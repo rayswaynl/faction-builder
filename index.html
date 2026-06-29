@@ -175,6 +175,47 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .side-chip{font-family:'JetBrains Mono',monospace;font-size:12px;border:1px solid var(--line);border-radius:4px;padding:6px 14px;background:var(--gunmetal);cursor:pointer;color:#9aa3ad;transition:all .12s;font-weight:600}
 .side-chip:hover{border-color:var(--orange);color:var(--bone)}
 .side-chip.on{border-color:var(--orange);color:var(--orange);background:#251f18}
+
+/* ---- Structures panel ---- */
+.struct-layout{display:flex;width:100%;height:100%;min-height:0}
+.struct-left{width:340px;flex:0 0 340px;border-right:1px solid var(--line);background:var(--steel);overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:0}
+.struct-right{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:14px}
+.struct-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.struct-section:first-child{margin-top:0}
+.bldg-row{background:var(--gunmetal);border:1px solid var(--line);border-radius:5px;padding:10px 12px;margin-bottom:8px}
+.bldg-row-hdr{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.bldg-row-hdr .bname{font-family:Oswald,sans-serif;font-size:13px;color:var(--bone);flex:1}
+.bldg-row-hdr .bkey{font-family:'JetBrains Mono',monospace;font-size:9px;color:#556;border:1px solid var(--line);border-radius:3px;padding:1px 5px}
+.bldg-fields{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+.bldg-fields label{font-size:10px;color:#9aa3ad;text-transform:none;margin:0;display:flex;flex-direction:column;gap:3px}
+.bldg-fields input{width:70px;font-size:11px;padding:4px 6px;background:var(--steel);font-family:'JetBrains Mono',monospace}
+.bldg-cls-input{width:100%!important;font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 7px;background:var(--steel);margin-bottom:8px}
+
+/* ---- Flag picker ---- */
+.flag-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.flag-tile{border:1px solid var(--line);border-radius:4px;padding:6px 10px;background:var(--gunmetal);cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;transition:all .12s;text-align:center;min-width:70px}
+.flag-tile:hover{border-color:var(--orange);color:var(--bone)}
+.flag-tile.on{border-color:var(--orange);color:var(--orange);background:#251f18}
+.flag-paa-preview{background:#0a0c0f;border:1px solid var(--line);border-radius:4px;padding:7px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--orange);margin-top:6px;word-break:break-all}
+
+/* ---- Defense names ---- */
+.defense-list{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.defense-entry{display:flex;align-items:center;gap:6px;background:var(--gunmetal);border:1px solid var(--line);border-radius:4px;padding:5px 8px}
+.defense-entry input{flex:1;font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 6px;background:var(--steel)}
+.defense-add-row{margin-top:6px}
+
+/* ---- Glue panel ---- */
+.glue-layout{display:flex;width:100%;height:100%;min-height:0}
+.glue-col{flex:1;overflow-y:auto;padding:16px;border-right:1px solid var(--line);min-width:0}
+.glue-col:last-child{border-right:none}
+.glue-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.glue-section:first-child{margin-top:0}
+.glue-arr{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.glue-arr-row{display:flex;align-items:center;gap:6px;background:var(--gunmetal);border:1px solid var(--line);border-radius:4px;padding:4px 8px}
+.glue-arr-row input{flex:1;font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 5px;background:var(--steel)}
+.glue-arr-add{margin-top:5px;font-size:11px}
+.glue-mono{font-family:'JetBrains Mono',monospace;font-size:11px}
+.glue-row{margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -313,21 +354,197 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
   </div>
 </div>
 
-<!-- ====== Step 3: Structures (placeholder) ====== -->
+<!-- ====== Step 3: Structures ====== -->
 <div class="step-panel" id="stepStructures">
-  <div class="placeholder-panel">
-    <div class="icon">🏗</div>
-    <div class="p1">Structures — Task 3</div>
-    <div class="p2">8 buildings + MHQ + deployed HQ classnames, supply costs,<br>build times, defense palette. Flag picker.<br><br>Coming in Task 3 commit.</div>
+  <div class="struct-layout">
+
+    <!-- Left: 8 buildings + MHQ/HQ classnames -->
+    <div class="struct-left">
+      <div class="struct-section">Mobile HQ (MHQ)</div>
+      <label for="mhqInput">MHQ classname</label>
+      <input type="text" id="mhqInput" class="glue-mono" placeholder="e.g. BRDM2_HQ_Gue" autocomplete="off" oninput="onStructChange()">
+
+      <div class="struct-section" style="margin-top:12px">Deployed HQ</div>
+      <label for="hqInput">Deployed HQ classname</label>
+      <input type="text" id="hqInput" class="glue-mono" placeholder="e.g. BRDM2_HQ_Gue_unfolded" autocomplete="off" oninput="onStructChange()">
+
+      <div class="struct-section" style="margin-top:12px">8 Buildings</div>
+      <div id="buildingRows"></div>
+
+      <div class="struct-section" style="margin-top:12px">Defense Palette
+        <span class="hint" style="display:inline;text-transform:none;letter-spacing:0;font-size:9px;margin-left:4px">WFBE_%1DEFENSENAMES</span>
+      </div>
+      <div class="hint" style="margin-top:0;margin-bottom:8px">Classnames available in the defense build menu.</div>
+      <div class="defense-list" id="defenseList"></div>
+      <div class="defense-add-row">
+        <button class="sm" onclick="addDefenseName('')">+ Add classname</button>
+      </div>
+    </div>
+
+    <!-- Right: Flag picker -->
+    <div class="struct-right">
+      <div class="panel-hdr" style="margin:-16px -16px 16px;padding:11px 16px;flex:0 0 auto">
+        <h2>Flag</h2>
+        <div class="sub">WFBE_%1FLAG — the .paa texture shown on the flag pole</div>
+      </div>
+
+      <div>
+        <label style="margin-top:0">Known faction flags — click to use</label>
+        <div class="flag-grid" id="flagGrid"></div>
+      </div>
+
+      <div style="margin-top:10px">
+        <label for="flagCustom">Custom .paa path</label>
+        <input type="text" id="flagCustom" class="glue-mono" placeholder="\ca\data\Flag_napa_co.paa" autocomplete="off" oninput="onFlagCustomChange()" style="font-family:'JetBrains Mono',monospace">
+        <div class="hint">Type any custom path, or click a tile above to populate.</div>
+        <div class="flag-paa-preview" id="flagPaaPreview">\ca\data\Flag_napa_co.paa</div>
+      </div>
+
+      <div style="margin-top:10px">
+        <div class="hint">
+          The flag .paa is referenced as <code>WFBE_%1FLAG = '<em>path</em>'</code> in Root_&lt;F&gt;.sqf.
+          Use a path that exists in the game files or your mission pbo.
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <div class="btnbar" style="margin-top:auto;padding-top:16px">
+        <button onclick="switchStep('roster')" class="sm">← Roster</button>
+        <button onclick="switchStep('glue')" class="primary sm">Next: Glue →</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- ====== Step 4: Glue (placeholder) ====== -->
+<!-- ====== Step 4: Glue ====== -->
 <div class="step-panel" id="stepGlue">
-  <div class="placeholder-panel">
-    <div class="icon">⚙</div>
-    <div class="p1">Glue — Task 3</div>
-    <div class="p2">Root variables: support vehicles, starting vehicles,<br>paratroop pools, radio announcer, default gear class.<br>GUE defaults pre-filled.<br><br>Coming in Task 3 commit.</div>
+  <div class="glue-layout">
+
+    <!-- Col 1: Support + Starting vehicles -->
+    <div class="glue-col">
+      <div class="glue-section">Crew &amp; Soldier Classes</div>
+      <div class="glue-row">
+        <label for="glCrew">CREW classname</label>
+        <input type="text" id="glCrew" class="glue-mono" placeholder="e.g. GUE_Soldier_Crew" autocomplete="off" oninput="onGlueScalarChange('CREW',this.value)">
+      </div>
+      <div class="glue-row">
+        <label for="glPilot">PILOT classname</label>
+        <input type="text" id="glPilot" class="glue-mono" placeholder="e.g. GUE_Soldier_1" autocomplete="off" oninput="onGlueScalarChange('PILOT',this.value)">
+      </div>
+      <div class="glue-row">
+        <label for="glSoldier">SOLDIER classname</label>
+        <input type="text" id="glSoldier" class="glue-mono" placeholder="e.g. GUE_Soldier_1" autocomplete="off" oninput="onGlueScalarChange('SOLDIER',this.value)">
+      </div>
+      <div class="glue-row">
+        <label for="glDefaultFaction">DEFAULTFACTION string <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">shown in buy menus</span></label>
+        <input type="text" id="glDefaultFaction" placeholder="e.g. Guerilla" autocomplete="off" oninput="onGlueScalarChange('DEFAULTFACTION',this.value)">
+      </div>
+      <div class="glue-row">
+        <label for="glDefaultGear">_DefaultGear class <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">gear classname string</span></label>
+        <input type="text" id="glDefaultGear" class="glue-mono" placeholder="e.g. GUE_Soldier_1" autocomplete="off" oninput="onGlueScalarChange('_DefaultGear',this.value)">
+      </div>
+
+      <div class="glue-section">Support Trucks</div>
+      <label style="margin-bottom:4px">REPAIRTRUCKS <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">array</span></label>
+      <div class="glue-arr" id="glRepairTrucks"></div>
+      <button class="sm glue-arr-add" onclick="addGlueArrItem('REPAIRTRUCKS')">+ Add</button>
+
+      <div style="margin-top:10px">
+        <label style="margin-bottom:4px">SUPPLYTRUCKS <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">array</span></label>
+        <div class="glue-arr" id="glSupplyTrucks"></div>
+        <button class="sm glue-arr-add" onclick="addGlueArrItem('SUPPLYTRUCKS')">+ Add</button>
+      </div>
+
+      <div style="margin-top:10px">
+        <label style="margin-bottom:4px">SALVAGETRUCK <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">array</span></label>
+        <div class="glue-arr" id="glSalvageTruck"></div>
+        <button class="sm glue-arr-add" onclick="addGlueArrItem('SALVAGETRUCK')">+ Add</button>
+      </div>
+
+      <div style="margin-top:10px">
+        <label style="margin-bottom:4px">AMBULANCES <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">array</span></label>
+        <div class="glue-arr" id="glAmbulances"></div>
+        <button class="sm glue-arr-add" onclick="addGlueArrItem('AMBULANCES')">+ Add</button>
+      </div>
+
+      <div style="margin-top:10px">
+        <label style="margin-bottom:4px">MASHES <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">array</span></label>
+        <div class="glue-arr" id="glMashes"></div>
+        <button class="sm glue-arr-add" onclick="addGlueArrItem('MASHES')">+ Add</button>
+      </div>
+    </div>
+
+    <!-- Col 2: Starting vehicles + Paratrooper pools -->
+    <div class="glue-col">
+      <div class="glue-section">Starting Vehicles</div>
+      <div class="hint" style="margin-bottom:8px">STARTINGVEHICLES — spawned at base on mission start.</div>
+      <div class="glue-arr" id="glStartingVehicles"></div>
+      <button class="sm glue-arr-add" onclick="addGlueArrItem('STARTINGVEHICLES')">+ Add</button>
+
+      <div class="glue-section" style="margin-top:16px">Paratroop Pools</div>
+      <div class="hint" style="margin-bottom:8px">Infantry dropped via paradrop. Level 1 = basic, 3 = elite.</div>
+      <label style="margin-bottom:4px">PARACHUTELEVEL1</label>
+      <div class="glue-arr" id="glParaLevel1"></div>
+      <button class="sm glue-arr-add" onclick="addGlueArrItem('PARACHUTELEVEL1')">+ Add</button>
+
+      <div style="margin-top:10px">
+        <label style="margin-bottom:4px">PARACHUTELEVEL2</label>
+        <div class="glue-arr" id="glParaLevel2"></div>
+        <button class="sm glue-arr-add" onclick="addGlueArrItem('PARACHUTELEVEL2')">+ Add</button>
+      </div>
+
+      <div style="margin-top:10px">
+        <label style="margin-bottom:4px">PARACHUTELEVEL3</label>
+        <div class="glue-arr" id="glParaLevel3"></div>
+        <button class="sm glue-arr-add" onclick="addGlueArrItem('PARACHUTELEVEL3')">+ Add</button>
+      </div>
+    </div>
+
+    <!-- Col 3: Radio + misc scalar vars -->
+    <div class="glue-col">
+      <div class="glue-section">Radio &amp; Announcer</div>
+      <div class="glue-row">
+        <label for="glRadioConfig">_RadioAnnouncers_Config <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">protocol class</span></label>
+        <input type="text" id="glRadioConfig" class="glue-mono" placeholder="e.g. RadioProtocolCZ" autocomplete="off" oninput="onGlueScalarChange('_RadioAnnouncers_Config',this.value)">
+      </div>
+      <div style="margin-top:8px">
+        <label style="margin-bottom:4px">_RadioAnnouncers <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">array of announcer classes</span></label>
+        <div class="glue-arr" id="glRadioAnnouncers"></div>
+        <button class="sm glue-arr-add" onclick="addGlueArrItem('_RadioAnnouncers')">+ Add</button>
+      </div>
+
+      <div class="glue-section" style="margin-top:16px">Paradrop Transport</div>
+      <div class="glue-row">
+        <label for="glParacargo">PARACARGO <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">paradrop cargo heli</span></label>
+        <input type="text" id="glParacargo" class="glue-mono" placeholder="e.g. Mi17_Civilian" autocomplete="off" oninput="onGlueScalarChange('PARACARGO',this.value)">
+      </div>
+      <div class="glue-row">
+        <label for="glParavehi">PARAVEHI <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">paradrop transport heli</span></label>
+        <input type="text" id="glParavehi" class="glue-mono" placeholder="e.g. Mi17_Civilian" autocomplete="off" oninput="onGlueScalarChange('PARAVEHI',this.value)">
+      </div>
+      <div class="glue-row">
+        <label for="glParavehicargo">PARAVEHICARGO <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">vehicle paradrop type</span></label>
+        <input type="text" id="glParavehicargo" class="glue-mono" placeholder="e.g. BRDM2_Gue" autocomplete="off" oninput="onGlueScalarChange('PARAVEHICARGO',this.value)">
+      </div>
+      <div class="glue-row">
+        <label for="glParachute">PARACHUTE classname</label>
+        <input type="text" id="glParachute" class="glue-mono" placeholder="e.g. ParachuteC" autocomplete="off" oninput="onGlueScalarChange('PARACHUTE',this.value)">
+      </div>
+
+      <div style="margin-top:8px">
+        <label style="margin-bottom:4px">PARAAMMO <span class="hint" style="display:inline;text-transform:none;letter-spacing:0">array of ammo box classnames</span></label>
+        <div class="glue-arr" id="glParaammo"></div>
+        <button class="sm glue-arr-add" onclick="addGlueArrItem('PARAAMMO')">+ Add</button>
+      </div>
+
+      <!-- Nav -->
+      <div class="btnbar" style="margin-top:auto;padding-top:16px">
+        <button onclick="switchStep('structures')" class="sm">← Structures</button>
+        <button onclick="switchStep('export')" class="primary sm">Next: Export →</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -964,6 +1181,338 @@ function renderPickerGrid() {
 function pickUnit(cls) {
   addUnitToRoster(cls, PICKER_SLOT);
   closePicker();
+}
+
+// ============================================================
+//  MODEL — extend for Task 3
+// ============================================================
+// Extend MODEL.faction with structures + flag + glue
+Object.assign(MODEL.faction, {
+  structures: {
+    mhq: 'BRDM2_HQ_Gue',
+    hq:  'BRDM2_HQ_Gue_unfolded',
+    buildings: [
+      { key: 'Headquarters',  classname: 'BRDM2_HQ_Gue_unfolded',          cost: 0,    time: 30  },
+      { key: 'Barracks',      classname: 'Gue_WarfareBBarracks',            cost: 200,  time: 70  },
+      { key: 'Light',         classname: 'Gue_WarfareBLightFactory',        cost: 600,  time: 90  },
+      { key: 'CommandCenter', classname: 'GUE_WarfareBUAVterminal',         cost: 1200, time: 110 },
+      { key: 'Heavy',         classname: 'Gue_WarfareBHeavyFactory',        cost: 2800, time: 130 },
+      { key: 'Aircraft',      classname: 'GUE_WarfareBAircraftFactory',     cost: 4400, time: 150 },
+      { key: 'ServicePoint',  classname: 'GUE_WarfareBVehicleServicePoint', cost: 700,  time: 70  },
+      { key: 'AARadar',       classname: 'Gue_WarfareBAntiAirRadar',        cost: 3200, time: 280 }
+    ],
+    defenseNames: [
+      'GUE_WarfareBMGNest_PK','DSHKM_Gue','SearchLight_Gue','SPG9_Gue','ZU23_Gue',
+      '2b14_82mm_GUE','Land_HBarrier3','Land_HBarrier5','Land_HBarrier_large',
+      'Base_WarfareBBarrier5x','Base_WarfareBBarrier10x','Base_WarfareBBarrier10xTall',
+      'MASH','Land_fort_bagfence_long','Land_fort_bagfence_corner','Land_fort_bagfence_round',
+      'Land_fortified_nest_small','Land_fortified_nest_big','Land_Fort_Watchtower',
+      'Land_fort_rampart','Land_fort_artillery_nest','Hhedgehog_concreteBig','Hedgehog',
+      'Land_CamoNet_EAST','Land_CamoNetVar_EAST','Land_CamoNetB_EAST','Sign_Danger',
+      'HeliH','Fort_RazorWire','Land_Ind_IlluminantTower','Land_Campfire',
+      'RUOrdnanceBox','RUVehicleBox','RUBasicAmmunitionBox','RUBasicWeaponsBox',
+      'RULaunchersBox','RUSpecialWeaponsBox'
+    ]
+  },
+  flag: '\\ca\\data\\Flag_napa_co.paa',
+  glue: {
+    CREW:                  'GUE_Soldier_Crew',
+    PILOT:                 'GUE_Soldier_1',
+    SOLDIER:               'GUE_Soldier_1',
+    DEFAULTFACTION:        'Guerilla',
+    _DefaultGear:          'GUE_Soldier_1',
+    REPAIRTRUCKS:          ['WarfareRepairTruck_Gue','V3S_Repair_TK_GUE_EP1'],
+    SUPPLYTRUCKS:          ['WarfareSupplyTruck_Gue','V3S_Supply_TK_GUE_EP1'],
+    SALVAGETRUCK:          ['WarfareSalvageTruck_Gue','V3S_Salvage_TK_GUE_EP1'],
+    AMBULANCES:            ['V3S_TK_GUE_EP1','V3S_Gue'],
+    MASHES:                ['MASH'],
+    STARTINGVEHICLES:      ['TT650_Gue','BTR90','Offroad_DSHKM_Gue'],
+    PARACHUTELEVEL1:       ['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_2','GUE_Soldier_3','GUE_Soldier_AR','GUE_Soldier_Medic'],
+    PARACHUTELEVEL2:       ['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AA','GUE_Soldier_MG','GUE_Soldier_Medic','GUE_Soldier_Scout','GUE_Soldier_Sniper'],
+    PARACHUTELEVEL3:       ['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AA','GUE_Soldier_AA','GUE_Soldier_AR','GUE_Soldier_Medic','GUE_Soldier_Scout','GUE_Soldier_AT','GUE_Soldier_AT'],
+    _RadioAnnouncers:      ['WFHQ_CZ0','WFHQ_CZ1','WFHQ_CZ2'],
+    _RadioAnnouncers_Config: 'RadioProtocolCZ',
+    PARACARGO:             'Mi17_Civilian',
+    PARAVEHI:              'Mi17_Civilian',
+    PARAVEHICARGO:         'BRDM2_Gue',
+    PARACHUTE:             'ParachuteC',
+    PARAAMMO:             ['RUBasicAmmunitionBox','RUBasicWeaponsBox','RULaunchersBox']
+  }
+});
+
+// ============================================================
+//  STRUCTURES PANEL
+// ============================================================
+const BUILDING_LABELS = {
+  Headquarters:  'Headquarters',
+  Barracks:      'Barracks',
+  Light:         'Light Factory',
+  CommandCenter: 'Command Center',
+  Heavy:         'Heavy Factory',
+  Aircraft:      'Aircraft Factory',
+  ServicePoint:  'Service Point',
+  AARadar:       'AA Radar'
+};
+
+function initStructuresPanel() {
+  // MHQ / HQ inputs
+  document.getElementById('mhqInput').value = MODEL.faction.structures.mhq;
+  document.getElementById('hqInput').value  = MODEL.faction.structures.hq;
+
+  // 8 buildings
+  const container = document.getElementById('buildingRows');
+  container.innerHTML = '';
+  MODEL.faction.structures.buildings.forEach((b, i) => {
+    const row = document.createElement('div');
+    row.className = 'bldg-row';
+    row.innerHTML = `
+      <div class="bldg-row-hdr">
+        <span class="bname">${BUILDING_LABELS[b.key] || b.key}</span>
+        <span class="bkey">${b.key}</span>
+      </div>
+      <label style="font-size:10px;color:#9aa3ad;margin-bottom:3px">Classname</label>
+      <input type="text" class="bldg-cls-input" value="${b.classname}" data-idx="${i}" data-field="classname"
+        style="width:100%;font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 7px;background:var(--steel);border:1px solid var(--line);border-radius:4px;color:var(--bone);outline:none;margin-bottom:8px"
+        autocomplete="off" oninput="onBuildingField(${i},'classname',this.value)">
+      <div class="bldg-fields">
+        <label>Cost (supply)
+          <input type="number" value="${b.cost}" min="0" max="99999"
+            style="width:70px;font-size:11px;padding:4px 6px;background:var(--steel);border:1px solid var(--line);border-radius:4px;color:var(--bone);font-family:'JetBrains Mono',monospace;outline:none"
+            onchange="onBuildingField(${i},'cost',this.value)">
+        </label>
+        <label>Build time (s)
+          <input type="number" value="${b.time}" min="0" max="9999"
+            style="width:70px;font-size:11px;padding:4px 6px;background:var(--steel);border:1px solid var(--line);border-radius:4px;color:var(--bone);font-family:'JetBrains Mono',monospace;outline:none"
+            onchange="onBuildingField(${i},'time',this.value)">
+        </label>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+
+  // Defense names
+  renderDefenseList();
+
+  // Flag grid
+  initFlagGrid();
+
+  // Set flag custom field
+  document.getElementById('flagCustom').value = MODEL.faction.flag;
+  document.getElementById('flagPaaPreview').textContent = MODEL.faction.flag;
+}
+
+function onStructChange() {
+  MODEL.faction.structures.mhq = document.getElementById('mhqInput').value;
+  MODEL.faction.structures.hq  = document.getElementById('hqInput').value;
+}
+
+function onBuildingField(idx, field, val) {
+  if (field === 'cost' || field === 'time') {
+    MODEL.faction.structures.buildings[idx][field] = parseInt(val) || 0;
+  } else {
+    MODEL.faction.structures.buildings[idx][field] = val;
+  }
+}
+
+function renderDefenseList() {
+  const list = document.getElementById('defenseList');
+  list.innerHTML = '';
+  MODEL.faction.structures.defenseNames.forEach((cls, i) => {
+    const row = document.createElement('div');
+    row.className = 'defense-entry';
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.value = cls;
+    inp.style.cssText = 'flex:1;font-family:\'JetBrains Mono\',monospace;font-size:11px;padding:4px 6px;background:var(--steel);border:1px solid var(--line);border-radius:4px;color:var(--bone);outline:none';
+    inp.oninput = () => { MODEL.faction.structures.defenseNames[i] = inp.value; };
+    const del = document.createElement('button');
+    del.className = 'ico danger';
+    del.textContent = '✕';
+    del.style.padding = '2px 6px';
+    del.onclick = () => {
+      MODEL.faction.structures.defenseNames.splice(i, 1);
+      renderDefenseList();
+    };
+    row.appendChild(inp);
+    row.appendChild(del);
+    list.appendChild(row);
+  });
+}
+
+function addDefenseName(cls) {
+  MODEL.faction.structures.defenseNames.push(cls);
+  renderDefenseList();
+  // Focus the last input
+  setTimeout(() => {
+    const inputs = document.querySelectorAll('#defenseList .defense-entry input');
+    if (inputs.length) inputs[inputs.length - 1].focus();
+  }, 30);
+}
+
+// ============================================================
+//  FLAG PANEL
+// ============================================================
+const KNOWN_FLAGS = [
+  { faction: 'CDF',    paa: '\\ca\\ca_e\\data\\flag_cdf_co.paa' },
+  { faction: 'GUE',    paa: '\\ca\\data\\Flag_napa_co.paa' },
+  { faction: 'INS',    paa: '\\Ca\\Data\\flag_chdkz_co.paa' },
+  { faction: 'PMC',    paa: '\\ca\\ca_e\\data\\flag_tkg_co.paa' },
+  { faction: 'RU',     paa: '\\Ca\\Data\\flag_rus_co.paa' },
+  { faction: 'TKA',    paa: '\\Ca\\ca_e\\Data\\flag_tka_co.paa' },
+  { faction: 'TKGUE',  paa: '\\ca\\ca_e\\data\\flag_tkg_co.paa' },
+  { faction: 'US',     paa: '\\Ca\\ca_e\\Data\\flag_us_co.paa' },
+  { faction: 'USMC',   paa: '\\Ca\\Data\\flag_usa_co.paa' },
+  { faction: 'US_Camo',paa: '\\Ca\\ca_e\\Data\\flag_us_co.paa' }
+];
+
+function initFlagGrid() {
+  const grid = document.getElementById('flagGrid');
+  grid.innerHTML = '';
+  KNOWN_FLAGS.forEach(f => {
+    const tile = document.createElement('button');
+    tile.className = 'flag-tile' + (MODEL.faction.flag === f.paa ? ' on' : '');
+    tile.dataset.paa = f.paa;
+    tile.textContent = f.faction;
+    tile.title = f.paa;
+    tile.onclick = () => selectFlag(f.paa);
+    grid.appendChild(tile);
+  });
+}
+
+function selectFlag(paa) {
+  MODEL.faction.flag = paa;
+  document.getElementById('flagCustom').value = paa;
+  document.getElementById('flagPaaPreview').textContent = paa;
+  // Update tiles
+  document.querySelectorAll('.flag-tile').forEach(t => {
+    t.classList.toggle('on', t.dataset.paa === paa);
+  });
+}
+
+function onFlagCustomChange() {
+  const val = document.getElementById('flagCustom').value;
+  MODEL.faction.flag = val;
+  document.getElementById('flagPaaPreview').textContent = val || '(none)';
+  // Deselect tiles if custom
+  document.querySelectorAll('.flag-tile').forEach(t => {
+    t.classList.toggle('on', t.dataset.paa === val);
+  });
+}
+
+// ============================================================
+//  GLUE PANEL
+// ============================================================
+// scalar glue var IDs → model keys
+const GLUE_SCALAR_MAP = {
+  glCrew:             'CREW',
+  glPilot:            'PILOT',
+  glSoldier:          'SOLDIER',
+  glDefaultFaction:   'DEFAULTFACTION',
+  glDefaultGear:      '_DefaultGear',
+  glRadioConfig:      '_RadioAnnouncers_Config',
+  glParacargo:        'PARACARGO',
+  glParavehi:         'PARAVEHI',
+  glParavehicargo:    'PARAVEHICARGO',
+  glParachute:        'PARACHUTE'
+};
+
+// array glue vars: elementId → model key
+const GLUE_ARR_MAP = {
+  glRepairTrucks:    'REPAIRTRUCKS',
+  glSupplyTrucks:    'SUPPLYTRUCKS',
+  glSalvageTruck:    'SALVAGETRUCK',
+  glAmbulances:      'AMBULANCES',
+  glMashes:          'MASHES',
+  glStartingVehicles:'STARTINGVEHICLES',
+  glParaLevel1:      'PARACHUTELEVEL1',
+  glParaLevel2:      'PARACHUTELEVEL2',
+  glParaLevel3:      'PARACHUTELEVEL3',
+  glRadioAnnouncers: '_RadioAnnouncers',
+  glParaammo:        'PARAAMMO'
+};
+
+function initGluePanel() {
+  // Scalars
+  for (const [elId, key] of Object.entries(GLUE_SCALAR_MAP)) {
+    const el = document.getElementById(elId);
+    if (el) el.value = MODEL.faction.glue[key] || '';
+  }
+  // Arrays
+  for (const [elId, key] of Object.entries(GLUE_ARR_MAP)) {
+    renderGlueArr(elId, key);
+  }
+}
+
+function onGlueScalarChange(key, val) {
+  MODEL.faction.glue[key] = val;
+}
+
+function renderGlueArr(elId, key) {
+  const container = document.getElementById(elId);
+  if (!container) return;
+  container.innerHTML = '';
+  const arr = MODEL.faction.glue[key] || [];
+  arr.forEach((val, i) => {
+    const row = document.createElement('div');
+    row.className = 'glue-arr-row';
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.value = val;
+    inp.style.cssText = 'flex:1;font-family:\'JetBrains Mono\',monospace;font-size:11px;padding:3px 5px;background:var(--steel);border:1px solid var(--line);border-radius:4px;color:var(--bone);outline:none';
+    inp.oninput = () => { arr[i] = inp.value; };
+    const del = document.createElement('button');
+    del.className = 'ico danger';
+    del.textContent = '✕';
+    del.style.padding = '2px 5px';
+    del.onclick = () => {
+      arr.splice(i, 1);
+      MODEL.faction.glue[key] = arr;
+      renderGlueArr(elId, key);
+    };
+    row.appendChild(inp);
+    row.appendChild(del);
+    container.appendChild(row);
+  });
+}
+
+function addGlueArrItem(key) {
+  if (!Array.isArray(MODEL.faction.glue[key])) MODEL.faction.glue[key] = [];
+  MODEL.faction.glue[key].push('');
+  // Find container
+  const elId = Object.keys(GLUE_ARR_MAP).find(k => GLUE_ARR_MAP[k] === key);
+  if (elId) {
+    renderGlueArr(elId, key);
+    setTimeout(() => {
+      const rows = document.querySelectorAll(`#${elId} .glue-arr-row input`);
+      if (rows.length) rows[rows.length - 1].focus();
+    }, 30);
+  }
+}
+
+// ============================================================
+//  STEP SWITCHING — extend to init panels on first visit
+// ============================================================
+const _STEP_INITED = {};
+const _origSwitchStep = switchStep;
+// Override switchStep to init panels on first visit
+function switchStep(name) {
+  const key = name.charAt(0).toUpperCase() + name.slice(1);
+  STEPS.forEach(s => {
+    document.getElementById('step' + s)?.classList.remove('on');
+    document.getElementById('stepBtn' + s)?.classList.remove('on');
+  });
+  document.getElementById('step' + key).classList.add('on');
+  document.getElementById('stepBtn' + key).classList.add('on');
+
+  if (!_STEP_INITED[key]) {
+    _STEP_INITED[key] = true;
+    if (key === 'Structures') initStructuresPanel();
+    if (key === 'Glue') initGluePanel();
+  }
+
+  // Enable step button (remove disabled class when navigated to)
+  const btn = document.getElementById('stepBtn' + key);
+  if (btn) btn.classList.remove('disabled');
 }
 
 // ============================================================
