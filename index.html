@@ -216,6 +216,41 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .glue-arr-add{margin-top:5px;font-size:11px}
 .glue-mono{font-family:'JetBrains Mono',monospace;font-size:11px}
 .glue-row{margin-bottom:10px}
+
+/* ---- Export panel ---- */
+.export-layout{display:flex;width:100%;height:100%;min-height:0}
+.export-left{width:300px;flex:0 0 300px;border-right:1px solid var(--line);background:var(--steel);display:flex;flex-direction:column;min-height:0;overflow-y:auto;padding:14px}
+.export-main{flex:1;display:flex;flex-direction:column;min-height:0;overflow-y:auto;padding:14px}
+.export-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.export-section:first-child{margin-top:0}
+.file-block{background:#0a0c0f;border:1px solid var(--line);border-radius:5px;margin-bottom:10px;overflow:hidden}
+.file-block-hdr{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--steel);border-bottom:1px solid var(--line)}
+.file-block-hdr .fname{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bone);flex:1}
+.file-block-hdr .ftype{font-family:'JetBrains Mono',monospace;font-size:9px;color:#556;border:1px solid var(--line);border-radius:3px;padding:1px 5px}
+.file-block-hdr .copy-btn{font-size:10px;padding:3px 8px;font-family:'JetBrains Mono',monospace}
+.file-block pre{font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;padding:10px 12px;overflow-x:auto;max-height:200px;overflow-y:auto;line-height:1.6;white-space:pre;margin:0}
+.patch-block{background:#0a0c0f;border:1px solid var(--orange-deep);border-radius:5px;margin-bottom:10px;overflow:hidden}
+.patch-block-hdr{display:flex;align-items:center;gap:8px;padding:7px 10px;background:#1a0f06;border-bottom:1px solid var(--orange-deep)}
+.patch-block-hdr .fname{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--orange);flex:1}
+.patch-block pre{font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;padding:10px 12px;overflow-x:auto;max-height:160px;overflow-y:auto;line-height:1.6;white-space:pre;margin:0}
+.patch-block pre .new{color:var(--olive)}
+.patch-block pre .ctx{color:#39414b}
+.launcher-btn{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--gunmetal);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .15s}
+.launcher-btn:hover{border-color:var(--orange)}
+.launcher-btn .lb-icon{font-size:20px;flex:0 0 auto;line-height:1}
+.launcher-btn .lb-text{flex:1}
+.launcher-btn .lb-title{font-family:Oswald,sans-serif;font-size:14px;color:var(--bone);letter-spacing:.5px}
+.launcher-btn .lb-sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;margin-top:2px}
+.launcher-btn .lb-arrow{color:#556;font-size:18px}
+.export-summary{background:var(--gunmetal);border:1px solid var(--line);border-radius:5px;padding:10px 12px;margin-bottom:10px}
+.export-summary .es-row{display:flex;gap:8px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:#9aa3ad;padding:3px 0}
+.export-summary .es-key{color:#556;width:130px;flex:0 0 130px}
+.export-summary .es-val{color:var(--bone)}
+.export-summary .es-val.ok{color:var(--olive)}
+.export-summary .es-val.warn{color:var(--orange)}
+.export-not-ready{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px 20px;color:#39414b;text-align:center}
+.export-not-ready .nr-icon{font-size:40px;line-height:1}
+.export-not-ready .nr-msg{font-family:'JetBrains Mono',monospace;font-size:11px;color:#556;line-height:1.8}
 </style>
 </head>
 <body>
@@ -548,12 +583,67 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
   </div>
 </div>
 
-<!-- ====== Step 5: Export (placeholder) ====== -->
+<!-- ====== Step 5: Export ====== -->
 <div class="step-panel" id="stepExport">
-  <div class="placeholder-panel">
-    <div class="icon">📦</div>
-    <div class="p1">Export — Task 4</div>
-    <div class="p2">Emit Core_/Root_/Structures_/Units_ SQF files,<br>GUE-clone defaults for deferred files,<br>registration patches, download as .zip.<br>Cross-tool launcher (Loadout Lab · Garrison · S&amp;E).<br><br>Coming in Task 4 commit.</div>
+  <div class="export-layout">
+
+    <!-- Left: summary + controls -->
+    <div class="export-left">
+      <div class="export-section">Faction Summary</div>
+      <div class="export-summary" id="exportSummary">
+        <div class="es-row"><span class="es-key">Token</span><span class="es-val" id="esTok">—</span></div>
+        <div class="es-row"><span class="es-key">Side</span><span class="es-val" id="esSide">—</span></div>
+        <div class="es-row"><span class="es-key">Display name</span><span class="es-val" id="esName">—</span></div>
+        <div class="es-row"><span class="es-key">Roster units</span><span class="es-val" id="esRoster">0</span></div>
+        <div class="es-row"><span class="es-key">Flag</span><span class="es-val" id="esFlag" style="font-size:9px;word-break:break-all">—</span></div>
+      </div>
+
+      <div class="export-section">Actions</div>
+      <button class="primary" style="width:100%;margin-bottom:8px" onclick="runEmit()">Generate Files</button>
+      <button id="dlZipBtn" style="width:100%;margin-bottom:8px;display:none" onclick="downloadZip()">⬇ Download faction (.zip)</button>
+
+      <div class="export-section" style="margin-top:8px">Cross-Tool Launcher</div>
+      <div class="hint" style="margin-bottom:8px">Writes a handoff bundle to <code>localStorage</code> so sibling tools can import this faction.</div>
+      <button class="launcher-btn" onclick="launchSibling('strategy-economy')" title="Strategy &amp; Economy">
+        <span class="lb-icon">📊</span>
+        <span class="lb-text">
+          <div class="lb-title">Strategy &amp; Economy</div>
+          <div class="lb-sub">Refine upgrades + economy</div>
+        </span>
+        <span class="lb-arrow">↗</span>
+      </button>
+      <button class="launcher-btn" onclick="launchSibling('loadout-lab')" title="Loadout Lab">
+        <span class="lb-icon">🎽</span>
+        <span class="lb-text">
+          <div class="lb-title">Loadout Lab</div>
+          <div class="lb-sub">Refine gear + loadouts</div>
+        </span>
+        <span class="lb-arrow">↗</span>
+      </button>
+      <button class="launcher-btn" onclick="launchSibling('garrison-editor')" title="Garrison Editor">
+        <span class="lb-icon">🛡</span>
+        <span class="lb-text">
+          <div class="lb-title">Garrison Editor</div>
+          <div class="lb-sub">Refine AI squads + groups</div>
+        </span>
+        <span class="lb-arrow">↗</span>
+      </button>
+      <div id="launchStatus" class="hint" style="margin-top:6px"></div>
+
+      <div class="btnbar" style="margin-top:auto;padding-top:10px">
+        <button onclick="switchStep('glue')" class="sm">← Glue</button>
+      </div>
+    </div>
+
+    <!-- Main: generated files + patches -->
+    <div class="export-main" id="exportMain">
+      <div class="export-not-ready" id="exportNotReady">
+        <div class="nr-icon">📦</div>
+        <div class="nr-msg">Click <b>Generate Files</b> to emit the faction file set.<br>Requires a valid token and side.</div>
+      </div>
+      <div id="exportFiles" style="display:none"></div>
+    </div>
+
   </div>
 </div>
 
@@ -1521,6 +1611,8 @@ function switchStep(name) {
     if (key === 'Structures') initStructuresPanel();
     if (key === 'Glue') initGluePanel();
   }
+  // Export panel always re-syncs summary when visited
+  if (key === 'Export') initExportPanel();
 
   // Enable step button (remove disabled class when navigated to)
   if (btn) btn.classList.remove('disabled');
@@ -1536,6 +1628,682 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load data
   loadData();
 });
+
+// ============================================================
+//  EXPORT PANEL — step init
+// ============================================================
+function initExportPanel() {
+  const f = MODEL.faction;
+  document.getElementById('esTok').textContent   = f.token   || '—';
+  document.getElementById('esSide').textContent  = f.side    || '—';
+  document.getElementById('esName').textContent  = f.displayName || '—';
+  document.getElementById('esRoster').textContent= f.roster.length;
+  document.getElementById('esFlag').textContent  = f.flag    || '—';
+  document.getElementById('exportNotReady').style.display = '';
+  document.getElementById('exportFiles').style.display    = 'none';
+  document.getElementById('dlZipBtn').style.display       = 'none';
+  document.getElementById('exportFiles').innerHTML        = '';
+  document.getElementById('launchStatus').textContent     = '';
+}
+
+// ============================================================
+//  EMIT ENGINE
+// ============================================================
+
+// Helper: SQF array literal from a JS array of strings
+function sqfArr(arr) {
+  if (!arr || arr.length === 0) return '[]';
+  return '[' + arr.map(s => `'${s}'`).join(',') + ']';
+}
+
+// Emit Core_<F>.sqf from roster
+function emitCore(tok, side, roster, factionStr) {
+  const fs = factionStr || tok;
+  let lines = [];
+  lines.push(`/* ${tok} Configuration — generated by Faction Builder */`);
+  lines.push(`Private ['_c','_i'];`);
+  lines.push(``);
+  lines.push(`_c = [];`);
+  lines.push(`_i = [];`);
+  lines.push(``);
+
+  if (roster.length === 0) {
+    lines.push(`/* No units added — add units on the Roster step */`);
+  }
+
+  roster.forEach(entry => {
+    // factory code: factory=-1 → factory slot code -1 (infantry); factory=-2 or 1 for vehicles/defenses
+    // The Core tuple factory column is the factory building type: -1=infantry, -2=vehicle, 1=static/defense
+    const factoryCode = entry.factory !== undefined ? entry.factory : -1;
+    lines.push(`_c = _c + ['${entry.cls}'];`);
+    lines.push(`_i = _i + [['','',${entry.price},${entry.buildTime},${entry.crew !== undefined ? entry.crew : -1},${entry.upgrade || 0},${factoryCode},1,'${fs}',${entry.crew > 0 ? '[[]]' : '[]'}]];`);
+    lines.push(``);
+  });
+
+  lines.push(`WFBE_${tok}_C = _c;`);
+  lines.push(`WFBE_${tok}_I = _i;`);
+  return lines.join('\n');
+}
+
+// Emit Units_<F>.sqf from roster slots
+function emitUnits(tok, side, roster) {
+  const bySlot = {};
+  roster.forEach(r => {
+    const k = r.factory_key || 'Depot';
+    if (!bySlot[k]) bySlot[k] = [];
+    bySlot[k].push(r.cls);
+  });
+
+  const slotVar = {
+    Barracks: 'BARRACKSUNITS',
+    Light:    'LIGHTUNITS',
+    Heavy:    'HEAVYUNITS',
+    Aircraft: 'AIRCRAFTUNITS',
+    Depot:    'DEPOTUNITS',
+    Defenses: 'DEFENSEUNITS'
+  };
+
+  let lines = [];
+  lines.push(`/* ${tok} Unit Lists — generated by Faction Builder */`);
+  lines.push(`Private ['_side','_u'];`);
+  lines.push(``);
+  lines.push(`_side = _this;`);
+  lines.push(``);
+
+  for (const [slotKey, varSuffix] of Object.entries(slotVar)) {
+    const units = bySlot[slotKey] || [];
+    if (units.length === 0) {
+      lines.push(`missionNamespace setVariable [Format ["WFBE_%1${varSuffix}", _side], []];`);
+    } else {
+      lines.push(`_u = ['${units[0]}'];`);
+      units.slice(1).forEach(cls => {
+        lines.push(`_u = _u + ['${cls}'];`);
+      });
+      lines.push(`missionNamespace setVariable [Format ["WFBE_%1${varSuffix}", _side], _u];`);
+    }
+    lines.push(``);
+  }
+
+  return lines.join('\n');
+}
+
+// Emit Structures_<F>.sqf
+function emitStructures(tok, side, structs) {
+  const b = structs.buildings;
+  const bByKey = {};
+  b.forEach(bld => { bByKey[bld.key] = bld; });
+
+  const hq  = bByKey['Headquarters'] || { classname: structs.hq || 'HQ', cost: 0, time: 30 };
+  const bar  = bByKey['Barracks']     || { classname: '', cost: 200,  time: 70 };
+  const lvf  = bByKey['Light']        || { classname: '', cost: 600,  time: 90 };
+  const cc   = bByKey['CommandCenter']|| { classname: '', cost: 1200, time: 110 };
+  const hvy  = bByKey['Heavy']        || { classname: '', cost: 2800, time: 130 };
+  const air  = bByKey['Aircraft']     || { classname: '', cost: 4400, time: 150 };
+  const sp   = bByKey['ServicePoint'] || { classname: '', cost: 700,  time: 70 };
+  const aar  = bByKey['AARadar']      || { classname: '', cost: 3200, time: 280 };
+
+  const defArr = structs.defenseNames || [];
+
+  return `/* ${tok} Structures — generated by Faction Builder */
+Private ['_c','_count','_d','_dir','_dis','_n','_s','_side','_t','_v'];
+
+_side = _this;
+
+/* Definitions */
+_MHQ   = "${structs.mhq || 'MHQ'}";
+_HQ    = "${hq.classname}";
+_BAR   = "${bar.classname}";
+_LVF   = "${lvf.classname}";
+_CC    = "${cc.classname}";
+_HEAVY = "${hvy.classname}";
+_AIR   = "${air.classname}";
+_SP    = "${sp.classname}";
+_AAR   = "${aar.classname}";
+
+/* MHQ */
+missionNamespace setVariable [Format["WFBE_%1MHQNAME", _side], _MHQ];
+missionNamespace setVariable [Format["WFBE_%1HQ", _side], _HQ];
+
+/* Defense palette */
+missionNamespace setVariable [Format["WFBE_%1DEFENSENAMES", _side], ${sqfArr(defArr)}];
+
+/* Structures */
+_v = ["Headquarters"]; _n = [_HQ];
+_d = [getText (configFile >> "CfgVehicles" >> (_n select (count _n - 1)) >> "displayName")];
+_c = [missionNamespace getVariable "WFBE_C_STRUCTURES_HQ_COST_DEPLOY"];
+_t = [if (WF_Debug) then {1} else {${hq.time}}]; _s = ["HQSite"]; _dis = [15]; _dir = [0];
+
+_v = _v + ["Barracks"];     _n = _n + [_BAR];
+_d = _d + [getText (configFile >> "CfgVehicles" >> (_n select (count _n - 1)) >> "displayName")];
+_c = _c + [${bar.cost}]; _t = _t + [if (WF_Debug) then {1} else {${bar.time}}]; _s = _s + ["SmallSite"]; _dis = _dis + [12]; _dir = _dir + [0];
+
+_v = _v + ["Light Factory"]; _n = _n + [_LVF];
+_d = _d + [getText (configFile >> "CfgVehicles" >> (_n select (count _n - 1)) >> "displayName")];
+_c = _c + [${lvf.cost}]; _t = _t + [if (WF_Debug) then {1} else {${lvf.time}}]; _s = _s + ["SmallSite"]; _dis = _dis + [14]; _dir = _dir + [0];
+
+_v = _v + ["Command Center"]; _n = _n + [_CC];
+_d = _d + [getText (configFile >> "CfgVehicles" >> (_n select (count _n - 1)) >> "displayName")];
+_c = _c + [${cc.cost}]; _t = _t + [if (WF_Debug) then {1} else {${cc.time}}]; _s = _s + ["SmallSite"]; _dis = _dis + [10]; _dir = _dir + [0];
+
+_v = _v + ["Heavy Factory"]; _n = _n + [_HEAVY];
+_d = _d + [getText (configFile >> "CfgVehicles" >> (_n select (count _n - 1)) >> "displayName")];
+_c = _c + [${hvy.cost}]; _t = _t + [if (WF_Debug) then {1} else {${hvy.time}}]; _s = _s + ["LargeSite"]; _dis = _dis + [18]; _dir = _dir + [0];
+
+_v = _v + ["Aircraft Factory"]; _n = _n + [_AIR];
+_d = _d + [getText (configFile >> "CfgVehicles" >> (_n select (count _n - 1)) >> "displayName")];
+_c = _c + [${air.cost}]; _t = _t + [if (WF_Debug) then {1} else {${air.time}}]; _s = _s + ["AircraftSite"]; _dis = _dis + [20]; _dir = _dir + [0];
+
+_v = _v + ["Service Point"]; _n = _n + [_SP];
+_d = _d + [getText (configFile >> "CfgVehicles" >> (_n select (count _n - 1)) >> "displayName")];
+_c = _c + [${sp.cost}]; _t = _t + [if (WF_Debug) then {1} else {${sp.time}}]; _s = _s + ["SmallSite"]; _dis = _dis + [12]; _dir = _dir + [0];
+
+_v = _v + ["AA Radar"]; _n = _n + [_AAR];
+_d = _d + [getText (configFile >> "CfgVehicles" >> (_n select (count _n - 1)) >> "displayName")];
+_c = _c + [${aar.cost}]; _t = _t + [if (WF_Debug) then {1} else {${aar.time}}]; _s = _s + ["SmallSite"]; _dis = _dis + [10]; _dir = _dir + [0];
+
+missionNamespace setVariable [Format["WFBE_%1STRUCTURES", _side], [_v,_n,_d,_c,_t,_s,_dis,_dir]];
+`;
+}
+
+// Emit Root_<F>.sqf — the master glue
+function emitRoot(tok, side, glue, flag) {
+  const sideStr = side; // WEST / EAST / GUER
+  const g = glue;
+
+  const arrSqf = (arr) => sqfArr(arr || []);
+
+  return `/* ${tok} Root — generated by Faction Builder */
+Private ["_side"];
+
+_side = "${sideStr}";
+
+//--- Generic.
+missionNamespace setVariable [Format["WFBE_%1CREW", _side], '${g.CREW || ''}'];
+missionNamespace setVariable [Format["WFBE_%1PILOT", _side], '${g.PILOT || ''}'];
+missionNamespace setVariable [Format["WFBE_%1SOLDIER", _side], '${g.SOLDIER || ''}'];
+
+//--- Flag texture.
+missionNamespace setVariable [Format["WFBE_%1FLAG", _side], '${flag || ''}'];
+
+missionNamespace setVariable [Format["WFBE_%1AMBULANCES", _side], ${arrSqf(g.AMBULANCES)}];
+missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCKS", _side], ${arrSqf(g.REPAIRTRUCKS)}];
+missionNamespace setVariable [Format["WFBE_%1SALVAGETRUCK", _side], ${arrSqf(g.SALVAGETRUCK)}];
+missionNamespace setVariable [Format["WFBE_%1SUPPLYTRUCKS", _side], ${arrSqf(g.SUPPLYTRUCKS)}];
+
+//--- Radio Announcers.
+missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers", _side], ${arrSqf(g._RadioAnnouncers)}];
+missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers_Config", _side], '${g._RadioAnnouncers_Config || ''}'];
+
+//--- Paratroopers.
+missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL1", _side], ${arrSqf(g.PARACHUTELEVEL1)}];
+missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL2", _side], ${arrSqf(g.PARACHUTELEVEL2)}];
+missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side], ${arrSqf(g.PARACHUTELEVEL3)}];
+
+missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], '${g.PARACARGO || ''}'];
+missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ${arrSqf(g.STARTINGVEHICLES)}];
+missionNamespace setVariable [Format["WFBE_%1PARAAMMO", _side], ${arrSqf(g.PARAAMMO)}];
+missionNamespace setVariable [Format["WFBE_%1PARAVEHICARGO", _side], '${g.PARAVEHICARGO || ''}'];
+missionNamespace setVariable [Format["WFBE_%1PARAVEHI", _side], '${g.PARAVEHI || ''}'];
+missionNamespace setVariable [Format["WFBE_%1PARACHUTE", _side], '${g.PARACHUTE || ''}'];
+
+//--- Client only.
+if (local player) then {
+	missionNamespace setVariable [Format["WFBE_%1DEFAULTFACTION", _side], '${g.DEFAULTFACTION || tok}'];
+	(_side) Call Compile preprocessFileLineNumbers "Common\\Config\\Loadout\\Loadout_${tok}.sqf";
+};
+
+//--- Server only.
+if (isServer) then {
+	//--- Artillery.
+	(_side) Call Compile preprocessFileLineNumbers "Common\\Config\\Core_Artillery\\Artillery_${tok}.sqf";
+	//--- Units.
+	(_side) Call Compile preprocessFileLineNumbers "Common\\Config\\Core_Units\\Units_${tok}.sqf";
+	//--- Squads.
+	(_side) Call Compile preprocessFileLineNumbers "Common\\Config\\Core_Squads\\Squad_${tok}.sqf";
+	//--- Structures.
+	(_side) Call Compile preprocessFileLineNumbers "Common\\Config\\Core_Structures\\Structures_${tok}.sqf";
+	//--- Upgrades.
+	(_side) Call Compile preprocessFileLineNumbers "Common\\Config\\Core_Upgrades\\Upgrades_${tok}.sqf";
+};
+`;
+}
+
+// Clone-with-token: replace GUE + GUER with new token/side in a template text
+function cloneGUE(templateText, tok, side) {
+  // Replace side string first (GUER before GUE to avoid partial match)
+  let out = templateText
+    .replace(/\bGUER\b/g, side)
+    .replace(/\bGUE\b/g, tok);
+  return out;
+}
+
+// Build the registration patch texts
+function buildRegistrationPatches(tok, side, reg) {
+  const sideKey = side.toLowerCase();
+  const existing = reg['factions_' + sideKey] || [];
+  const arrName  = `WFBE_C_UNITS_FACTIONS_${side}`;
+  const idxName  = `WFBE_C_UNITS_FACTION_${side}`;
+  const nextIdx  = existing.length;
+
+  const corePat = reg.include_patterns?.core_pattern || 'Common\\Config\\Core\\Core_{TOKEN}.sqf';
+  const gearPat = reg.include_patterns?.gear_pattern || 'Common\\Config\\Gear\\Gear_{TOKEN}.sqf';
+  const coreFile = corePat.replace('{TOKEN}', tok);
+  const gearFile = gearPat.replace('{TOKEN}', tok);
+
+  const arrPatch = [
+    `// Init_CommonConstants.sqf — add "${tok}" to the ${side} faction array`,
+    `// Find this line and append "${tok}":`,
+    `${arrName} = [${[...existing, tok].map(t => `"${t}"`).join(', ')}];`,
+    `// Also update (or add) the index variable:`,
+    `${idxName} = ${nextIdx};`
+  ].join('\n');
+
+  const incPatch = [
+    `// Init_Common.sqf — add these two #include lines near the other Core_/Gear_ includes:`,
+    `#include "${coreFile}"`,
+    `#include "${gearFile}"`
+  ].join('\n');
+
+  return { arrPatch, incPatch };
+}
+
+// Generate README text
+function buildReadme(tok, side, patches) {
+  return `# Faction: ${tok} — WASP Warfare Integration Guide
+
+Generated by WASP Faction Builder.
+
+## Files in this archive
+
+Common/Config/Core/Core_${tok}.sqf          — unit classname + info tuples
+Common/Config/Core_Root/Root_${tok}.sqf     — master glue (flag, crew, vehicles, paradrop)
+Common/Config/Core_Structures/Structures_${tok}.sqf — building classnames + costs
+Common/Config/Core_Units/Units_${tok}.sqf   — factory buy lists
+
+GUE-cloned defaults (token-substituted, refine in sibling tools):
+  Core_Upgrades/Upgrades_${tok}.sqf
+  Core_Squads/Squad_${tok}.sqf
+  Core_Artillery/Artillery_${tok}.sqf
+  Defenses/Defenses_${tok}.sqf
+  Gear/Gear_${tok}.sqf
+  Groups/Groups_${tok}.sqf
+  Loadout/Loadout_${tok}.sqf
+
+## Required manual patches
+
+### 1. Init_CommonConstants.sqf
+
+${patches.arrPatch}
+
+### 2. Init_Common.sqf
+
+${patches.incPatch}
+
+## Notes
+
+- Root_/Defenses_/Groups_ load dynamically via Format[..., token] — no includes needed for those.
+- Refine upgrades in Strategy & Economy, gear in Loadout Lab, AI squads in Garrison Editor.
+`;
+}
+
+// ---- Main emit orchestrator ----
+let LAST_EMIT = null; // { files: [{name, path, content}], patches, tok, side }
+
+function runEmit() {
+  const f = MODEL.faction;
+  const tok  = f.token;
+  const side = f.side;
+
+  if (!tok || !/^[A-Z][A-Z0-9]{1,11}$/.test(tok)) {
+    alert('Please set a valid faction token first (Identity step).');
+    return;
+  }
+
+  const reg = MODEL.template?.registration || {};
+
+  // Build core files
+  const coreText       = emitCore(tok, side, f.roster, f.factionStr || f.displayName || tok);
+  const unitsText      = emitUnits(tok, side, f.roster);
+  const structuresText = emitStructures(tok, side, f.structures || {});
+  const rootText       = emitRoot(tok, side, f.glue || {}, f.flag || '');
+
+  // GUE-clone deferred files
+  const tplFiles = MODEL.template?.files || [];
+  const deferredNames = [
+    'Upgrades_GUE', 'Squad_GUE', 'Artillery_GUE', 'Defenses_GUE',
+    'Gear_GUE', 'Groups_GUE', 'Loadout_GUE'
+  ];
+  // Also include CO variants
+  const deferredCO = ['Upgrades_CO_GUE', 'Artillery_CO_GUE', 'Units_CO_GUE', 'Structures_CO_GUE'];
+
+  const cloned = [];
+  tplFiles.forEach(fi => {
+    const base = (fi.relpath || '').replace(/^Config\\/, '').replace(/GUE\.sqf$/, '').replace(/\\$/, '');
+    const isDeferred = deferredNames.some(d => fi.relpath && fi.relpath.includes(d)) ||
+                       deferredCO.some(d => fi.relpath && fi.relpath.includes(d));
+    if (isDeferred && fi.text) {
+      const newRelpath = fi.relpath.replace(/GUE\b/g, tok);
+      const newText = cloneGUE(fi.text, tok, side);
+      cloned.push({ name: newRelpath.split('\\').pop(), path: `Common\\Config\\${newRelpath}`, content: newText, type: 'clone' });
+    }
+  });
+
+  // Registration patches
+  const patches = buildRegistrationPatches(tok, side, reg);
+
+  // README
+  const readmeText = buildReadme(tok, side, patches);
+
+  // File list
+  const files = [
+    { name: `Core_${tok}.sqf`,       path: `Common\\Config\\Core\\Core_${tok}.sqf`,                      content: coreText,       type: 'core' },
+    { name: `Root_${tok}.sqf`,       path: `Common\\Config\\Core_Root\\Root_${tok}.sqf`,                 content: rootText,       type: 'root' },
+    { name: `Structures_${tok}.sqf`, path: `Common\\Config\\Core_Structures\\Structures_${tok}.sqf`,     content: structuresText, type: 'struct' },
+    { name: `Units_${tok}.sqf`,      path: `Common\\Config\\Core_Units\\Units_${tok}.sqf`,               content: unitsText,      type: 'units' },
+    ...cloned,
+    { name: 'README.txt',            path: 'README.txt',                                                  content: readmeText,     type: 'readme' }
+  ];
+
+  LAST_EMIT = { files, patches, tok, side };
+
+  renderEmitResults(files, patches, tok, side);
+}
+
+function renderEmitResults(files, patches, tok, side) {
+  document.getElementById('exportNotReady').style.display = 'none';
+  const container = document.getElementById('exportFiles');
+  container.style.display = '';
+  container.innerHTML = '';
+
+  // Section: Generated core files
+  const coreFiles = files.filter(f => ['core','root','struct','units'].includes(f.type));
+  const cloneFiles = files.filter(f => f.type === 'clone');
+
+  addSectionHeader(container, `Core Files — ${tok}`);
+  coreFiles.forEach(f => addFileBlock(container, f));
+
+  // Section: Registration patches
+  addSectionHeader(container, 'Registration Patches (apply manually)');
+  addPatchBlock(container, 'Init_CommonConstants.sqf — faction array + index', patches.arrPatch);
+  addPatchBlock(container, 'Init_Common.sqf — #include lines', patches.incPatch);
+
+  // Section: GUE-clone defaults
+  addSectionHeader(container, 'GUE-Clone Defaults (token-substituted)');
+  cloneFiles.forEach(f => addFileBlock(container, f));
+
+  // Show download button
+  document.getElementById('dlZipBtn').style.display = '';
+}
+
+function addSectionHeader(container, text) {
+  const h = document.createElement('div');
+  h.className = 'export-section';
+  h.textContent = text;
+  container.appendChild(h);
+}
+
+function addFileBlock(container, f) {
+  const block = document.createElement('div');
+  block.className = 'file-block';
+  block.innerHTML = `
+    <div class="file-block-hdr">
+      <span class="fname">${f.name}</span>
+      <span class="ftype">${f.type}</span>
+      <button class="copy-btn sm" onclick="copyText(this, ${JSON.stringify(f.content)})">Copy</button>
+    </div>
+    <pre>${escHtml(f.content)}</pre>
+  `;
+  container.appendChild(block);
+}
+
+function addPatchBlock(container, title, text) {
+  const block = document.createElement('div');
+  block.className = 'patch-block';
+  // Colour new lines (starting with # or WFBE_ that are actual changes)
+  const coloured = text.split('\n').map(line => {
+    if (line.startsWith('//')) return `<span class="ctx">${escHtml(line)}</span>`;
+    if (line.startsWith('#') || line.match(/^WFBE_/)) return `<span class="new">${escHtml(line)}</span>`;
+    return escHtml(line);
+  }).join('\n');
+  block.innerHTML = `
+    <div class="patch-block-hdr">
+      <span class="fname">${title}</span>
+      <button class="copy-btn sm" onclick="copyText(this, ${JSON.stringify(text)})">Copy</button>
+    </div>
+    <pre>${coloured}</pre>
+  `;
+  container.appendChild(block);
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = orig; }, 1400);
+  }).catch(() => {
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = orig; }, 1400);
+  });
+}
+
+// ============================================================
+//  MINIMAL STORE-ONLY ZIP WRITER
+// ============================================================
+// Implements PKZIP local file header + data descriptor + central directory.
+// Method = 0 (STORE, no compression). CRC32 computed in JS.
+
+const CRC32_TABLE = (() => {
+  const t = new Uint32Array(256);
+  for (let i = 0; i < 256; i++) {
+    let c = i;
+    for (let j = 0; j < 8; j++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+    t[i] = c;
+  }
+  return t;
+})();
+
+function crc32(bytes) {
+  let crc = 0xFFFFFFFF;
+  for (let i = 0; i < bytes.length; i++) crc = CRC32_TABLE[(crc ^ bytes[i]) & 0xFF] ^ (crc >>> 8);
+  return (crc ^ 0xFFFFFFFF) >>> 0;
+}
+
+function strToBytes(str) {
+  return new TextEncoder().encode(str);
+}
+
+function u16LE(n) {
+  return [n & 0xFF, (n >>> 8) & 0xFF];
+}
+function u32LE(n) {
+  n = n >>> 0;
+  return [n & 0xFF, (n >>> 8) & 0xFF, (n >>> 16) & 0xFF, (n >>> 24) & 0xFF];
+}
+
+function writeZip(entries) {
+  // entries: [{name: string (path inside zip), content: string}]
+  const localHeaders = [];
+  const centralDirs  = [];
+  let offset = 0;
+
+  const enc = new TextEncoder();
+
+  entries.forEach(entry => {
+    const nameBytes    = enc.encode(entry.name);
+    const dataBytes    = enc.encode(entry.content);
+    const crc          = crc32(dataBytes);
+    const size         = dataBytes.length;
+    const nameLen      = nameBytes.length;
+    const now          = dosDateTime();
+
+    // Local file header: sig + version + flags + method + time + date + crc + sizes + name_len + extra_len
+    const localHdr = new Uint8Array([
+      0x50, 0x4B, 0x03, 0x04, // signature
+      0x14, 0x00,             // version needed (2.0)
+      0x00, 0x00,             // general purpose bit flag
+      0x00, 0x00,             // compression method: store
+      ...u16LE(now.time),
+      ...u16LE(now.date),
+      ...u32LE(crc),
+      ...u32LE(size),         // compressed size = uncompressed (store)
+      ...u32LE(size),
+      ...u16LE(nameLen),
+      0x00, 0x00,             // extra field length
+      ...nameBytes
+    ]);
+
+    localHeaders.push({ localHdr, dataBytes, offset, crc, size, nameLen, nameBytes, now });
+    offset += localHdr.length + size;
+  });
+
+  // Central directory
+  let cdSize = 0;
+  const cdStart = offset;
+  const cdParts = [];
+
+  localHeaders.forEach((lh, idx) => {
+    const cd = new Uint8Array([
+      0x50, 0x4B, 0x01, 0x02, // signature
+      0x14, 0x00,             // version made by
+      0x14, 0x00,             // version needed
+      0x00, 0x00,             // flags
+      0x00, 0x00,             // method: store
+      ...u16LE(lh.now.time),
+      ...u16LE(lh.now.date),
+      ...u32LE(lh.crc),
+      ...u32LE(lh.size),
+      ...u32LE(lh.size),
+      ...u16LE(lh.nameLen),
+      0x00, 0x00,             // extra length
+      0x00, 0x00,             // comment length
+      0x00, 0x00,             // disk start
+      0x00, 0x00,             // internal attributes
+      0x00, 0x00, 0x00, 0x00, // external attributes
+      ...u32LE(lh.offset),
+      ...lh.nameBytes
+    ]);
+    cdParts.push(cd);
+    cdSize += cd.length;
+  });
+
+  // End of central directory record
+  const eocd = new Uint8Array([
+    0x50, 0x4B, 0x05, 0x06, // signature
+    0x00, 0x00,             // disk number
+    0x00, 0x00,             // start disk
+    ...u16LE(entries.length),
+    ...u16LE(entries.length),
+    ...u32LE(cdSize),
+    ...u32LE(cdStart),
+    0x00, 0x00              // comment length
+  ]);
+
+  // Assemble final buffer
+  let totalLen = offset + cdSize + eocd.length;
+  const buf = new Uint8Array(totalLen);
+  let pos = 0;
+
+  localHeaders.forEach(lh => {
+    buf.set(lh.localHdr,  pos); pos += lh.localHdr.length;
+    buf.set(lh.dataBytes, pos); pos += lh.dataBytes.length;
+  });
+  cdParts.forEach(cd => { buf.set(cd, pos); pos += cd.length; });
+  buf.set(eocd, pos);
+
+  return buf;
+}
+
+function dosDateTime() {
+  const d = new Date();
+  const date = ((d.getFullYear() - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate();
+  const time = (d.getHours() << 11) | (d.getMinutes() << 5) | (d.getSeconds() >> 1);
+  return { date: date >>> 0, time: time >>> 0 };
+}
+
+function downloadZip() {
+  if (!LAST_EMIT) { alert('Generate files first.'); return; }
+  const { files, tok } = LAST_EMIT;
+
+  // Build zip entries — use forward slashes for paths inside zip
+  const entries = files.map(f => ({
+    name: f.path.replace(/\\/g, '/'),
+    content: f.content
+  }));
+
+  const buf = writeZip(entries);
+  const blob = new Blob([buf], { type: 'application/zip' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `faction_${tok}.zip`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+}
+
+// ============================================================
+//  CROSS-TOOL LAUNCHER
+// ============================================================
+const SIBLING_URLS = {
+  'strategy-economy': 'https://rayswaynl.github.io/strategy-economy/',
+  'loadout-lab':      'https://rayswaynl.github.io/loadout-lab/',
+  'garrison-editor':  'https://rayswaynl.github.io/garrison-editor/'
+};
+
+function launchSibling(key) {
+  const f   = MODEL.faction;
+  const tok = f.token;
+  const url = SIBLING_URLS[key];
+
+  // Write handoff bundle regardless of emit state
+  const handoff = {
+    token:      tok || '',
+    side:       f.side || 'GUER',
+    factionStr: f.factionStr || f.displayName || tok || '',
+    displayName: f.displayName || '',
+    flag:       f.flag || '',
+    coreUnits:  f.roster.map(r => ({
+      cls:         r.cls,
+      factory_key: r.factory_key,
+      factory:     r.factory,
+      price:       r.price,
+      buildTime:   r.buildTime,
+      crew:        r.crew,
+      upgrade:     r.upgrade
+    })),
+    glue:       f.glue || {},
+    structures: f.structures || {},
+    _source:    'faction-builder',
+    _ts:        Date.now()
+  };
+
+  try {
+    localStorage.setItem('wasp-faction-handoff', JSON.stringify(handoff));
+    const st = document.getElementById('launchStatus');
+    st.innerHTML = `<span style="color:var(--olive)">✓ Handoff written for <b>${tok || '(no token)'}</b> → opening ${key}…</span>`;
+  } catch (e) {
+    console.warn('localStorage write failed:', e);
+    const st = document.getElementById('launchStatus');
+    st.innerHTML = `<span style="color:var(--danger)">localStorage unavailable — opening ${key} without handoff.</span>`;
+  }
+
+  window.open(url, '_blank', 'noopener');
+}
 </script>
 </body>
 </html>
