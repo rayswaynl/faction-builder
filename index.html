@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faction Builder — WASP Side Composer</title>
+<meta name="description" content="Compose a new WASP Warfare faction: identity, roster, structures, glue, emit.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2096%2096'%3E%3Cpolygon%20points%3D'48%2C8%2088%2C32%2088%2C64%2048%2C88%208%2C64%208%2C32'%20fill%3D'none'%20stroke%3D'%23D9763C'%20stroke-width%3D'7'%2F%3E%3Ctext%20x%3D'48'%20y%3D'62'%20text-anchor%3D'middle'%20font-size%3D'38'%20font-weight%3D'bold'%20fill%3D'%235C6536'%20font-family%3D'sans-serif'%3EF%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ---- Design tokens (WDDM) ---- */
+:root{
+  --gunmetal:#14171B;--steel:#2A2F36;--steel2:#343b44;
+  --olive:#5C6536;--bone:#E7E3D6;--orange:#D9763C;--orange-deep:#B85F2A;
+  --chalk:#F2EFE8;--line:#39414b;--danger:#c0392b;--ok:#27ae60;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:Inter,system-ui,sans-serif;background:var(--gunmetal);color:var(--bone);overflow:hidden}
+h1,h2,h3{font-family:Oswald,Inter,sans-serif;font-weight:600;letter-spacing:.5px}
+
+/* ---- Brand bar ---- */
+.brandbar{height:54px;display:flex;align-items:center;gap:14px;padding:0 16px;
+  background:linear-gradient(90deg,#101317 0%,#171b20 100%);border-bottom:1px solid var(--line);position:relative;z-index:5;flex:0 0 auto}
+.brandbar .mark{width:34px;height:34px;flex:0 0 auto}
+.brandbar .word{display:flex;flex-direction:column;line-height:1}
+.brandbar .word .t1{font-family:Oswald,sans-serif;font-weight:600;font-size:19px;letter-spacing:2px;color:var(--bone)}
+.brandbar .word .t2{font-family:Oswald,sans-serif;font-weight:400;font-size:10px;letter-spacing:6px;color:var(--orange);margin-top:2px}
+.brandbar .spacer{flex:1}
+.brandbar .chip{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8b939c;border:1px solid var(--line);border-radius:10px;padding:3px 9px;background:#0d1014}
+.brandbar .chip b{color:var(--olive)}
+
+/* ---- Step tabs ---- */
+.steps-bar{display:flex;gap:0;padding:0 16px;background:#101317;border-bottom:1px solid var(--line);flex:0 0 auto}
+.step-btn{font-family:Oswald,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;background:none;border:none;color:#8b939c;padding:10px 20px;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;display:flex;align-items:center;gap:7px}
+.step-btn:hover{color:var(--bone)}
+.step-btn.on{color:var(--orange);border-bottom-color:var(--orange)}
+.step-btn.disabled{color:#39414b;cursor:not-allowed}
+.step-num{width:18px;height:18px;border-radius:50%;background:var(--line);font-size:10px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace}
+.step-btn.on .step-num{background:var(--orange);color:#1a1208}
+
+/* ---- Main layout ---- */
+.app-body{flex:1;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+body{display:flex;flex-direction:column}
+.step-panel{display:none;flex:1;overflow:hidden;min-height:0}
+.step-panel.on{display:flex}
+
+/* ---- Panels ---- */
+.panel-left{width:300px;flex:0 0 300px;display:flex;flex-direction:column;border-right:1px solid var(--line);background:var(--steel);min-height:0}
+.panel-main{flex:1;display:flex;flex-direction:column;min-height:0;min-width:0;overflow:hidden}
+.panel-hdr{padding:11px 14px;border-bottom:1px solid var(--line);background:var(--gunmetal);flex:0 0 auto}
+.panel-hdr h2{font-size:14px}
+.panel-hdr .sub{font-size:11px;color:#9aa3ad;margin-top:3px;font-family:'JetBrains Mono',monospace}
+.scroll{overflow-y:auto;overflow-x:hidden;padding:14px;flex:1;min-height:0}
+
+/* ---- Forms ---- */
+label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#9aa3ad;margin:10px 0 4px}
+label:first-child{margin-top:0}
+input,select,textarea,button{font-family:inherit;font-size:13px}
+input[type=text],input[type=number],select{width:100%;background:var(--gunmetal);border:1px solid var(--line);color:var(--bone);border-radius:5px;padding:7px 8px;outline:none}
+input:focus,select:focus{border-color:var(--orange)}
+input.valid{border-color:var(--ok)!important}
+input.invalid{border-color:var(--danger)!important}
+input.warn{border-color:var(--orange)!important}
+button{cursor:pointer;background:var(--steel2);color:var(--bone);border:1px solid var(--line);border-radius:5px;padding:6px 10px}
+button:hover{border-color:var(--orange)}
+button.primary{background:var(--orange);border-color:var(--orange);color:#1a1208;font-weight:600}
+button.primary:hover{background:var(--orange-deep);border-color:var(--orange-deep)}
+button.danger{border-color:var(--danger);color:#e88}
+button.danger:hover{background:var(--danger);color:#fff}
+button.sm{font-size:11px;padding:4px 8px}
+button.ico{font-size:13px;padding:3px 7px;border-color:transparent;background:none;color:#9aa3ad}
+button.ico:hover{color:var(--bone);border-color:var(--line)}
+.btnbar{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.divider{height:1px;background:var(--line);margin:12px 0}
+.hint{font-size:11px;color:#8b939c;line-height:1.5;margin-top:5px}
+.hint code{background:#0d1014;padding:1px 4px;border-radius:3px;color:var(--orange)}
+.badge{display:inline-block;font-size:10px;background:var(--olive);color:var(--chalk);padding:1px 6px;border-radius:10px;margin-left:5px;vertical-align:middle}
+.badge-count{display:inline-block;font-size:10px;background:var(--steel2);color:#9aa3ad;padding:1px 6px;border-radius:10px;margin-left:5px;vertical-align:middle;font-family:'JetBrains Mono',monospace}
+.warn-text{color:var(--orange);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
+.ok-text{color:var(--ok);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
+.err-text{color:var(--danger);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
+
+/* ---- Status bar ---- */
+.statusbar{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8b939c;padding:5px 8px;background:#0d1014;border-radius:4px;border:1px solid var(--line);margin-top:8px}
+.statusbar .ok{color:var(--olive)}
+.statusbar .loading{color:#9aa3ad}
+.statusbar .err{color:var(--danger)}
+
+/* ---- Scrollbars ---- */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-thumb{background:var(--steel2);border-radius:6px}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ---- Registration preview ---- */
+.reg-preview{background:#0a0c0f;border:1px solid var(--line);border-radius:5px;padding:10px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;line-height:1.7;white-space:pre;overflow-x:auto}
+.reg-preview .hi{color:var(--orange);font-weight:600}
+.reg-preview .dim{color:#39414b}
+.reg-preview .new{color:var(--ok)}
+
+/* ---- Roster ---- */
+.roster-layout{display:flex;width:100%;height:100%;min-height:0}
+.roster-sidebar{width:220px;flex:0 0 220px;border-right:1px solid var(--line);background:var(--steel);display:flex;flex-direction:column;min-height:0}
+.roster-main{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.roster-slot-list{overflow-y:auto;flex:1;padding:8px 10px}
+.slot-btn{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:1px solid transparent;border-radius:5px;padding:7px 10px;margin-bottom:4px;color:#9aa3ad;font-family:'JetBrains Mono',monospace;font-size:11px;cursor:pointer;transition:all .12s}
+.slot-btn:hover{background:var(--gunmetal);color:var(--bone);border-color:var(--line)}
+.slot-btn.on{background:var(--gunmetal);border-color:var(--orange);color:var(--orange)}
+.slot-count{font-size:9px;background:var(--steel2);color:#9aa3ad;padding:1px 5px;border-radius:8px;margin-left:auto;white-space:nowrap;font-family:'JetBrains Mono',monospace}
+.slot-btn.on .slot-count{background:var(--orange);color:#1a1208}
+.roster-panel{flex:1;overflow:auto;padding:14px}
+.roster-card{background:var(--steel);border:1px solid var(--line);border-radius:7px;padding:14px;margin-bottom:14px}
+.roster-card-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.roster-card-hdr h2{font-family:Oswald,sans-serif;font-size:16px;letter-spacing:.5px;flex:1}
+.roster-card-hdr .slot-badge{font-family:'JetBrains Mono',monospace;font-size:10px;background:#0d1014;border:1px solid var(--line);border-radius:8px;padding:2px 8px;color:#9aa3ad}
+.roster-card-hdr .factory-code{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--orange);border:1px solid var(--orange-deep);background:#1a0f08;border-radius:3px;padding:1px 6px}
+.roster-empty{text-align:center;padding:48px 20px;color:#39414b;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:2}
+.roster-add-row{display:flex;align-items:center;justify-content:center;padding:10px 0;border-top:1px dashed var(--line);margin-top:8px}
+/* ---- Unit rows in roster ---- */
+.unit-row{display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid var(--line);border-radius:5px;background:var(--gunmetal);margin-bottom:6px;transition:border-color .1s}
+.unit-row:hover{border-color:var(--steel2)}
+.unit-thumb{width:44px;height:44px;flex:0 0 44px;border-radius:4px;background:#0d1014;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.unit-thumb img{width:100%;height:100%;object-fit:contain}
+.unit-thumb .glyph{font-size:18px;color:#39414b}
+.unit-info{flex:1;min-width:0}
+.unit-info .uname{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.unit-info .ucls{font-family:'JetBrains Mono',monospace;font-size:9px;color:#556;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.unit-info .uwarn{color:var(--orange)}
+.unit-fields{display:flex;gap:6px;align-items:center;flex-wrap:wrap;flex:0 0 auto}
+.unit-fields label{margin:0;font-size:9px;color:#556;display:flex;flex-direction:column;gap:2px;align-items:flex-start}
+.unit-fields input[type=number]{width:56px;font-size:11px;padding:4px 5px;background:#0d1014}
+.unit-fields select{width:90px;font-size:11px;padding:4px 5px;background:#0d1014}
+.unit-del{flex:0 0 auto}
+
+/* ---- Picker modal ---- */
+.modal-back{position:fixed;inset:0;background:rgba(8,10,13,.75);display:none;align-items:center;justify-content:center;z-index:50;backdrop-filter:blur(3px)}
+.modal-back.open{display:flex}
+.modal{width:860px;max-width:96vw;max-height:88vh;background:var(--steel);border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;overflow:hidden}
+.modal-head{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--gunmetal);flex:0 0 auto}
+.modal-head h2{font-size:15px;flex:1}
+.modal-head .x{cursor:pointer;color:#9aa3ad;font-size:22px;line-height:1;background:none;border:none;padding:0 4px}
+.modal-head .x:hover{color:var(--bone)}
+.modal-search-bar{padding:10px 14px;border-bottom:1px solid var(--line);background:var(--gunmetal);flex:0 0 auto;display:flex;gap:8px;align-items:center}
+.modal-search-bar input{flex:1;background:var(--steel);border:1px solid var(--line);color:var(--bone);border-radius:5px;padding:8px 10px;font-size:13px;outline:none}
+.modal-search-bar input:focus{border-color:var(--orange)}
+.modal-body{display:flex;min-height:0;flex:1}
+.modal-side{width:150px;border-right:1px solid var(--line);overflow-y:auto;padding:8px 6px;flex:0 0 150px}
+.modal-side-chip{display:block;width:100%;text-align:left;font-family:'JetBrains Mono',monospace;font-size:11px;background:none;border:1px solid transparent;border-radius:4px;padding:5px 8px;color:#9aa3ad;cursor:pointer;margin-bottom:3px}
+.modal-side-chip:hover{background:var(--steel2);color:var(--bone)}
+.modal-side-chip.on{background:var(--steel2);border-color:var(--orange);color:var(--orange)}
+.modal-grid-wrap{flex:1;overflow-y:auto;padding:12px}
+.pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px}
+.pick-tile{border:1px solid var(--line);border-radius:5px;background:var(--gunmetal);cursor:pointer;overflow:hidden;display:flex;flex-direction:column;transition:border-color .1s}
+.pick-tile:hover{border-color:var(--orange)}
+.pick-tile-img{width:100%;height:64px;object-fit:contain;background:#11141a;display:block}
+.pick-tile-glyph{width:100%;height:64px;display:flex;align-items:center;justify-content:center;background:#11141a;color:#39414b;font-size:24px}
+.pick-tile-name{font-family:'JetBrains Mono',monospace;font-size:9px;color:#c8d0d8;padding:4px 5px;border-top:1px solid var(--steel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pick-tile-class{font-family:'JetBrains Mono',monospace;font-size:8px;color:#556;padding:0 5px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pick-empty{font-size:12px;color:#8b939c;padding:20px;text-align:center}
+
+/* ---- Placeholder panels (Tasks 3-4) ---- */
+.placeholder-panel{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:#39414b}
+.placeholder-panel .icon{font-size:52px;line-height:1}
+.placeholder-panel .p1{font-family:Oswald,sans-serif;font-size:18px;color:#556;letter-spacing:1px}
+.placeholder-panel .p2{font-family:'JetBrains Mono',monospace;font-size:11px;color:#39414b;text-align:center;line-height:1.8}
+
+/* ---- Identity layout ---- */
+.identity-layout{display:flex;width:100%;height:100%;min-height:0}
+.id-form-col{width:320px;flex:0 0 320px;border-right:1px solid var(--line);background:var(--steel);overflow-y:auto;padding:16px}
+.id-preview-col{flex:1;display:flex;flex-direction:column;min-width:0;padding:16px;overflow-y:auto}
+.id-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:18px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.id-section:first-child{margin-top:0}
+.side-chips{display:flex;gap:6px;margin-top:6px}
+.side-chip{font-family:'JetBrains Mono',monospace;font-size:12px;border:1px solid var(--line);border-radius:4px;padding:6px 14px;background:var(--gunmetal);cursor:pointer;color:#9aa3ad;transition:all .12s;font-weight:600}
+.side-chip:hover{border-color:var(--orange);color:var(--bone)}
+.side-chip.on{border-color:var(--orange);color:var(--orange);background:#251f18}
+</style>
+</head>
+<body>
+
+<!-- ====== Brand bar ====== -->
+<div class="brandbar">
+  <svg class="mark" viewBox="0 0 96 96" aria-label="WASP Faction Builder">
+    <g fill="none" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter">
+      <polyline points="20,54 48,30 76,54" stroke="#D9763C"/>
+      <polyline points="20,66 48,42 76,66" stroke="#F2EFE8"/>
+      <polyline points="20,78 48,54 76,78" stroke="#5C6536"/>
+    </g>
+  </svg>
+  <div class="word">
+    <span class="t1">FACTION BUILDER</span>
+    <span class="t2">WASP SIDE COMPOSER</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="chip" id="loadChip">loading<b> …</b></div>
+</div>
+
+<!-- ====== Step tabs ====== -->
+<div class="steps-bar">
+  <button class="step-btn on" id="stepBtnIdentity" onclick="switchStep('identity')">
+    <span class="step-num">1</span>Identity
+  </button>
+  <button class="step-btn" id="stepBtnRoster" onclick="switchStep('roster')">
+    <span class="step-num">2</span>Roster
+  </button>
+  <button class="step-btn disabled" id="stepBtnStructures" onclick="switchStep('structures')">
+    <span class="step-num">3</span>Structures
+  </button>
+  <button class="step-btn disabled" id="stepBtnGlue" onclick="switchStep('glue')">
+    <span class="step-num">4</span>Glue
+  </button>
+  <button class="step-btn disabled" id="stepBtnExport" onclick="switchStep('export')">
+    <span class="step-num">5</span>Export
+  </button>
+</div>
+
+<div class="app-body">
+
+<!-- ====== Step 1: Identity ====== -->
+<div class="step-panel on" id="stepIdentity">
+  <div class="identity-layout">
+
+    <!-- Left: form -->
+    <div class="id-form-col">
+      <div class="id-section">Token &amp; Side</div>
+
+      <label for="tokenInput">Faction Token <span style="color:#556;font-size:9px;font-family:'JetBrains Mono',monospace">[A-Z][A-Z0-9]{1,11}</span></label>
+      <input type="text" id="tokenInput" placeholder="e.g. PARTISANS" maxlength="12" autocomplete="off" oninput="onTokenChange()" style="text-transform:uppercase;font-family:'JetBrains Mono',monospace;letter-spacing:2px">
+      <div id="tokenStatus" class="hint"></div>
+
+      <label>Side</label>
+      <div class="side-chips">
+        <button class="side-chip" data-side="WEST" onclick="setSide('WEST')">WEST</button>
+        <button class="side-chip" data-side="EAST" onclick="setSide('EAST')">EAST</button>
+        <button class="side-chip on" data-side="GUER" onclick="setSide('GUER')">GUER</button>
+      </div>
+
+      <div class="id-section">Names</div>
+
+      <label for="displayNameInput">Display Name / DEFAULTFACTION string
+        <span class="hint" style="display:inline;margin:0;text-transform:none;letter-spacing:0">shown in buy menus</span>
+      </label>
+      <input type="text" id="displayNameInput" placeholder="e.g. Partisans" autocomplete="off" oninput="onDisplayNameChange()">
+
+      <label for="factionStrInput">Core faction string
+        <span class="hint" style="display:inline;margin:0;text-transform:none;letter-spacing:0">per-unit factionStr in tuples</span>
+      </label>
+      <input type="text" id="factionStrInput" placeholder="auto-fills from display name" autocomplete="off" oninput="onFactionStrChange()">
+      <div class="hint">Defaults to display name. Used in the <code>factionStr</code> column of Core tuples (index 8).</div>
+
+      <div class="divider"></div>
+      <button class="primary" onclick="switchStep('roster')" style="width:100%">Next: Build Roster →</button>
+    </div>
+
+    <!-- Right: registration preview -->
+    <div class="id-preview-col">
+      <div class="panel-hdr" style="margin:-16px -16px 16px;padding:11px 16px">
+        <h2>Registration Preview</h2>
+        <div class="sub">Read-only — shows what Task 4 Emit will touch</div>
+      </div>
+
+      <label style="margin-top:0">WFBE_C_UNITS_FACTIONS_&lt;SIDE&gt; — array patch</label>
+      <div class="reg-preview" id="regArrayPreview">Set a token and side to preview.</div>
+
+      <label style="margin-top:14px">WFBE_C_UNITS_FACTION_&lt;SIDE&gt; — index variable</label>
+      <div class="reg-preview" id="regIndexPreview">—</div>
+
+      <label style="margin-top:14px">Init_Common.sqf — include lines to add</label>
+      <div class="reg-preview" id="regIncludePreview">—</div>
+
+      <div class="hint" style="margin-top:10px">
+        These three edits register your faction so WASP's init loader picks it up.
+        <code>Root_/Defenses_/Groups_</code> load dynamically via <code>Format[...%1.sqf,token]</code> — no edits needed for those.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Step 2: Roster ====== -->
+<div class="step-panel" id="stepRoster">
+  <div class="roster-layout">
+
+    <!-- Sidebar: slot navigation -->
+    <div class="roster-sidebar">
+      <div class="panel-hdr">
+        <h2>Factory Slots</h2>
+        <div class="sub" id="rosterSidebarSub">0 units total</div>
+      </div>
+      <div class="roster-slot-list" id="rosterSlotList"></div>
+      <div style="padding:10px;border-top:1px solid var(--line);flex:0 0 auto">
+        <button onclick="openPicker(null)" style="width:100%" class="primary">+ Add Unit</button>
+        <div style="margin-top:6px">
+          <button onclick="seedFromGUE()" style="width:100%;font-size:11px">Import GUE roster as template</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main: roster table per slot -->
+    <div class="roster-main">
+      <div class="panel-hdr">
+        <h2 id="rosterMainTitle">Roster</h2>
+        <div class="sub" id="rosterMainSub">Select a slot or add units</div>
+      </div>
+      <div class="roster-panel" id="rosterPanel">
+        <div class="roster-empty" id="rosterEmpty">
+          No units yet.<br>Click <b>+ Add Unit</b> to open the picker, or<br><b>Import GUE roster</b> to start from the GUE template.
+        </div>
+        <div id="rosterSlots"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====== Step 3: Structures (placeholder) ====== -->
+<div class="step-panel" id="stepStructures">
+  <div class="placeholder-panel">
+    <div class="icon">🏗</div>
+    <div class="p1">Structures — Task 3</div>
+    <div class="p2">8 buildings + MHQ + deployed HQ classnames, supply costs,<br>build times, defense palette. Flag picker.<br><br>Coming in Task 3 commit.</div>
+  </div>
+</div>
+
+<!-- ====== Step 4: Glue (placeholder) ====== -->
+<div class="step-panel" id="stepGlue">
+  <div class="placeholder-panel">
+    <div class="icon">⚙</div>
+    <div class="p1">Glue — Task 3</div>
+    <div class="p2">Root variables: support vehicles, starting vehicles,<br>paratroop pools, radio announcer, default gear class.<br>GUE defaults pre-filled.<br><br>Coming in Task 3 commit.</div>
+  </div>
+</div>
+
+<!-- ====== Step 5: Export (placeholder) ====== -->
+<div class="step-panel" id="stepExport">
+  <div class="placeholder-panel">
+    <div class="icon">📦</div>
+    <div class="p1">Export — Task 4</div>
+    <div class="p2">Emit Core_/Root_/Structures_/Units_ SQF files,<br>GUE-clone defaults for deferred files,<br>registration patches, download as .zip.<br>Cross-tool launcher (Loadout Lab · Garrison · S&amp;E).<br><br>Coming in Task 4 commit.</div>
+  </div>
+</div>
+
+</div><!-- /.app-body -->
+
+<!-- ====== Unit Picker Modal ====== -->
+<div class="modal-back" id="pickerModal">
+  <div class="modal" role="dialog" aria-label="Pick a unit">
+    <div class="modal-head">
+      <h2 id="pickerTitle">Add Unit</h2>
+      <button class="x" onclick="closePicker()" aria-label="Close">×</button>
+    </div>
+    <div class="modal-search-bar">
+      <input type="text" id="pickerSearch" placeholder="Search by name or classname…" autocomplete="off" oninput="renderPickerGrid()">
+    </div>
+    <div class="modal-body">
+      <!-- Left: type filter -->
+      <div class="modal-side" id="pickerSide"></div>
+      <!-- Grid -->
+      <div class="modal-grid-wrap">
+        <div class="pick-grid" id="pickerGrid"></div>
+        <div class="pick-empty" id="pickerEmpty" style="display:none">No units match.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+//  MODEL
+// ============================================================
+const MODEL = {
+  template: null,  // faction-template.json
+  units: {},       // units.json  { cls: {name, type, thumb} }
+  loaded: false,
+  faction: {
+    token: '',
+    side: 'GUER',
+    displayName: '',
+    factionStr: '',
+    roster: []     // [{ cls, price, buildTime, factory, upgrade, crew }]
+  }
+};
+
+// Factory slot definitions
+// factory code: -1=infantry(Barracks), -2=vehicle, 1=defense
+// For Units_<F>.sqf: BARRACKS / LIGHT / HEAVY / AIRCRAFT / DEPOT
+const SLOTS = [
+  { key: 'Barracks',  label: 'Barracks',  factory: -1, icon: '🪖', desc: 'Infantry — Units_BARRACKS' },
+  { key: 'Light',     label: 'Light',     factory: -2, icon: '🚙', desc: 'Light vehicles — Units_LIGHT' },
+  { key: 'Heavy',     label: 'Heavy',     factory: -2, icon: '🛡',  desc: 'Heavy vehicles — Units_HEAVY' },
+  { key: 'Aircraft',  label: 'Aircraft',  factory: -2, icon: '✈',  desc: 'Aircraft — Units_AIRCRAFT' },
+  { key: 'Depot',     label: 'Depot',     factory: -2, icon: '📦', desc: 'Supply/depot — Units_DEPOT' },
+  { key: 'Defenses',  label: 'Defenses',  factory:  1, icon: '🔫', desc: 'Static defenses (factory=1)' }
+];
+
+// Default factory slot by unit type
+const TYPE_DEFAULT_SLOT = {
+  man:    'Barracks',
+  car:    'Light',
+  tank:   'Heavy',
+  air:    'Aircraft',
+  static: 'Defenses',
+  other:  'Depot'
+};
+
+// ============================================================
+//  DATA LOADING
+// ============================================================
+async function loadData() {
+  try {
+    const [tRes, uRes] = await Promise.all([
+      fetch('assets/data/faction-template.json'),
+      fetch('assets/data/units.json')
+    ]);
+    if (!tRes.ok) throw new Error('faction-template.json: ' + tRes.status);
+    if (!uRes.ok) throw new Error('units.json: ' + uRes.status);
+    MODEL.template = await tRes.json();
+    MODEL.units = await uRes.json();
+    MODEL.loaded = true;
+
+    const uCount = Object.keys(MODEL.units).length;
+    document.getElementById('loadChip').innerHTML = `<b class="ok">${uCount}</b> units loaded`;
+    buildPickerSide();
+    renderRosterSidebar();
+    updateRegPreview();
+  } catch (e) {
+    document.getElementById('loadChip').innerHTML = `<span style="color:var(--danger)">load error</span>`;
+    console.error('Load error:', e);
+  }
+}
+
+// ============================================================
+//  STEP SWITCHING
+// ============================================================
+const STEPS = ['Identity', 'Roster', 'Structures', 'Glue', 'Export'];
+
+function switchStep(name) {
+  const key = name.charAt(0).toUpperCase() + name.slice(1);
+  // Don't block disabled steps — just allow switching (they show placeholder)
+  STEPS.forEach(s => {
+    document.getElementById('step' + s)?.classList.remove('on');
+    document.getElementById('stepBtn' + s)?.classList.remove('on');
+  });
+  document.getElementById('step' + key).classList.add('on');
+  document.getElementById('stepBtn' + key).classList.add('on');
+}
+
+// ============================================================
+//  IDENTITY PANEL
+// ============================================================
+function onTokenChange() {
+  const raw = document.getElementById('tokenInput').value.toUpperCase();
+  document.getElementById('tokenInput').value = raw;
+  MODEL.faction.token = raw;
+  validateToken(raw);
+  updateRegPreview();
+}
+
+function validateToken(tok) {
+  const el = document.getElementById('tokenInput');
+  const st = document.getElementById('tokenStatus');
+  if (!tok) {
+    el.className = ''; st.innerHTML = ''; return;
+  }
+  const fmt = /^[A-Z][A-Z0-9]{1,11}$/.test(tok);
+  if (!fmt) {
+    el.className = 'invalid';
+    st.innerHTML = '<span class="err-text">Must be 2-12 chars: first letter A-Z, rest A-Z0-9.</span>';
+    return;
+  }
+  // Collision check
+  const reg = MODEL.template?.registration;
+  if (reg) {
+    const all = [
+      ...(reg.factions_west || []),
+      ...(reg.factions_east || []),
+      ...(reg.factions_guer || [])
+    ];
+    if (all.includes(tok)) {
+      el.className = 'warn';
+      st.innerHTML = `<span class="warn-text">⚠ Token "${tok}" is already registered as an existing faction.</span>`;
+      return;
+    }
+  }
+  el.className = 'valid';
+  st.innerHTML = '<span class="ok-text">✓ Token looks good.</span>';
+}
+
+function setSide(side) {
+  MODEL.faction.side = side;
+  document.querySelectorAll('.side-chip').forEach(btn => {
+    btn.classList.toggle('on', btn.dataset.side === side);
+  });
+  updateRegPreview();
+}
+
+function onDisplayNameChange() {
+  MODEL.faction.displayName = document.getElementById('displayNameInput').value;
+  // Auto-fill factionStr if user hasn't typed in it
+  const fsEl = document.getElementById('factionStrInput');
+  if (!fsEl.dataset.userEdited) {
+    fsEl.value = MODEL.faction.displayName;
+    MODEL.faction.factionStr = MODEL.faction.displayName;
+  }
+}
+
+function onFactionStrChange() {
+  const fsEl = document.getElementById('factionStrInput');
+  fsEl.dataset.userEdited = '1';
+  MODEL.faction.factionStr = fsEl.value;
+}
+
+function updateRegPreview() {
+  if (!MODEL.template) return;
+  const tok = MODEL.faction.token;
+  const side = MODEL.faction.side;
+  const reg = MODEL.template.registration;
+
+  if (!tok || !/^[A-Z][A-Z0-9]{1,11}$/.test(tok)) {
+    document.getElementById('regArrayPreview').innerHTML = 'Enter a valid token to preview.';
+    document.getElementById('regIndexPreview').innerHTML = '—';
+    document.getElementById('regIncludePreview').innerHTML = '—';
+    return;
+  }
+
+  const sideKey = side.toLowerCase();
+  const existing = reg['factions_' + sideKey] || [];
+  const nextIndex = existing.length; // 0-based index of new entry
+  const arrName = `WFBE_C_UNITS_FACTIONS_${side}`;
+  const idxName = `WFBE_C_UNITS_FACTION_${side}`;
+
+  // Array preview
+  const existingTokens = existing.map(t => `"${t}"`).join(', ');
+  const arrayPrev = document.getElementById('regArrayPreview');
+  arrayPrev.innerHTML =
+    `<span class="dim">// Init_CommonConstants.sqf</span>\n` +
+    `${arrName} = [${existingTokens}${existing.length ? ', ' : ''}<span class="new">"${tok}"</span>];\n` +
+    `<span class="dim">// ↑ add "${tok}" at index ${nextIndex} (0-based)</span>`;
+
+  // Index preview
+  const idxPrev = document.getElementById('regIndexPreview');
+  idxPrev.innerHTML =
+    `<span class="dim">// Init_CommonConstants.sqf (current value for your session)</span>\n` +
+    `${idxName} = <span class="new">${nextIndex}</span>;   <span class="dim">// will be the new faction's index</span>`;
+
+  // Include lines preview
+  const corePat = reg.include_patterns?.core_pattern || 'Common\\Config\\Core\\Core_{TOKEN}.sqf';
+  const gearPat = reg.include_patterns?.gear_pattern || 'Common\\Config\\Gear\\Gear_{TOKEN}.sqf';
+  const coreFile = corePat.replace('{TOKEN}', tok);
+  const gearFile = gearPat.replace('{TOKEN}', tok);
+  const incPrev = document.getElementById('regIncludePreview');
+  incPrev.innerHTML =
+    `<span class="dim">// Init_Common.sqf — add these two #include lines:</span>\n` +
+    `<span class="new">#include "${coreFile}"</span>\n` +
+    `<span class="new">#include "${gearFile}"</span>\n` +
+    `<span class="dim">// Root_/Defenses_/Groups_ load dynamically — no include needed.</span>`;
+}
+
+// ============================================================
+//  ROSTER PANEL
+// ============================================================
+let ACTIVE_SLOT = 'Barracks'; // which slot is shown
+
+function renderRosterSidebar() {
+  const list = document.getElementById('rosterSlotList');
+  list.innerHTML = '';
+  SLOTS.forEach(slot => {
+    const count = MODEL.faction.roster.filter(r => r.factory_key === slot.key).length;
+    const btn = document.createElement('button');
+    btn.className = 'slot-btn' + (slot.key === ACTIVE_SLOT ? ' on' : '');
+    btn.dataset.slot = slot.key;
+    btn.innerHTML = `${slot.icon} ${slot.label}<span class="slot-count">${count}</span>`;
+    btn.onclick = () => { ACTIVE_SLOT = slot.key; renderRosterSidebar(); renderActiveSlot(); };
+    list.appendChild(btn);
+  });
+  // Total count
+  const total = MODEL.faction.roster.length;
+  document.getElementById('rosterSidebarSub').textContent = total + ' unit' + (total !== 1 ? 's' : '') + ' total';
+}
+
+function renderActiveSlot() {
+  const slot = SLOTS.find(s => s.key === ACTIVE_SLOT);
+  document.getElementById('rosterMainTitle').textContent = slot ? `${slot.icon} ${slot.label}` : 'Roster';
+  document.getElementById('rosterMainSub').textContent = slot ? slot.desc : '';
+
+  const container = document.getElementById('rosterSlots');
+  const empty = document.getElementById('rosterEmpty');
+  const units = MODEL.faction.roster.filter(r => r.factory_key === ACTIVE_SLOT);
+
+  container.innerHTML = '';
+
+  if (units.length === 0) {
+    empty.style.display = '';
+    empty.innerHTML = `No units in <b>${slot?.label || ACTIVE_SLOT}</b> slot yet.<br>Click <b>+ Add Unit</b> or the button below.`;
+  } else {
+    empty.style.display = 'none';
+    units.forEach(entry => {
+      container.appendChild(buildUnitRow(entry));
+    });
+  }
+
+  // Add button at bottom
+  const addRow = document.createElement('div');
+  addRow.className = 'roster-add-row';
+  addRow.innerHTML = `<button onclick="openPicker('${ACTIVE_SLOT}')" class="sm">+ Add unit to ${slot?.label || ACTIVE_SLOT}</button>`;
+  container.appendChild(addRow);
+}
+
+function buildUnitRow(entry) {
+  const udata = MODEL.units[entry.cls] || null;
+  const name = udata?.name || entry.cls;
+  const known = !!udata;
+
+  const row = document.createElement('div');
+  row.className = 'unit-row';
+  row.dataset.cls = entry.cls;
+
+  // Thumb
+  const thumbDiv = document.createElement('div');
+  thumbDiv.className = 'unit-thumb';
+  if (udata?.thumb) {
+    const img = document.createElement('img');
+    img.src = `assets/thumbs/${udata.thumb}`;
+    img.alt = name;
+    img.loading = 'lazy';
+    img.onerror = function() { this.outerHTML = '<span class="glyph">⬡</span>'; };
+    thumbDiv.appendChild(img);
+  } else {
+    const g = document.createElement('span');
+    g.className = 'glyph';
+    g.textContent = typeGlyph(entry.type_hint || udata?.type || '?');
+    thumbDiv.appendChild(g);
+  }
+  row.appendChild(thumbDiv);
+
+  // Info
+  const info = document.createElement('div');
+  info.className = 'unit-info';
+  info.innerHTML = `
+    <div class="uname">${name}${!known ? '<span class="warn-chip" style="display:inline-block;font-family:\'JetBrains Mono\',monospace;font-size:9px;background:#3a1a1a;color:var(--orange);border:1px solid #6a3a2a;border-radius:3px;padding:1px 5px;margin-left:4px">unknown class</span>' : ''}</div>
+    <div class="ucls${!known ? ' uwarn' : ''}">${entry.cls}</div>
+  `;
+  row.appendChild(info);
+
+  // Editable fields
+  const fields = document.createElement('div');
+  fields.className = 'unit-fields';
+
+  // Price
+  fields.appendChild(makeField('Price', 'number', entry.price, 10, 99999, v => {
+    entry.price = parseInt(v) || 0;
+  }));
+
+  // Build time
+  fields.appendChild(makeField('Build (s)', 'number', entry.buildTime, 1, 999, v => {
+    entry.buildTime = parseInt(v) || 0;
+  }));
+
+  // Crew
+  fields.appendChild(makeField('Crew', 'number', entry.crew, -1, 20, v => {
+    entry.crew = parseInt(v);
+  }));
+
+  // Upgrade tier
+  const upgLabel = document.createElement('label');
+  upgLabel.textContent = 'Upgrade';
+  const upgSel = document.createElement('select');
+  upgSel.style.width = '60px';
+  upgSel.style.fontSize = '11px';
+  upgSel.style.padding = '4px 5px';
+  upgSel.style.background = '#0d1014';
+  [0,1,2,3].forEach(t => {
+    const o = document.createElement('option');
+    o.value = t; o.textContent = t;
+    if (entry.upgrade === t) o.selected = true;
+    upgSel.appendChild(o);
+  });
+  upgSel.onchange = () => { entry.upgrade = parseInt(upgSel.value); };
+  upgLabel.appendChild(upgSel);
+  fields.appendChild(upgLabel);
+
+  // Re-slot select
+  const slotLabel = document.createElement('label');
+  slotLabel.textContent = 'Slot';
+  const slotSel = document.createElement('select');
+  slotSel.style.width = '90px';
+  slotSel.style.fontSize = '11px';
+  slotSel.style.padding = '4px 5px';
+  slotSel.style.background = '#0d1014';
+  SLOTS.forEach(s => {
+    const o = document.createElement('option');
+    o.value = s.key; o.textContent = s.label;
+    if (entry.factory_key === s.key) o.selected = true;
+    slotSel.appendChild(o);
+  });
+  slotSel.onchange = () => {
+    entry.factory_key = slotSel.value;
+    entry.factory = SLOTS.find(s => s.key === slotSel.value)?.factory ?? -2;
+    renderRosterSidebar();
+    renderActiveSlot();
+  };
+  slotLabel.appendChild(slotSel);
+  fields.appendChild(slotLabel);
+
+  row.appendChild(fields);
+
+  // Delete button
+  const del = document.createElement('button');
+  del.className = 'ico danger unit-del';
+  del.textContent = '✕';
+  del.title = 'Remove unit';
+  del.onclick = () => {
+    MODEL.faction.roster = MODEL.faction.roster.filter(r => r !== entry);
+    renderRosterSidebar();
+    renderActiveSlot();
+  };
+  row.appendChild(del);
+
+  return row;
+}
+
+function makeField(lbl, type, val, min, max, onChange) {
+  const label = document.createElement('label');
+  label.textContent = lbl;
+  const inp = document.createElement('input');
+  inp.type = type;
+  inp.value = val;
+  inp.min = min;
+  inp.max = max;
+  inp.style.width = '56px';
+  inp.style.fontSize = '11px';
+  inp.style.padding = '4px 5px';
+  inp.style.background = '#0d1014';
+  inp.onchange = () => onChange(inp.value);
+  label.appendChild(inp);
+  return label;
+}
+
+function typeGlyph(type) {
+  return { man: '🪖', car: '🚙', tank: '🛡', air: '✈', static: '🔫', other: '📦' }[type] || '⬡';
+}
+
+function addUnitToRoster(cls, targetSlot) {
+  const udata = MODEL.units[cls];
+  const type = udata?.type || 'other';
+  const slot = targetSlot || TYPE_DEFAULT_SLOT[type] || 'Depot';
+  const factoryCode = SLOTS.find(s => s.key === slot)?.factory ?? -2;
+
+  // Default prices by type
+  const defaultPrice = { man: 150, car: 400, tank: 1200, air: 2000, static: 200, other: 300 }[type] || 200;
+  const defaultBuild = { man: 4, car: 15, tank: 25, air: 30, static: 8, other: 10 }[type] || 10;
+
+  MODEL.faction.roster.push({
+    cls,
+    type_hint: type,
+    price: defaultPrice,
+    buildTime: defaultBuild,
+    factory_key: slot,
+    factory: factoryCode,
+    upgrade: 0,
+    crew: -1
+  });
+
+  ACTIVE_SLOT = slot;
+  renderRosterSidebar();
+  renderActiveSlot();
+}
+
+function seedFromGUE() {
+  if (!MODEL.template) return;
+  if (MODEL.faction.roster.length > 0 &&
+      !confirm('This will add the GUE roster on top of your current units. Continue?')) return;
+
+  const rows = MODEL.template.core_rows || [];
+  rows.forEach(row => {
+    // Parse raw_tuple: ['label','pic',price,buildTime,crew,upgrade,factory,skill,'factionStr',turrets]
+    const tup = row.raw_tuple;
+    // Quick extraction using regex
+    const nums = [...tup.matchAll(/-?\d+/g)].map(m => parseInt(m[0]));
+    // index: [label,pic,price,buildTime,crew,upgrade,factory,skill,factionStr,turrets]
+    const price     = nums[0] || 150;
+    const buildTime = nums[1] || 4;
+    const crew      = nums[2] !== undefined ? nums[2] : -1;
+    const upgrade   = nums[3] !== undefined ? nums[3] : 0;
+    const factory   = nums[4] !== undefined ? nums[4] : -1;
+
+    const cls = row.classname;
+    // Map factory code to slot
+    let slot;
+    if (factory === -1) slot = 'Barracks';
+    else if (factory === 1) slot = 'Defenses';
+    else slot = 'Depot'; // vehicle units in GUE core are factory -2; use type to sub-classify
+    // Check unit type for better slot
+    const udata = MODEL.units[cls];
+    if (udata) {
+      slot = TYPE_DEFAULT_SLOT[udata.type] || slot;
+    }
+
+    MODEL.faction.roster.push({
+      cls,
+      type_hint: udata?.type || 'other',
+      price,
+      buildTime,
+      factory_key: slot,
+      factory: SLOTS.find(s => s.key === slot)?.factory ?? factory,
+      upgrade,
+      crew
+    });
+  });
+
+  renderRosterSidebar();
+  renderActiveSlot();
+}
+
+// ============================================================
+//  PICKER MODAL
+// ============================================================
+let PICKER_SLOT = null;     // which slot to add to (null = use default)
+let PICKER_TYPE = 'all';   // type filter
+
+function openPicker(slot) {
+  PICKER_SLOT = slot;
+  const slotName = slot ? SLOTS.find(s => s.key === slot)?.label || slot : 'any slot';
+  document.getElementById('pickerTitle').textContent = `Add Unit — ${slotName}`;
+  document.getElementById('pickerSearch').value = '';
+  // Set type filter default based on slot
+  if (slot === 'Barracks') PICKER_TYPE = 'man';
+  else if (slot === 'Heavy') PICKER_TYPE = 'tank';
+  else if (slot === 'Aircraft') PICKER_TYPE = 'air';
+  else if (slot === 'Defenses') PICKER_TYPE = 'static';
+  else if (slot === 'Light') PICKER_TYPE = 'car';
+  else PICKER_TYPE = 'all';
+  // Update side chips
+  document.querySelectorAll('#pickerSide .modal-side-chip').forEach(b => {
+    b.classList.toggle('on', b.dataset.type === PICKER_TYPE);
+  });
+  renderPickerGrid();
+  document.getElementById('pickerModal').classList.add('open');
+  setTimeout(() => document.getElementById('pickerSearch').focus(), 50);
+}
+
+function closePicker() {
+  document.getElementById('pickerModal').classList.remove('open');
+}
+
+document.getElementById('pickerModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('pickerModal')) closePicker();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closePicker();
+});
+
+function buildPickerSide() {
+  const side = document.getElementById('pickerSide');
+  side.innerHTML = '';
+
+  const types = [
+    { key: 'all',    label: 'All' },
+    { key: 'man',    label: 'Infantry' },
+    { key: 'car',    label: 'Light Veh' },
+    { key: 'tank',   label: 'Heavy Veh' },
+    { key: 'air',    label: 'Aircraft' },
+    { key: 'static', label: 'Static' },
+    { key: 'other',  label: 'Other' }
+  ];
+
+  types.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'modal-side-chip' + (t.key === PICKER_TYPE ? ' on' : '');
+    btn.dataset.type = t.key;
+
+    const count = t.key === 'all'
+      ? Object.keys(MODEL.units).length
+      : Object.values(MODEL.units).filter(u => u.type === t.key).length;
+
+    btn.innerHTML = `${t.label} <span style="color:#39414b;font-size:9px">(${count})</span>`;
+    btn.onclick = () => {
+      PICKER_TYPE = t.key;
+      document.querySelectorAll('#pickerSide .modal-side-chip').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      renderPickerGrid();
+    };
+    side.appendChild(btn);
+  });
+}
+
+function renderPickerGrid() {
+  const grid = document.getElementById('pickerGrid');
+  const empty = document.getElementById('pickerEmpty');
+  const query = document.getElementById('pickerSearch').value.toLowerCase().trim();
+
+  let entries = Object.entries(MODEL.units);
+
+  // Filter by type
+  if (PICKER_TYPE !== 'all') {
+    entries = entries.filter(([, u]) => u.type === PICKER_TYPE);
+  }
+
+  // Filter by search
+  if (query) {
+    entries = entries.filter(([cls, u]) =>
+      cls.toLowerCase().includes(query) || (u.name && u.name.toLowerCase().includes(query))
+    );
+  }
+
+  grid.innerHTML = '';
+
+  if (entries.length === 0) {
+    empty.style.display = '';
+    return;
+  }
+  empty.style.display = 'none';
+
+  // Limit to 300 for perf; user can search to narrow
+  const slice = entries.slice(0, 300);
+
+  slice.forEach(([cls, u]) => {
+    const tile = document.createElement('div');
+    tile.className = 'pick-tile';
+
+    if (u.thumb) {
+      const img = document.createElement('img');
+      img.className = 'pick-tile-img';
+      img.src = `assets/thumbs/${u.thumb}`;
+      img.alt = u.name || cls;
+      img.loading = 'lazy';
+      img.onerror = function() {
+        const g = document.createElement('div');
+        g.className = 'pick-tile-glyph';
+        g.textContent = typeGlyph(u.type);
+        this.parentNode.replaceChild(g, this);
+      };
+      tile.appendChild(img);
+    } else {
+      const g = document.createElement('div');
+      g.className = 'pick-tile-glyph';
+      g.textContent = typeGlyph(u.type);
+      tile.appendChild(g);
+    }
+
+    const nameDiv = document.createElement('div');
+    nameDiv.className = 'pick-tile-name';
+    nameDiv.textContent = u.name || cls;
+    tile.appendChild(nameDiv);
+
+    const clsDiv = document.createElement('div');
+    clsDiv.className = 'pick-tile-class';
+    clsDiv.textContent = cls;
+    tile.appendChild(clsDiv);
+
+    tile.addEventListener('click', () => pickUnit(cls));
+    grid.appendChild(tile);
+  });
+
+  if (entries.length > 300) {
+    const note = document.createElement('div');
+    note.className = 'pick-empty';
+    note.style.display = '';
+    note.textContent = `Showing first 300 of ${entries.length} results. Search to narrow.`;
+    grid.appendChild(note);
+  }
+}
+
+function pickUnit(cls) {
+  addUnitToRoster(cls, PICKER_SLOT);
+  closePicker();
+}
+
+// ============================================================
+//  INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  // Init roster sidebar with empty counts
+  renderRosterSidebar();
+  renderActiveSlot();
+  // Load data
+  loadData();
+});
+</script>
+</body>
+</html>
