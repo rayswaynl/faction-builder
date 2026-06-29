@@ -1,0 +1,6517 @@
+{
+  "2S6M_Tunguska": {
+    "name": "2S6M_Tunguska",
+    "type": "tank",
+    "thumb": "2S6M_Tunguska.jpg"
+  },
+  "2b14_82mm": {
+    "name": "2b14_82mm",
+    "type": "static",
+    "thumb": "2b14_82mm.jpg"
+  },
+  "2b14_82mm_CZ_EP1": {
+    "name": "2b14_82mm_CZ_EP1",
+    "type": "static",
+    "thumb": null
+  },
+  "2b14_82mm_TK_Bag_EP1": {
+    "name": "Podnos 2B14 Bag [Takistani Army]",
+    "type": "static",
+    "thumb": "2b14_82mm_TK_Bag_EP1.jpg"
+  },
+  "2b14_82mm_TK_EP1": {
+    "name": "2b14_82mm_TK_EP1",
+    "type": "static",
+    "thumb": "2b14_82mm_TK_EP1.jpg"
+  },
+  "2b14_82mm_TK_GUE_EP1": {
+    "name": "2b14_82mm_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "2b14_82mm_TK_GUE_EP1.jpg"
+  },
+  "2b14_82mm_TK_INS_EP1": {
+    "name": "2b14_82mm_TK_INS_EP1",
+    "type": "static",
+    "thumb": "2b14_82mm_TK_INS_EP1.jpg"
+  },
+  "76n6ClamShell": {
+    "name": "Anti-air radar",
+    "type": "static",
+    "thumb": "76n6ClamShell.jpg"
+  },
+  "76n6ClamShell_EP1": {
+    "name": "Anti-air radar",
+    "type": "static",
+    "thumb": "76n6ClamShell_EP1.jpg"
+  },
+  "A10": {
+    "name": "A-10",
+    "type": "air",
+    "thumb": "A10.jpg"
+  },
+  "A10_US_EP1": {
+    "name": "A10_US_EP1",
+    "type": "air",
+    "thumb": "A10_US_EP1.jpg"
+  },
+  "AAV": {
+    "name": "AAVP7A1",
+    "type": "tank",
+    "thumb": "AAV.jpg"
+  },
+  "ACamp": {
+    "name": "Camping tent",
+    "type": "static",
+    "thumb": "ACamp.jpg"
+  },
+  "ACamp_EP1": {
+    "name": "ACamp_EP1",
+    "type": "static",
+    "thumb": "ACamp_EP1.jpg"
+  },
+  "AGS_CDF": {
+    "name": "AGS_CDF",
+    "type": "static",
+    "thumb": "AGS_CDF.jpg"
+  },
+  "AGS_CZ_EP1": {
+    "name": "AGS_CZ_EP1",
+    "type": "static",
+    "thumb": null
+  },
+  "AGS_Ins": {
+    "name": "AGS_Ins",
+    "type": "static",
+    "thumb": "AGS_Ins.jpg"
+  },
+  "AGS_RU": {
+    "name": "AGS_RU",
+    "type": "static",
+    "thumb": "AGS_RU.jpg"
+  },
+  "AGS_TK_Bag_EP1": {
+    "name": "AGS-30 Bag [Takistani Army]",
+    "type": "static",
+    "thumb": "AGS_TK_Bag_EP1.jpg"
+  },
+  "AGS_TK_EP1": {
+    "name": "AGS_TK_EP1",
+    "type": "static",
+    "thumb": "AGS_TK_EP1.jpg"
+  },
+  "AGS_TK_GUE_EP1": {
+    "name": "AGS_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "AGS_TK_GUE_EP1.jpg"
+  },
+  "AGS_TK_INS_EP1": {
+    "name": "AGS_TK_INS_EP1",
+    "type": "static",
+    "thumb": "AGS_TK_INS_EP1.jpg"
+  },
+  "AGS_UN_EP1": {
+    "name": "AGS_UN_EP1",
+    "type": "static",
+    "thumb": "AGS_UN_EP1.jpg"
+  },
+  "AH1Z": {
+    "name": "AH-1Z",
+    "type": "air",
+    "thumb": "AH1Z.jpg"
+  },
+  "AH64D": {
+    "name": "AH-64D",
+    "type": "air",
+    "thumb": "AH64D.jpg"
+  },
+  "AH64D_EP1": {
+    "name": "AH-64D",
+    "type": "air",
+    "thumb": "AH64D_EP1.jpg"
+  },
+  "AH6J_EP1": {
+    "name": "AH-6J",
+    "type": "air",
+    "thumb": "AH6J_EP1.jpg"
+  },
+  "AH6X_EP1": {
+    "name": "AH-6X",
+    "type": "air",
+    "thumb": "AH6X_EP1.jpg"
+  },
+  "ATV_CZ_EP1": {
+    "name": "ATV_CZ_EP1",
+    "type": "car",
+    "thumb": "ATV_CZ_EP1.jpg"
+  },
+  "ATV_US_EP1": {
+    "name": "ATV_US_EP1",
+    "type": "car",
+    "thumb": "ATV_US_EP1.jpg"
+  },
+  "AV8B2": {
+    "name": "AV-8B",
+    "type": "air",
+    "thumb": "AV8B2.jpg"
+  },
+  "AW159_Lynx_BAF": {
+    "name": "AW159_Lynx_BAF",
+    "type": "air",
+    "thumb": null
+  },
+  "AmmoCrate_NoInteractive_": {
+    "name": "Ammo Crate",
+    "type": "static",
+    "thumb": "AmmoCrate_NoInteractive_.jpg"
+  },
+  "AmmoCrates_NoInteractive_Large": {
+    "name": "Ammo Crates (large)",
+    "type": "static",
+    "thumb": null
+  },
+  "AmmoCrates_NoInteractive_Medium": {
+    "name": "Ammo Crates (medium)",
+    "type": "static",
+    "thumb": "AmmoCrates_NoInteractive_Medium.jpg"
+  },
+  "AmmoCrates_NoInteractive_Small": {
+    "name": "Ammo Crates (small)",
+    "type": "static",
+    "thumb": "AmmoCrates_NoInteractive_Small.jpg"
+  },
+  "Ammobox_PMC": {
+    "name": "PMC Basic Weapons",
+    "type": "static",
+    "thumb": null
+  },
+  "An2_1_TK_CIV_EP1": {
+    "name": "An2_1_TK_CIV_EP1",
+    "type": "air",
+    "thumb": "An2_1_TK_CIV_EP1.jpg"
+  },
+  "An2_TK_EP1": {
+    "name": "An2_TK_EP1",
+    "type": "air",
+    "thumb": "An2_TK_EP1.jpg"
+  },
+  "ArmoredSUV_PMC": {
+    "name": "ArmoredSUV_PMC",
+    "type": "car",
+    "thumb": null
+  },
+  "Assistant": {
+    "name": "Assistant",
+    "type": "man",
+    "thumb": "Assistant.jpg"
+  },
+  "Axe_woodblock": {
+    "name": "Woodblock w. axe",
+    "type": "other",
+    "thumb": "Axe_woodblock.jpg"
+  },
+  "BAF_ASoldier_MTP": {
+    "name": "Rifleman (backpack)",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_ATV_D": {
+    "name": "BAF_ATV_D",
+    "type": "car",
+    "thumb": null
+  },
+  "BAF_Apache_AH1_D": {
+    "name": "BAF_Apache_AH1_D",
+    "type": "air",
+    "thumb": null
+  },
+  "BAF_AssaultPack": {
+    "name": "BAF_AssaultPack",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_BasicAmmunitionBox": {
+    "name": "BAF Basic Ammo",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_BasicWeapons": {
+    "name": "BAF Basic Weapons",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_FV510_D": {
+    "name": "FV510 Warrior 2",
+    "type": "tank",
+    "thumb": null
+  },
+  "BAF_GMG_ACOG_minitripod_bag": {
+    "name": "L134A1 GMG minitripod Bag",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_GMG_Tripod_D": {
+    "name": "GMG Minitripod",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_GPMG_Minitripod_D": {
+    "name": "GPMG Minitripod",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_GPMG_Minitripod_D_bag": {
+    "name": "L7A2 GPMG Minitripod Bag",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_Jackal2_GMG_D": {
+    "name": "BAF_Jackal2_GMG_D",
+    "type": "car",
+    "thumb": null
+  },
+  "BAF_Jackal2_L2A1_D": {
+    "name": "BAF_Jackal2_L2A1_D",
+    "type": "car",
+    "thumb": null
+  },
+  "BAF_L2A1_ACOG_minitripod_bag": {
+    "name": "L111A1 HMG Minitripod Bag",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_L2A1_ACOG_tripod_bag": {
+    "name": "L111A1 HMG Tripod Bag",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_L2A1_Minitripod_D": {
+    "name": "L111A1 Minitripod",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_L2A1_Tripod_D": {
+    "name": "L111A1 Tripod",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_Launchers": {
+    "name": "BAF Launchers",
+    "type": "static",
+    "thumb": null
+  },
+  "BAF_Merlin_HC3_D": {
+    "name": "Open door",
+    "type": "air",
+    "thumb": null
+  },
+  "BAF_Offroad_D": {
+    "name": "BAF_Offroad_D",
+    "type": "car",
+    "thumb": null
+  },
+  "BAF_Pilot_MTP": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_AAA_MTP": {
+    "name": "Asst. AA Specialist",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_AAR_MTP": {
+    "name": "Asst. Automatic Rifleman",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_AAT_MTP": {
+    "name": "Asst. AT Specialist",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_AA_MTP": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_AHAT_MTP": {
+    "name": "Asst. AT Specialist (Javelin)",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_AMG_MTP": {
+    "name": "Asst. Machineguner",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_AR_MTP": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_AT_MTP": {
+    "name": "AT Specialist",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_EN_MTP": {
+    "name": "Engineer",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_FAC_MTP": {
+    "name": "Joint Terminal Attack Controller",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_GL_MTP": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_HAT_MTP": {
+    "name": "AT Specialist (Javelin)",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_L_MTP": {
+    "name": "Rifleman (light)",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_MG_MTP": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_MTP": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_Marksman_MTP": {
+    "name": "Marksman (LSW)",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_Medic_MTP": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_N_MTP": {
+    "name": "Rifleman (night)",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_Officer_MTP": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_SL_MTP": {
+    "name": "Section Leader",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_Sniper_MTP": {
+    "name": "Sniper (LRR)",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_TL_MTP": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_scout_MTP": {
+    "name": "Marksman (LRR)",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_Soldier_spotter_MTP": {
+    "name": "Spotter",
+    "type": "man",
+    "thumb": null
+  },
+  "BAF_crewman_MTP": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": null
+  },
+  "BIS_ARTY_Virtual_Artillery": {
+    "name": "Artillery - Virtual Piece",
+    "type": "other",
+    "thumb": null
+  },
+  "BIS_Steerable_Parachute": {
+    "name": "Steerable parachute",
+    "type": "air",
+    "thumb": "BIS_Steerable_Parachute.jpg"
+  },
+  "BMP2Wreck": {
+    "name": "BMP-2",
+    "type": "static",
+    "thumb": "BMP2Wreck.jpg"
+  },
+  "BMP2_Ambul_CDF": {
+    "name": "BMP2_Ambul_CDF",
+    "type": "tank",
+    "thumb": "BMP2_Ambul_CDF.jpg"
+  },
+  "BMP2_Ambul_INS": {
+    "name": "BMP2_Ambul_INS",
+    "type": "tank",
+    "thumb": "BMP2_Ambul_INS.jpg"
+  },
+  "BMP2_CDF": {
+    "name": "BMP2_CDF",
+    "type": "tank",
+    "thumb": "BMP2_CDF.jpg"
+  },
+  "BMP2_Gue": {
+    "name": "BMP2_Gue",
+    "type": "tank",
+    "thumb": "BMP2_Gue.jpg"
+  },
+  "BMP2_HQ_CDF": {
+    "name": "BMP2_HQ_CDF",
+    "type": "tank",
+    "thumb": "BMP2_HQ_CDF.jpg"
+  },
+  "BMP2_HQ_CDF_unfolded": {
+    "name": "HQ (CDF)",
+    "type": "static",
+    "thumb": "BMP2_HQ_CDF_unfolded.jpg"
+  },
+  "BMP2_HQ_INS": {
+    "name": "BMP2_HQ_INS",
+    "type": "tank",
+    "thumb": "BMP2_HQ_INS.jpg"
+  },
+  "BMP2_HQ_INS_unfolded": {
+    "name": "HQ (Ins)",
+    "type": "static",
+    "thumb": "BMP2_HQ_INS_unfolded.jpg"
+  },
+  "BMP2_HQ_TK_EP1": {
+    "name": "BMP2_HQ_TK_EP1",
+    "type": "tank",
+    "thumb": "BMP2_HQ_TK_EP1.jpg"
+  },
+  "BMP2_HQ_TK_unfolded_Base_EP1": {
+    "name": "HQ",
+    "type": "static",
+    "thumb": "BMP2_HQ_TK_unfolded_Base_EP1.jpg"
+  },
+  "BMP2_HQ_TK_unfolded_EP1": {
+    "name": "BMP2_HQ_TK_unfolded_EP1",
+    "type": "static",
+    "thumb": "BMP2_HQ_TK_unfolded_EP1.jpg"
+  },
+  "BMP2_INS": {
+    "name": "BMP2_INS",
+    "type": "tank",
+    "thumb": "BMP2_INS.jpg"
+  },
+  "BMP2_TK_EP1": {
+    "name": "BMP2_TK_EP1",
+    "type": "tank",
+    "thumb": "BMP2_TK_EP1.jpg"
+  },
+  "BMP2_UN_EP1": {
+    "name": "BMP2_UN_EP1",
+    "type": "tank",
+    "thumb": "BMP2_UN_EP1.jpg"
+  },
+  "BMP3": {
+    "name": "BMP-3",
+    "type": "tank",
+    "thumb": "BMP3.jpg"
+  },
+  "BRDM2_ATGM_CDF": {
+    "name": "BRDM2_ATGM_CDF",
+    "type": "tank",
+    "thumb": "BRDM2_ATGM_CDF.jpg"
+  },
+  "BRDM2_ATGM_INS": {
+    "name": "BRDM2_ATGM_INS",
+    "type": "tank",
+    "thumb": "BRDM2_ATGM_INS.jpg"
+  },
+  "BRDM2_ATGM_TK_EP1": {
+    "name": "BRDM2_ATGM_TK_EP1",
+    "type": "tank",
+    "thumb": "BRDM2_ATGM_TK_EP1.jpg"
+  },
+  "BRDM2_CDF": {
+    "name": "BRDM2_CDF",
+    "type": "tank",
+    "thumb": "BRDM2_CDF.jpg"
+  },
+  "BRDM2_Gue": {
+    "name": "BRDM2_Gue",
+    "type": "tank",
+    "thumb": "BRDM2_Gue.jpg"
+  },
+  "BRDM2_HQ_Gue": {
+    "name": "BRDM2_HQ_Gue",
+    "type": "tank",
+    "thumb": "BRDM2_HQ_Gue.jpg"
+  },
+  "BRDM2_HQ_Gue_unfolded": {
+    "name": "HQ (Gue)",
+    "type": "static",
+    "thumb": "BRDM2_HQ_Gue_unfolded.jpg"
+  },
+  "BRDM2_HQ_TK_GUE_EP1": {
+    "name": "BRDM2_HQ_TK_GUE_EP1",
+    "type": "tank",
+    "thumb": "BRDM2_HQ_TK_GUE_EP1.jpg"
+  },
+  "BRDM2_HQ_TK_GUE_unfolded_Base_EP1": {
+    "name": "HQ",
+    "type": "static",
+    "thumb": "BRDM2_HQ_TK_GUE_unfolded_Base_EP1.jpg"
+  },
+  "BRDM2_HQ_TK_GUE_unfolded_EP1": {
+    "name": "BRDM2_HQ_TK_GUE_unfolded_EP1",
+    "type": "static",
+    "thumb": "BRDM2_HQ_TK_GUE_unfolded_EP1.jpg"
+  },
+  "BRDM2_INS": {
+    "name": "BRDM2_INS",
+    "type": "tank",
+    "thumb": "BRDM2_INS.jpg"
+  },
+  "BRDM2_TK_EP1": {
+    "name": "BRDM2_TK_EP1",
+    "type": "tank",
+    "thumb": "BRDM2_TK_EP1.jpg"
+  },
+  "BRDM2_TK_GUE_EP1": {
+    "name": "BRDM2_TK_GUE_EP1",
+    "type": "tank",
+    "thumb": "BRDM2_TK_GUE_EP1.jpg"
+  },
+  "BRDMWreck": {
+    "name": "BRDM-2",
+    "type": "static",
+    "thumb": "BRDMWreck.jpg"
+  },
+  "BTR40_MG_TK_GUE_EP1": {
+    "name": "BTR40_MG_TK_GUE_EP1",
+    "type": "tank",
+    "thumb": "BTR40_MG_TK_GUE_EP1.jpg"
+  },
+  "BTR40_MG_TK_INS_EP1": {
+    "name": "BTR40_MG_TK_INS_EP1",
+    "type": "tank",
+    "thumb": "BTR40_MG_TK_INS_EP1.jpg"
+  },
+  "BTR40_TK_GUE_EP1": {
+    "name": "BTR40_TK_GUE_EP1",
+    "type": "tank",
+    "thumb": "BTR40_TK_GUE_EP1.jpg"
+  },
+  "BTR40_TK_INS_EP1": {
+    "name": "BTR40_TK_INS_EP1",
+    "type": "tank",
+    "thumb": "BTR40_TK_INS_EP1.jpg"
+  },
+  "BTR60_TK_EP1": {
+    "name": "BTR-60",
+    "type": "tank",
+    "thumb": "BTR60_TK_EP1.jpg"
+  },
+  "BTR90": {
+    "name": "BTR90",
+    "type": "tank",
+    "thumb": "BTR90.jpg"
+  },
+  "BTR90_HQ": {
+    "name": "BTR-90 (HQ)",
+    "type": "tank",
+    "thumb": "BTR90_HQ.jpg"
+  },
+  "BTR90_HQ_unfolded": {
+    "name": "HQ (RU)",
+    "type": "static",
+    "thumb": "BTR90_HQ_unfolded.jpg"
+  },
+  "Barrack2": {
+    "name": "Barrack2",
+    "type": "static",
+    "thumb": "Barrack2.jpg"
+  },
+  "Barrel1": {
+    "name": "Barrel (red)",
+    "type": "other",
+    "thumb": "Barrel1.jpg"
+  },
+  "Barrel4": {
+    "name": "Barrel (black)",
+    "type": "other",
+    "thumb": "Barrel4.jpg"
+  },
+  "Barrel5": {
+    "name": "Barrel (green)",
+    "type": "other",
+    "thumb": "Barrel5.jpg"
+  },
+  "Barrels": {
+    "name": "Barrels",
+    "type": "other",
+    "thumb": "Barrels.jpg"
+  },
+  "Base_WarfareBBarrier5x": {
+    "name": "Wall (small)",
+    "type": "static",
+    "thumb": "Base_WarfareBBarrier5x.jpg"
+  },
+  "Base_WarfareBContructionSite": {
+    "name": "Crate",
+    "type": "static",
+    "thumb": "Base_WarfareBContructionSite.jpg"
+  },
+  "Baseball": {
+    "name": "Baseball",
+    "type": "other",
+    "thumb": "Baseball.jpg"
+  },
+  "Bleacher_EP1": {
+    "name": "Bleacher",
+    "type": "static",
+    "thumb": "Bleacher_EP1.jpg"
+  },
+  "Body": {
+    "name": "Body",
+    "type": "static",
+    "thumb": "Body.jpg"
+  },
+  "Bomb": {
+    "name": "Bomb",
+    "type": "static",
+    "thumb": "Bomb.jpg"
+  },
+  "Bunker_PMC": {
+    "name": "Bunker",
+    "type": "static",
+    "thumb": null
+  },
+  "BuoyBig": {
+    "name": "Buoy",
+    "type": "other",
+    "thumb": "BuoyBig.jpg"
+  },
+  "BuoySmall": {
+    "name": "Buoy (small)",
+    "type": "other",
+    "thumb": "BuoySmall.jpg"
+  },
+  "C130J": {
+    "name": "C130J",
+    "type": "air",
+    "thumb": "C130J.jpg"
+  },
+  "C130J_US_EP1": {
+    "name": "C130J_US_EP1",
+    "type": "air",
+    "thumb": "C130J_US_EP1.jpg"
+  },
+  "C130J_static_EP1": {
+    "name": "C-130J static",
+    "type": "static",
+    "thumb": "C130J_static_EP1.jpg"
+  },
+  "C130J_wreck_EP1": {
+    "name": "C130J wreck",
+    "type": "static",
+    "thumb": "C130J_wreck_EP1.jpg"
+  },
+  "CDF_Commander": {
+    "name": "General",
+    "type": "man",
+    "thumb": "CDF_Commander.jpg"
+  },
+  "CDF_Soldier": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "CDF_Soldier.jpg"
+  },
+  "CDF_Soldier_AR": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "CDF_Soldier_AR.jpg"
+  },
+  "CDF_Soldier_Crew": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": "CDF_Soldier_Crew.jpg"
+  },
+  "CDF_Soldier_Engineer": {
+    "name": "Engineer",
+    "type": "man",
+    "thumb": "CDF_Soldier_Engineer.jpg"
+  },
+  "CDF_Soldier_GL": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "CDF_Soldier_GL.jpg"
+  },
+  "CDF_Soldier_Light": {
+    "name": "Soldier (unarmed)",
+    "type": "man",
+    "thumb": "CDF_Soldier_Light.jpg"
+  },
+  "CDF_Soldier_MG": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "CDF_Soldier_MG.jpg"
+  },
+  "CDF_Soldier_Marksman": {
+    "name": "Marksman",
+    "type": "man",
+    "thumb": "CDF_Soldier_Marksman.jpg"
+  },
+  "CDF_Soldier_Medic": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": "CDF_Soldier_Medic.jpg"
+  },
+  "CDF_Soldier_Militia": {
+    "name": "Militia",
+    "type": "man",
+    "thumb": "CDF_Soldier_Militia.jpg"
+  },
+  "CDF_Soldier_Officer": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": "CDF_Soldier_Officer.jpg"
+  },
+  "CDF_Soldier_Pilot": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": "CDF_Soldier_Pilot.jpg"
+  },
+  "CDF_Soldier_RPG": {
+    "name": "AT Specialist",
+    "type": "man",
+    "thumb": "CDF_Soldier_RPG.jpg"
+  },
+  "CDF_Soldier_Sniper": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": "CDF_Soldier_Sniper.jpg"
+  },
+  "CDF_Soldier_Spotter": {
+    "name": "Spotter",
+    "type": "man",
+    "thumb": "CDF_Soldier_Spotter.jpg"
+  },
+  "CDF_Soldier_Strela": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": "CDF_Soldier_Strela.jpg"
+  },
+  "CDF_Soldier_TL": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": "CDF_Soldier_TL.jpg"
+  },
+  "CDF_WarfareBAircraftFactory": {
+    "name": "Aircraft Factory (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBAircraftFactory.jpg"
+  },
+  "CDF_WarfareBAntiAirRadar": {
+    "name": "Anti-Air Radar (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBAntiAirRadar.jpg"
+  },
+  "CDF_WarfareBArtilleryRadar": {
+    "name": "Artillery Radar (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBArtilleryRadar.jpg"
+  },
+  "CDF_WarfareBBarracks": {
+    "name": "Barracks (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBBarracks.jpg"
+  },
+  "CDF_WarfareBContructionSite": {
+    "name": "Construction Site (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBContructionSite.jpg"
+  },
+  "CDF_WarfareBFieldhHospital": {
+    "name": "Field Hospital (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBFieldhHospital.jpg"
+  },
+  "CDF_WarfareBHeavyFactory": {
+    "name": "Heavy Factory (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBHeavyFactory.jpg"
+  },
+  "CDF_WarfareBLightFactory": {
+    "name": "Light Factory (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBLightFactory.jpg"
+  },
+  "CDF_WarfareBMGNest_PK": {
+    "name": "CDF_WarfareBMGNest_PK",
+    "type": "static",
+    "thumb": "CDF_WarfareBMGNest_PK.jpg"
+  },
+  "CDF_WarfareBUAVterminal": {
+    "name": "UAV Terminal (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBUAVterminal.jpg"
+  },
+  "CDF_WarfareBVehicleServicePoint": {
+    "name": "Vehicle Service Point (CDF)",
+    "type": "static",
+    "thumb": "CDF_WarfareBVehicleServicePoint.jpg"
+  },
+  "CH_47F_BAF": {
+    "name": "CH_47F_BAF",
+    "type": "air",
+    "thumb": null
+  },
+  "CH_47F_EP1": {
+    "name": "CH-47F",
+    "type": "air",
+    "thumb": "CH_47F_EP1.jpg"
+  },
+  "CIV_Contractor1_BAF": {
+    "name": "Contractor 1",
+    "type": "man",
+    "thumb": null
+  },
+  "CIV_EuroMan01_EP1": {
+    "name": "EuroMan1",
+    "type": "man",
+    "thumb": "CIV_EuroMan01_EP1.jpg"
+  },
+  "CIV_EuroMan02_EP1": {
+    "name": "EuroMan2",
+    "type": "man",
+    "thumb": "CIV_EuroMan02_EP1.jpg"
+  },
+  "CIV_EuroWoman01_EP1": {
+    "name": "EuroWoman1",
+    "type": "man",
+    "thumb": "CIV_EuroWoman01_EP1.jpg"
+  },
+  "CZBasicWeapons_EP1": {
+    "name": "CZ Weapons",
+    "type": "static",
+    "thumb": "CZBasicWeapons_EP1.jpg"
+  },
+  "CZ_Backpack_EP1": {
+    "name": "Czech Backpack",
+    "type": "static",
+    "thumb": "CZ_Backpack_EP1.jpg"
+  },
+  "CZ_Soldier_AT_DES_EP1": {
+    "name": "Rifleman (AT)",
+    "type": "man",
+    "thumb": "CZ_Soldier_AT_DES_EP1.jpg"
+  },
+  "CZ_Soldier_DES_EP1": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "CZ_Soldier_DES_EP1.jpg"
+  },
+  "CZ_Soldier_Light_DES_EP1": {
+    "name": "Soldier (light)",
+    "type": "man",
+    "thumb": "CZ_Soldier_Light_DES_EP1.jpg"
+  },
+  "CZ_Soldier_MG_DES_EP1": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "CZ_Soldier_MG_DES_EP1.jpg"
+  },
+  "CZ_Soldier_Office_DES_EP1": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": "CZ_Soldier_Office_DES_EP1.jpg"
+  },
+  "CZ_Soldier_Pilot_EP1": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": "CZ_Soldier_Pilot_EP1.jpg"
+  },
+  "CZ_Soldier_SL_DES_EP1": {
+    "name": "Squad Leader",
+    "type": "man",
+    "thumb": "CZ_Soldier_SL_DES_EP1.jpg"
+  },
+  "CZ_Soldier_Sniper_EP1": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": "CZ_Soldier_Sniper_EP1.jpg"
+  },
+  "CZ_Soldier_medik_DES_EP1": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": null
+  },
+  "CZ_Special_Forces_DES_EP1": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "CZ_Special_Forces_DES_EP1.jpg"
+  },
+  "CZ_Special_Forces_GL_DES_EP1": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "CZ_Special_Forces_GL_DES_EP1.jpg"
+  },
+  "CZ_Special_Forces_MG_DES_EP1": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "CZ_Special_Forces_MG_DES_EP1.jpg"
+  },
+  "CZ_Special_Forces_Scout_DES_EP1": {
+    "name": "Scout",
+    "type": "man",
+    "thumb": "CZ_Special_Forces_Scout_DES_EP1.jpg"
+  },
+  "CZ_Special_Forces_TL_DES_EP1": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": "CZ_Special_Forces_TL_DES_EP1.jpg"
+  },
+  "CZ_VestPouch_EP1": {
+    "name": "Czech Vest Pouch",
+    "type": "static",
+    "thumb": "CZ_VestPouch_EP1.jpg"
+  },
+  "Camp": {
+    "name": "Tent",
+    "type": "static",
+    "thumb": "Camp.jpg"
+  },
+  "CampEast": {
+    "name": "Tent (US)",
+    "type": "static",
+    "thumb": "CampEast.jpg"
+  },
+  "CampEast_EP1": {
+    "name": "CampEast_EP1",
+    "type": "static",
+    "thumb": "CampEast_EP1.jpg"
+  },
+  "Camp_EP1": {
+    "name": "Camp_EP1",
+    "type": "static",
+    "thumb": null
+  },
+  "Can_small": {
+    "name": "Can (small)",
+    "type": "other",
+    "thumb": "Can_small.jpg"
+  },
+  "Chukar": {
+    "name": "BQM-74",
+    "type": "air",
+    "thumb": "Chukar.jpg"
+  },
+  "Chukar_EP1": {
+    "name": "Chukar_EP1",
+    "type": "air",
+    "thumb": "Chukar_EP1.jpg"
+  },
+  "Citizen1": {
+    "name": "Citizen (Brown)",
+    "type": "man",
+    "thumb": "Citizen1.jpg"
+  },
+  "Citizen2": {
+    "name": "Citizen (Blue)",
+    "type": "man",
+    "thumb": "Citizen2.jpg"
+  },
+  "Citizen2_EP1": {
+    "name": "Citizen2_EP1",
+    "type": "man",
+    "thumb": "Citizen2_EP1.jpg"
+  },
+  "Citizen3": {
+    "name": "Citizen (Gray)",
+    "type": "man",
+    "thumb": "Citizen3.jpg"
+  },
+  "Citizen3_EP1": {
+    "name": "Citizen3_EP1",
+    "type": "man",
+    "thumb": "Citizen3_EP1.jpg"
+  },
+  "Citizen4": {
+    "name": "Citizen (Green)",
+    "type": "man",
+    "thumb": "Citizen4.jpg"
+  },
+  "ClutterCutter_EP1": {
+    "name": "Grass cutter (large)",
+    "type": "other",
+    "thumb": null
+  },
+  "Cock": {
+    "name": "Rooster",
+    "type": "man",
+    "thumb": "Cock.jpg"
+  },
+  "Concrete_Wall_EP1": {
+    "name": "Concrete Wall",
+    "type": "static",
+    "thumb": null
+  },
+  "Cow01": {
+    "name": "Cow (Brown/White)",
+    "type": "man",
+    "thumb": "Cow01.jpg"
+  },
+  "Cow01_EP1": {
+    "name": "Cow (White)",
+    "type": "man",
+    "thumb": "Cow01_EP1.jpg"
+  },
+  "D30_CDF": {
+    "name": "D30_CDF",
+    "type": "static",
+    "thumb": "D30_CDF.jpg"
+  },
+  "D30_Ins": {
+    "name": "D30_Ins",
+    "type": "static",
+    "thumb": "D30_Ins.jpg"
+  },
+  "D30_RU": {
+    "name": "D30_RU",
+    "type": "static",
+    "thumb": "D30_RU.jpg"
+  },
+  "D30_TK_EP1": {
+    "name": "D30_TK_EP1",
+    "type": "static",
+    "thumb": "D30_TK_EP1.jpg"
+  },
+  "D30_TK_GUE_EP1": {
+    "name": "D30_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "D30_TK_GUE_EP1.jpg"
+  },
+  "D30_TK_INS_EP1": {
+    "name": "D30_TK_INS_EP1",
+    "type": "static",
+    "thumb": "D30_TK_INS_EP1.jpg"
+  },
+  "DSHKM_CDF": {
+    "name": "DSHKM_CDF",
+    "type": "static",
+    "thumb": "DSHKM_CDF.jpg"
+  },
+  "DSHKM_CZ_EP1": {
+    "name": "DSHKM_CZ_EP1",
+    "type": "static",
+    "thumb": null
+  },
+  "DSHKM_Gue": {
+    "name": "DSHKM_Gue",
+    "type": "static",
+    "thumb": "DSHKM_Gue.jpg"
+  },
+  "DSHKM_Ins": {
+    "name": "DSHKM_Ins",
+    "type": "static",
+    "thumb": "DSHKM_Ins.jpg"
+  },
+  "DSHKM_TK_GUE_Bag_EP1": {
+    "name": "DShKM Bag [Takistani Locals]",
+    "type": "static",
+    "thumb": "DSHKM_TK_GUE_Bag_EP1.jpg"
+  },
+  "DSHKM_TK_GUE_EP1": {
+    "name": "DSHKM_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "DSHKM_TK_GUE_EP1.jpg"
+  },
+  "DSHKM_TK_INS_EP1": {
+    "name": "DSHKM_TK_INS_EP1",
+    "type": "static",
+    "thumb": "DSHKM_TK_INS_EP1.jpg"
+  },
+  "DSHkM_Mini_TriPod": {
+    "name": "DSHkM Minitripod",
+    "type": "static",
+    "thumb": "DSHkM_Mini_TriPod.jpg"
+  },
+  "DSHkM_Mini_TriPod_TK_GUE_Bag_EP1": {
+    "name": "DShKM Minitripod Bag [Takistani Locals]",
+    "type": "static",
+    "thumb": "DSHkM_Mini_TriPod_TK_GUE_Bag_EP1.jpg"
+  },
+  "DSHkM_Mini_TriPod_TK_GUE_EP1": {
+    "name": "DSHkM_Mini_TriPod_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "DSHkM_Mini_TriPod_TK_GUE_EP1.jpg"
+  },
+  "DSHkM_Mini_TriPod_TK_INS_EP1": {
+    "name": "DSHkM_Mini_TriPod_TK_INS_EP1",
+    "type": "static",
+    "thumb": "DSHkM_Mini_TriPod_TK_INS_EP1.jpg"
+  },
+  "Damsel1": {
+    "name": "Damsel (Blue)",
+    "type": "man",
+    "thumb": "Damsel1.jpg"
+  },
+  "Damsel2": {
+    "name": "Damsel (Green)",
+    "type": "man",
+    "thumb": "Damsel2.jpg"
+  },
+  "Damsel3": {
+    "name": "Damsel (Brown)",
+    "type": "man",
+    "thumb": "Damsel3.jpg"
+  },
+  "Damsel4": {
+    "name": "Damsel (Gray)",
+    "type": "man",
+    "thumb": "Damsel4.jpg"
+  },
+  "Damsel5": {
+    "name": "Damsel (Purple)",
+    "type": "man",
+    "thumb": "Damsel5.jpg"
+  },
+  "Desk": {
+    "name": "Desk",
+    "type": "other",
+    "thumb": "Desk.jpg"
+  },
+  "Dirtmount_EP1": {
+    "name": "Dirtmount (iregular surface)",
+    "type": "static",
+    "thumb": "Dirtmount_EP1.jpg"
+  },
+  "Dixon_PMC": {
+    "name": "Dixon",
+    "type": "man",
+    "thumb": null
+  },
+  "Doctor": {
+    "name": "Doctor",
+    "type": "man",
+    "thumb": "Doctor.jpg"
+  },
+  "Dr_Annie_Baker_EP1": {
+    "name": "Dr. Annie Baker",
+    "type": "man",
+    "thumb": "Dr_Annie_Baker_EP1.jpg"
+  },
+  "Dr_Hladik_EP1": {
+    "name": "Dr. Hladik",
+    "type": "man",
+    "thumb": "Dr_Hladik_EP1.jpg"
+  },
+  "Drake": {
+    "name": "Drake",
+    "type": "man",
+    "thumb": "Drake.jpg"
+  },
+  "Drake_Light": {
+    "name": "Drake (light)",
+    "type": "man",
+    "thumb": "Drake_Light.jpg"
+  },
+  "EntranceGate_EP1": {
+    "name": "Entrance Gate (ARMEX)",
+    "type": "static",
+    "thumb": null
+  },
+  "EvPhoto": {
+    "name": "Evidence (Photos)",
+    "type": "other",
+    "thumb": "EvPhoto.jpg"
+  },
+  "Explosive": {
+    "name": "Explosive Charge",
+    "type": "static",
+    "thumb": "Explosive.jpg"
+  },
+  "F35B": {
+    "name": "F35B",
+    "type": "air",
+    "thumb": "F35B.jpg"
+  },
+  "FR_AC": {
+    "name": "FAC Operator",
+    "type": "man",
+    "thumb": "FR_AC.jpg"
+  },
+  "FR_AR": {
+    "name": "Heavy Gunner",
+    "type": "man",
+    "thumb": "FR_AR.jpg"
+  },
+  "FR_Assault_GL": {
+    "name": "Assault Grenadier",
+    "type": "man",
+    "thumb": "FR_Assault_GL.jpg"
+  },
+  "FR_Assault_R": {
+    "name": "Assault Rifleman",
+    "type": "man",
+    "thumb": "FR_Assault_R.jpg"
+  },
+  "FR_Commander": {
+    "name": "Commander",
+    "type": "man",
+    "thumb": "FR_Commander.jpg"
+  },
+  "FR_Cooper": {
+    "name": "Cooper",
+    "type": "man",
+    "thumb": "FR_Cooper.jpg"
+  },
+  "FR_Corpsman": {
+    "name": "Corpsman",
+    "type": "man",
+    "thumb": "FR_Corpsman.jpg"
+  },
+  "FR_GL": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "FR_GL.jpg"
+  },
+  "FR_Light": {
+    "name": "Force Recon Unarmed",
+    "type": "man",
+    "thumb": "FR_Light.jpg"
+  },
+  "FR_Marksman": {
+    "name": "Marksman",
+    "type": "man",
+    "thumb": "FR_Marksman.jpg"
+  },
+  "FR_Miles": {
+    "name": "Miles",
+    "type": "man",
+    "thumb": "FR_Miles.jpg"
+  },
+  "FR_OHara": {
+    "name": "O'Hara",
+    "type": "man",
+    "thumb": "FR_OHara.jpg"
+  },
+  "FR_R": {
+    "name": "Saboteur",
+    "type": "man",
+    "thumb": "FR_R.jpg"
+  },
+  "FR_Rodriguez": {
+    "name": "Rodriguez",
+    "type": "man",
+    "thumb": "FR_Rodriguez.jpg"
+  },
+  "FR_Sapper": {
+    "name": "Demolitions Specialist",
+    "type": "man",
+    "thumb": "FR_Sapper.jpg"
+  },
+  "FR_Sykes": {
+    "name": "Sykes",
+    "type": "man",
+    "thumb": "FR_Sykes.jpg"
+  },
+  "FR_TL": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": "FR_TL.jpg"
+  },
+  "Farmwife1": {
+    "name": "Farmwife (Red)",
+    "type": "man",
+    "thumb": "Farmwife1.jpg"
+  },
+  "Farmwife2": {
+    "name": "Farmwife (Orange)",
+    "type": "man",
+    "thumb": "Farmwife2.jpg"
+  },
+  "Farmwife3": {
+    "name": "Farmwife (Gray)",
+    "type": "man",
+    "thumb": "Farmwife3.jpg"
+  },
+  "Farmwife4": {
+    "name": "Farmwife (Brown)",
+    "type": "man",
+    "thumb": "Farmwife4.jpg"
+  },
+  "Farmwife5": {
+    "name": "Farmwife (Green)",
+    "type": "man",
+    "thumb": "Farmwife5.jpg"
+  },
+  "Fence_Ind": {
+    "name": "Fence (industrial)",
+    "type": "static",
+    "thumb": "Fence_Ind.jpg"
+  },
+  "Fin": {
+    "name": "Mongrel",
+    "type": "man",
+    "thumb": "Fin.jpg"
+  },
+  "Fishing_Boat": {
+    "name": "Fishing boat",
+    "type": "other",
+    "thumb": "Fishing_Boat.jpg"
+  },
+  "FlagCarrierArmex_EP1": {
+    "name": "Flag (ARMEX)",
+    "type": "static",
+    "thumb": null
+  },
+  "FlagCarrierBAF": {
+    "name": "Flag (Great Britain)",
+    "type": "static",
+    "thumb": null
+  },
+  "FlagCarrierChecked": {
+    "name": "Flag (checked)",
+    "type": "static",
+    "thumb": "FlagCarrierChecked.jpg"
+  },
+  "FlagCarrierIONblack_PMC": {
+    "name": "Flag (ION black)",
+    "type": "static",
+    "thumb": null
+  },
+  "FlagCarrierSmall": {
+    "name": "Flag (small)",
+    "type": "static",
+    "thumb": "FlagCarrierSmall.jpg"
+  },
+  "FlagCarrierUNO_EP1": {
+    "name": "Flag (UNO)",
+    "type": "static",
+    "thumb": "FlagCarrierUNO_EP1.jpg"
+  },
+  "FlagCarrierUSA": {
+    "name": "Flag (USA)",
+    "type": "static",
+    "thumb": "FlagCarrierUSA.jpg"
+  },
+  "FlagPole_EP1": {
+    "name": "Flagpole",
+    "type": "static",
+    "thumb": "FlagPole_EP1.jpg"
+  },
+  "FloorMop": {
+    "name": "Mop",
+    "type": "other",
+    "thumb": "FloorMop.jpg"
+  },
+  "FoldChair": {
+    "name": "Folding Chair",
+    "type": "other",
+    "thumb": "FoldChair.jpg"
+  },
+  "FoldTable": {
+    "name": "Folding Table",
+    "type": "other",
+    "thumb": "FoldTable.jpg"
+  },
+  "Fort_Barracks_USMC": {
+    "name": "Barracks",
+    "type": "static",
+    "thumb": "Fort_Barracks_USMC.jpg"
+  },
+  "Fort_Barricade": {
+    "name": "Barricade",
+    "type": "static",
+    "thumb": "Fort_Barricade.jpg"
+  },
+  "Fort_Barricade_EP1": {
+    "name": "Barricade",
+    "type": "static",
+    "thumb": "Fort_Barricade_EP1.jpg"
+  },
+  "Fort_Crate_wood": {
+    "name": "Wooden crate",
+    "type": "static",
+    "thumb": "Fort_Crate_wood.jpg"
+  },
+  "Fort_EnvelopeBig": {
+    "name": "Trench",
+    "type": "static",
+    "thumb": "Fort_EnvelopeBig.jpg"
+  },
+  "Fort_EnvelopeBig_EP1": {
+    "name": "Trench",
+    "type": "static",
+    "thumb": "Fort_EnvelopeBig_EP1.jpg"
+  },
+  "Fort_EnvelopeSmall": {
+    "name": "Trench (Small)",
+    "type": "static",
+    "thumb": "Fort_EnvelopeSmall.jpg"
+  },
+  "Fort_EnvelopeSmall_EP1": {
+    "name": "Trench (Small)",
+    "type": "static",
+    "thumb": "Fort_EnvelopeSmall_EP1.jpg"
+  },
+  "Fort_Nest_M240": {
+    "name": "MG Nest (M240)",
+    "type": "static",
+    "thumb": "Fort_Nest_M240.jpg"
+  },
+  "Fort_RazorWire": {
+    "name": "Wire",
+    "type": "static",
+    "thumb": "Fort_RazorWire.jpg"
+  },
+  "Fort_StoneWall_EP1": {
+    "name": "Stone wall",
+    "type": "static",
+    "thumb": "Fort_StoneWall_EP1.jpg"
+  },
+  "Fuel_can": {
+    "name": "Fuel can",
+    "type": "other",
+    "thumb": "Fuel_can.jpg"
+  },
+  "Functionary1": {
+    "name": "Functionary (Black suit)",
+    "type": "man",
+    "thumb": "Functionary1.jpg"
+  },
+  "Functionary1_EP1": {
+    "name": "Functionary1_EP1",
+    "type": "man",
+    "thumb": "Functionary1_EP1.jpg"
+  },
+  "Functionary2": {
+    "name": "Functionary (Brown suit)",
+    "type": "man",
+    "thumb": "Functionary2.jpg"
+  },
+  "Functionary2_EP1": {
+    "name": "Functionary2_EP1",
+    "type": "man",
+    "thumb": "Functionary2_EP1.jpg"
+  },
+  "GAZ_Vodnik_HMG": {
+    "name": "GAZ_Vodnik_HMG",
+    "type": "tank",
+    "thumb": "GAZ_Vodnik_HMG.jpg"
+  },
+  "GERBasicWeapons_EP1": {
+    "name": "GER Weapons",
+    "type": "static",
+    "thumb": "GERBasicWeapons_EP1.jpg"
+  },
+  "GER_Soldier_EP1": {
+    "name": "KSK Rifleman",
+    "type": "man",
+    "thumb": "GER_Soldier_EP1.jpg"
+  },
+  "GER_Soldier_MG_EP1": {
+    "name": "KSK Machinegunner",
+    "type": "man",
+    "thumb": "GER_Soldier_MG_EP1.jpg"
+  },
+  "GER_Soldier_Medic_EP1": {
+    "name": "KSK Paramedic",
+    "type": "man",
+    "thumb": "GER_Soldier_Medic_EP1.jpg"
+  },
+  "GER_Soldier_Scout_EP1": {
+    "name": "KSK Scout",
+    "type": "man",
+    "thumb": "GER_Soldier_Scout_EP1.jpg"
+  },
+  "GER_Soldier_TL_EP1": {
+    "name": "KSK Team Leader",
+    "type": "man",
+    "thumb": "GER_Soldier_TL_EP1.jpg"
+  },
+  "GRAD_CDF": {
+    "name": "GRAD_CDF",
+    "type": "car",
+    "thumb": "GRAD_CDF.jpg"
+  },
+  "GRAD_INS": {
+    "name": "GRAD_INS",
+    "type": "car",
+    "thumb": "GRAD_INS.jpg"
+  },
+  "GRAD_RU": {
+    "name": "GRAD_RU",
+    "type": "car",
+    "thumb": "GRAD_RU.jpg"
+  },
+  "GRAD_TK_EP1": {
+    "name": "GRAD_TK_EP1",
+    "type": "car",
+    "thumb": "GRAD_TK_EP1.jpg"
+  },
+  "GUE_Commander": {
+    "name": "Warlord",
+    "type": "man",
+    "thumb": "GUE_Commander.jpg"
+  },
+  "GUE_Soldier_1": {
+    "name": "Rifleman (AKSU)",
+    "type": "man",
+    "thumb": "GUE_Soldier_1.jpg"
+  },
+  "GUE_Soldier_2": {
+    "name": "Rifleman (AKM)",
+    "type": "man",
+    "thumb": "GUE_Soldier_2.jpg"
+  },
+  "GUE_Soldier_3": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "GUE_Soldier_3.jpg"
+  },
+  "GUE_Soldier_AA": {
+    "name": "Rifleman (Stinger)",
+    "type": "man",
+    "thumb": "GUE_Soldier_AA.jpg"
+  },
+  "GUE_Soldier_AR": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "GUE_Soldier_AR.jpg"
+  },
+  "GUE_Soldier_AT": {
+    "name": "Rifleman (RPG-7)",
+    "type": "man",
+    "thumb": "GUE_Soldier_AT.jpg"
+  },
+  "GUE_Soldier_CO": {
+    "name": "Commander",
+    "type": "man",
+    "thumb": "GUE_Soldier_CO.jpg"
+  },
+  "GUE_Soldier_Crew": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": "GUE_Soldier_Crew.jpg"
+  },
+  "GUE_Soldier_GL": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "GUE_Soldier_GL.jpg"
+  },
+  "GUE_Soldier_MG": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "GUE_Soldier_MG.jpg"
+  },
+  "GUE_Soldier_Medic": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": "GUE_Soldier_Medic.jpg"
+  },
+  "GUE_Soldier_Pilot": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": "GUE_Soldier_Pilot.jpg"
+  },
+  "GUE_Soldier_Sab": {
+    "name": "Saboteur",
+    "type": "man",
+    "thumb": "GUE_Soldier_Sab.jpg"
+  },
+  "GUE_Soldier_Scout": {
+    "name": "Scout",
+    "type": "man",
+    "thumb": "GUE_Soldier_Scout.jpg"
+  },
+  "GUE_Soldier_Sniper": {
+    "name": "Hunter",
+    "type": "man",
+    "thumb": "GUE_Soldier_Sniper.jpg"
+  },
+  "GUE_Villager3": {
+    "name": "Farmer",
+    "type": "man",
+    "thumb": "GUE_Villager3.jpg"
+  },
+  "GUE_WarfareBAircraftFactory": {
+    "name": "Aircraft Factory (Gue)",
+    "type": "static",
+    "thumb": "GUE_WarfareBAircraftFactory.jpg"
+  },
+  "GUE_WarfareBAntiAirRadar": {
+    "name": "Anti-Air Radar (GUE)",
+    "type": "static",
+    "thumb": "GUE_WarfareBAntiAirRadar.jpg"
+  },
+  "GUE_WarfareBFieldhHospital": {
+    "name": "Field Hospital (Gue)",
+    "type": "static",
+    "thumb": "GUE_WarfareBFieldhHospital.jpg"
+  },
+  "GUE_WarfareBMGNest_PK": {
+    "name": "GUE_WarfareBMGNest_PK",
+    "type": "static",
+    "thumb": "GUE_WarfareBMGNest_PK.jpg"
+  },
+  "GUE_WarfareBUAVterminal": {
+    "name": "UAV Terminal (GUE)",
+    "type": "static",
+    "thumb": "GUE_WarfareBUAVterminal.jpg"
+  },
+  "GUE_WarfareBVehicleServicePoint": {
+    "name": "Vehicle Service Point (GUE)",
+    "type": "static",
+    "thumb": "GUE_WarfareBVehicleServicePoint.jpg"
+  },
+  "GUE_Woodlander1": {
+    "name": "Woodman",
+    "type": "man",
+    "thumb": "GUE_Woodlander1.jpg"
+  },
+  "GUE_Worker2": {
+    "name": "Local",
+    "type": "man",
+    "thumb": "GUE_Worker2.jpg"
+  },
+  "Garbage_can": {
+    "name": "Garbage can",
+    "type": "static",
+    "thumb": "Garbage_can.jpg"
+  },
+  "Garbage_container": {
+    "name": "Garbage container",
+    "type": "static",
+    "thumb": "Garbage_container.jpg"
+  },
+  "Goat": {
+    "name": "Goat",
+    "type": "man",
+    "thumb": "Goat.jpg"
+  },
+  "Goat01_EP1": {
+    "name": "Goat (Brown)",
+    "type": "man",
+    "thumb": "Goat01_EP1.jpg"
+  },
+  "Grave": {
+    "name": "Grave",
+    "type": "static",
+    "thumb": "Grave.jpg"
+  },
+  "GraveCross1": {
+    "name": "Cross w. dogtags",
+    "type": "static",
+    "thumb": "GraveCross1.jpg"
+  },
+  "GraveCross2": {
+    "name": "Cross",
+    "type": "static",
+    "thumb": "GraveCross2.jpg"
+  },
+  "GraveCross2_EP1": {
+    "name": "Cross",
+    "type": "static",
+    "thumb": "GraveCross2_EP1.jpg"
+  },
+  "GraveCrossHelmet": {
+    "name": "Cross w. helmet",
+    "type": "static",
+    "thumb": "GraveCrossHelmet.jpg"
+  },
+  "GraveCrossHelmet_EP1": {
+    "name": "Cross w. helmet",
+    "type": "static",
+    "thumb": "GraveCrossHelmet_EP1.jpg"
+  },
+  "Graves": {
+    "name": "Graves",
+    "type": "man",
+    "thumb": "Graves.jpg"
+  },
+  "Graves_Light": {
+    "name": "Graves (light)",
+    "type": "man",
+    "thumb": "Graves_Light.jpg"
+  },
+  "Gue_WarfareBArtilleryRadar": {
+    "name": "Artillery Radar (GUE)",
+    "type": "static",
+    "thumb": "Gue_WarfareBArtilleryRadar.jpg"
+  },
+  "Gue_WarfareBBarracks": {
+    "name": "Barracks (Gue)",
+    "type": "static",
+    "thumb": "Gue_WarfareBBarracks.jpg"
+  },
+  "Gue_WarfareBContructionSite": {
+    "name": "Construction Site (Gue)",
+    "type": "static",
+    "thumb": "Gue_WarfareBContructionSite.jpg"
+  },
+  "Gue_WarfareBHeavyFactory": {
+    "name": "Heavy Factory (Gue)",
+    "type": "static",
+    "thumb": "Gue_WarfareBHeavyFactory.jpg"
+  },
+  "Gue_WarfareBLightFactory": {
+    "name": "Light Factory (Gue)",
+    "type": "static",
+    "thumb": "Gue_WarfareBLightFactory.jpg"
+  },
+  "GuerillaCacheBox": {
+    "name": "Guerilla Cache",
+    "type": "static",
+    "thumb": "GuerillaCacheBox.jpg"
+  },
+  "GuerillaCacheBox_EP1": {
+    "name": "Guerilla Cache",
+    "type": "static",
+    "thumb": "GuerillaCacheBox_EP1.jpg"
+  },
+  "Gunrack1": {
+    "name": "Gun rack",
+    "type": "static",
+    "thumb": "Gunrack1.jpg"
+  },
+  "GunrackUS_EP1": {
+    "name": "Gun rack (US)",
+    "type": "static",
+    "thumb": null
+  },
+  "HMMWV": {
+    "name": "HMMWV",
+    "type": "car",
+    "thumb": "HMMWV.jpg"
+  },
+  "HMMWVWreck": {
+    "name": "HMMWV",
+    "type": "static",
+    "thumb": "HMMWVWreck.jpg"
+  },
+  "HMMWV_Ambulance": {
+    "name": "HMMWV_Ambulance",
+    "type": "car",
+    "thumb": "HMMWV_Ambulance.jpg"
+  },
+  "HMMWV_Ambulance_CZ_DES_EP1": {
+    "name": "HMMWV_Ambulance_CZ_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_Ambulance_CZ_DES_EP1.jpg"
+  },
+  "HMMWV_Ambulance_DES_EP1": {
+    "name": "HMMWV_Ambulance_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_Ambulance_DES_EP1.jpg"
+  },
+  "HMMWV_Armored": {
+    "name": "HMMWV_Armored",
+    "type": "car",
+    "thumb": "HMMWV_Armored.jpg"
+  },
+  "HMMWV_Avenger": {
+    "name": "HMMWV_Avenger",
+    "type": "car",
+    "thumb": "HMMWV_Avenger.jpg"
+  },
+  "HMMWV_Avenger_DES_EP1": {
+    "name": "HMMWV_Avenger_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_Avenger_DES_EP1.jpg"
+  },
+  "HMMWV_DES_EP1": {
+    "name": "HMMWV_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_DES_EP1.jpg"
+  },
+  "HMMWV_Ghost_EP1": {
+    "name": "HMMWV",
+    "type": "other",
+    "thumb": "HMMWV_Ghost_EP1.jpg"
+  },
+  "HMMWV_M1035_DES_EP1": {
+    "name": "HMMWV_M1035_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_M1035_DES_EP1.jpg"
+  },
+  "HMMWV_M1151_M2_CZ_DES_EP1": {
+    "name": "HMMWV_M1151_M2_CZ_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_M1151_M2_CZ_DES_EP1.jpg"
+  },
+  "HMMWV_M1151_M2_DES_EP1": {
+    "name": "HMMWV_M1151_M2_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_M1151_M2_DES_EP1.jpg"
+  },
+  "HMMWV_M2": {
+    "name": "HMMWV (M2)",
+    "type": "car",
+    "thumb": "HMMWV_M2.jpg"
+  },
+  "HMMWV_M998A2_SOV_DES_EP1": {
+    "name": "HMMWV_M998A2_SOV_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_M998A2_SOV_DES_EP1.jpg"
+  },
+  "HMMWV_M998_crows_M2_DES_EP1": {
+    "name": "HMMWV_M998_crows_M2_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_M998_crows_M2_DES_EP1.jpg"
+  },
+  "HMMWV_M998_crows_MK19_DES_EP1": {
+    "name": "HMMWV_M998_crows_MK19_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_M998_crows_MK19_DES_EP1.jpg"
+  },
+  "HMMWV_MK19": {
+    "name": "HMMWV (Mk19)",
+    "type": "car",
+    "thumb": "HMMWV_MK19.jpg"
+  },
+  "HMMWV_MK19_DES_EP1": {
+    "name": "HMMWV_MK19_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_MK19_DES_EP1.jpg"
+  },
+  "HMMWV_TOW": {
+    "name": "HMMWV (TOW)",
+    "type": "car",
+    "thumb": "HMMWV_TOW.jpg"
+  },
+  "HMMWV_TOW_DES_EP1": {
+    "name": "HMMWV_TOW_DES_EP1",
+    "type": "car",
+    "thumb": "HMMWV_TOW_DES_EP1.jpg"
+  },
+  "HMMWV_Terminal_EP1": {
+    "name": "HMMWV Terminal",
+    "type": "car",
+    "thumb": "HMMWV_Terminal_EP1.jpg"
+  },
+  "Hanged": {
+    "name": "Hanged",
+    "type": "static",
+    "thumb": "Hanged.jpg"
+  },
+  "Haris_Press_EP1": {
+    "name": "Haris Press",
+    "type": "man",
+    "thumb": "Haris_Press_EP1.jpg"
+  },
+  "Haystack_small": {
+    "name": "Haypack",
+    "type": "other",
+    "thumb": "Haystack_small.jpg"
+  },
+  "Hedgehog": {
+    "name": "Hedgehog (Steel)",
+    "type": "static",
+    "thumb": "Hedgehog.jpg"
+  },
+  "Hedgehog_EP1": {
+    "name": "Hedgehog (Steel)",
+    "type": "static",
+    "thumb": "Hedgehog_EP1.jpg"
+  },
+  "HeliH": {
+    "name": "H",
+    "type": "static",
+    "thumb": "HeliH.jpg"
+  },
+  "Hen": {
+    "name": "Chicken",
+    "type": "man",
+    "thumb": "Hen.jpg"
+  },
+  "Herrera": {
+    "name": "Herrera",
+    "type": "man",
+    "thumb": "Herrera.jpg"
+  },
+  "Herrera_Light": {
+    "name": "Herrera (light)",
+    "type": "man",
+    "thumb": "Herrera_Light.jpg"
+  },
+  "Hhedgehog_concrete": {
+    "name": "Dragon Teeth (Small)",
+    "type": "static",
+    "thumb": "Hhedgehog_concrete.jpg"
+  },
+  "Hooker1": {
+    "name": "Woman (Red)",
+    "type": "man",
+    "thumb": "Hooker1.jpg"
+  },
+  "HouseWife1": {
+    "name": "Housewife (Purple)",
+    "type": "man",
+    "thumb": "HouseWife1.jpg"
+  },
+  "HouseWife2": {
+    "name": "Housewife (Brown)",
+    "type": "man",
+    "thumb": "HouseWife2.jpg"
+  },
+  "HouseWife3": {
+    "name": "Housewife (Blue)",
+    "type": "man",
+    "thumb": "HouseWife3.jpg"
+  },
+  "HouseWife4": {
+    "name": "Housewife (Black)",
+    "type": "man",
+    "thumb": "HouseWife4.jpg"
+  },
+  "HouseWife5": {
+    "name": "Housewife (Green)",
+    "type": "man",
+    "thumb": "HouseWife5.jpg"
+  },
+  "HumpsDirt": {
+    "name": "Dirt hump (large)",
+    "type": "static",
+    "thumb": "HumpsDirt.jpg"
+  },
+  "IED_placement_BAF": {
+    "name": "IED_placement_BAF",
+    "type": "static",
+    "thumb": null
+  },
+  "INS_WarfareBAircraftFactory": {
+    "name": "Aircraft Factory (Ins)",
+    "type": "static",
+    "thumb": "INS_WarfareBAircraftFactory.jpg"
+  },
+  "INS_WarfareBAntiAirRadar": {
+    "name": "Anti-Air Radar (INS)",
+    "type": "static",
+    "thumb": "INS_WarfareBAntiAirRadar.jpg"
+  },
+  "INS_WarfareBFieldhHospital": {
+    "name": "Field Hospital (Ins)",
+    "type": "static",
+    "thumb": "INS_WarfareBFieldhHospital.jpg"
+  },
+  "INS_WarfareBUAVterminal": {
+    "name": "UAV Terminal (INS)",
+    "type": "static",
+    "thumb": "INS_WarfareBUAVterminal.jpg"
+  },
+  "INS_WarfareBVehicleServicePoint": {
+    "name": "Vehicle Service Point (INS)",
+    "type": "static",
+    "thumb": "INS_WarfareBVehicleServicePoint.jpg"
+  },
+  "Igla_AA_pod_East": {
+    "name": "AA IGLA Pod",
+    "type": "static",
+    "thumb": "Igla_AA_pod_East.jpg"
+  },
+  "Igla_AA_pod_TK_EP1": {
+    "name": "Igla_AA_pod_TK_EP1",
+    "type": "static",
+    "thumb": "Igla_AA_pod_TK_EP1.jpg"
+  },
+  "Ikarus": {
+    "name": "Bus",
+    "type": "car",
+    "thumb": "Ikarus.jpg"
+  },
+  "Ikarus_TK_CIV_EP1": {
+    "name": "Ikarus_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "Ikarus_TK_CIV_EP1.jpg"
+  },
+  "Info_Board_EP1": {
+    "name": "Info Board",
+    "type": "static",
+    "thumb": null
+  },
+  "Infostand_1_EP1": {
+    "name": "Infostand 1",
+    "type": "other",
+    "thumb": "Infostand_1_EP1.jpg"
+  },
+  "Ins_Bardak": {
+    "name": "Insurgent",
+    "type": "man",
+    "thumb": "Ins_Bardak.jpg"
+  },
+  "Ins_Commander": {
+    "name": "Commander",
+    "type": "man",
+    "thumb": "Ins_Commander.jpg"
+  },
+  "Ins_Lopotev": {
+    "name": "Boss",
+    "type": "man",
+    "thumb": "Ins_Lopotev.jpg"
+  },
+  "Ins_Soldier_1": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "Ins_Soldier_1.jpg"
+  },
+  "Ins_Soldier_2": {
+    "name": "Rifleman (AK-74)",
+    "type": "man",
+    "thumb": "Ins_Soldier_2.jpg"
+  },
+  "Ins_Soldier_AA": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": "Ins_Soldier_AA.jpg"
+  },
+  "Ins_Soldier_AR": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "Ins_Soldier_AR.jpg"
+  },
+  "Ins_Soldier_AT": {
+    "name": "AT Specialist",
+    "type": "man",
+    "thumb": "Ins_Soldier_AT.jpg"
+  },
+  "Ins_Soldier_CO": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": "Ins_Soldier_CO.jpg"
+  },
+  "Ins_Soldier_Crew": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": "Ins_Soldier_Crew.jpg"
+  },
+  "Ins_Soldier_GL": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "Ins_Soldier_GL.jpg"
+  },
+  "Ins_Soldier_MG": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "Ins_Soldier_MG.jpg"
+  },
+  "Ins_Soldier_Medic": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": "Ins_Soldier_Medic.jpg"
+  },
+  "Ins_Soldier_Pilot": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": "Ins_Soldier_Pilot.jpg"
+  },
+  "Ins_Soldier_Sab": {
+    "name": "Saboteur",
+    "type": "man",
+    "thumb": "Ins_Soldier_Sab.jpg"
+  },
+  "Ins_Soldier_Sapper": {
+    "name": "Sapper",
+    "type": "man",
+    "thumb": "Ins_Soldier_Sapper.jpg"
+  },
+  "Ins_Soldier_Sniper": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": "Ins_Soldier_Sniper.jpg"
+  },
+  "Ins_Villager3": {
+    "name": "Farmer",
+    "type": "man",
+    "thumb": "Ins_Villager3.jpg"
+  },
+  "Ins_WarfareBArtilleryRadar": {
+    "name": "Artillery Radar (INS)",
+    "type": "static",
+    "thumb": "Ins_WarfareBArtilleryRadar.jpg"
+  },
+  "Ins_WarfareBBarracks": {
+    "name": "Barracks (Ins)",
+    "type": "static",
+    "thumb": "Ins_WarfareBBarracks.jpg"
+  },
+  "Ins_WarfareBContructionSite": {
+    "name": "Construction Site (Ins)",
+    "type": "static",
+    "thumb": "Ins_WarfareBContructionSite.jpg"
+  },
+  "Ins_WarfareBHeavyFactory": {
+    "name": "Heavy Factory (Ins)",
+    "type": "static",
+    "thumb": "Ins_WarfareBHeavyFactory.jpg"
+  },
+  "Ins_WarfareBLightFactory": {
+    "name": "Light Factory (Ins)",
+    "type": "static",
+    "thumb": "Ins_WarfareBLightFactory.jpg"
+  },
+  "Ins_WarfareBMGNest_PK": {
+    "name": "Ins_WarfareBMGNest_PK",
+    "type": "static",
+    "thumb": "Ins_WarfareBMGNest_PK.jpg"
+  },
+  "Ins_Woodlander1": {
+    "name": "Woodman",
+    "type": "man",
+    "thumb": "Ins_Woodlander1.jpg"
+  },
+  "Ins_Worker2": {
+    "name": "Local",
+    "type": "man",
+    "thumb": "Ins_Worker2.jpg"
+  },
+  "KORD": {
+    "name": "KORD",
+    "type": "static",
+    "thumb": "KORD.jpg"
+  },
+  "KORD_TK_Bag_EP1": {
+    "name": "KORD Minitripod Bag [Takistani Army]",
+    "type": "static",
+    "thumb": "KORD_TK_Bag_EP1.jpg"
+  },
+  "KORD_TK_EP1": {
+    "name": "KORD_TK_EP1",
+    "type": "static",
+    "thumb": "KORD_TK_EP1.jpg"
+  },
+  "KORD_UN_EP1": {
+    "name": "KORD_UN_EP1",
+    "type": "static",
+    "thumb": "KORD_UN_EP1.jpg"
+  },
+  "KORD_high_TK_Bag_EP1": {
+    "name": "KORD Bag [Takistani Army]",
+    "type": "static",
+    "thumb": "KORD_high_TK_Bag_EP1.jpg"
+  },
+  "KORD_high_TK_EP1": {
+    "name": "KORD_high_TK_EP1",
+    "type": "static",
+    "thumb": "KORD_high_TK_EP1.jpg"
+  },
+  "KORD_high_UN_EP1": {
+    "name": "KORD_high_UN_EP1",
+    "type": "static",
+    "thumb": "KORD_high_UN_EP1.jpg"
+  },
+  "Ka137_MG_PMC": {
+    "name": "Ka-137 (PK)",
+    "type": "air",
+    "thumb": null
+  },
+  "Ka137_PMC": {
+    "name": "Ka137_PMC",
+    "type": "air",
+    "thumb": null
+  },
+  "Ka52": {
+    "name": "Ka-52",
+    "type": "air",
+    "thumb": "Ka52.jpg"
+  },
+  "Ka60_GL_PMC": {
+    "name": "Ka-60 (M32)",
+    "type": "air",
+    "thumb": null
+  },
+  "Ka60_PMC": {
+    "name": "Ka60_PMC",
+    "type": "air",
+    "thumb": null
+  },
+  "Kamaz": {
+    "name": "Kamaz",
+    "type": "car",
+    "thumb": "Kamaz.jpg"
+  },
+  "KamazOpen": {
+    "name": "Utility Truck (Open)",
+    "type": "car",
+    "thumb": "KamazOpen.jpg"
+  },
+  "KamazReammo": {
+    "name": "Utility Truck (Ammunition)",
+    "type": "car",
+    "thumb": "KamazReammo.jpg"
+  },
+  "KamazRefuel": {
+    "name": "Utility Truck (Fuel)",
+    "type": "car",
+    "thumb": "KamazRefuel.jpg"
+  },
+  "KamazRepair": {
+    "name": "Utility Truck (Repair)",
+    "type": "car",
+    "thumb": "KamazRepair.jpg"
+  },
+  "L39_TK_EP1": {
+    "name": "L39_TK_EP1",
+    "type": "air",
+    "thumb": "L39_TK_EP1.jpg"
+  },
+  "LADAWreck": {
+    "name": "Car",
+    "type": "static",
+    "thumb": "LADAWreck.jpg"
+  },
+  "LAV25": {
+    "name": "LAV25",
+    "type": "tank",
+    "thumb": "LAV25.jpg"
+  },
+  "LAV25_HQ": {
+    "name": "LAV-25 (HQ)",
+    "type": "tank",
+    "thumb": "LAV25_HQ.jpg"
+  },
+  "LAV25_HQ_unfolded": {
+    "name": "HQ (USMC)",
+    "type": "static",
+    "thumb": "LAV25_HQ_unfolded.jpg"
+  },
+  "Lada1": {
+    "name": "Lada1",
+    "type": "car",
+    "thumb": "Lada1.jpg"
+  },
+  "Lada1_TK_CIV_EP1": {
+    "name": "Lada1_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "Lada1_TK_CIV_EP1.jpg"
+  },
+  "Lada2": {
+    "name": "Lada2",
+    "type": "car",
+    "thumb": "Lada2.jpg"
+  },
+  "Lada2_TK_CIV_EP1": {
+    "name": "Lada2_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "Lada2_TK_CIV_EP1.jpg"
+  },
+  "LadaLM": {
+    "name": "LadaLM",
+    "type": "car",
+    "thumb": "LadaLM.jpg"
+  },
+  "LandRover_CZ_EP1": {
+    "name": "LandRover_CZ_EP1",
+    "type": "car",
+    "thumb": "LandRover_CZ_EP1.jpg"
+  },
+  "LandRover_MG_TK_EP1": {
+    "name": "LandRover_MG_TK_EP1",
+    "type": "car",
+    "thumb": "LandRover_MG_TK_EP1.jpg"
+  },
+  "LandRover_MG_TK_INS_EP1": {
+    "name": "LandRover_MG_TK_INS_EP1",
+    "type": "car",
+    "thumb": "LandRover_MG_TK_INS_EP1.jpg"
+  },
+  "LandRover_SPG9_TK_EP1": {
+    "name": "LandRover_SPG9_TK_EP1",
+    "type": "car",
+    "thumb": "LandRover_SPG9_TK_EP1.jpg"
+  },
+  "LandRover_SPG9_TK_INS_EP1": {
+    "name": "LandRover_SPG9_TK_INS_EP1",
+    "type": "car",
+    "thumb": "LandRover_SPG9_TK_INS_EP1.jpg"
+  },
+  "LandRover_Special_CZ_EP1": {
+    "name": "LandRover_Special_CZ_EP1",
+    "type": "car",
+    "thumb": "LandRover_Special_CZ_EP1.jpg"
+  },
+  "LandRover_TK_CIV_EP1": {
+    "name": "LandRover_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "LandRover_TK_CIV_EP1.jpg"
+  },
+  "Land_A_tent": {
+    "name": "Old camping tent",
+    "type": "static",
+    "thumb": "Land_A_tent.jpg"
+  },
+  "Land_Antenna": {
+    "name": "Antenna",
+    "type": "static",
+    "thumb": "Land_Antenna.jpg"
+  },
+  "Land_Bag_EP1": {
+    "name": "Bag",
+    "type": "other",
+    "thumb": "Land_Bag_EP1.jpg"
+  },
+  "Land_Barrack2_EP1": {
+    "name": "Land_Barrack2_EP1",
+    "type": "static",
+    "thumb": "Land_Barrack2_EP1.jpg"
+  },
+  "Land_Barrel_empty": {
+    "name": "Plastic barrel (empty)",
+    "type": "other",
+    "thumb": "Land_Barrel_empty.jpg"
+  },
+  "Land_Barrel_sand": {
+    "name": "Plastic barrel (sand)",
+    "type": "other",
+    "thumb": "Land_Barrel_sand.jpg"
+  },
+  "Land_Barrel_water": {
+    "name": "Plastic barrel (water)",
+    "type": "other",
+    "thumb": "Land_Barrel_water.jpg"
+  },
+  "Land_Basket_EP1": {
+    "name": "Basket",
+    "type": "other",
+    "thumb": "Land_Basket_EP1.jpg"
+  },
+  "Land_Bench_EP1": {
+    "name": "Wooden bench",
+    "type": "other",
+    "thumb": "Land_Bench_EP1.jpg"
+  },
+  "Land_Blankets_EP1": {
+    "name": "Blankets",
+    "type": "static",
+    "thumb": "Land_Blankets_EP1.jpg"
+  },
+  "Land_BoatSmall_1": {
+    "name": "Small boat",
+    "type": "static",
+    "thumb": "Land_BoatSmall_1.jpg"
+  },
+  "Land_Boots_EP1": {
+    "name": "Boots",
+    "type": "static",
+    "thumb": "Land_Boots_EP1.jpg"
+  },
+  "Land_Bowl_EP1": {
+    "name": "Bowl",
+    "type": "other",
+    "thumb": "Land_Bowl_EP1.jpg"
+  },
+  "Land_Bucket_EP1": {
+    "name": "Bucket",
+    "type": "other",
+    "thumb": "Land_Bucket_EP1.jpg"
+  },
+  "Land_Cabinet_EP1": {
+    "name": "Wooden cabinet",
+    "type": "other",
+    "thumb": "Land_Cabinet_EP1.jpg"
+  },
+  "Land_CamoNetB_EAST_EP1": {
+    "name": "Camouflage vehicle cover (East desert)",
+    "type": "static",
+    "thumb": "Land_CamoNetB_EAST_EP1.jpg"
+  },
+  "Land_CamoNetB_NATO_EP1": {
+    "name": "Camouflage vehicle cover (NATO desert)",
+    "type": "static",
+    "thumb": "Land_CamoNetB_NATO_EP1.jpg"
+  },
+  "Land_CamoNetVar_EAST_EP1": {
+    "name": "Camouflage net open (East desert)",
+    "type": "static",
+    "thumb": "Land_CamoNetVar_EAST_EP1.jpg"
+  },
+  "Land_CamoNetVar_NATO_EP1": {
+    "name": "Camouflage net open (NATO desert)",
+    "type": "static",
+    "thumb": "Land_CamoNetVar_NATO_EP1.jpg"
+  },
+  "Land_CamoNet_EAST": {
+    "name": "Camouflage net (East)",
+    "type": "static",
+    "thumb": "Land_CamoNet_EAST.jpg"
+  },
+  "Land_CamoNet_EAST_EP1": {
+    "name": "Camouflage net (East desert)",
+    "type": "static",
+    "thumb": "Land_CamoNet_EAST_EP1.jpg"
+  },
+  "Land_CamoNet_NATO": {
+    "name": "Camouflage net (NATO)",
+    "type": "static",
+    "thumb": "Land_CamoNet_NATO.jpg"
+  },
+  "Land_CamoNet_NATO_EP1": {
+    "name": "Camouflage net (NATO desert)",
+    "type": "static",
+    "thumb": "Land_CamoNet_NATO_EP1.jpg"
+  },
+  "Land_Canister_EP1": {
+    "name": "Plastic canister",
+    "type": "other",
+    "thumb": "Land_Canister_EP1.jpg"
+  },
+  "Land_Carpet_2_EP1": {
+    "name": "Takistani carpet (fold)",
+    "type": "static",
+    "thumb": "Land_Carpet_2_EP1.jpg"
+  },
+  "Land_Carpet_EP1": {
+    "name": "Takistani carpet",
+    "type": "static",
+    "thumb": "Land_Carpet_EP1.jpg"
+  },
+  "Land_Carpet_rack_EP1": {
+    "name": "Carpet rack",
+    "type": "static",
+    "thumb": "Land_Carpet_rack_EP1.jpg"
+  },
+  "Land_Chair_EP1": {
+    "name": "Garden chair",
+    "type": "other",
+    "thumb": "Land_Chair_EP1.jpg"
+  },
+  "Land_Chest_EP1": {
+    "name": "Chest",
+    "type": "other",
+    "thumb": "Land_Chest_EP1.jpg"
+  },
+  "Land_Church_tomb_1": {
+    "name": "Grave cross 1",
+    "type": "static",
+    "thumb": "Land_Church_tomb_1.jpg"
+  },
+  "Land_Church_tomb_2": {
+    "name": "Grave cross 2",
+    "type": "static",
+    "thumb": "Land_Church_tomb_2.jpg"
+  },
+  "Land_Church_tomb_3": {
+    "name": "Grave cross 3",
+    "type": "static",
+    "thumb": "Land_Church_tomb_3.jpg"
+  },
+  "Land_Climbing_Obstacle": {
+    "name": "Obstacle - Climbing",
+    "type": "static",
+    "thumb": "Land_Climbing_Obstacle.jpg"
+  },
+  "Land_CncBlock": {
+    "name": "Concrete barrier",
+    "type": "static",
+    "thumb": "Land_CncBlock.jpg"
+  },
+  "Land_CncBlock_D": {
+    "name": "Concrete barrier (damaged)",
+    "type": "static",
+    "thumb": "Land_CncBlock_D.jpg"
+  },
+  "Land_CncBlock_Stripes": {
+    "name": "Concrete barrier (stripes)",
+    "type": "static",
+    "thumb": "Land_CncBlock_Stripes.jpg"
+  },
+  "Land_ConcreteBlock": {
+    "name": "Concrete block",
+    "type": "static",
+    "thumb": "Land_ConcreteBlock.jpg"
+  },
+  "Land_ConcreteRamp": {
+    "name": "Concrete ramp 2",
+    "type": "static",
+    "thumb": "Land_ConcreteRamp.jpg"
+  },
+  "Land_Crates_EP1": {
+    "name": "Cardboard crates",
+    "type": "static",
+    "thumb": "Land_Crates_EP1.jpg"
+  },
+  "Land_Crates_stack_EP1": {
+    "name": "Shabby crates",
+    "type": "static",
+    "thumb": "Land_Crates_stack_EP1.jpg"
+  },
+  "Land_Destroyer": {
+    "name": "Destroyer",
+    "type": "static",
+    "thumb": "Land_Destroyer.jpg"
+  },
+  "Land_Dirthump01": {
+    "name": "Dirt hump 1",
+    "type": "static",
+    "thumb": "Land_Dirthump01.jpg"
+  },
+  "Land_Dirthump01_EP1": {
+    "name": "Dirt hump 1",
+    "type": "static",
+    "thumb": "Land_Dirthump01_EP1.jpg"
+  },
+  "Land_Dirthump02": {
+    "name": "Dirt hump 2",
+    "type": "static",
+    "thumb": "Land_Dirthump02.jpg"
+  },
+  "Land_Dirthump02_EP1": {
+    "name": "Dirt hump 2",
+    "type": "static",
+    "thumb": "Land_Dirthump02_EP1.jpg"
+  },
+  "Land_Dirthump03": {
+    "name": "Dirt hump 3",
+    "type": "static",
+    "thumb": "Land_Dirthump03.jpg"
+  },
+  "Land_Dirthump03_EP1": {
+    "name": "Dirt hump 3",
+    "type": "static",
+    "thumb": "Land_Dirthump03_EP1.jpg"
+  },
+  "Land_Fire": {
+    "name": "Fireplace",
+    "type": "static",
+    "thumb": "Land_Fire.jpg"
+  },
+  "Land_Fort_Watchtower": {
+    "name": "Bunker (Tower)",
+    "type": "static",
+    "thumb": "Land_Fort_Watchtower.jpg"
+  },
+  "Land_Fort_Watchtower_EP1": {
+    "name": "Bunker (Tower)",
+    "type": "static",
+    "thumb": "Land_Fort_Watchtower_EP1.jpg"
+  },
+  "Land_Fregata": {
+    "name": "Fregata",
+    "type": "static",
+    "thumb": "Land_Fregata.jpg"
+  },
+  "Land_GuardShed": {
+    "name": "Guard shed",
+    "type": "static",
+    "thumb": "Land_GuardShed.jpg"
+  },
+  "Land_HBarrier_large": {
+    "name": "H-barrier (large)",
+    "type": "static",
+    "thumb": "Land_HBarrier_large.jpg"
+  },
+  "Land_Hangar_2": {
+    "name": "Hangar 2",
+    "type": "static",
+    "thumb": "Land_Hangar_2.jpg"
+  },
+  "Land_Hlidac_Budka_EP1": {
+    "name": "Line-keeper's box",
+    "type": "static",
+    "thumb": "Land_Hlidac_Budka_EP1.jpg"
+  },
+  "Land_Hlidac_budka": {
+    "name": "Line-keeper's box",
+    "type": "static",
+    "thumb": "Land_Hlidac_budka.jpg"
+  },
+  "Land_IED_v1_PMC": {
+    "name": "IED 1",
+    "type": "static",
+    "thumb": null
+  },
+  "Land_Ind_BoardsPack1": {
+    "name": "Boards pack",
+    "type": "static",
+    "thumb": "Land_Ind_BoardsPack1.jpg"
+  },
+  "Land_Ind_IlluminantTower": {
+    "name": "Illuminant Tower",
+    "type": "static",
+    "thumb": "Land_Ind_IlluminantTower.jpg"
+  },
+  "Land_Ind_TankSmall": {
+    "name": "Rusty tank",
+    "type": "static",
+    "thumb": "Land_Ind_TankSmall.jpg"
+  },
+  "Land_Ind_TankSmall2_EP1": {
+    "name": "Land_Ind_TankSmall2_EP1",
+    "type": "static",
+    "thumb": "Land_Ind_TankSmall2_EP1.jpg"
+  },
+  "Land_Ind_Timbers": {
+    "name": "Timbers",
+    "type": "static",
+    "thumb": "Land_Ind_Timbers.jpg"
+  },
+  "Land_Market_shelter_EP1": {
+    "name": "Market shelter",
+    "type": "static",
+    "thumb": "Land_Market_shelter_EP1.jpg"
+  },
+  "Land_Market_stalls_01_EP1": {
+    "name": "Market stalls 1",
+    "type": "static",
+    "thumb": "Land_Market_stalls_01_EP1.jpg"
+  },
+  "Land_Market_stalls_02_EP1": {
+    "name": "Market stalls 2",
+    "type": "static",
+    "thumb": "Land_Market_stalls_02_EP1.jpg"
+  },
+  "Land_Misc_Cargo1E_EP1": {
+    "name": "Cargo container",
+    "type": "static",
+    "thumb": "Land_Misc_Cargo1E_EP1.jpg"
+  },
+  "Land_Misc_Cargo1Eo_EP1": {
+    "name": "Cargo container (open)",
+    "type": "static",
+    "thumb": "Land_Misc_Cargo1Eo_EP1.jpg"
+  },
+  "Land_Misc_Cargo2E": {
+    "name": "Cargo containers",
+    "type": "static",
+    "thumb": "Land_Misc_Cargo2E.jpg"
+  },
+  "Land_Misc_Cargo2E_EP1": {
+    "name": "Cargo containers",
+    "type": "static",
+    "thumb": "Land_Misc_Cargo2E_EP1.jpg"
+  },
+  "Land_Misc_Coil_EP1": {
+    "name": "Coil",
+    "type": "static",
+    "thumb": "Land_Misc_Coil_EP1.jpg"
+  },
+  "Land_Misc_ConcBox_EP1": {
+    "name": "Concrete reservoir",
+    "type": "static",
+    "thumb": "Land_Misc_ConcBox_EP1.jpg"
+  },
+  "Land_Misc_ConcOutlet_EP1": {
+    "name": "Concrete outlet",
+    "type": "static",
+    "thumb": "Land_Misc_ConcOutlet_EP1.jpg"
+  },
+  "Land_Misc_ConcPipeline_EP1": {
+    "name": "Concrete pipe",
+    "type": "static",
+    "thumb": "Land_Misc_ConcPipeline_EP1.jpg"
+  },
+  "Land_Misc_GContainer_Big": {
+    "name": "Garbage container (large)",
+    "type": "static",
+    "thumb": "Land_Misc_GContainer_Big.jpg"
+  },
+  "Land_Misc_Garb_Heap_EP1": {
+    "name": "Garbage",
+    "type": "static",
+    "thumb": "Land_Misc_Garb_Heap_EP1.jpg"
+  },
+  "Land_Misc_IronPipes_EP1": {
+    "name": "Iron pipes",
+    "type": "static",
+    "thumb": "Land_Misc_IronPipes_EP1.jpg"
+  },
+  "Land_Misc_Rubble_EP1": {
+    "name": "Rubble",
+    "type": "static",
+    "thumb": "Land_Misc_Rubble_EP1.jpg"
+  },
+  "Land_Misc_Scaffolding": {
+    "name": "Scaffolding",
+    "type": "static",
+    "thumb": "Land_Misc_Scaffolding.jpg"
+  },
+  "Land_Misc_Well_C_EP1": {
+    "name": "Concrete well",
+    "type": "static",
+    "thumb": "Land_Misc_Well_C_EP1.jpg"
+  },
+  "Land_Misc_Well_L_EP1": {
+    "name": "Village well",
+    "type": "static",
+    "thumb": "Land_Misc_Well_L_EP1.jpg"
+  },
+  "Land_Misc_deerstand": {
+    "name": "Deer stand",
+    "type": "static",
+    "thumb": "Land_Misc_deerstand.jpg"
+  },
+  "Land_Pillow_EP1": {
+    "name": "Pillow",
+    "type": "other",
+    "thumb": "Land_Pillow_EP1.jpg"
+  },
+  "Land_Pneu": {
+    "name": "Tyre",
+    "type": "other",
+    "thumb": "Land_Pneu.jpg"
+  },
+  "Land_Rack_EP1": {
+    "name": "Rack",
+    "type": "other",
+    "thumb": "Land_Rack_EP1.jpg"
+  },
+  "Land_RedWhiteBarrier": {
+    "name": "Barrier",
+    "type": "static",
+    "thumb": "Land_RedWhiteBarrier.jpg"
+  },
+  "Land_Reservoir_EP1": {
+    "name": "Reservoir",
+    "type": "other",
+    "thumb": "Land_Reservoir_EP1.jpg"
+  },
+  "Land_Sack_EP1": {
+    "name": "Sack",
+    "type": "other",
+    "thumb": "Land_Sack_EP1.jpg"
+  },
+  "Land_Shed_wooden": {
+    "name": "Shed",
+    "type": "static",
+    "thumb": "Land_Shed_wooden.jpg"
+  },
+  "Land_Shelf_EP1": {
+    "name": "Shelf",
+    "type": "other",
+    "thumb": "Land_Shelf_EP1.jpg"
+  },
+  "Land_Shooting_range": {
+    "name": "Shooting position",
+    "type": "static",
+    "thumb": "Land_Shooting_range.jpg"
+  },
+  "Land_Table_EP1": {
+    "name": "Wooden table",
+    "type": "other",
+    "thumb": "Land_Table_EP1.jpg"
+  },
+  "Land_Table_small_EP1": {
+    "name": "Small table",
+    "type": "other",
+    "thumb": "Land_Table_small_EP1.jpg"
+  },
+  "Land_Teapot_EP1": {
+    "name": "Teapot",
+    "type": "other",
+    "thumb": "Land_Teapot_EP1.jpg"
+  },
+  "Land_Toilet": {
+    "name": "Field Toilet",
+    "type": "static",
+    "thumb": "Land_Toilet.jpg"
+  },
+  "Land_Urn_EP1": {
+    "name": "Urn",
+    "type": "other",
+    "thumb": "Land_Urn_EP1.jpg"
+  },
+  "Land_Vase_EP1": {
+    "name": "Vase",
+    "type": "other",
+    "thumb": "Land_Vase_EP1.jpg"
+  },
+  "Land_Vase_loam_2_EP1": {
+    "name": "Vase (adobe) 2",
+    "type": "other",
+    "thumb": "Land_Vase_loam_2_EP1.jpg"
+  },
+  "Land_Vase_loam_3_EP1": {
+    "name": "Vase (adobe) 3",
+    "type": "other",
+    "thumb": "Land_Vase_loam_3_EP1.jpg"
+  },
+  "Land_Vase_loam_EP1": {
+    "name": "Vase (adobe)",
+    "type": "other",
+    "thumb": "Land_Vase_loam_EP1.jpg"
+  },
+  "Land_Water_pipe_EP1": {
+    "name": "Water pipe",
+    "type": "other",
+    "thumb": "Land_Water_pipe_EP1.jpg"
+  },
+  "Land_Wheel_cart_EP1": {
+    "name": "Wheel cart",
+    "type": "other",
+    "thumb": "Land_Wheel_cart_EP1.jpg"
+  },
+  "Land_Wicker_basket_EP1": {
+    "name": "Wicker basket",
+    "type": "other",
+    "thumb": "Land_Wicker_basket_EP1.jpg"
+  },
+  "Land_WoodenRamp": {
+    "name": "Wooden ramp",
+    "type": "static",
+    "thumb": "Land_WoodenRamp.jpg"
+  },
+  "Land_arrows_desk_L": {
+    "name": "Arrow desk (left)",
+    "type": "other",
+    "thumb": "Land_arrows_desk_L.jpg"
+  },
+  "Land_arrows_desk_R": {
+    "name": "Arrow desk (right)",
+    "type": "other",
+    "thumb": "Land_arrows_desk_R.jpg"
+  },
+  "Land_arrows_yellow_L": {
+    "name": "Arrow marker (left)",
+    "type": "other",
+    "thumb": "Land_arrows_yellow_L.jpg"
+  },
+  "Land_arrows_yellow_R": {
+    "name": "Arrow marker (right)",
+    "type": "other",
+    "thumb": "Land_arrows_yellow_R.jpg"
+  },
+  "Land_bags_EP1": {
+    "name": "Bags with goods",
+    "type": "static",
+    "thumb": "Land_bags_EP1.jpg"
+  },
+  "Land_bags_stack_EP1": {
+    "name": "Heap of bags",
+    "type": "static",
+    "thumb": "Land_bags_stack_EP1.jpg"
+  },
+  "Land_cages_EP1": {
+    "name": "Poultry cages",
+    "type": "static",
+    "thumb": "Land_cages_EP1.jpg"
+  },
+  "Land_coneLight": {
+    "name": "Road cone (light)",
+    "type": "other",
+    "thumb": "Land_coneLight.jpg"
+  },
+  "Land_covering_hut_EP1": {
+    "name": "Canvas hut",
+    "type": "static",
+    "thumb": "Land_covering_hut_EP1.jpg"
+  },
+  "Land_covering_hut_big_EP1": {
+    "name": "Canvas hut (big)",
+    "type": "static",
+    "thumb": "Land_covering_hut_big_EP1.jpg"
+  },
+  "Land_fort_artillery_nest": {
+    "name": "Earthen artillery nest",
+    "type": "static",
+    "thumb": "Land_fort_artillery_nest.jpg"
+  },
+  "Land_fort_artillery_nest_EP1": {
+    "name": "Earthen artillery nest (desert)",
+    "type": "static",
+    "thumb": "Land_fort_artillery_nest_EP1.jpg"
+  },
+  "Land_fort_bagfence_corner": {
+    "name": "Big bag fence (Corner)",
+    "type": "static",
+    "thumb": "Land_fort_bagfence_corner.jpg"
+  },
+  "Land_fort_bagfence_long": {
+    "name": "Big bag fence",
+    "type": "static",
+    "thumb": "Land_fort_bagfence_long.jpg"
+  },
+  "Land_fort_bagfence_round": {
+    "name": "Big bag fence (Round)",
+    "type": "static",
+    "thumb": "Land_fort_bagfence_round.jpg"
+  },
+  "Land_fort_rampart": {
+    "name": "Earthen rampart",
+    "type": "static",
+    "thumb": "Land_fort_rampart.jpg"
+  },
+  "Land_fort_rampart_EP1": {
+    "name": "Earthen rampart (desert)",
+    "type": "static",
+    "thumb": "Land_fort_rampart_EP1.jpg"
+  },
+  "Land_fortified_nest_big": {
+    "name": "Bunker (large)",
+    "type": "static",
+    "thumb": "Land_fortified_nest_big.jpg"
+  },
+  "Land_fortified_nest_big_EP1": {
+    "name": "Bunker (large)",
+    "type": "static",
+    "thumb": "Land_fortified_nest_big_EP1.jpg"
+  },
+  "Land_fortified_nest_small": {
+    "name": "Bunker (small)",
+    "type": "static",
+    "thumb": "Land_fortified_nest_small.jpg"
+  },
+  "Land_fortified_nest_small_EP1": {
+    "name": "Bunker (small desert)",
+    "type": "static",
+    "thumb": "Land_fortified_nest_small_EP1.jpg"
+  },
+  "Land_ladder": {
+    "name": "Ladder",
+    "type": "static",
+    "thumb": "Land_ladder.jpg"
+  },
+  "Land_ladderEP1": {
+    "name": "Ladder",
+    "type": "static",
+    "thumb": "Land_ladderEP1.jpg"
+  },
+  "Land_ladder_half": {
+    "name": "Ladder (short)",
+    "type": "static",
+    "thumb": "Land_ladder_half.jpg"
+  },
+  "Land_ladder_half_EP1": {
+    "name": "Ladder (short)",
+    "type": "static",
+    "thumb": "Land_ladder_half_EP1.jpg"
+  },
+  "Land_loco_742_blue": {
+    "name": "Locomotive (Blue)",
+    "type": "static",
+    "thumb": "Land_loco_742_blue.jpg"
+  },
+  "Land_podlejzacka": {
+    "name": "Obstacle - Crawling",
+    "type": "static",
+    "thumb": "Land_podlejzacka.jpg"
+  },
+  "Land_psi_bouda": {
+    "name": "Doghouse",
+    "type": "static",
+    "thumb": "Land_psi_bouda.jpg"
+  },
+  "Land_radar": {
+    "name": "Radar",
+    "type": "static",
+    "thumb": "Land_radar.jpg"
+  },
+  "Land_radar_EP1": {
+    "name": "Look-out mast",
+    "type": "static",
+    "thumb": "Land_radar_EP1.jpg"
+  },
+  "Land_stand_meat_EP1": {
+    "name": "Stand (lamb)",
+    "type": "static",
+    "thumb": "Land_stand_meat_EP1.jpg"
+  },
+  "Land_stand_small_EP1": {
+    "name": "Stand (small)",
+    "type": "static",
+    "thumb": "Land_stand_small_EP1.jpg"
+  },
+  "Land_stand_waterl_EP1": {
+    "name": "Stand (water)",
+    "type": "static",
+    "thumb": "Land_stand_waterl_EP1.jpg"
+  },
+  "Land_sunshade_EP1": {
+    "name": "Canvas sunshade",
+    "type": "static",
+    "thumb": "Land_sunshade_EP1.jpg"
+  },
+  "Land_tent_east": {
+    "name": "Tent East",
+    "type": "static",
+    "thumb": "Land_tent_east.jpg"
+  },
+  "Land_tires_EP1": {
+    "name": "Tyre pile",
+    "type": "static",
+    "thumb": "Land_tires_EP1.jpg"
+  },
+  "Land_transport_cart_EP1": {
+    "name": "Wooden cart",
+    "type": "static",
+    "thumb": "Land_transport_cart_EP1.jpg"
+  },
+  "Land_transport_crates_EP1": {
+    "name": "Wooden crates",
+    "type": "static",
+    "thumb": "Land_transport_crates_EP1.jpg"
+  },
+  "Land_transport_kiosk_EP1": {
+    "name": "Stand",
+    "type": "static",
+    "thumb": "Land_transport_kiosk_EP1.jpg"
+  },
+  "Land_wagon_box": {
+    "name": "Wagon Box",
+    "type": "static",
+    "thumb": "Land_wagon_box.jpg"
+  },
+  "Land_wagon_flat": {
+    "name": "Wagon Flat",
+    "type": "static",
+    "thumb": "Land_wagon_flat.jpg"
+  },
+  "Land_wagon_tanker": {
+    "name": "Wagon Tanker",
+    "type": "static",
+    "thumb": "Land_wagon_tanker.jpg"
+  },
+  "Laptop_EP1": {
+    "name": "Laptop",
+    "type": "other",
+    "thumb": null
+  },
+  "LocalBasicAmmunitionBox": {
+    "name": "Local Basic Ammunition",
+    "type": "static",
+    "thumb": "LocalBasicAmmunitionBox.jpg"
+  },
+  "Logic": {
+    "name": "Game Logic",
+    "type": "other",
+    "thumb": null
+  },
+  "Loudspeaker": {
+    "name": "Loudspeaker",
+    "type": "static",
+    "thumb": "Loudspeaker.jpg"
+  },
+  "Loudspeakers_EP1": {
+    "name": "Loudspeakers",
+    "type": "static",
+    "thumb": null
+  },
+  "M1030": {
+    "name": "Motorcycle",
+    "type": "car",
+    "thumb": "M1030.jpg"
+  },
+  "M1030_US_DES_EP1": {
+    "name": "M1030_US_DES_EP1",
+    "type": "car",
+    "thumb": "M1030_US_DES_EP1.jpg"
+  },
+  "M1126_ICV_M2_EP1": {
+    "name": "Stryker ICV (M2)",
+    "type": "tank",
+    "thumb": "M1126_ICV_M2_EP1.jpg"
+  },
+  "M1126_ICV_mk19_EP1": {
+    "name": "Stryker ICV (Mk19)",
+    "type": "tank",
+    "thumb": "M1126_ICV_mk19_EP1.jpg"
+  },
+  "M1128_MGS_EP1": {
+    "name": "Stryker MGS",
+    "type": "tank",
+    "thumb": "M1128_MGS_EP1.jpg"
+  },
+  "M1129_MC_EP1": {
+    "name": "Stryker MC",
+    "type": "tank",
+    "thumb": "M1129_MC_EP1.jpg"
+  },
+  "M1130_CV_EP1": {
+    "name": "Stryker CV",
+    "type": "tank",
+    "thumb": "M1130_CV_EP1.jpg"
+  },
+  "M1130_HQ_unfolded_Base_EP1": {
+    "name": "HQ",
+    "type": "static",
+    "thumb": "M1130_HQ_unfolded_Base_EP1.jpg"
+  },
+  "M1130_HQ_unfolded_EP1": {
+    "name": "M1130_HQ_unfolded_EP1",
+    "type": "static",
+    "thumb": "M1130_HQ_unfolded_EP1.jpg"
+  },
+  "M1133_MEV_EP1": {
+    "name": "Stryker MEV",
+    "type": "tank",
+    "thumb": "M1133_MEV_EP1.jpg"
+  },
+  "M1135_ATGMV_EP1": {
+    "name": "Stryker (TOW)",
+    "type": "tank",
+    "thumb": "M1135_ATGMV_EP1.jpg"
+  },
+  "M113Ambul_TK_EP1": {
+    "name": "M113Ambul_TK_EP1",
+    "type": "tank",
+    "thumb": "M113Ambul_TK_EP1.jpg"
+  },
+  "M113Ambul_UN_EP1": {
+    "name": "M113Ambul_UN_EP1",
+    "type": "tank",
+    "thumb": "M113Ambul_UN_EP1.jpg"
+  },
+  "M113_TK_EP1": {
+    "name": "M113_TK_EP1",
+    "type": "tank",
+    "thumb": "M113_TK_EP1.jpg"
+  },
+  "M113_UN_EP1": {
+    "name": "M113_UN_EP1",
+    "type": "tank",
+    "thumb": "M113_UN_EP1.jpg"
+  },
+  "M119": {
+    "name": "M119",
+    "type": "static",
+    "thumb": "M119.jpg"
+  },
+  "M119_US_EP1": {
+    "name": "M119_US_EP1",
+    "type": "static",
+    "thumb": "M119_US_EP1.jpg"
+  },
+  "M1A1": {
+    "name": "M1A1",
+    "type": "tank",
+    "thumb": "M1A1.jpg"
+  },
+  "M1A1_US_DES_EP1": {
+    "name": "M1A1_US_DES_EP1",
+    "type": "tank",
+    "thumb": "M1A1_US_DES_EP1.jpg"
+  },
+  "M1A2_US_TUSK_MG_EP1": {
+    "name": "M1A2_US_TUSK_MG_EP1",
+    "type": "tank",
+    "thumb": "M1A2_US_TUSK_MG_EP1.jpg"
+  },
+  "M252": {
+    "name": "M252",
+    "type": "static",
+    "thumb": "M252.jpg"
+  },
+  "M252_US_Bag_EP1": {
+    "name": "M252 81mm Mortar Bag",
+    "type": "static",
+    "thumb": "M252_US_Bag_EP1.jpg"
+  },
+  "M252_US_EP1": {
+    "name": "M252_US_EP1",
+    "type": "static",
+    "thumb": "M252_US_EP1.jpg"
+  },
+  "M2A2_EP1": {
+    "name": "M2A2 Bradley IFV",
+    "type": "tank",
+    "thumb": "M2A2_EP1.jpg"
+  },
+  "M2HD_mini_TriPod": {
+    "name": "M2 Minitripod",
+    "type": "static",
+    "thumb": "M2HD_mini_TriPod.jpg"
+  },
+  "M2HD_mini_TriPod_US_Bag_EP1": {
+    "name": "M2 Minitripod Bag",
+    "type": "static",
+    "thumb": "M2HD_mini_TriPod_US_Bag_EP1.jpg"
+  },
+  "M2HD_mini_TriPod_US_EP1": {
+    "name": "M2HD_mini_TriPod_US_EP1",
+    "type": "static",
+    "thumb": "M2HD_mini_TriPod_US_EP1.jpg"
+  },
+  "M2StaticMG": {
+    "name": "M2StaticMG",
+    "type": "static",
+    "thumb": "M2StaticMG.jpg"
+  },
+  "M2StaticMG_US_Bag_EP1": {
+    "name": "M2 Machine Gun Bag",
+    "type": "static",
+    "thumb": "M2StaticMG_US_Bag_EP1.jpg"
+  },
+  "M2StaticMG_US_EP1": {
+    "name": "M2StaticMG_US_EP1",
+    "type": "static",
+    "thumb": "M2StaticMG_US_EP1.jpg"
+  },
+  "M6_EP1": {
+    "name": "M6 Linebacker",
+    "type": "tank",
+    "thumb": "M6_EP1.jpg"
+  },
+  "MASH": {
+    "name": "Field Hospital",
+    "type": "static",
+    "thumb": "MASH.jpg"
+  },
+  "MASH_EP1": {
+    "name": "Field Hospital",
+    "type": "static",
+    "thumb": "MASH_EP1.jpg"
+  },
+  "MAZ_543_SCUD_TK_EP1": {
+    "name": "MAZ_543_SCUD_TK_EP1",
+    "type": "car",
+    "thumb": "MAZ_543_SCUD_TK_EP1.jpg"
+  },
+  "MH60S": {
+    "name": "MH-60S",
+    "type": "air",
+    "thumb": "MH60S.jpg"
+  },
+  "MH6J_EP1": {
+    "name": "MH-6J",
+    "type": "air",
+    "thumb": "MH6J_EP1.jpg"
+  },
+  "MK19_TriPod": {
+    "name": "MK19 Minitripod",
+    "type": "static",
+    "thumb": "MK19_TriPod.jpg"
+  },
+  "MK19_TriPod_US_Bag_EP1": {
+    "name": "MK19 Minitripod Bag",
+    "type": "static",
+    "thumb": "MK19_TriPod_US_Bag_EP1.jpg"
+  },
+  "MK19_TriPod_US_EP1": {
+    "name": "MK19_TriPod_US_EP1",
+    "type": "static",
+    "thumb": "MK19_TriPod_US_EP1.jpg"
+  },
+  "MLRS": {
+    "name": "M270 MLRS",
+    "type": "tank",
+    "thumb": "MLRS.jpg"
+  },
+  "MLRS_DES_EP1": {
+    "name": "MLRS_DES_EP1",
+    "type": "tank",
+    "thumb": "MLRS_DES_EP1.jpg"
+  },
+  "MMT_Civ": {
+    "name": "MMT_Civ",
+    "type": "car",
+    "thumb": "MMT_Civ.jpg"
+  },
+  "MMT_USMC": {
+    "name": "MMT_USMC",
+    "type": "car",
+    "thumb": "MMT_USMC.jpg"
+  },
+  "MQ9PredatorB": {
+    "name": "MQ-9",
+    "type": "air",
+    "thumb": "MQ9PredatorB.jpg"
+  },
+  "MQ9PredatorB_US_EP1": {
+    "name": "MQ9PredatorB_US_EP1",
+    "type": "air",
+    "thumb": "MQ9PredatorB_US_EP1.jpg"
+  },
+  "MTVR": {
+    "name": "MTVR",
+    "type": "car",
+    "thumb": "MTVR.jpg"
+  },
+  "MTVR_DES_EP1": {
+    "name": "MTVR",
+    "type": "car",
+    "thumb": "MTVR_DES_EP1.jpg"
+  },
+  "MV22": {
+    "name": "MV-22",
+    "type": "air",
+    "thumb": "MV22.jpg"
+  },
+  "MVD_Soldier": {
+    "name": "Operator",
+    "type": "man",
+    "thumb": "MVD_Soldier.jpg"
+  },
+  "MVD_Soldier_AT": {
+    "name": "Operator (RPG-7)",
+    "type": "man",
+    "thumb": "MVD_Soldier_AT.jpg"
+  },
+  "MVD_Soldier_GL": {
+    "name": "Operator (GL)",
+    "type": "man",
+    "thumb": "MVD_Soldier_GL.jpg"
+  },
+  "MVD_Soldier_MG": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "MVD_Soldier_MG.jpg"
+  },
+  "MVD_Soldier_Marksman": {
+    "name": "Marksman",
+    "type": "man",
+    "thumb": "MVD_Soldier_Marksman.jpg"
+  },
+  "MVD_Soldier_Sniper": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": "MVD_Soldier_Sniper.jpg"
+  },
+  "MVD_Soldier_TL": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": "MVD_Soldier_TL.jpg"
+  },
+  "Madam1": {
+    "name": "Madam (Green)",
+    "type": "man",
+    "thumb": "Madam1.jpg"
+  },
+  "Madam2": {
+    "name": "Madam (Brown)",
+    "type": "man",
+    "thumb": "Madam2.jpg"
+  },
+  "Madam3": {
+    "name": "Madam (Purple)",
+    "type": "man",
+    "thumb": "Madam3.jpg"
+  },
+  "Madam4": {
+    "name": "Madam (Gray)",
+    "type": "man",
+    "thumb": "Madam4.jpg"
+  },
+  "Madam5": {
+    "name": "Madam (Black)",
+    "type": "man",
+    "thumb": "Madam5.jpg"
+  },
+  "Mass_grave": {
+    "name": "Mass grave",
+    "type": "static",
+    "thumb": "Mass_grave.jpg"
+  },
+  "MetalBucket": {
+    "name": "Bucket",
+    "type": "other",
+    "thumb": "MetalBucket.jpg"
+  },
+  "Metis": {
+    "name": "Metis",
+    "type": "static",
+    "thumb": "Metis.jpg"
+  },
+  "Metis_TK_Bag_EP1": {
+    "name": "Metis AT-13 Bag",
+    "type": "static",
+    "thumb": "Metis_TK_Bag_EP1.jpg"
+  },
+  "Metis_TK_EP1": {
+    "name": "Metis_TK_EP1",
+    "type": "static",
+    "thumb": "Metis_TK_EP1.jpg"
+  },
+  "Mi171Sh_CZ_EP1": {
+    "name": "Mi-171Sh",
+    "type": "air",
+    "thumb": "Mi171Sh_CZ_EP1.jpg"
+  },
+  "Mi171Sh_rockets_CZ_EP1": {
+    "name": "Mi-171Sh (rockets)",
+    "type": "air",
+    "thumb": "Mi171Sh_rockets_CZ_EP1.jpg"
+  },
+  "Mi17_CDF": {
+    "name": "Mi-17",
+    "type": "air",
+    "thumb": "Mi17_CDF.jpg"
+  },
+  "Mi17_Civilian": {
+    "name": "Mi-17 (Civilian)",
+    "type": "air",
+    "thumb": "Mi17_Civilian.jpg"
+  },
+  "Mi17_Ins": {
+    "name": "Mi-8MT",
+    "type": "air",
+    "thumb": "Mi17_Ins.jpg"
+  },
+  "Mi17_TK_EP1": {
+    "name": "Mi17_TK_EP1",
+    "type": "air",
+    "thumb": "Mi17_TK_EP1.jpg"
+  },
+  "Mi17_UN_CDF_EP1": {
+    "name": "Mi17_UN_CDF_EP1",
+    "type": "air",
+    "thumb": "Mi17_UN_CDF_EP1.jpg"
+  },
+  "Mi17_medevac_CDF": {
+    "name": "Mi-17-IVA Medevac",
+    "type": "air",
+    "thumb": "Mi17_medevac_CDF.jpg"
+  },
+  "Mi17_medevac_Ins": {
+    "name": "Mi-8MT Medevac",
+    "type": "air",
+    "thumb": "Mi17_medevac_Ins.jpg"
+  },
+  "Mi17_medevac_RU": {
+    "name": "Mi-8MT Medevac",
+    "type": "air",
+    "thumb": "Mi17_medevac_RU.jpg"
+  },
+  "Mi17_rockets_RU": {
+    "name": "Mi-8MTV-3",
+    "type": "air",
+    "thumb": "Mi17_rockets_RU.jpg"
+  },
+  "Mi24_D": {
+    "name": "Mi-24D",
+    "type": "air",
+    "thumb": "Mi24_D.jpg"
+  },
+  "Mi24_D_TK_EP1": {
+    "name": "Mi24_D_TK_EP1",
+    "type": "air",
+    "thumb": "Mi24_D_TK_EP1.jpg"
+  },
+  "Mi24_P": {
+    "name": "Mi-24P",
+    "type": "air",
+    "thumb": "Mi24_P.jpg"
+  },
+  "Mi24_V": {
+    "name": "Mi-24V",
+    "type": "air",
+    "thumb": "Mi24_V.jpg"
+  },
+  "Mi8Wreck": {
+    "name": "Mi-8",
+    "type": "static",
+    "thumb": "Mi8Wreck.jpg"
+  },
+  "Microphone1_ep1": {
+    "name": "Microphone 1",
+    "type": "static",
+    "thumb": "Microphone1_ep1.jpg"
+  },
+  "MineMine": {
+    "name": "Mine",
+    "type": "other",
+    "thumb": null
+  },
+  "MineMineE": {
+    "name": "Mine (RU)",
+    "type": "other",
+    "thumb": null
+  },
+  "Misc_Backpackheap": {
+    "name": "Backpack heap",
+    "type": "static",
+    "thumb": "Misc_Backpackheap.jpg"
+  },
+  "Misc_Backpackheap_EP1": {
+    "name": "Backpack heap (desert)",
+    "type": "static",
+    "thumb": "Misc_Backpackheap_EP1.jpg"
+  },
+  "Misc_Cargo1B_military": {
+    "name": "Misc_Cargo1B_military",
+    "type": "static",
+    "thumb": "Misc_Cargo1B_military.jpg"
+  },
+  "Misc_Cargo1Bo_military": {
+    "name": "Cargo container (open)",
+    "type": "static",
+    "thumb": "Misc_Cargo1Bo_military.jpg"
+  },
+  "Misc_TyreHeap": {
+    "name": "Tyre heap",
+    "type": "static",
+    "thumb": "Misc_TyreHeap.jpg"
+  },
+  "Misc_TyreHeapEP1": {
+    "name": "Tyre heap",
+    "type": "static",
+    "thumb": "Misc_TyreHeapEP1.jpg"
+  },
+  "Misc_Videoprojektor": {
+    "name": "Videoprojector",
+    "type": "static",
+    "thumb": "Misc_Videoprojektor.jpg"
+  },
+  "Misc_Wall_lamp": {
+    "name": "Wall lamp",
+    "type": "static",
+    "thumb": "Misc_Wall_lamp.jpg"
+  },
+  "Misc_cargo_cont_net1": {
+    "name": "Container in net",
+    "type": "static",
+    "thumb": "Misc_cargo_cont_net1.jpg"
+  },
+  "Misc_cargo_cont_net2": {
+    "name": "Containers in net",
+    "type": "static",
+    "thumb": "Misc_cargo_cont_net2.jpg"
+  },
+  "Misc_cargo_cont_net3": {
+    "name": "Containers in net (heap)",
+    "type": "static",
+    "thumb": "Misc_cargo_cont_net3.jpg"
+  },
+  "Misc_cargo_cont_small": {
+    "name": "Cargo container small",
+    "type": "static",
+    "thumb": "Misc_cargo_cont_small.jpg"
+  },
+  "Misc_cargo_cont_small2": {
+    "name": "Cargo container small 2",
+    "type": "static",
+    "thumb": "Misc_cargo_cont_small2.jpg"
+  },
+  "Misc_cargo_cont_small_EP1": {
+    "name": "Cargo container small",
+    "type": "static",
+    "thumb": "Misc_cargo_cont_small_EP1.jpg"
+  },
+  "Misc_cargo_cont_tiny": {
+    "name": "Cargo container tiny",
+    "type": "static",
+    "thumb": "Misc_cargo_cont_tiny.jpg"
+  },
+  "Misc_concrete_High": {
+    "name": "Concrete panels",
+    "type": "other",
+    "thumb": "Misc_concrete_High.jpg"
+  },
+  "Misc_palletsfoiled": {
+    "name": "Foiled pallet",
+    "type": "static",
+    "thumb": "Misc_palletsfoiled.jpg"
+  },
+  "Misc_palletsfoiled_heap": {
+    "name": "Foiled pallets",
+    "type": "static",
+    "thumb": "Misc_palletsfoiled_heap.jpg"
+  },
+  "MtvrReammo_DES_EP1": {
+    "name": "MTVR (Ammunition)",
+    "type": "car",
+    "thumb": "MtvrReammo_DES_EP1.jpg"
+  },
+  "MtvrRefuel_DES_EP1": {
+    "name": "MTVR (Fuel)",
+    "type": "car",
+    "thumb": "MtvrRefuel_DES_EP1.jpg"
+  },
+  "MtvrRepair_DES_EP1": {
+    "name": "MTVR (Repair)",
+    "type": "car",
+    "thumb": "MtvrRepair_DES_EP1.jpg"
+  },
+  "Notebook": {
+    "name": "Notebook",
+    "type": "other",
+    "thumb": "Notebook.jpg"
+  },
+  "Notice_board": {
+    "name": "Notice board",
+    "type": "other",
+    "thumb": "Notice_board.jpg"
+  },
+  "Notice_board_EP1": {
+    "name": "Notice board",
+    "type": "other",
+    "thumb": "Notice_board_EP1.jpg"
+  },
+  "Obstacle_saddle": {
+    "name": "Obstacle - Saddle",
+    "type": "static",
+    "thumb": "Obstacle_saddle.jpg"
+  },
+  "Offroad_DSHKM_Gue": {
+    "name": "Off-road (DShKM)",
+    "type": "car",
+    "thumb": "Offroad_DSHKM_Gue.jpg"
+  },
+  "Offroad_DSHKM_INS": {
+    "name": "Off-road (DShKM)",
+    "type": "car",
+    "thumb": "Offroad_DSHKM_INS.jpg"
+  },
+  "Offroad_DSHKM_TK_GUE_EP1": {
+    "name": "Off-road (DShKM)",
+    "type": "car",
+    "thumb": "Offroad_DSHKM_TK_GUE_EP1.jpg"
+  },
+  "Offroad_SPG9_Gue": {
+    "name": "Off-road (SPG-9)",
+    "type": "car",
+    "thumb": "Offroad_SPG9_Gue.jpg"
+  },
+  "Offroad_SPG9_TK_GUE_EP1": {
+    "name": "Offroad_SPG9_TK_GUE_EP1",
+    "type": "car",
+    "thumb": "Offroad_SPG9_TK_GUE_EP1.jpg"
+  },
+  "Old_bike_TK_CIV_EP1": {
+    "name": "Old_bike_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "Old_bike_TK_CIV_EP1.jpg"
+  },
+  "Old_bike_TK_INS_EP1": {
+    "name": "Old_bike_TK_INS_EP1",
+    "type": "car",
+    "thumb": "Old_bike_TK_INS_EP1.jpg"
+  },
+  "Old_moto_TK_Civ_EP1": {
+    "name": "Old_moto_TK_Civ_EP1",
+    "type": "car",
+    "thumb": "Old_moto_TK_Civ_EP1.jpg"
+  },
+  "PBX": {
+    "name": "PBX",
+    "type": "other",
+    "thumb": "PBX.jpg"
+  },
+  "Paleta1": {
+    "name": "Pallet",
+    "type": "static",
+    "thumb": "Paleta1.jpg"
+  },
+  "Paleta2": {
+    "name": "Pallets",
+    "type": "static",
+    "thumb": "Paleta2.jpg"
+  },
+  "ParachuteBigEast": {
+    "name": "ParachuteBigEast",
+    "type": "air",
+    "thumb": "ParachuteBigEast.jpg"
+  },
+  "ParachuteBigEast_EP1": {
+    "name": "ParachuteBigEast_EP1",
+    "type": "air",
+    "thumb": "ParachuteBigEast_EP1.jpg"
+  },
+  "ParachuteBigWest": {
+    "name": "ParachuteBigWest",
+    "type": "air",
+    "thumb": "ParachuteBigWest.jpg"
+  },
+  "ParachuteBigWest_EP1": {
+    "name": "ParachuteBigWest_EP1",
+    "type": "air",
+    "thumb": "ParachuteBigWest_EP1.jpg"
+  },
+  "ParachuteC": {
+    "name": "ParachuteC",
+    "type": "air",
+    "thumb": "ParachuteC.jpg"
+  },
+  "ParachuteEast": {
+    "name": "ParachuteEast",
+    "type": "air",
+    "thumb": "ParachuteEast.jpg"
+  },
+  "ParachuteG": {
+    "name": "ParachuteG",
+    "type": "air",
+    "thumb": "ParachuteG.jpg"
+  },
+  "ParachuteMediumEast": {
+    "name": "ParachuteMediumEast",
+    "type": "air",
+    "thumb": "ParachuteMediumEast.jpg"
+  },
+  "ParachuteMediumEast_EP1": {
+    "name": "ParachuteMediumEast_EP1",
+    "type": "air",
+    "thumb": "ParachuteMediumEast_EP1.jpg"
+  },
+  "ParachuteMediumWest": {
+    "name": "ParachuteMediumWest",
+    "type": "air",
+    "thumb": "ParachuteMediumWest.jpg"
+  },
+  "ParachuteMediumWest_EP1": {
+    "name": "ParachuteMediumWest_EP1",
+    "type": "air",
+    "thumb": "ParachuteMediumWest_EP1.jpg"
+  },
+  "ParachuteWest": {
+    "name": "ParachuteWest",
+    "type": "air",
+    "thumb": "ParachuteWest.jpg"
+  },
+  "Parachute_TK_EP1": {
+    "name": "Parachute_TK_EP1",
+    "type": "air",
+    "thumb": "Parachute_TK_EP1.jpg"
+  },
+  "Parachute_TK_GUE_EP1": {
+    "name": "Parachute_TK_GUE_EP1",
+    "type": "air",
+    "thumb": "Parachute_TK_GUE_EP1.jpg"
+  },
+  "Parachute_US_EP1": {
+    "name": "Parachute_US_EP1",
+    "type": "air",
+    "thumb": "Parachute_US_EP1.jpg"
+  },
+  "Pastor": {
+    "name": "Alsatian",
+    "type": "man",
+    "thumb": "Pastor.jpg"
+  },
+  "Pchela1T": {
+    "name": "Pchela-1T",
+    "type": "air",
+    "thumb": "Pchela1T.jpg"
+  },
+  "Pickup_PK_GUE": {
+    "name": "Pickup_PK_GUE",
+    "type": "car",
+    "thumb": "Pickup_PK_GUE.jpg"
+  },
+  "Pickup_PK_INS": {
+    "name": "Pickup_PK_INS",
+    "type": "car",
+    "thumb": "Pickup_PK_INS.jpg"
+  },
+  "Pickup_PK_TK_GUE_EP1": {
+    "name": "Pickup_PK_TK_GUE_EP1",
+    "type": "car",
+    "thumb": "Pickup_PK_TK_GUE_EP1.jpg"
+  },
+  "Pierce": {
+    "name": "Pierce",
+    "type": "man",
+    "thumb": "Pierce.jpg"
+  },
+  "Pierce_Light": {
+    "name": "Pierce (light)",
+    "type": "man",
+    "thumb": "Pierce_Light.jpg"
+  },
+  "Pilot": {
+    "name": "Pilot (Civil)",
+    "type": "man",
+    "thumb": "Pilot.jpg"
+  },
+  "Pilot_EP1": {
+    "name": "Pilot_EP1",
+    "type": "man",
+    "thumb": "Pilot_EP1.jpg"
+  },
+  "Plastic_Pole_EP1": {
+    "name": "Plastic Pole",
+    "type": "static",
+    "thumb": null
+  },
+  "Poet_PMC": {
+    "name": "Frost",
+    "type": "man",
+    "thumb": null
+  },
+  "Policeman": {
+    "name": "Policeman",
+    "type": "man",
+    "thumb": "Policeman.jpg"
+  },
+  "PowGen_Big": {
+    "name": "Generator trailer",
+    "type": "static",
+    "thumb": "PowGen_Big.jpg"
+  },
+  "PowGen_Big_EP1": {
+    "name": "Generator trailer",
+    "type": "static",
+    "thumb": "PowGen_Big_EP1.jpg"
+  },
+  "PowerGenerator": {
+    "name": "Power generator",
+    "type": "other",
+    "thumb": "PowerGenerator.jpg"
+  },
+  "PowerGenerator_EP1": {
+    "name": "Power generator",
+    "type": "other",
+    "thumb": "PowerGenerator_EP1.jpg"
+  },
+  "Priest": {
+    "name": "Priest",
+    "type": "man",
+    "thumb": "Priest.jpg"
+  },
+  "Profiteer1": {
+    "name": "Profiteer (Gray)",
+    "type": "man",
+    "thumb": "Profiteer1.jpg"
+  },
+  "Profiteer2": {
+    "name": "Profiteer (Blue)",
+    "type": "man",
+    "thumb": "Profiteer2.jpg"
+  },
+  "Profiteer2_EP1": {
+    "name": "Profiteer2_EP1",
+    "type": "man",
+    "thumb": "Profiteer2_EP1.jpg"
+  },
+  "Profiteer3": {
+    "name": "Profiteer (Brown)",
+    "type": "man",
+    "thumb": "Profiteer3.jpg"
+  },
+  "Profiteer4": {
+    "name": "Profiteer (Red)",
+    "type": "man",
+    "thumb": "Profiteer4.jpg"
+  },
+  "RHIB": {
+    "name": "RHIB",
+    "type": "other",
+    "thumb": "RHIB.jpg"
+  },
+  "RUBasicAmmunitionBox": {
+    "name": "RU Basic Ammunition",
+    "type": "static",
+    "thumb": "RUBasicAmmunitionBox.jpg"
+  },
+  "RUS_Commander": {
+    "name": "Spetsnaz Officer",
+    "type": "man",
+    "thumb": "RUS_Commander.jpg"
+  },
+  "RUS_Soldier1": {
+    "name": "Spetsnaz Operator",
+    "type": "man",
+    "thumb": "RUS_Soldier1.jpg"
+  },
+  "RUS_Soldier2": {
+    "name": "Spetsnaz Operator (SD)",
+    "type": "man",
+    "thumb": "RUS_Soldier2.jpg"
+  },
+  "RUS_Soldier3": {
+    "name": "Spetsnaz Scout",
+    "type": "man",
+    "thumb": "RUS_Soldier3.jpg"
+  },
+  "RUS_Soldier_GL": {
+    "name": "Spetsnaz Assaultman",
+    "type": "man",
+    "thumb": "RUS_Soldier_GL.jpg"
+  },
+  "RUS_Soldier_Marksman": {
+    "name": "Spetsnaz Marksman",
+    "type": "man",
+    "thumb": "RUS_Soldier_Marksman.jpg"
+  },
+  "RUS_Soldier_TL": {
+    "name": "Spetsnaz Team Leader",
+    "type": "man",
+    "thumb": "RUS_Soldier_TL.jpg"
+  },
+  "RU_Commander": {
+    "name": "General",
+    "type": "man",
+    "thumb": "RU_Commander.jpg"
+  },
+  "RU_Soldier": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "RU_Soldier.jpg"
+  },
+  "RU_Soldier2": {
+    "name": "Rifleman (Saiga)",
+    "type": "man",
+    "thumb": "RU_Soldier2.jpg"
+  },
+  "RU_Soldier_AA": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": "RU_Soldier_AA.jpg"
+  },
+  "RU_Soldier_AR": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "RU_Soldier_AR.jpg"
+  },
+  "RU_Soldier_AT": {
+    "name": "Rifleman (RPG-7)",
+    "type": "man",
+    "thumb": "RU_Soldier_AT.jpg"
+  },
+  "RU_Soldier_Crew": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": "RU_Soldier_Crew.jpg"
+  },
+  "RU_Soldier_GL": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "RU_Soldier_GL.jpg"
+  },
+  "RU_Soldier_HAT": {
+    "name": "AT Specialist (Metis)",
+    "type": "man",
+    "thumb": "RU_Soldier_HAT.jpg"
+  },
+  "RU_Soldier_LAT": {
+    "name": "Rifleman (RPG-18)",
+    "type": "man",
+    "thumb": "RU_Soldier_LAT.jpg"
+  },
+  "RU_Soldier_Light": {
+    "name": "Soldier (unarmed)",
+    "type": "man",
+    "thumb": "RU_Soldier_Light.jpg"
+  },
+  "RU_Soldier_MG": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "RU_Soldier_MG.jpg"
+  },
+  "RU_Soldier_Marksman": {
+    "name": "Marksman (SVD)",
+    "type": "man",
+    "thumb": "RU_Soldier_Marksman.jpg"
+  },
+  "RU_Soldier_Medic": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": "RU_Soldier_Medic.jpg"
+  },
+  "RU_Soldier_Officer": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": "RU_Soldier_Officer.jpg"
+  },
+  "RU_Soldier_Pilot": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": "RU_Soldier_Pilot.jpg"
+  },
+  "RU_Soldier_SL": {
+    "name": "Squad Leader",
+    "type": "man",
+    "thumb": "RU_Soldier_SL.jpg"
+  },
+  "RU_Soldier_Sniper": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": "RU_Soldier_Sniper.jpg"
+  },
+  "RU_Soldier_SniperH": {
+    "name": "Sniper (KSVK)",
+    "type": "man",
+    "thumb": "RU_Soldier_SniperH.jpg"
+  },
+  "RU_Soldier_Spotter": {
+    "name": "Spotter",
+    "type": "man",
+    "thumb": "RU_Soldier_Spotter.jpg"
+  },
+  "RU_Soldier_TL": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": "RU_Soldier_TL.jpg"
+  },
+  "RU_WarfareBAircraftFactory": {
+    "name": "Aircraft Factory (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBAircraftFactory.jpg"
+  },
+  "RU_WarfareBAntiAirRadar": {
+    "name": "Anti-Air Radar (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBAntiAirRadar.jpg"
+  },
+  "RU_WarfareBArtilleryRadar": {
+    "name": "Artillery Radar (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBArtilleryRadar.jpg"
+  },
+  "RU_WarfareBBarracks": {
+    "name": "Barracks (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBBarracks.jpg"
+  },
+  "RU_WarfareBContructionSite": {
+    "name": "Construction Site (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBContructionSite.jpg"
+  },
+  "RU_WarfareBFieldhHospital": {
+    "name": "Field Hospital (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBFieldhHospital.jpg"
+  },
+  "RU_WarfareBHeavyFactory": {
+    "name": "Heavy Factory (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBHeavyFactory.jpg"
+  },
+  "RU_WarfareBLightFactory": {
+    "name": "Light Factory (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBLightFactory.jpg"
+  },
+  "RU_WarfareBMGNest_PK": {
+    "name": "RU_WarfareBMGNest_PK",
+    "type": "static",
+    "thumb": "RU_WarfareBMGNest_PK.jpg"
+  },
+  "RU_WarfareBUAVterminal": {
+    "name": "UAV Terminal",
+    "type": "static",
+    "thumb": "RU_WarfareBUAVterminal.jpg"
+  },
+  "RU_WarfareBVehicleServicePoint": {
+    "name": "Vehicle Service Point (RU)",
+    "type": "static",
+    "thumb": "RU_WarfareBVehicleServicePoint.jpg"
+  },
+  "Rabbit": {
+    "name": "Rabbit",
+    "type": "man",
+    "thumb": "Rabbit.jpg"
+  },
+  "Radio": {
+    "name": "Radio",
+    "type": "other",
+    "thumb": "Radio.jpg"
+  },
+  "RampConcrete": {
+    "name": "Concrete ramp",
+    "type": "static",
+    "thumb": "RampConcrete.jpg"
+  },
+  "Red_Light_Blinking_EP1": {
+    "name": "Red_Light_Blinking_EP1",
+    "type": "static",
+    "thumb": null
+  },
+  "Reynolds_PMC": {
+    "name": "Reynolds",
+    "type": "man",
+    "thumb": null
+  },
+  "RoadBarrier_light": {
+    "name": "Road barrier (small)",
+    "type": "static",
+    "thumb": "RoadBarrier_light.jpg"
+  },
+  "RoadCone": {
+    "name": "Road Cone",
+    "type": "other",
+    "thumb": "RoadCone.jpg"
+  },
+  "Rocker1": {
+    "name": "Rocker (Black)",
+    "type": "man",
+    "thumb": "Rocker1.jpg"
+  },
+  "Rocker2": {
+    "name": "Rocker (Brown)",
+    "type": "man",
+    "thumb": "Rocker2.jpg"
+  },
+  "Rocker3": {
+    "name": "Rocker (Blue)",
+    "type": "man",
+    "thumb": "Rocker3.jpg"
+  },
+  "Rocker4": {
+    "name": "Rocker (Green)",
+    "type": "man",
+    "thumb": "Rocker4.jpg"
+  },
+  "Ry_PMC": {
+    "name": "Asano",
+    "type": "man",
+    "thumb": null
+  },
+  "S1203_TK_CIV_EP1": {
+    "name": "S1203_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "S1203_TK_CIV_EP1.jpg"
+  },
+  "S1203_ambulance_EP1": {
+    "name": "S1203_ambulance_EP1",
+    "type": "car",
+    "thumb": "S1203_ambulance_EP1.jpg"
+  },
+  "SKODAWreck": {
+    "name": "Sedan",
+    "type": "static",
+    "thumb": "SKODAWreck.jpg"
+  },
+  "SPG9_CDF": {
+    "name": "SPG9_CDF",
+    "type": "static",
+    "thumb": "SPG9_CDF.jpg"
+  },
+  "SPG9_Gue": {
+    "name": "SPG9_Gue",
+    "type": "static",
+    "thumb": "SPG9_Gue.jpg"
+  },
+  "SPG9_Ins": {
+    "name": "SPG9_Ins",
+    "type": "static",
+    "thumb": "SPG9_Ins.jpg"
+  },
+  "SPG9_TK_GUE_Bag_EP1": {
+    "name": "SPG-9 Bag [Takistani Locals]",
+    "type": "static",
+    "thumb": "SPG9_TK_GUE_Bag_EP1.jpg"
+  },
+  "SPG9_TK_GUE_EP1": {
+    "name": "SPG9_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "SPG9_TK_GUE_EP1.jpg"
+  },
+  "SPG9_TK_INS_EP1": {
+    "name": "SPG9_TK_INS_EP1",
+    "type": "static",
+    "thumb": "SPG9_TK_INS_EP1.jpg"
+  },
+  "SUV_PMC": {
+    "name": "SUV_PMC",
+    "type": "car",
+    "thumb": null
+  },
+  "SUV_PMC_BAF": {
+    "name": "SUV_PMC_BAF",
+    "type": "car",
+    "thumb": null
+  },
+  "SUV_TK_CIV_EP1": {
+    "name": "SUV_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "SUV_TK_CIV_EP1.jpg"
+  },
+  "SUV_TK_EP1": {
+    "name": "SUV_TK_EP1",
+    "type": "car",
+    "thumb": "SUV_TK_EP1.jpg"
+  },
+  "SUV_UN_EP1": {
+    "name": "SUV_UN_EP1",
+    "type": "car",
+    "thumb": "SUV_UN_EP1.jpg"
+  },
+  "SatPhone": {
+    "name": "Satellite Phone",
+    "type": "other",
+    "thumb": "SatPhone.jpg"
+  },
+  "Satelit": {
+    "name": "Satellite dish",
+    "type": "other",
+    "thumb": "Satelit.jpg"
+  },
+  "SchoolTeacher": {
+    "name": "School teacher",
+    "type": "man",
+    "thumb": "SchoolTeacher.jpg"
+  },
+  "SeaFox": {
+    "name": "Water target",
+    "type": "other",
+    "thumb": "SeaFox.jpg"
+  },
+  "SeaFox_EP1": {
+    "name": "SeaFox_EP1",
+    "type": "other",
+    "thumb": "SeaFox_EP1.jpg"
+  },
+  "SearchLight": {
+    "name": "Searchlight",
+    "type": "static",
+    "thumb": "SearchLight.jpg"
+  },
+  "SearchLight_TK_EP1": {
+    "name": "SearchLight_TK_EP1",
+    "type": "static",
+    "thumb": "SearchLight_TK_EP1.jpg"
+  },
+  "SearchLight_TK_GUE_EP1": {
+    "name": "SearchLight_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "SearchLight_TK_GUE_EP1.jpg"
+  },
+  "SearchLight_TK_INS_EP1": {
+    "name": "SearchLight_TK_INS_EP1",
+    "type": "static",
+    "thumb": "SearchLight_TK_INS_EP1.jpg"
+  },
+  "SearchLight_UN_EP1": {
+    "name": "SearchLight_UN_EP1",
+    "type": "static",
+    "thumb": "SearchLight_UN_EP1.jpg"
+  },
+  "SearchLight_US_EP1": {
+    "name": "SearchLight_US_EP1",
+    "type": "static",
+    "thumb": "SearchLight_US_EP1.jpg"
+  },
+  "Secretary1": {
+    "name": "Secretary (Gray)",
+    "type": "man",
+    "thumb": "Secretary1.jpg"
+  },
+  "Secretary2": {
+    "name": "Secretary (Brown)",
+    "type": "man",
+    "thumb": "Secretary2.jpg"
+  },
+  "Secretary3": {
+    "name": "Secretary (Black)",
+    "type": "man",
+    "thumb": "Secretary3.jpg"
+  },
+  "Secretary4": {
+    "name": "Secretary (White)",
+    "type": "man",
+    "thumb": "Secretary4.jpg"
+  },
+  "Secretary5": {
+    "name": "Secretary (Green)",
+    "type": "man",
+    "thumb": "Secretary5.jpg"
+  },
+  "Sheep": {
+    "name": "Sheep",
+    "type": "man",
+    "thumb": "Sheep.jpg"
+  },
+  "Sheep01_EP1": {
+    "name": "Sheep (Brown)",
+    "type": "man",
+    "thumb": "Sheep01_EP1.jpg"
+  },
+  "Sign_1L_Border": {
+    "name": "Border sign",
+    "type": "other",
+    "thumb": "Sign_1L_Border.jpg"
+  },
+  "Sign_1L_Firstaid_EP1": {
+    "name": "First Aid",
+    "type": "other",
+    "thumb": "Sign_1L_Firstaid_EP1.jpg"
+  },
+  "Sign_1L_Noentry_EP1": {
+    "name": "No Entry",
+    "type": "other",
+    "thumb": "Sign_1L_Noentry_EP1.jpg"
+  },
+  "Sign_Armex_EP1": {
+    "name": "ARMEX",
+    "type": "static",
+    "thumb": null
+  },
+  "Sign_Checkpoint_TK_EP1": {
+    "name": "Checkpoint (TK)",
+    "type": "other",
+    "thumb": "Sign_Checkpoint_TK_EP1.jpg"
+  },
+  "Sign_Checkpoint_US_EP1": {
+    "name": "Checkpoint (US)",
+    "type": "other",
+    "thumb": "Sign_Checkpoint_US_EP1.jpg"
+  },
+  "Sign_Danger": {
+    "name": "Danger",
+    "type": "other",
+    "thumb": "Sign_Danger.jpg"
+  },
+  "Sign_Direction_EP1": {
+    "name": "Direction",
+    "type": "static",
+    "thumb": null
+  },
+  "Sign_MP_blu_EP1": {
+    "name": "No trespassing - BLUFOR",
+    "type": "other",
+    "thumb": "Sign_MP_blu_EP1.jpg"
+  },
+  "Sign_MP_ind_EP1": {
+    "name": "No trespassing - INDEPENDENT",
+    "type": "other",
+    "thumb": "Sign_MP_ind_EP1.jpg"
+  },
+  "Sign_MP_op_EP1": {
+    "name": "No trespassing - OPFOR",
+    "type": "other",
+    "thumb": "Sign_MP_op_EP1.jpg"
+  },
+  "Sign_arrow_down_EP1": {
+    "name": "Arrow (down)",
+    "type": "other",
+    "thumb": "Sign_arrow_down_EP1.jpg"
+  },
+  "Sign_arrow_down_large_EP1": {
+    "name": "Arrow (down large)",
+    "type": "other",
+    "thumb": "Sign_arrow_down_large_EP1.jpg"
+  },
+  "Sign_circle": {
+    "name": "Circle",
+    "type": "other",
+    "thumb": "Sign_circle.jpg"
+  },
+  "Sign_circle_EP1": {
+    "name": "Circle 2",
+    "type": "other",
+    "thumb": "Sign_circle_EP1.jpg"
+  },
+  "Sign_sphere100cm_EP1": {
+    "name": "Sphere 100cm",
+    "type": "other",
+    "thumb": "Sign_sphere100cm_EP1.jpg"
+  },
+  "Sign_sphere10cm_EP1": {
+    "name": "Sphere 10cm",
+    "type": "other",
+    "thumb": "Sign_sphere10cm_EP1.jpg"
+  },
+  "Sign_sphere25cm_EP1": {
+    "name": "Sphere 25cm",
+    "type": "other",
+    "thumb": "Sign_sphere25cm_EP1.jpg"
+  },
+  "SkeetDisk": {
+    "name": "Skeet Disk",
+    "type": "other",
+    "thumb": "SkeetDisk.jpg"
+  },
+  "SkeetMachine": {
+    "name": "Skeet Machine",
+    "type": "other",
+    "thumb": "SkeetMachine.jpg"
+  },
+  "Skoda": {
+    "name": "Car (white)",
+    "type": "car",
+    "thumb": "Skoda.jpg"
+  },
+  "SkodaBlue": {
+    "name": "Car (blue)",
+    "type": "car",
+    "thumb": "SkodaBlue.jpg"
+  },
+  "SkodaGreen": {
+    "name": "Car (green)",
+    "type": "car",
+    "thumb": "SkodaGreen.jpg"
+  },
+  "SkodaRed": {
+    "name": "Car (red)",
+    "type": "car",
+    "thumb": "SkodaRed.jpg"
+  },
+  "SmallTV": {
+    "name": "TV",
+    "type": "other",
+    "thumb": "SmallTV.jpg"
+  },
+  "SmallTable": {
+    "name": "Table (small)",
+    "type": "other",
+    "thumb": "SmallTable.jpg"
+  },
+  "Smallboat_1": {
+    "name": "Small boat",
+    "type": "other",
+    "thumb": "Smallboat_1.jpg"
+  },
+  "Soldier_AA_PMC": {
+    "name": "Tactical Specialist (Stinger)",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_AT_PMC": {
+    "name": "Field Specialist (RPG-18)",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_Bodyguard_AA12_PMC": {
+    "name": "Bodyguard (AA-12)",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_Bodyguard_M4_PMC": {
+    "name": "Bodyguard (M4A1)",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_Crew_PMC": {
+    "name": "Tactical Driver",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_Engineer_PMC": {
+    "name": "Field Technician",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_GL_PMC": {
+    "name": "Security Contractor (M8-GL)",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_MG_PMC": {
+    "name": "Field Specialist (M8-Auto)",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_Medic_PMC": {
+    "name": "Field Medic",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_PMC": {
+    "name": "Security Contractor (M8)",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_Pilot_PMC": {
+    "name": "Tactical Pilot",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_Sniper_KSVK_PMC": {
+    "name": "Tactical Specialist (KSVK)",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_Sniper_PMC": {
+    "name": "Defensive Marksman",
+    "type": "man",
+    "thumb": null
+  },
+  "Soldier_TL_PMC": {
+    "name": "Team Coordinator",
+    "type": "man",
+    "thumb": null
+  },
+  "Sound_Alarm": {
+    "name": "Alarm",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Alarm2": {
+    "name": "Alarm2",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_BadDog": {
+    "name": "Bad Dog",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_BirdSinging": {
+    "name": "Bird singing",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Chicken": {
+    "name": "Chicken",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Cock": {
+    "name": "Cock",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Cow": {
+    "name": "Cow",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Crickets1": {
+    "name": "Cricket 1",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Crickets2": {
+    "name": "Cricket 2",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Crickets3": {
+    "name": "Cricket 3",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Crickets4": {
+    "name": "Cricket 4",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Crow": {
+    "name": "Crow",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Dog": {
+    "name": "Dog",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Fire": {
+    "name": "Fire",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Frog": {
+    "name": "Frog",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Frogs": {
+    "name": "Frogs",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_LittleDog": {
+    "name": "Little Dog",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Music": {
+    "name": "Music",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Owl": {
+    "name": "Owl",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_SorrowDog": {
+    "name": "Sorrow Dog",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Stream": {
+    "name": "Stream",
+    "type": "other",
+    "thumb": null
+  },
+  "Sound_Wolf": {
+    "name": "Wolf",
+    "type": "other",
+    "thumb": null
+  },
+  "Sportswoman1": {
+    "name": "Sports-woman (Purple)",
+    "type": "man",
+    "thumb": "Sportswoman1.jpg"
+  },
+  "Sportswoman2": {
+    "name": "Sports-woman (Brown)",
+    "type": "man",
+    "thumb": "Sportswoman2.jpg"
+  },
+  "Sportswoman3": {
+    "name": "Sports-woman (Gray)",
+    "type": "man",
+    "thumb": "Sportswoman3.jpg"
+  },
+  "Sportswoman4": {
+    "name": "Sports-woman (Green)",
+    "type": "man",
+    "thumb": "Sportswoman4.jpg"
+  },
+  "Sportswoman5": {
+    "name": "Sports-woman (Black)",
+    "type": "man",
+    "thumb": "Sportswoman5.jpg"
+  },
+  "Sr_border": {
+    "name": "Yellow border",
+    "type": "static",
+    "thumb": "Sr_border.jpg"
+  },
+  "Steerable_Parachute_EP1": {
+    "name": "Steerable parachute",
+    "type": "air",
+    "thumb": "Steerable_Parachute_EP1.jpg"
+  },
+  "Stinger_Pod": {
+    "name": "AA Pod",
+    "type": "static",
+    "thumb": "Stinger_Pod.jpg"
+  },
+  "Stinger_Pod_US_EP1": {
+    "name": "Stinger_Pod_US_EP1",
+    "type": "static",
+    "thumb": "Stinger_Pod_US_EP1.jpg"
+  },
+  "Su25_CDF": {
+    "name": "Su-25",
+    "type": "air",
+    "thumb": "Su25_CDF.jpg"
+  },
+  "Su25_Ins": {
+    "name": "Su25_Ins",
+    "type": "air",
+    "thumb": "Su25_Ins.jpg"
+  },
+  "Su25_TK_EP1": {
+    "name": "Su25_TK_EP1",
+    "type": "air",
+    "thumb": "Su25_TK_EP1.jpg"
+  },
+  "Su34": {
+    "name": "Su-34",
+    "type": "air",
+    "thumb": "Su34.jpg"
+  },
+  "Su39": {
+    "name": "Su-25",
+    "type": "air",
+    "thumb": "Su39.jpg"
+  },
+  "Suitcase": {
+    "name": "Suitcase",
+    "type": "other",
+    "thumb": "Suitcase.jpg"
+  },
+  "T34": {
+    "name": "T34",
+    "type": "tank",
+    "thumb": "T34.jpg"
+  },
+  "T34_TK_EP1": {
+    "name": "T34_TK_EP1",
+    "type": "tank",
+    "thumb": "T34_TK_EP1.jpg"
+  },
+  "T34_TK_GUE_EP1": {
+    "name": "T34_TK_GUE_EP1",
+    "type": "tank",
+    "thumb": "T34_TK_GUE_EP1.jpg"
+  },
+  "T55_TK_EP1": {
+    "name": "T55_TK_EP1",
+    "type": "tank",
+    "thumb": "T55_TK_EP1.jpg"
+  },
+  "T55_TK_GUE_EP1": {
+    "name": "T55_TK_GUE_EP1",
+    "type": "tank",
+    "thumb": "T55_TK_GUE_EP1.jpg"
+  },
+  "T72Wreck": {
+    "name": "T-72",
+    "type": "static",
+    "thumb": "T72Wreck.jpg"
+  },
+  "T72WreckTurret": {
+    "name": "T-72 Turret",
+    "type": "static",
+    "thumb": "T72WreckTurret.jpg"
+  },
+  "T72_CDF": {
+    "name": "T72_CDF",
+    "type": "tank",
+    "thumb": "T72_CDF.jpg"
+  },
+  "T72_Gue": {
+    "name": "T72_Gue",
+    "type": "tank",
+    "thumb": "T72_Gue.jpg"
+  },
+  "T72_INS": {
+    "name": "T72_INS",
+    "type": "tank",
+    "thumb": "T72_INS.jpg"
+  },
+  "T72_RU": {
+    "name": "T72_RU",
+    "type": "tank",
+    "thumb": "T72_RU.jpg"
+  },
+  "T72_TK_EP1": {
+    "name": "T72_TK_EP1",
+    "type": "tank",
+    "thumb": "T72_TK_EP1.jpg"
+  },
+  "T90": {
+    "name": "T-90",
+    "type": "tank",
+    "thumb": "T90.jpg"
+  },
+  "TKBasicAmmunitionBox_EP1": {
+    "name": "TK Basic Ammo",
+    "type": "static",
+    "thumb": "TKBasicAmmunitionBox_EP1.jpg"
+  },
+  "TKBasicWeapons_EP1": {
+    "name": "TK Basic Weapons",
+    "type": "static",
+    "thumb": "TKBasicWeapons_EP1.jpg"
+  },
+  "TKLaunchers_EP1": {
+    "name": "TK Launchers",
+    "type": "static",
+    "thumb": "TKLaunchers_EP1.jpg"
+  },
+  "TKSpecialWeapons_EP1": {
+    "name": "TK Special Weapons",
+    "type": "static",
+    "thumb": "TKSpecialWeapons_EP1.jpg"
+  },
+  "TK_ALICE_Pack_EP1": {
+    "name": "ALICE Pack",
+    "type": "static",
+    "thumb": "TK_ALICE_Pack_EP1.jpg"
+  },
+  "TK_Assault_Pack_EP1": {
+    "name": "Assault Pack (khaki)",
+    "type": "static",
+    "thumb": "TK_Assault_Pack_EP1.jpg"
+  },
+  "TK_Aziz_EP1": {
+    "name": "Col. Aziz",
+    "type": "man",
+    "thumb": "TK_Aziz_EP1.jpg"
+  },
+  "TK_CIV_Takistani01_EP1": {
+    "name": "Takistani (sweater)",
+    "type": "man",
+    "thumb": "TK_CIV_Takistani01_EP1.jpg"
+  },
+  "TK_CIV_Takistani02_EP1": {
+    "name": "Takistani (jacket)",
+    "type": "man",
+    "thumb": "TK_CIV_Takistani02_EP1.jpg"
+  },
+  "TK_CIV_Takistani03_EP1": {
+    "name": "Takistani (hat)",
+    "type": "man",
+    "thumb": "TK_CIV_Takistani03_EP1.jpg"
+  },
+  "TK_CIV_Takistani04_EP1": {
+    "name": "Takistani (turban)",
+    "type": "man",
+    "thumb": "TK_CIV_Takistani04_EP1.jpg"
+  },
+  "TK_CIV_Takistani05_EP1": {
+    "name": "Takistani (scarf)",
+    "type": "man",
+    "thumb": "TK_CIV_Takistani05_EP1.jpg"
+  },
+  "TK_CIV_Takistani06_EP1": {
+    "name": "Takistani (vest)",
+    "type": "man",
+    "thumb": "TK_CIV_Takistani06_EP1.jpg"
+  },
+  "TK_CIV_Woman01_EP1": {
+    "name": "Takistani city woman",
+    "type": "man",
+    "thumb": "TK_CIV_Woman01_EP1.jpg"
+  },
+  "TK_CIV_Woman02_EP1": {
+    "name": "Takistani old woman",
+    "type": "man",
+    "thumb": "TK_CIV_Woman02_EP1.jpg"
+  },
+  "TK_CIV_Worker01_EP1": {
+    "name": "Worker (red)",
+    "type": "man",
+    "thumb": "TK_CIV_Worker01_EP1.jpg"
+  },
+  "TK_Commander_EP1": {
+    "name": "Commander",
+    "type": "man",
+    "thumb": "TK_Commander_EP1.jpg"
+  },
+  "TK_GUE_Bonesetter_EP1": {
+    "name": "Bonesetter",
+    "type": "man",
+    "thumb": "TK_GUE_Bonesetter_EP1.jpg"
+  },
+  "TK_GUE_Soldier_2_EP1": {
+    "name": "Guerilla (AK-47S)",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_2_EP1.jpg"
+  },
+  "TK_GUE_Soldier_3_EP1": {
+    "name": "Guerilla (M16A2)",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_3_EP1.jpg"
+  },
+  "TK_GUE_Soldier_4_EP1": {
+    "name": "Guerilla (M16A2 GL)",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_4_EP1.jpg"
+  },
+  "TK_GUE_Soldier_5_EP1": {
+    "name": "Guerilla (Lee-Enfield)",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_5_EP1.jpg"
+  },
+  "TK_GUE_Soldier_AA_EP1": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_AA_EP1.jpg"
+  },
+  "TK_GUE_Soldier_AR_EP1": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_AR_EP1.jpg"
+  },
+  "TK_GUE_Soldier_AT_EP1": {
+    "name": "Guerilla (RPG-7)",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_AT_EP1.jpg"
+  },
+  "TK_GUE_Soldier_EP1": {
+    "name": "Guerilla (AK-47)",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_EP1.jpg"
+  },
+  "TK_GUE_Soldier_HAT_EP1": {
+    "name": "Guerilla (Dragon)",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_HAT_EP1.jpg"
+  },
+  "TK_GUE_Soldier_MG_EP1": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_MG_EP1.jpg"
+  },
+  "TK_GUE_Soldier_Sniper_EP1": {
+    "name": "Guerilla Sniper",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_Sniper_EP1.jpg"
+  },
+  "TK_GUE_Soldier_TL_EP1": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": "TK_GUE_Soldier_TL_EP1.jpg"
+  },
+  "TK_GUE_WarfareBAircraftFactory_Base_EP1": {
+    "name": "Aircraft Factory",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBAircraftFactory_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBAircraftFactory_EP1": {
+    "name": "TK_GUE_WarfareBAircraftFactory_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBAircraftFactory_EP1.jpg"
+  },
+  "TK_GUE_WarfareBAntiAirRadar_Base_EP1": {
+    "name": "Anti-Air Radar",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBAntiAirRadar_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBAntiAirRadar_EP1": {
+    "name": "TK_GUE_WarfareBAntiAirRadar_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBAntiAirRadar_EP1.jpg"
+  },
+  "TK_GUE_WarfareBArtilleryRadar_Base_EP1": {
+    "name": "Artillery Radar",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBArtilleryRadar_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBArtilleryRadar_EP1": {
+    "name": "TK_GUE_WarfareBArtilleryRadar_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBArtilleryRadar_EP1.jpg"
+  },
+  "TK_GUE_WarfareBBarracks_Base_EP1": {
+    "name": "Barracks",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBBarracks_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBBarracks_EP1": {
+    "name": "TK_GUE_WarfareBBarracks_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBBarracks_EP1.jpg"
+  },
+  "TK_GUE_WarfareBContructionSite1_EP1": {
+    "name": "TK_GUE_WarfareBContructionSite1_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBContructionSite1_EP1.jpg"
+  },
+  "TK_GUE_WarfareBContructionSite_Base_EP1": {
+    "name": "Construction Site",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBContructionSite_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBContructionSite_EP1": {
+    "name": "TK_GUE_WarfareBContructionSite_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBContructionSite_EP1.jpg"
+  },
+  "TK_GUE_WarfareBFieldhHospital_Base_EP1": {
+    "name": "Field Hospital",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBFieldhHospital_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBFieldhHospital_EP1": {
+    "name": "TK_GUE_WarfareBFieldhHospital_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBFieldhHospital_EP1.jpg"
+  },
+  "TK_GUE_WarfareBHeavyFactory_Base_EP1": {
+    "name": "Heavy Factory",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBHeavyFactory_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBHeavyFactory_EP1": {
+    "name": "TK_GUE_WarfareBHeavyFactory_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBHeavyFactory_EP1.jpg"
+  },
+  "TK_GUE_WarfareBLightFactory_EP1": {
+    "name": "TK_GUE_WarfareBLightFactory_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBLightFactory_EP1.jpg"
+  },
+  "TK_GUE_WarfareBLightFactory_base_EP1": {
+    "name": "Light Factory",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBLightFactory_base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBUAVterminal_Base_EP1": {
+    "name": "UAV Terminal",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBUAVterminal_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBUAVterminal_EP1": {
+    "name": "TK_GUE_WarfareBUAVterminal_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBUAVterminal_EP1.jpg"
+  },
+  "TK_GUE_WarfareBVehicleServicePoint_Base_EP1": {
+    "name": "Vehicle Service Point",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBVehicleServicePoint_Base_EP1.jpg"
+  },
+  "TK_GUE_WarfareBVehicleServicePoint_EP1": {
+    "name": "TK_GUE_WarfareBVehicleServicePoint_EP1",
+    "type": "static",
+    "thumb": "TK_GUE_WarfareBVehicleServicePoint_EP1.jpg"
+  },
+  "TK_GUE_Warlord_EP1": {
+    "name": "Warlord",
+    "type": "man",
+    "thumb": "TK_GUE_Warlord_EP1.jpg"
+  },
+  "TK_INS_Bonesetter_EP1": {
+    "name": "Bonesetter",
+    "type": "man",
+    "thumb": "TK_INS_Bonesetter_EP1.jpg"
+  },
+  "TK_INS_Soldier_2_EP1": {
+    "name": "Militiaman (AK-74 GL)",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_2_EP1.jpg"
+  },
+  "TK_INS_Soldier_3_EP1": {
+    "name": "Militiaman (Lee-Enfield)",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_3_EP1.jpg"
+  },
+  "TK_INS_Soldier_4_EP1": {
+    "name": "Militiaman (FN FAL)",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_4_EP1.jpg"
+  },
+  "TK_INS_Soldier_AA_EP1": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_AA_EP1.jpg"
+  },
+  "TK_INS_Soldier_AR_EP1": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_AR_EP1.jpg"
+  },
+  "TK_INS_Soldier_AT_EP1": {
+    "name": "Militiaman (RPG-7)",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_AT_EP1.jpg"
+  },
+  "TK_INS_Soldier_EP1": {
+    "name": "Militiaman (AK-74)",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_EP1.jpg"
+  },
+  "TK_INS_Soldier_MG_EP1": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_MG_EP1.jpg"
+  },
+  "TK_INS_Soldier_Sniper_EP1": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_Sniper_EP1.jpg"
+  },
+  "TK_INS_Soldier_TL_EP1": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": "TK_INS_Soldier_TL_EP1.jpg"
+  },
+  "TK_INS_Warlord_EP1": {
+    "name": "Warlord",
+    "type": "man",
+    "thumb": "TK_INS_Warlord_EP1.jpg"
+  },
+  "TK_RPG_Backpack_EP1": {
+    "name": "RPG Pack",
+    "type": "static",
+    "thumb": "TK_RPG_Backpack_EP1.jpg"
+  },
+  "TK_Soldier_AA_EP1": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": "TK_Soldier_AA_EP1.jpg"
+  },
+  "TK_Soldier_AR_EP1": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "TK_Soldier_AR_EP1.jpg"
+  },
+  "TK_Soldier_AT_EP1": {
+    "name": "Rifleman (RPG-7)",
+    "type": "man",
+    "thumb": "TK_Soldier_AT_EP1.jpg"
+  },
+  "TK_Soldier_Crew_EP1": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": "TK_Soldier_Crew_EP1.jpg"
+  },
+  "TK_Soldier_EP1": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "TK_Soldier_EP1.jpg"
+  },
+  "TK_Soldier_Engineer_EP1": {
+    "name": "Engineer",
+    "type": "man",
+    "thumb": "TK_Soldier_Engineer_EP1.jpg"
+  },
+  "TK_Soldier_GL_EP1": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "TK_Soldier_GL_EP1.jpg"
+  },
+  "TK_Soldier_HAT_EP1": {
+    "name": "AT Specialist",
+    "type": "man",
+    "thumb": "TK_Soldier_HAT_EP1.jpg"
+  },
+  "TK_Soldier_LAT_EP1": {
+    "name": "Rifleman (RPG-18)",
+    "type": "man",
+    "thumb": "TK_Soldier_LAT_EP1.jpg"
+  },
+  "TK_Soldier_MG_EP1": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "TK_Soldier_MG_EP1.jpg"
+  },
+  "TK_Soldier_Medic_EP1": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": "TK_Soldier_Medic_EP1.jpg"
+  },
+  "TK_Soldier_Night_1_EP1": {
+    "name": "Soldier (AKS-74 night)",
+    "type": "man",
+    "thumb": "TK_Soldier_Night_1_EP1.jpg"
+  },
+  "TK_Soldier_Night_2_EP1": {
+    "name": "Soldier (night)",
+    "type": "man",
+    "thumb": "TK_Soldier_Night_2_EP1.jpg"
+  },
+  "TK_Soldier_Officer_EP1": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": "TK_Soldier_Officer_EP1.jpg"
+  },
+  "TK_Soldier_Pilot_EP1": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": "TK_Soldier_Pilot_EP1.jpg"
+  },
+  "TK_Soldier_SL_EP1": {
+    "name": "Squad leader",
+    "type": "man",
+    "thumb": "TK_Soldier_SL_EP1.jpg"
+  },
+  "TK_Soldier_SniperH_EP1": {
+    "name": "Sniper (KSVK)",
+    "type": "man",
+    "thumb": "TK_Soldier_SniperH_EP1.jpg"
+  },
+  "TK_Soldier_Sniper_EP1": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": "TK_Soldier_Sniper_EP1.jpg"
+  },
+  "TK_Soldier_Sniper_Night_EP1": {
+    "name": "Sniper (night)",
+    "type": "man",
+    "thumb": "TK_Soldier_Sniper_Night_EP1.jpg"
+  },
+  "TK_Soldier_Spotter_EP1": {
+    "name": "Spotter",
+    "type": "man",
+    "thumb": "TK_Soldier_Spotter_EP1.jpg"
+  },
+  "TK_Soldier_TWS_EP1": {
+    "name": "Soldier (TWS)",
+    "type": "man",
+    "thumb": "TK_Soldier_TWS_EP1.jpg"
+  },
+  "TK_Special_Forces_EP1": {
+    "name": "Special Soldier",
+    "type": "man",
+    "thumb": "TK_Special_Forces_EP1.jpg"
+  },
+  "TK_WarfareBAircraftFactory_Base_EP1": {
+    "name": "Aircraft Factory",
+    "type": "static",
+    "thumb": "TK_WarfareBAircraftFactory_Base_EP1.jpg"
+  },
+  "TK_WarfareBAircraftFactory_EP1": {
+    "name": "TK_WarfareBAircraftFactory_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBAircraftFactory_EP1.jpg"
+  },
+  "TK_WarfareBAntiAirRadar_Base_EP1": {
+    "name": "Anti-Air Radar",
+    "type": "static",
+    "thumb": "TK_WarfareBAntiAirRadar_Base_EP1.jpg"
+  },
+  "TK_WarfareBAntiAirRadar_EP1": {
+    "name": "TK_WarfareBAntiAirRadar_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBAntiAirRadar_EP1.jpg"
+  },
+  "TK_WarfareBArtilleryRadar_Base_EP1": {
+    "name": "Artillery Radar",
+    "type": "static",
+    "thumb": "TK_WarfareBArtilleryRadar_Base_EP1.jpg"
+  },
+  "TK_WarfareBArtilleryRadar_EP1": {
+    "name": "TK_WarfareBArtilleryRadar_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBArtilleryRadar_EP1.jpg"
+  },
+  "TK_WarfareBBarracks_Base_EP1": {
+    "name": "Barracks",
+    "type": "static",
+    "thumb": "TK_WarfareBBarracks_Base_EP1.jpg"
+  },
+  "TK_WarfareBBarracks_EP1": {
+    "name": "TK_WarfareBBarracks_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBBarracks_EP1.jpg"
+  },
+  "TK_WarfareBContructionSite1_EP1": {
+    "name": "TK_WarfareBContructionSite1_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBContructionSite1_EP1.jpg"
+  },
+  "TK_WarfareBContructionSite_Base_EP1": {
+    "name": "Construction Site",
+    "type": "static",
+    "thumb": "TK_WarfareBContructionSite_Base_EP1.jpg"
+  },
+  "TK_WarfareBContructionSite_EP1": {
+    "name": "TK_WarfareBContructionSite_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBContructionSite_EP1.jpg"
+  },
+  "TK_WarfareBFieldhHospital_Base_EP1": {
+    "name": "Field Hospital",
+    "type": "static",
+    "thumb": "TK_WarfareBFieldhHospital_Base_EP1.jpg"
+  },
+  "TK_WarfareBFieldhHospital_EP1": {
+    "name": "TK_WarfareBFieldhHospital_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBFieldhHospital_EP1.jpg"
+  },
+  "TK_WarfareBHeavyFactory_Base_EP1": {
+    "name": "Heavy Factory",
+    "type": "static",
+    "thumb": "TK_WarfareBHeavyFactory_Base_EP1.jpg"
+  },
+  "TK_WarfareBHeavyFactory_EP1": {
+    "name": "TK_WarfareBHeavyFactory_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBHeavyFactory_EP1.jpg"
+  },
+  "TK_WarfareBLightFactory_EP1": {
+    "name": "TK_WarfareBLightFactory_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBLightFactory_EP1.jpg"
+  },
+  "TK_WarfareBLightFactory_base_EP1": {
+    "name": "Light Factory",
+    "type": "static",
+    "thumb": "TK_WarfareBLightFactory_base_EP1.jpg"
+  },
+  "TK_WarfareBUAVterminal_Base_EP1": {
+    "name": "UAV Terminal",
+    "type": "static",
+    "thumb": "TK_WarfareBUAVterminal_Base_EP1.jpg"
+  },
+  "TK_WarfareBUAVterminal_EP1": {
+    "name": "TK_WarfareBUAVterminal_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBUAVterminal_EP1.jpg"
+  },
+  "TK_WarfareBVehicleServicePoint_Base_EP1": {
+    "name": "Vehicle Service Point",
+    "type": "static",
+    "thumb": "TK_WarfareBVehicleServicePoint_Base_EP1.jpg"
+  },
+  "TK_WarfareBVehicleServicePoint_EP1": {
+    "name": "TK_WarfareBVehicleServicePoint_EP1",
+    "type": "static",
+    "thumb": "TK_WarfareBVehicleServicePoint_EP1.jpg"
+  },
+  "TOW_TriPod": {
+    "name": "TOW Tripod",
+    "type": "static",
+    "thumb": "TOW_TriPod.jpg"
+  },
+  "TOW_TriPod_US_Bag_EP1": {
+    "name": "TOW Tripod Bag",
+    "type": "static",
+    "thumb": "TOW_TriPod_US_Bag_EP1.jpg"
+  },
+  "TOW_TriPod_US_EP1": {
+    "name": "TOW_TriPod_US_EP1",
+    "type": "static",
+    "thumb": "TOW_TriPod_US_EP1.jpg"
+  },
+  "TT650_Civ": {
+    "name": "TT650_Civ",
+    "type": "car",
+    "thumb": "TT650_Civ.jpg"
+  },
+  "TT650_Gue": {
+    "name": "TT650_Gue",
+    "type": "car",
+    "thumb": "TT650_Gue.jpg"
+  },
+  "TT650_Ins": {
+    "name": "TT650_Ins",
+    "type": "car",
+    "thumb": "TT650_Ins.jpg"
+  },
+  "TT650_TK_CIV_EP1": {
+    "name": "TT650_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "TT650_TK_CIV_EP1.jpg"
+  },
+  "TT650_TK_EP1": {
+    "name": "TT650_TK_EP1",
+    "type": "car",
+    "thumb": "TT650_TK_EP1.jpg"
+  },
+  "Tanny_PMC": {
+    "name": "Tanny",
+    "type": "man",
+    "thumb": null
+  },
+  "TargetE": {
+    "name": "Simple target",
+    "type": "static",
+    "thumb": null
+  },
+  "TargetE_EP1": {
+    "name": "Simple target",
+    "type": "static",
+    "thumb": null
+  },
+  "TargetEpopup": {
+    "name": "Pop-up target (small)",
+    "type": "static",
+    "thumb": null
+  },
+  "TargetFakeTank_Lockable_EP1": {
+    "name": "TargetFakeTank_Lockable_EP1",
+    "type": "static",
+    "thumb": null
+  },
+  "TargetPopUpTarget": {
+    "name": "Pop-up target (big)",
+    "type": "static",
+    "thumb": null
+  },
+  "TowingTractor": {
+    "name": "Towing Tractor",
+    "type": "car",
+    "thumb": "TowingTractor.jpg"
+  },
+  "Tractor": {
+    "name": "Tractor",
+    "type": "car",
+    "thumb": "Tractor.jpg"
+  },
+  "Training_target_EP1": {
+    "name": "Training target",
+    "type": "static",
+    "thumb": "Training_target_EP1.jpg"
+  },
+  "Tripod_Bag": {
+    "name": "Tripod Bag",
+    "type": "static",
+    "thumb": "Tripod_Bag.jpg"
+  },
+  "UAZWreck": {
+    "name": "UAZ",
+    "type": "static",
+    "thumb": "UAZWreck.jpg"
+  },
+  "UAZ_AGS30_CDF": {
+    "name": "UAZ_AGS30_CDF",
+    "type": "car",
+    "thumb": "UAZ_AGS30_CDF.jpg"
+  },
+  "UAZ_AGS30_INS": {
+    "name": "UAZ_AGS30_INS",
+    "type": "car",
+    "thumb": "UAZ_AGS30_INS.jpg"
+  },
+  "UAZ_AGS30_RU": {
+    "name": "UAZ_AGS30_RU",
+    "type": "car",
+    "thumb": "UAZ_AGS30_RU.jpg"
+  },
+  "UAZ_AGS30_TK_EP1": {
+    "name": "UAZ_AGS30_TK_EP1",
+    "type": "car",
+    "thumb": "UAZ_AGS30_TK_EP1.jpg"
+  },
+  "UAZ_CDF": {
+    "name": "UAZ_CDF",
+    "type": "car",
+    "thumb": "UAZ_CDF.jpg"
+  },
+  "UAZ_INS": {
+    "name": "UAZ_INS",
+    "type": "car",
+    "thumb": "UAZ_INS.jpg"
+  },
+  "UAZ_MG_CDF": {
+    "name": "UAZ_MG_CDF",
+    "type": "car",
+    "thumb": "UAZ_MG_CDF.jpg"
+  },
+  "UAZ_MG_INS": {
+    "name": "UAZ_MG_INS",
+    "type": "car",
+    "thumb": "UAZ_MG_INS.jpg"
+  },
+  "UAZ_MG_TK_EP1": {
+    "name": "UAZ_MG_TK_EP1",
+    "type": "car",
+    "thumb": "UAZ_MG_TK_EP1.jpg"
+  },
+  "UAZ_RU": {
+    "name": "UAZ_RU",
+    "type": "car",
+    "thumb": "UAZ_RU.jpg"
+  },
+  "UAZ_SPG9_INS": {
+    "name": "UAZ_SPG9_INS",
+    "type": "car",
+    "thumb": "UAZ_SPG9_INS.jpg"
+  },
+  "UAZ_Unarmed_TK_CIV_EP1": {
+    "name": "UAZ_Unarmed_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "UAZ_Unarmed_TK_CIV_EP1.jpg"
+  },
+  "UAZ_Unarmed_TK_EP1": {
+    "name": "UAZ_Unarmed_TK_EP1",
+    "type": "car",
+    "thumb": "UAZ_Unarmed_TK_EP1.jpg"
+  },
+  "UAZ_Unarmed_UN_EP1": {
+    "name": "UAZ_Unarmed_UN_EP1",
+    "type": "car",
+    "thumb": "UAZ_Unarmed_UN_EP1.jpg"
+  },
+  "UH1H_TK_EP1": {
+    "name": "UH1H_TK_EP1",
+    "type": "air",
+    "thumb": "UH1H_TK_EP1.jpg"
+  },
+  "UH1H_TK_GUE_EP1": {
+    "name": "UH1H_TK_GUE_EP1",
+    "type": "air",
+    "thumb": "UH1H_TK_GUE_EP1.jpg"
+  },
+  "UH1Wreck": {
+    "name": "Crashed UH-1Y",
+    "type": "static",
+    "thumb": "UH1Wreck.jpg"
+  },
+  "UH1Y": {
+    "name": "UH1Y",
+    "type": "air",
+    "thumb": "UH1Y.jpg"
+  },
+  "UH60M_EP1": {
+    "name": "UH-60M",
+    "type": "air",
+    "thumb": "UH60M_EP1.jpg"
+  },
+  "UH60M_MEV_EP1": {
+    "name": "UH-60M MEV",
+    "type": "air",
+    "thumb": "UH60M_MEV_EP1.jpg"
+  },
+  "UH60_wreck_EP1": {
+    "name": "UH-60 wreck",
+    "type": "static",
+    "thumb": "UH60_wreck_EP1.jpg"
+  },
+  "UNBasicAmmunitionBox_EP1": {
+    "name": "UN Basic Ammo",
+    "type": "static",
+    "thumb": "UNBasicAmmunitionBox_EP1.jpg"
+  },
+  "UNBasicWeapons_EP1": {
+    "name": "UN Basic Weapons",
+    "type": "static",
+    "thumb": "UNBasicWeapons_EP1.jpg"
+  },
+  "UN_CDF_Soldier_AT_EP1": {
+    "name": "Rifleman (RPG-7)",
+    "type": "man",
+    "thumb": "UN_CDF_Soldier_AT_EP1.jpg"
+  },
+  "UN_CDF_Soldier_Crew_EP1": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": "UN_CDF_Soldier_Crew_EP1.jpg"
+  },
+  "UN_CDF_Soldier_EP1": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "UN_CDF_Soldier_EP1.jpg"
+  },
+  "UN_CDF_Soldier_Light_EP1": {
+    "name": "Soldier (light)",
+    "type": "man",
+    "thumb": "UN_CDF_Soldier_Light_EP1.jpg"
+  },
+  "UN_CDF_Soldier_MG_EP1": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "UN_CDF_Soldier_MG_EP1.jpg"
+  },
+  "UN_CDF_Soldier_Officer_EP1": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": "UN_CDF_Soldier_Officer_EP1.jpg"
+  },
+  "UN_CDF_Soldier_Pilot_EP1": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": "UN_CDF_Soldier_Pilot_EP1.jpg"
+  },
+  "UN_CDF_Soldier_SL_EP1": {
+    "name": "Squad Leader",
+    "type": "man",
+    "thumb": "UN_CDF_Soldier_SL_EP1.jpg"
+  },
+  "USBasicAmmunitionBox": {
+    "name": "US Basic Ammunition",
+    "type": "static",
+    "thumb": "USBasicAmmunitionBox.jpg"
+  },
+  "USBasicAmmunitionBox_EP1": {
+    "name": "US Army Basic Ammo",
+    "type": "static",
+    "thumb": "USBasicAmmunitionBox_EP1.jpg"
+  },
+  "USBasicBag": {
+    "name": "US Bag",
+    "type": "static",
+    "thumb": "USBasicBag.jpg"
+  },
+  "USBasicWeapons_EP1": {
+    "name": "US Army Basic Weapons",
+    "type": "static",
+    "thumb": "USBasicWeapons_EP1.jpg"
+  },
+  "USLaunchers_EP1": {
+    "name": "US Army Launchers",
+    "type": "static",
+    "thumb": "USLaunchers_EP1.jpg"
+  },
+  "USMC_LHD_Crew_Blue": {
+    "name": "LHD Crew (Blue)",
+    "type": "man",
+    "thumb": "USMC_LHD_Crew_Blue.jpg"
+  },
+  "USMC_LHD_Crew_Brown": {
+    "name": "LHD Crew (Brown)",
+    "type": "man",
+    "thumb": "USMC_LHD_Crew_Brown.jpg"
+  },
+  "USMC_LHD_Crew_Green": {
+    "name": "LHD Crew (Green)",
+    "type": "man",
+    "thumb": "USMC_LHD_Crew_Green.jpg"
+  },
+  "USMC_LHD_Crew_Purple": {
+    "name": "LHD Crew (Violet)",
+    "type": "man",
+    "thumb": "USMC_LHD_Crew_Purple.jpg"
+  },
+  "USMC_LHD_Crew_Red": {
+    "name": "LHD Crew (Red)",
+    "type": "man",
+    "thumb": "USMC_LHD_Crew_Red.jpg"
+  },
+  "USMC_LHD_Crew_White": {
+    "name": "LHD Crew (White)",
+    "type": "man",
+    "thumb": "USMC_LHD_Crew_White.jpg"
+  },
+  "USMC_LHD_Crew_Yellow": {
+    "name": "LHD Crew (Yellow)",
+    "type": "man",
+    "thumb": "USMC_LHD_Crew_Yellow.jpg"
+  },
+  "USMC_Soldier": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "USMC_Soldier.jpg"
+  },
+  "USMC_Soldier2": {
+    "name": "Rifleman (M1014)",
+    "type": "man",
+    "thumb": "USMC_Soldier2.jpg"
+  },
+  "USMC_SoldierM_Marksman": {
+    "name": "Designated Marksman",
+    "type": "man",
+    "thumb": "USMC_SoldierM_Marksman.jpg"
+  },
+  "USMC_SoldierS": {
+    "name": "Scout",
+    "type": "man",
+    "thumb": "USMC_SoldierS.jpg"
+  },
+  "USMC_SoldierS_Engineer": {
+    "name": "Engineer",
+    "type": "man",
+    "thumb": "USMC_SoldierS_Engineer.jpg"
+  },
+  "USMC_SoldierS_Sniper": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": "USMC_SoldierS_Sniper.jpg"
+  },
+  "USMC_SoldierS_SniperH": {
+    "name": "Sniper (M107)",
+    "type": "man",
+    "thumb": "USMC_SoldierS_SniperH.jpg"
+  },
+  "USMC_SoldierS_Spotter": {
+    "name": "Spotter",
+    "type": "man",
+    "thumb": "USMC_SoldierS_Spotter.jpg"
+  },
+  "USMC_Soldier_AA": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": "USMC_Soldier_AA.jpg"
+  },
+  "USMC_Soldier_AR": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "USMC_Soldier_AR.jpg"
+  },
+  "USMC_Soldier_AT": {
+    "name": "AT Specialist (SMAW)",
+    "type": "man",
+    "thumb": "USMC_Soldier_AT.jpg"
+  },
+  "USMC_Soldier_Crew": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": "USMC_Soldier_Crew.jpg"
+  },
+  "USMC_Soldier_GL": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "USMC_Soldier_GL.jpg"
+  },
+  "USMC_Soldier_HAT": {
+    "name": "AT Specialist (Javelin)",
+    "type": "man",
+    "thumb": "USMC_Soldier_HAT.jpg"
+  },
+  "USMC_Soldier_LAT": {
+    "name": "Rifleman (M136)",
+    "type": "man",
+    "thumb": "USMC_Soldier_LAT.jpg"
+  },
+  "USMC_Soldier_Light": {
+    "name": "Soldier (unarmed)",
+    "type": "man",
+    "thumb": "USMC_Soldier_Light.jpg"
+  },
+  "USMC_Soldier_MG": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "USMC_Soldier_MG.jpg"
+  },
+  "USMC_Soldier_Medic": {
+    "name": "Corpsman",
+    "type": "man",
+    "thumb": "USMC_Soldier_Medic.jpg"
+  },
+  "USMC_Soldier_Officer": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": "USMC_Soldier_Officer.jpg"
+  },
+  "USMC_Soldier_Pilot": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": "USMC_Soldier_Pilot.jpg"
+  },
+  "USMC_Soldier_SL": {
+    "name": "Squad Leader",
+    "type": "man",
+    "thumb": "USMC_Soldier_SL.jpg"
+  },
+  "USMC_Soldier_TL": {
+    "name": "Fire Team Leader",
+    "type": "man",
+    "thumb": "USMC_Soldier_TL.jpg"
+  },
+  "USMC_WarfareBAircraftFactory": {
+    "name": "Aircraft Factory (USMC)",
+    "type": "static",
+    "thumb": "USMC_WarfareBAircraftFactory.jpg"
+  },
+  "USMC_WarfareBAntiAirRadar": {
+    "name": "Anti-Air Radar (USMC)",
+    "type": "static",
+    "thumb": "USMC_WarfareBAntiAirRadar.jpg"
+  },
+  "USMC_WarfareBArtilleryRadar": {
+    "name": "Artillery Radar (USMC)",
+    "type": "static",
+    "thumb": "USMC_WarfareBArtilleryRadar.jpg"
+  },
+  "USMC_WarfareBBarracks": {
+    "name": "Barracks (US)",
+    "type": "static",
+    "thumb": "USMC_WarfareBBarracks.jpg"
+  },
+  "USMC_WarfareBContructionSite": {
+    "name": "Construction Site (US)",
+    "type": "static",
+    "thumb": "USMC_WarfareBContructionSite.jpg"
+  },
+  "USMC_WarfareBFieldhHospital": {
+    "name": "Field Hospital (USMC)",
+    "type": "static",
+    "thumb": "USMC_WarfareBFieldhHospital.jpg"
+  },
+  "USMC_WarfareBHeavyFactory": {
+    "name": "Heavy Factory (USMC)",
+    "type": "static",
+    "thumb": "USMC_WarfareBHeavyFactory.jpg"
+  },
+  "USMC_WarfareBLightFactory": {
+    "name": "Light Factory (USMC)",
+    "type": "static",
+    "thumb": "USMC_WarfareBLightFactory.jpg"
+  },
+  "USMC_WarfareBMGNest_M240": {
+    "name": "MG Nest (M240)",
+    "type": "static",
+    "thumb": "USMC_WarfareBMGNest_M240.jpg"
+  },
+  "USMC_WarfareBUAVterminal": {
+    "name": "UAV Terminal (USMC)",
+    "type": "static",
+    "thumb": "USMC_WarfareBUAVterminal.jpg"
+  },
+  "USMC_WarfareBVehicleServicePoint": {
+    "name": "Vehicle Service Point (USMC)",
+    "type": "static",
+    "thumb": "USMC_WarfareBVehicleServicePoint.jpg"
+  },
+  "USSpecialWeapons_EP1": {
+    "name": "US Army Special Weapons",
+    "type": "static",
+    "thumb": "USSpecialWeapons_EP1.jpg"
+  },
+  "US_Assault_Pack_EP1": {
+    "name": "Assault Pack (ACU)",
+    "type": "static",
+    "thumb": "US_Assault_Pack_EP1.jpg"
+  },
+  "US_Backpack_EP1": {
+    "name": "Backpack (coyote)",
+    "type": "static",
+    "thumb": "US_Backpack_EP1.jpg"
+  },
+  "US_Delta_Force_AR_EP1": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "US_Delta_Force_AR_EP1.jpg"
+  },
+  "US_Delta_Force_Air_Controller_EP1": {
+    "name": "Forward Air Controller",
+    "type": "man",
+    "thumb": "US_Delta_Force_Air_Controller_EP1.jpg"
+  },
+  "US_Delta_Force_Assault_EP1": {
+    "name": "Operator (Assault)",
+    "type": "man",
+    "thumb": "US_Delta_Force_Assault_EP1.jpg"
+  },
+  "US_Delta_Force_EP1": {
+    "name": "Operator",
+    "type": "man",
+    "thumb": "US_Delta_Force_EP1.jpg"
+  },
+  "US_Delta_Force_M14_EP1": {
+    "name": "Operator (M14)",
+    "type": "man",
+    "thumb": "US_Delta_Force_M14_EP1.jpg"
+  },
+  "US_Delta_Force_MG_EP1": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "US_Delta_Force_MG_EP1.jpg"
+  },
+  "US_Delta_Force_Marksman_EP1": {
+    "name": "Marksman",
+    "type": "man",
+    "thumb": "US_Delta_Force_Marksman_EP1.jpg"
+  },
+  "US_Delta_Force_Medic_EP1": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": "US_Delta_Force_Medic_EP1.jpg"
+  },
+  "US_Delta_Force_Night_EP1": {
+    "name": "Operator (Night Assault)",
+    "type": "man",
+    "thumb": "US_Delta_Force_Night_EP1.jpg"
+  },
+  "US_Delta_Force_SD_EP1": {
+    "name": "Operator (Silenced)",
+    "type": "man",
+    "thumb": "US_Delta_Force_SD_EP1.jpg"
+  },
+  "US_Delta_Force_TL_EP1": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": "US_Delta_Force_TL_EP1.jpg"
+  },
+  "US_Delta_Force_Undercover_Takistani06_EP1": {
+    "name": "Graves (undercover)",
+    "type": "man",
+    "thumb": "US_Delta_Force_Undercover_Takistani06_EP1.jpg"
+  },
+  "US_Patrol_Pack_EP1": {
+    "name": "Patrol Pack (coyote)",
+    "type": "static",
+    "thumb": "US_Patrol_Pack_EP1.jpg"
+  },
+  "US_Pilot_Light_EP1": {
+    "name": "Pilot (light)",
+    "type": "man",
+    "thumb": "US_Pilot_Light_EP1.jpg"
+  },
+  "US_Soldier_AA_EP1": {
+    "name": "AA Specialist",
+    "type": "man",
+    "thumb": "US_Soldier_AA_EP1.jpg"
+  },
+  "US_Soldier_AR_EP1": {
+    "name": "Automatic Rifleman",
+    "type": "man",
+    "thumb": "US_Soldier_AR_EP1.jpg"
+  },
+  "US_Soldier_AT_EP1": {
+    "name": "AT Specialist",
+    "type": "man",
+    "thumb": "US_Soldier_AT_EP1.jpg"
+  },
+  "US_Soldier_Crew_EP1": {
+    "name": "Crewman",
+    "type": "man",
+    "thumb": "US_Soldier_Crew_EP1.jpg"
+  },
+  "US_Soldier_EP1": {
+    "name": "Rifleman",
+    "type": "man",
+    "thumb": "US_Soldier_EP1.jpg"
+  },
+  "US_Soldier_Engineer_EP1": {
+    "name": "Engineer",
+    "type": "man",
+    "thumb": "US_Soldier_Engineer_EP1.jpg"
+  },
+  "US_Soldier_GL_EP1": {
+    "name": "Grenadier",
+    "type": "man",
+    "thumb": "US_Soldier_GL_EP1.jpg"
+  },
+  "US_Soldier_HAT_EP1": {
+    "name": "AT Specialist (Javelin)",
+    "type": "man",
+    "thumb": "US_Soldier_HAT_EP1.jpg"
+  },
+  "US_Soldier_LAT_EP1": {
+    "name": "Rifleman (AT)",
+    "type": "man",
+    "thumb": "US_Soldier_LAT_EP1.jpg"
+  },
+  "US_Soldier_Light_EP1": {
+    "name": "Soldier (light)",
+    "type": "man",
+    "thumb": "US_Soldier_Light_EP1.jpg"
+  },
+  "US_Soldier_MG_EP1": {
+    "name": "Machinegunner",
+    "type": "man",
+    "thumb": "US_Soldier_MG_EP1.jpg"
+  },
+  "US_Soldier_Marksman_EP1": {
+    "name": "Marksman",
+    "type": "man",
+    "thumb": "US_Soldier_Marksman_EP1.jpg"
+  },
+  "US_Soldier_Medic_EP1": {
+    "name": "Medic",
+    "type": "man",
+    "thumb": "US_Soldier_Medic_EP1.jpg"
+  },
+  "US_Soldier_Officer_EP1": {
+    "name": "Officer",
+    "type": "man",
+    "thumb": null
+  },
+  "US_Soldier_Pilot_EP1": {
+    "name": "Pilot",
+    "type": "man",
+    "thumb": null
+  },
+  "US_Soldier_SL_EP1": {
+    "name": "Squad Leader",
+    "type": "man",
+    "thumb": null
+  },
+  "US_Soldier_SniperH_EP1": {
+    "name": "Sniper (M107)",
+    "type": "man",
+    "thumb": null
+  },
+  "US_Soldier_Sniper_EP1": {
+    "name": "Sniper",
+    "type": "man",
+    "thumb": null
+  },
+  "US_Soldier_Spotter_EP1": {
+    "name": "Spotter",
+    "type": "man",
+    "thumb": null
+  },
+  "US_Soldier_TL_EP1": {
+    "name": "Team Leader",
+    "type": "man",
+    "thumb": null
+  },
+  "US_UAV_Pack_EP1": {
+    "name": "UAV Terminal(pack)",
+    "type": "static",
+    "thumb": "US_UAV_Pack_EP1.jpg"
+  },
+  "US_WarfareBAircraftFactory_Base_EP1": {
+    "name": "Aircraft Factory",
+    "type": "static",
+    "thumb": "US_WarfareBAircraftFactory_Base_EP1.jpg"
+  },
+  "US_WarfareBAircraftFactory_EP1": {
+    "name": "US_WarfareBAircraftFactory_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBAircraftFactory_EP1.jpg"
+  },
+  "US_WarfareBAntiAirRadar_Base_EP1": {
+    "name": "Anti-Air Radar",
+    "type": "static",
+    "thumb": "US_WarfareBAntiAirRadar_Base_EP1.jpg"
+  },
+  "US_WarfareBAntiAirRadar_EP1": {
+    "name": "US_WarfareBAntiAirRadar_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBAntiAirRadar_EP1.jpg"
+  },
+  "US_WarfareBArtilleryRadar_Base_EP1": {
+    "name": "Artillery Radar",
+    "type": "static",
+    "thumb": "US_WarfareBArtilleryRadar_Base_EP1.jpg"
+  },
+  "US_WarfareBArtilleryRadar_EP1": {
+    "name": "US_WarfareBArtilleryRadar_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBArtilleryRadar_EP1.jpg"
+  },
+  "US_WarfareBBarracks_Base_EP1": {
+    "name": "Barracks",
+    "type": "static",
+    "thumb": "US_WarfareBBarracks_Base_EP1.jpg"
+  },
+  "US_WarfareBBarracks_EP1": {
+    "name": "US_WarfareBBarracks_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBBarracks_EP1.jpg"
+  },
+  "US_WarfareBContructionSite1_EP1": {
+    "name": "US_WarfareBContructionSite1_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBContructionSite1_EP1.jpg"
+  },
+  "US_WarfareBContructionSite_Base_EP1": {
+    "name": "Construction Site",
+    "type": "static",
+    "thumb": "US_WarfareBContructionSite_Base_EP1.jpg"
+  },
+  "US_WarfareBContructionSite_EP1": {
+    "name": "US_WarfareBContructionSite_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBContructionSite_EP1.jpg"
+  },
+  "US_WarfareBFieldhHospital_Base_EP1": {
+    "name": "Field Hospital",
+    "type": "static",
+    "thumb": "US_WarfareBFieldhHospital_Base_EP1.jpg"
+  },
+  "US_WarfareBFieldhHospital_EP1": {
+    "name": "US_WarfareBFieldhHospital_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBFieldhHospital_EP1.jpg"
+  },
+  "US_WarfareBHeavyFactory_Base_EP1": {
+    "name": "Heavy Factory",
+    "type": "static",
+    "thumb": "US_WarfareBHeavyFactory_Base_EP1.jpg"
+  },
+  "US_WarfareBHeavyFactory_EP1": {
+    "name": "US_WarfareBHeavyFactory_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBHeavyFactory_EP1.jpg"
+  },
+  "US_WarfareBLightFactory_EP1": {
+    "name": "US_WarfareBLightFactory_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBLightFactory_EP1.jpg"
+  },
+  "US_WarfareBLightFactory_base_EP1": {
+    "name": "Light Factory",
+    "type": "static",
+    "thumb": "US_WarfareBLightFactory_base_EP1.jpg"
+  },
+  "US_WarfareBUAVterminal_Base_EP1": {
+    "name": "UAV Terminal",
+    "type": "static",
+    "thumb": "US_WarfareBUAVterminal_Base_EP1.jpg"
+  },
+  "US_WarfareBUAVterminal_EP1": {
+    "name": "US_WarfareBUAVterminal_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBUAVterminal_EP1.jpg"
+  },
+  "US_WarfareBVehicleServicePoint_Base_EP1": {
+    "name": "Vehicle Service Point",
+    "type": "static",
+    "thumb": "US_WarfareBVehicleServicePoint_Base_EP1.jpg"
+  },
+  "US_WarfareBVehicleServicePoint_EP1": {
+    "name": "US_WarfareBVehicleServicePoint_EP1",
+    "type": "static",
+    "thumb": "US_WarfareBVehicleServicePoint_EP1.jpg"
+  },
+  "UralCivil": {
+    "name": "Ural (Civil)",
+    "type": "car",
+    "thumb": "UralCivil.jpg"
+  },
+  "UralCivil2": {
+    "name": "Ural (Civil 2)",
+    "type": "car",
+    "thumb": "UralCivil2.jpg"
+  },
+  "UralOpen_CDF": {
+    "name": "UralOpen_CDF",
+    "type": "car",
+    "thumb": "UralOpen_CDF.jpg"
+  },
+  "UralOpen_INS": {
+    "name": "UralOpen_INS",
+    "type": "car",
+    "thumb": "UralOpen_INS.jpg"
+  },
+  "UralReammo_CDF": {
+    "name": "UralReammo_CDF",
+    "type": "car",
+    "thumb": "UralReammo_CDF.jpg"
+  },
+  "UralReammo_INS": {
+    "name": "UralReammo_INS",
+    "type": "car",
+    "thumb": "UralReammo_INS.jpg"
+  },
+  "UralReammo_TK_EP1": {
+    "name": "UralReammo_TK_EP1",
+    "type": "car",
+    "thumb": "UralReammo_TK_EP1.jpg"
+  },
+  "UralRefuel_CDF": {
+    "name": "UralRefuel_CDF",
+    "type": "car",
+    "thumb": "UralRefuel_CDF.jpg"
+  },
+  "UralRefuel_INS": {
+    "name": "UralRefuel_INS",
+    "type": "car",
+    "thumb": "UralRefuel_INS.jpg"
+  },
+  "UralRefuel_TK_EP1": {
+    "name": "UralRefuel_TK_EP1",
+    "type": "car",
+    "thumb": "UralRefuel_TK_EP1.jpg"
+  },
+  "UralRepair_CDF": {
+    "name": "UralRepair_CDF",
+    "type": "car",
+    "thumb": "UralRepair_CDF.jpg"
+  },
+  "UralRepair_INS": {
+    "name": "UralRepair_INS",
+    "type": "car",
+    "thumb": "UralRepair_INS.jpg"
+  },
+  "UralRepair_TK_EP1": {
+    "name": "UralRepair_TK_EP1",
+    "type": "car",
+    "thumb": "UralRepair_TK_EP1.jpg"
+  },
+  "UralSupply_TK_EP1": {
+    "name": "Supply Truck",
+    "type": "car",
+    "thumb": "UralSupply_TK_EP1.jpg"
+  },
+  "UralWreck": {
+    "name": "Ural",
+    "type": "static",
+    "thumb": "UralWreck.jpg"
+  },
+  "Ural_CDF": {
+    "name": "Ural_CDF",
+    "type": "car",
+    "thumb": "Ural_CDF.jpg"
+  },
+  "Ural_INS": {
+    "name": "Ural_INS",
+    "type": "car",
+    "thumb": "Ural_INS.jpg"
+  },
+  "Ural_TK_CIV_EP1": {
+    "name": "Ural_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "Ural_TK_CIV_EP1.jpg"
+  },
+  "Ural_UN_EP1": {
+    "name": "Ural_UN_EP1",
+    "type": "car",
+    "thumb": "Ural_UN_EP1.jpg"
+  },
+  "Ural_ZU23_CDF": {
+    "name": "Ural_ZU23_CDF",
+    "type": "car",
+    "thumb": "Ural_ZU23_CDF.jpg"
+  },
+  "Ural_ZU23_Gue": {
+    "name": "Ural_ZU23_Gue",
+    "type": "car",
+    "thumb": "Ural_ZU23_Gue.jpg"
+  },
+  "Ural_ZU23_INS": {
+    "name": "Ural_ZU23_INS",
+    "type": "car",
+    "thumb": "Ural_ZU23_INS.jpg"
+  },
+  "Ural_ZU23_TK_EP1": {
+    "name": "Ural_ZU23_TK_EP1",
+    "type": "car",
+    "thumb": "Ural_ZU23_TK_EP1.jpg"
+  },
+  "Ural_ZU23_TK_GUE_EP1": {
+    "name": "Ural_ZU23_TK_GUE_EP1",
+    "type": "car",
+    "thumb": "Ural_ZU23_TK_GUE_EP1.jpg"
+  },
+  "V3S_Civ": {
+    "name": "V3S_Civ",
+    "type": "car",
+    "thumb": "V3S_Civ.jpg"
+  },
+  "V3S_Gue": {
+    "name": "V3S_Gue",
+    "type": "car",
+    "thumb": "V3S_Gue.jpg"
+  },
+  "V3S_Open_TK_CIV_EP1": {
+    "name": "V3S_Open_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "V3S_Open_TK_CIV_EP1.jpg"
+  },
+  "V3S_Open_TK_EP1": {
+    "name": "V3S_Open_TK_EP1",
+    "type": "car",
+    "thumb": "V3S_Open_TK_EP1.jpg"
+  },
+  "V3S_Reammo_TK_GUE_EP1": {
+    "name": "V3S_Reammo_TK_GUE_EP1",
+    "type": "car",
+    "thumb": "V3S_Reammo_TK_GUE_EP1.jpg"
+  },
+  "V3S_Refuel_TK_GUE_EP1": {
+    "name": "V3S_Refuel_TK_GUE_EP1",
+    "type": "car",
+    "thumb": "V3S_Refuel_TK_GUE_EP1.jpg"
+  },
+  "V3S_Repair_TK_GUE_EP1": {
+    "name": "V3S_Repair_TK_GUE_EP1",
+    "type": "car",
+    "thumb": "V3S_Repair_TK_GUE_EP1.jpg"
+  },
+  "V3S_TK_EP1": {
+    "name": "V3S_TK_EP1",
+    "type": "car",
+    "thumb": "V3S_TK_EP1.jpg"
+  },
+  "V3S_TK_GUE_EP1": {
+    "name": "V3S_TK_GUE_EP1",
+    "type": "car",
+    "thumb": "V3S_TK_GUE_EP1.jpg"
+  },
+  "VWGolf": {
+    "name": "VWGolf",
+    "type": "car",
+    "thumb": "VWGolf.jpg"
+  },
+  "ValentinaFit": {
+    "name": "Valentina",
+    "type": "man",
+    "thumb": "ValentinaFit.jpg"
+  },
+  "ValentinaVictim": {
+    "name": "Valentina (Victim)",
+    "type": "man",
+    "thumb": "ValentinaVictim.jpg"
+  },
+  "Villager1": {
+    "name": "Villager (Blue check)",
+    "type": "man",
+    "thumb": "Villager1.jpg"
+  },
+  "Villager2": {
+    "name": "Villager (Green check)",
+    "type": "man",
+    "thumb": "Villager2.jpg"
+  },
+  "Villager3": {
+    "name": "Villager (Green)",
+    "type": "man",
+    "thumb": "Villager3.jpg"
+  },
+  "Villager4": {
+    "name": "Villager (Blue)",
+    "type": "man",
+    "thumb": "Villager4.jpg"
+  },
+  "VolhaLimo_TK_CIV_EP1": {
+    "name": "VolhaLimo_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "VolhaLimo_TK_CIV_EP1.jpg"
+  },
+  "Volha_1_TK_CIV_EP1": {
+    "name": "Volha_1_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "Volha_1_TK_CIV_EP1.jpg"
+  },
+  "Volha_2_TK_CIV_EP1": {
+    "name": "Volha_2_TK_CIV_EP1",
+    "type": "car",
+    "thumb": "Volha_2_TK_CIV_EP1.jpg"
+  },
+  "WarfareBAircraftFactory_CDF": {
+    "name": "Aircraft Factory (CDF)",
+    "type": "static",
+    "thumb": "WarfareBAircraftFactory_CDF.jpg"
+  },
+  "WarfareBAircraftFactory_Gue": {
+    "name": "Aircraft Factory (Gue)",
+    "type": "static",
+    "thumb": "WarfareBAircraftFactory_Gue.jpg"
+  },
+  "WarfareBAircraftFactory_Ins": {
+    "name": "Aircraft Factory (Ins)",
+    "type": "static",
+    "thumb": "WarfareBAircraftFactory_Ins.jpg"
+  },
+  "WarfareBAirport": {
+    "name": "Airport",
+    "type": "static",
+    "thumb": "WarfareBAirport.jpg"
+  },
+  "WarfareBCamp": {
+    "name": "Camp",
+    "type": "static",
+    "thumb": "WarfareBCamp.jpg"
+  },
+  "WarfareBDepot": {
+    "name": "Depot",
+    "type": "static",
+    "thumb": "WarfareBDepot.jpg"
+  },
+  "WarfareBMGNest_M240_US_EP1": {
+    "name": "WarfareBMGNest_M240_US_EP1",
+    "type": "static",
+    "thumb": "WarfareBMGNest_M240_US_EP1.jpg"
+  },
+  "WarfareBMGNest_PK_TK_EP1": {
+    "name": "WarfareBMGNest_PK_TK_EP1",
+    "type": "static",
+    "thumb": "WarfareBMGNest_PK_TK_EP1.jpg"
+  },
+  "WarfareBMGNest_PK_TK_GUE_EP1": {
+    "name": "WarfareBMGNest_PK_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "WarfareBMGNest_PK_TK_GUE_EP1.jpg"
+  },
+  "WarfareBunkerSign": {
+    "name": "Sign",
+    "type": "static",
+    "thumb": "WarfareBunkerSign.jpg"
+  },
+  "WaterBasin_conc_EP1": {
+    "name": "Water Basin Concrete",
+    "type": "static",
+    "thumb": "WaterBasin_conc_EP1.jpg"
+  },
+  "WildBoar": {
+    "name": "Boar",
+    "type": "man",
+    "thumb": "WildBoar.jpg"
+  },
+  "Woodlander1": {
+    "name": "Woodlander (Blue)",
+    "type": "man",
+    "thumb": "Woodlander1.jpg"
+  },
+  "Woodlander2": {
+    "name": "Woodlander (Brown)",
+    "type": "man",
+    "thumb": "Woodlander2.jpg"
+  },
+  "Woodlander3": {
+    "name": "Woodlander (Camo)",
+    "type": "man",
+    "thumb": "Woodlander3.jpg"
+  },
+  "Woodlander4": {
+    "name": "Woodlander (Green)",
+    "type": "man",
+    "thumb": "Woodlander4.jpg"
+  },
+  "WorkWoman1": {
+    "name": "Workwoman (Red)",
+    "type": "man",
+    "thumb": "WorkWoman1.jpg"
+  },
+  "WorkWoman2": {
+    "name": "Workwoman (Blue)",
+    "type": "man",
+    "thumb": "WorkWoman2.jpg"
+  },
+  "WorkWoman3": {
+    "name": "Workwoman (Gray)",
+    "type": "man",
+    "thumb": "WorkWoman3.jpg"
+  },
+  "WorkWoman4": {
+    "name": "Workwoman (Green)",
+    "type": "man",
+    "thumb": "WorkWoman4.jpg"
+  },
+  "WorkWoman5": {
+    "name": "Workwoman (Brown)",
+    "type": "man",
+    "thumb": "WorkWoman5.jpg"
+  },
+  "Worker1": {
+    "name": "Worker (Gray)",
+    "type": "man",
+    "thumb": "Worker1.jpg"
+  },
+  "Worker2": {
+    "name": "Worker (Green)",
+    "type": "man",
+    "thumb": "Worker2.jpg"
+  },
+  "Worker3": {
+    "name": "Worker (Blue)",
+    "type": "man",
+    "thumb": "Worker3.jpg"
+  },
+  "Worker4": {
+    "name": "Worker (Brown)",
+    "type": "man",
+    "thumb": "Worker4.jpg"
+  },
+  "ZSU_CDF": {
+    "name": "ZSU_CDF",
+    "type": "tank",
+    "thumb": "ZSU_CDF.jpg"
+  },
+  "ZSU_INS": {
+    "name": "ZSU_INS",
+    "type": "tank",
+    "thumb": "ZSU_INS.jpg"
+  },
+  "ZSU_TK_EP1": {
+    "name": "ZSU_TK_EP1",
+    "type": "tank",
+    "thumb": "ZSU_TK_EP1.jpg"
+  },
+  "ZU23_CDF": {
+    "name": "ZU23_CDF",
+    "type": "static",
+    "thumb": "ZU23_CDF.jpg"
+  },
+  "ZU23_Gue": {
+    "name": "ZU23_Gue",
+    "type": "static",
+    "thumb": "ZU23_Gue.jpg"
+  },
+  "ZU23_Ins": {
+    "name": "ZU23_Ins",
+    "type": "static",
+    "thumb": "ZU23_Ins.jpg"
+  },
+  "ZU23_TK_EP1": {
+    "name": "ZU23_TK_EP1",
+    "type": "static",
+    "thumb": "ZU23_TK_EP1.jpg"
+  },
+  "ZU23_TK_GUE_EP1": {
+    "name": "ZU23_TK_GUE_EP1",
+    "type": "static",
+    "thumb": "ZU23_TK_GUE_EP1.jpg"
+  },
+  "ZU23_TK_INS_EP1": {
+    "name": "ZU23_TK_INS_EP1",
+    "type": "static",
+    "thumb": "ZU23_TK_INS_EP1.jpg"
+  },
+  "ZavoraAnim": {
+    "name": "Bar gate",
+    "type": "static",
+    "thumb": "ZavoraAnim.jpg"
+  },
+  "Zodiac": {
+    "name": "CRRC",
+    "type": "other",
+    "thumb": "Zodiac.jpg"
+  },
+  "car_hatchback": {
+    "name": "Old hatchback",
+    "type": "car",
+    "thumb": "car_hatchback.jpg"
+  },
+  "car_sedan": {
+    "name": "Sedan",
+    "type": "car",
+    "thumb": "car_sedan.jpg"
+  },
+  "datsun01Wreck": {
+    "name": "Pickup",
+    "type": "static",
+    "thumb": "datsun01Wreck.jpg"
+  },
+  "datsun02Wreck": {
+    "name": "Pickup II",
+    "type": "static",
+    "thumb": "datsun02Wreck.jpg"
+  },
+  "datsun1_civil_1_open": {
+    "name": "Pick-Up",
+    "type": "car",
+    "thumb": "datsun1_civil_1_open.jpg"
+  },
+  "hilux1_civil_1_open": {
+    "name": "Off-road (tan)",
+    "type": "car",
+    "thumb": "hilux1_civil_1_open.jpg"
+  },
+  "hilux1_civil_3_open_EP1": {
+    "name": "Pickup",
+    "type": "car",
+    "thumb": "hilux1_civil_3_open_EP1.jpg"
+  },
+  "hiluxWreck": {
+    "name": "Off-road",
+    "type": "static",
+    "thumb": "hiluxWreck.jpg"
+  },
+  "tractorOld": {
+    "name": "Old Tractor",
+    "type": "car",
+    "thumb": null
+  }
+}

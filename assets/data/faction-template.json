@@ -1,0 +1,430 @@
+{
+  "files": [
+    {
+      "relpath": "Config\\Core\\Core_GUE.sqf",
+      "text": "/* GUE Configuration */\nPrivate ['_c','_get','_i','_p','_z'];\n\n_c = [];\n_i = [];\n\n/* Infantry */\n_c = _c + ['GUE_Soldier_1'];\n_i = _i + [['','',150,4,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_2'];\n_i = _i + [['','',120,4,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_3'];\n_i = _i + [['','',140,4,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_GL'];\n_i = _i + [['','',150,5,-1,1,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_AT'];\n_i = _i + [['','',220,5,-1,1,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_AA'];\n_i = _i + [['','',250,4,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_AR'];\n_i = _i + [['','',150,4,-1,1,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_MG'];\n_i = _i + [['','',190,4,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_Sniper'];\n_i = _i + [['','',175,6,-1,1,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_Medic'];\n_i = _i + [['','',160,6,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_Crew'];\n_i = _i + [['','',120,5,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_Pilot'];\n_i = _i + [['','',120,5,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_Scout'];\n_i = _i + [['','',260,5,-1,3,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_CO'];\n_i = _i + [['','',300,5,-1,1,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Soldier_Sab'];\n_i = _i + [['','',220,5,-1,2,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Commander'];\n_i = _i + [['','',240,5,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Worker2'];\n_i = _i + [['','',100,5,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Woodlander3'];\n_i = _i + [['','',100,5,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Villager3'];\n_i = _i + [['','',100,5,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Woodlander2'];\n_i = _i + [['','',100,5,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Woodlander1'];\n_i = _i + [['','',100,5,-1,0,0,1,'Guerilla',[]]];\n\n_c = _c + ['GUE_Villager4'];\n_i = _i + [['','',100,5,-1,0,0,1,'Guerilla',[]]];\n\n/* Light Vehicles */\n_c = _c + ['TT650_Gue'];\n_i = _i + [['','',150,15,-2,0,1,0,'Guerilla',[]]];\n\n_c = _c + ['V3S_Gue'];\n_i = _i + [['','',175,15,-2,0,1,0,'Guerilla',[]]];\n\n_c = _c + ['Pickup_PK_GUE'];\n_i = _i + [['','',250,17,-2,0,1,0,'Guerilla',[]]];\n\n_c = _c + ['Offroad_DSHKM_Gue'];\n_i = _i + [['','',550,25,-2,1,1,0,'Guerilla',[]]];\n\n_c = _c + ['Offroad_SPG9_Gue'];\n_i = _i + [['','',750,20,-2,2,1,0,'Guerilla',[]]];\n_c = _c + ['WarfareRepairTruck_Gue'];\n_i = _i + [['','',425,17,-2,2,1,0,'Guerilla',[]]];\n\n_c = _c + ['WarfareSalvageTruck_Gue'];\n_i = _i + [['','',450,17,-2,1,1,0,'Guerilla',[]]];\n\n_c = _c + ['WarfareReammoTruck_Gue'];\n_i = _i + [['','',450,18,-2,1,1,0,'Guerilla',[]]];\n\n_c = _c + ['WarfareSupplyTruck_Gue'];\n_i = _i + [['','',450,21,-2,0,1,0,'Guerilla',[]]];\n\n_c = _c + ['BRDM2_Gue'];\n_i = _i + [['','',1200,25,-2,2,1,0,'Guerilla',[]]];\n\n_c = _c + ['Ural_ZU23_Gue'];\n_i = _i + [['','',1100,20,-2,2,1,0,'Guerilla',[]]];\n\n/* Heavy Vehicles */\n_c = _c + ['M113_UN_EP1'];\n_i = _i + [['','',1100,30,-2,0,2,0,'Takistani Guerilla',[]]];\n\n_c = _c + ['BMP2_Gue'];\n_i = _i + [['','',3400,28,-2,1,2,0,'Guerilla',[]]];\n\n_c = _c + ['T72_Gue'];\n_i = _i + [['','',5200,35,-2,3,2,0,'Guerilla',[]]];\n\n/* Static Defenses */\n_c = _c + ['GUE_WarfareBMGNest_PK'];\n_i = _i + [['','',300,0,1,0,'Defense',0,'Guerilla',[]]];\n\n_c = _c + ['DSHKM_Gue'];\n_i = _i + [['','',225,0,1,0,'Defense',0,'Guerilla',[]]];\n\n_c = _c + ['SPG9_Gue'];\n_i = _i + [['','',675,0,1,0,'Defense',0,'Guerilla',[]]];\n\n_c = _c + ['ZU23_Gue'];\n_i = _i + [['','',700,0,1,0,'Defense',0,'Guerilla',[]]];\n_c = _c + ['2b14_82mm_GUE'];\n_i = _i + [['Podnos 2B14','',1025,0,1,0,'Defense',0,'Guerilla',[]]];\n\nfor '_z' from 0 to (count _c)-1 do {\n\tif (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {\n\t\t_get = missionNamespace getVariable (_c select _z);\n\t\tif (isNil '_get') then {\n\t\t\tif ((_i select _z) select 0 == '') then {(_i select _z) set [0, [_c select _z,'displayName'] Call GetConfigInfo]};\n\t\t\tif (typeName ((_i select _z) select 4) == 'SCALAR') then {\n\t\t\t\tif (((_i select _z) select 4) == -2) then {\n\t\t\t\t\t_ret = (_c select _z) Call Compile preprocessFile \"Common\\Functions\\Common_GetConfigVehicleCrewSlot.sqf\";\n\t\t\t\t\t(_i select _z) set [4, _ret select 0];\n\t\t\t\t\t(_i select _z) set [9, _ret select 1];\n\t\t\t\t};\n\t\t\t};\n\t\t\tif (WF_Debug) then {(_i select _z) set [3,1]};\n\t\t\t_p = if ((_c select _z) isKindOf 'Man') then {'portrait'} else {'picture'};\n\t\t\t(_i select _z) set [1, [_c select _z,_p] Call GetConfigInfo];\n\t\t\tmissionNamespace setVariable [_c select _z, _i select _z];\n\t\t} else {\n\t\t\tdiag_log Format [\"[WFBE (INIT)][frameno:%2 | ticktime:%3] Core_GUE: Duplicated Element found '%1'\",(_c select _z),diag_frameno,diag_tickTime];\n\t\t};\n\t} else {\n\t\tdiag_log Format [\"[WFBE (ERROR)][frameno:%2 | ticktime:%3] Core_GUE: Element '%1' is not a valid class.\",(_c select _z),diag_frameno,diag_tickTime];\n\t};\n};\n\ndiag_log Format [\"[WFBE (INIT)][frameno:%2 | ticktime:%3] Core_GUE: Initialization (%1 Elements) - [Done]\",count _c,diag_frameno,diag_tickTime];"
+    },
+    {
+      "relpath": "Config\\Core_Root\\Root_GUE.sqf",
+      "text": "Private [\"_side\"];\n\n_side = \"GUER\";\n\n//--- Generic.\nmissionNamespace setVariable [Format[\"WFBE_%1CREW\", _side], 'GUE_Soldier_Crew'];\nmissionNamespace setVariable [Format[\"WFBE_%1PILOT\", _side], 'GUE_Soldier_1'];\nmissionNamespace setVariable [Format[\"WFBE_%1SOLDIER\", _side], 'GUE_Soldier_1'];\n\n//--- Flag texture.\nmissionNamespace setVariable [Format[\"WFBE_%1FLAG\", _side], '\\ca\\data\\Flag_napa_co.paa'];\n\nmissionNamespace setVariable [Format[\"WFBE_%1AMBULANCES\", _side], ['V3S_TK_GUE_EP1','V3S_Gue']];\n//missionNamespace setVariable [Format [\"WFBE_%1MASHES\", _side], ['MASH']];\nmissionNamespace setVariable [Format[\"WFBE_%1REPAIRTRUCKS\", _side], ['WarfareRepairTruck_Gue','V3S_Repair_TK_GUE_EP1']];\nmissionNamespace setVariable [Format[\"WFBE_%1SALVAGETRUCK\", _side], ['WarfareSalvageTruck_Gue','V3S_Salvage_TK_GUE_EP1']];\nmissionNamespace setVariable [Format[\"WFBE_%1SUPPLYTRUCKS\", _side], ['WarfareSupplyTruck_Gue','V3S_Supply_TK_GUE_EP1']];\n\n//--- Radio Announcers.\nmissionNamespace setVariable [Format [\"WFBE_%1_RadioAnnouncers\", _side], ['WFHQ_CZ0','WFHQ_CZ1','WFHQ_CZ2']];\nmissionNamespace setVariable [Format [\"WFBE_%1_RadioAnnouncers_Config\", _side], 'RadioProtocolCZ'];\n\n//--- Paratroopers.\nmissionNamespace setVariable [Format[\"WFBE_%1PARACHUTELEVEL1\", _side],['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_2','GUE_Soldier_3','GUE_Soldier_AR','GUE_Soldier_Medic']];\nmissionNamespace setVariable [Format[\"WFBE_%1PARACHUTELEVEL2\", _side],['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AA','GUE_Soldier_MG','GUE_Soldier_Medic','GUE_Soldier_Scout','GUE_Soldier_Sniper']];\nmissionNamespace setVariable [Format[\"WFBE_%1PARACHUTELEVEL3\", _side],['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AA','GUE_Soldier_AA','GUE_Soldier_AR','GUE_Soldier_Medic','GUE_Soldier_Scout','GUE_Soldier_AT','GUE_Soldier_Sniper']];\n\nmissionNamespace setVariable [Format[\"WFBE_%1PARACARGO\", _side], 'Mi17_Civilian'];\t//--- Paratroopers, Vehicle.\nmissionNamespace setVariable [Format[\"WFBE_%1REPAIRTRUCK\", _side], 'WarfareRepairTruck_Gue'];//--- Repair Truck model.\nmissionNamespace setVariable [Format[\"WFBE_%1STARTINGVEHICLES\", _side], ['TT650_Gue','BTR90','Offroad_DSHKM_Gue']];//--- Starting Vehicles.\nmissionNamespace setVariable [Format[\"WFBE_%1PARAAMMO\", _side], ['RUBasicAmmunitionBox','RUBasicWeaponsBox','RULaunchersBox']];//--- Supply Paradropping, Dropped Ammunition.\nmissionNamespace setVariable [Format[\"WFBE_%1PARAVEHICARGO\", _side], 'BRDM2_Gue'];//--- Supply Paradropping, Dropped Vehicle.\nmissionNamespace setVariable [Format[\"WFBE_%1PARAVEHI\", _side], 'Mi17_Civilian'];//--- Supply Paradropping, Vehicle\nmissionNamespace setVariable [Format[\"WFBE_%1PARACHUTE\", _side], 'ParachuteC'];//--- Supply Paradropping, Parachute Model.\nmissionNamespace setVariable [Format[\"WFBE_%1SUPPLYTRUCK\", _side], 'WarfareSupplyTruck_Gue'];//--- Supply Truck model.\n\n//--- Server only.\nif (isServer) then {\n\t//--- Patrols.\n\tmissionNamespace setVariable [Format[\"WFBE_%1_PATROL_LIGHT\", _side], [\n\t\t['GUE_Soldier_1','GUE_Soldier_MG','GUE_Soldier_Sniper','GUE_Soldier_Medic'], \n\t\t['GUE_Soldier_CO','GUE_Soldier_AR','GUE_Soldier_3','GUE_Soldier_AT','GUE_Soldier_2']\n\t]];\n\n\tmissionNamespace setVariable [Format[\"WFBE_%1_PATROL_MEDIUM\", _side], [\n\t\t['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_MG','GUE_Soldier_AT']\n\t]];\n\n\tmissionNamespace setVariable [Format[\"WFBE_%1_PATROL_HEAVY\", _side], [\n\t\t['GUE_Soldier_Sniper','GUE_Soldier_Scout','GUE_Soldier_Sniper']\n\t]];\n\t\n\t//--- AI Loadouts [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].\n\tmissionNamespace setVariable [Format[\"WFBE_%1_AI_Loadout_0\", _side], [\n\t\t[['AKS_74_kobra','RPG18','Makarov','Binocular','ItemRadio','ItemMap'],\n\t\t ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','RPG18','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],\n\t\t ['AKS_74_kobra','RPG18','Makarov']],\n\t\t[['AKS_74_U','RPG18','Makarov','Binocular','ItemRadio','ItemMap'],\n\t\t ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','RPG18','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],\n\t\t ['AKS_74_U','RPG18','Makarov']]\n\t]];\t\n\tmissionNamespace setVariable [Format[\"WFBE_%1_AI_Loadout_1\", _side], [\n\t\t[['AKS_74_kobra','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],\n\t\t ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7V','PG7V','PG7V','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],\n\t\t ['AKS_74_kobra','RPG7V','Makarov']],\n\t\t[['AKS_74_kobra','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],\n\t\t ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7V','PG7V','PG7V','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],\n\t\t ['AKS_74_kobra','RPG7V','Makarov']],\n\t\t[['SVD','MakarovSD','Binocular','NVGoggles','ItemRadio','ItemMap'],\n\t\t ['10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','HandGrenade_East','HandGrenade_East','8Rnd_9x18_MakarovSD','8Rnd_9x18_MakarovSD','8Rnd_9x18_MakarovSD','8Rnd_9x18_MakarovSD'],\n\t\t ['SVD','MakarovSD']]\n\t]];\n\tmissionNamespace setVariable [Format[\"WFBE_%1_AI_Loadout_2\", _side], [\n\t\t[['AKS_74_pso','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],\n\t\t ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7VL','PG7VL','PG7VL','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],\n\t\t ['AKS_74_pso','RPG7V','Makarov']],\n\t\t[['AKS_74_pso','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],\n\t\t ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7VL','PG7VL','PG7VL','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],\n\t\t ['AKS_74_pso','RPG7V','Makarov']]\n\t]];\n\tmissionNamespace setVariable [Format[\"WFBE_%1_AI_Loadout_3\", _side], [\n\t\t[['AK_74_GL','RPG7V','Binocular','NVGoggles','ItemRadio','ItemMap'],\n\t\t ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7VL','PG7VL','PG7VL','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25'],\n\t\t ['AK_74_GL','RPG7V']],\n\t\t[['AK_74_GL','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],\n\t\t ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7VL','PG7VL','PG7VL','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25'],\n\t\t ['AK_74_GL','RPG7V','Makarov']]\n\t]];\n};\n\n//--- Client only.\nif (local player) then {\n\t//--- Default Faction (Buy Menu), this is the faction name defined in core_xxx.sqf files.\n\tmissionNamespace setVariable [Format[\"WFBE_%1DEFAULTFACTION\", _side], 'Guerilla'];\n\t\n\t//--- Import the needed Gear (Available from the gear menu), multiple gear can be used.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Loadout\\Loadout_GUE.sqf\";\n\t\n\tif (WF_A2_CombinedOps) then {\n\t\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Loadout\\Loadout_TKGUE.sqf\";\n\t};\n};\n\n//--- Default Loadout [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].\nmissionNamespace setVariable [Format[\"WFBE_%1_DefaultGear\", _side], [\n\t['AKS_74_kobra','Makarov','Binocular','NVGoggles','ItemCompass','ItemMap','ItemRadio','ItemWatch'],\n\t['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','HandGrenade_East','HandGrenade_East','HandGrenade_East','SmokeShellRed','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],\n\t['AKS_74_kobra','Makarov']\n]];\n\nif (WF_A2_CombinedOps) then {\n\t//--- Artillery.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Artillery\\Artillery_CO_GUE.sqf\";\n\t//--- Units.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Units\\Units_CO_GUE.sqf\";\n\t//--- Squads.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Squads\\Squad_GUE.sqf\";\n\t//--- Structures.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Structures\\Structures_CO_GUE.sqf\";\n\t//--- Upgrades.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Upgrades\\Upgrades_CO_GUE.sqf\";\n} else {\n\t//--- Artillery.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Artillery\\Artillery_GUE.sqf\";\n\t//--- Units.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Units\\Units_GUE.sqf\";\n\t//--- Squads.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Squads\\Squad_GUE.sqf\";\n\t//--- Structures.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Structures\\Structures_GUE.sqf\";\n\t//--- Upgrades.\n\t(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Upgrades\\Upgrades_GUE.sqf\";\n};"
+    },
+    {
+      "relpath": "Config\\Core_Structures\\Structures_GUE.sqf",
+      "text": "Private ['_c','_count','_d','_dir','_dis','_n','_s','_side','_t','_v'];\n\n_side = _this;\n\n/* Root Definition */\n_MHQ = \"BRDM2_HQ_Gue\";\n_HQ = \"BRDM2_HQ_Gue_unfolded\";\n_BAR = \"Gue_WarfareBBarracks\";\n_LVF = \"Gue_WarfareBLightFactory\";\n_CC = \"GUE_WarfareBUAVterminal\";\n_HEAVY = \"Gue_WarfareBHeavyFactory\";\n_AIR = \"GUE_WarfareBAircraftFactory\";\n_SP = \"GUE_WarfareBVehicleServicePoint\";\n_AAR = \"Gue_WarfareBAntiAirRadar\";\n\n/* Mash used after being deployed */\nmissionNamespace setVariable [Format[\"WFBE_%1FARP\", _side], 'CampEast'];\n\n/* Construction Crates */\nmissionNamespace setVariable [Format[\"WFBE_%1CONSTRUCTIONSITE\", _side], 'Gue_WarfareBContructionSite'];\n\n/* Structures */\n_v\t\t\t= [\"Headquarters\"];\n_n\t\t\t= [_HQ];\n_d\t\t\t= [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n_c\t\t\t= [missionNamespace getVariable \"WFBE_C_STRUCTURES_HQ_COST_DEPLOY\"];\n_t\t\t\t= [if (WF_Debug) then {1} else {30}];\n_s\t\t\t= [\"HQSite\"];\n_dis\t\t= [15];\n_dir\t\t= [0];\n\n_v = _v\t\t+ [\"Barracks\"];\n_n = _n\t\t+ [_BAR];\n_d = _d\t\t+ [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n_c = _c\t\t+ [200];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {70}];\n_s = _s\t\t+ [\"SmallSite\"];\n_dis = _dis\t+ [18];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"Light\"];\n_n = _n\t\t+ [_LVF];\n_d = _d\t\t+ [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n_c = _c\t\t+ [600];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {90}];\n_s = _s\t\t+ [\"MediumSite\"];\n_dis = _dis\t+ [25];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"CommandCenter\"];\n_n = _n\t\t+ [_CC];\n_d = _d\t\t+ [localize \"STR_WF_CommandCenter\"];\n_c = _c\t\t+ [1200];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {110}];\n_s = _s\t\t+ [\"SmallSite\"];\n_dis = _dis\t+ [20];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"Heavy\"];\n_n = _n\t\t+ [_HEAVY];\n_d = _d\t\t+ [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n_c = _c\t\t+ [2800];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {130}];\n_s = _s\t\t+ [\"MediumSite\"];\n_dis = _dis\t+ [25];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"Aircraft\"];\n_n = _n\t\t+ [_AIR];\n_d = _d\t\t+ [localize \"STR_WF_AircraftFactory\"];\n_c = _c\t\t+ [4400];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {150}];\n_s = _s\t\t+ [\"SmallSite\"];\n_dis = _dis\t+ [31];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"ServicePoint\"];\n_n = _n\t\t+ [_SP];\n_d = _d\t\t+ [localize \"STR_WF_MAIN_ServicePoint\"];\n_c = _c\t\t+ [700];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {70}];\n_s = _s\t\t+ [\"SmallSite\"];\n_dis = _dis\t+ [21];\n_dir = _dir\t+ [90];\n\nif ((missionNamespace getVariable \"WFBE_C_STRUCTURES_ANTIAIRRADAR\") > 0) then {\n\t_v = _v\t\t+ [\"AARadar\"];\n\t_n = _n\t\t+ [_AAR];\n\t_d = _d\t\t+ [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n\t_c = _c\t\t+ [3200];\n\t_t = _t\t\t+ [if (WF_Debug) then {1} else {280}];\n\t_s = _s\t\t+ [\"MediumSite\"];\n\t_dis = _dis\t+ [21];\n\t_dir = _dir\t+ [90];\n};\n\nfor [{_count = count _v - 1},{_count >= 0},{_count = _count - 1}] do {\n\tmissionNamespace setVariable [Format[\"WFBE_%1%2TYPE\",_side,_v select _count],_count];\n};\n\n{\n\tmissionNamespace setVariable [Format [\"%1%2\",_side, _x select 0], _x select 1];\n} forEach [[\"HQ\",_HQ],[\"BAR\",_BAR],[\"LVF\",_LVF],[\"CC\",_CC],[\"HEAVY\",_HEAVY],[\"AIR\",_AIR],[\"SP\",_SP],[\"AAR\",_AAR]];\n\nmissionNamespace setVariable [Format[\"WFBE_%1MHQNAME\", _side], _MHQ];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURES\", _side], _v];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURENAMES\", _side], _n];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTUREDESCRIPTIONS\", _side], _d];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURECOSTS\", _side], _c];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURETIMES\", _side], _t];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTUREDISTANCES\", _side], _dis];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTUREDIRECTIONS\", _side], _dir];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURESCRIPTS\", _side], _s];\n\n/* Defenses */\n_n\t\t\t= [\"GUE_WarfareBMGNest_PK\"];\n_n = _n\t\t+ [\"DSHKM_Gue\"];\t\n_n = _n\t\t+ [\"SearchLight_Gue\"];\n_n = _n\t\t+ [\"SPG9_Gue\"];\n_n = _n\t\t+ [\"ZU23_Gue\"];\n_n = _n\t\t+ [\"2b14_82mm_GUE\"];\n_n = _n\t\t+ [\"Land_HBarrier3\"];\n_n = _n\t\t+ [\"Land_HBarrier5\"];\n_n = _n\t\t+ [\"Land_HBarrier_large\"];\n_n = _n\t\t+ [\"Base_WarfareBBarrier5x\"];\n_n = _n\t\t+ [\"Base_WarfareBBarrier10x\"];\n_n = _n\t\t+ [\"Base_WarfareBBarrier10xTall\"];\n_n = _n\t\t+ [\"MASH\"];\n_n = _n\t\t+ [\"Land_fort_bagfence_long\"];\n_n = _n\t\t+ [\"Land_fort_bagfence_corner\"];\n_n = _n\t\t+ [\"Land_fort_bagfence_round\"];\n_n = _n\t\t+ [\"Land_fortified_nest_small\"];\n_n = _n\t\t+ [\"Land_fortified_nest_big\"];\n_n = _n\t\t+ [\"Land_Fort_Watchtower\"];\n_n = _n\t\t+ [\"Land_fort_rampart\"];\n_n = _n\t\t+ [\"Land_fort_artillery_nest\"];\n_n = _n\t\t+ [\"Hhedgehog_concreteBig\"];\n_n = _n\t\t+ [\"Hedgehog\"];\n_n = _n\t\t+ [\"Land_CamoNet_EAST\"];\n_n = _n\t\t+ [\"Land_CamoNetVar_EAST\"];\n_n = _n\t\t+ [\"Land_CamoNetB_EAST\"];\n_n = _n\t\t+ [\"Sign_Danger\"];\n_n = _n\t\t+ [\"HeliH\"];\n_n = _n\t\t+ [\"Fort_RazorWire\"];\n_n = _n\t\t+ [\"Land_Ind_IlluminantTower\"];\n_n = _n\t\t+ [\"Land_Campfire\"];\n_n = _n\t\t+ [\"RUOrdnanceBox\"];\n_n = _n\t\t+ [\"RUVehicleBox\"];\n_n = _n\t\t+ [\"RUBasicAmmunitionBox\"];\n_n = _n\t\t+ [\"RUBasicWeaponsBox\"];\n_n = _n\t\t+ [\"RULaunchersBox\"];\n_n = _n\t\t+ [\"RUSpecialWeaponsBox\"];\n\n/* Class used for AI, AI will attempt to build those */\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_MG\", _side], ['DSHKM_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_GL\", _side], ['DSHKM_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_AAPOD\", _side], ['ZU23_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_ATPOD\", _side], ['SPG9_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_CANNON\", _side], ['SPG9_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_MASH\", _side], ['MASH']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_MORTAR\", _side], ['2b14_82mm_GUE']];\n\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSENAMES\", _side], _n];"
+    },
+    {
+      "relpath": "Config\\Core_Structures\\Structures_CO_GUE.sqf",
+      "text": "Private ['_c','_count','_d','_dir','_dis','_n','_s','_side','_t','_v'];\n\n_side = _this;\n\n/* Root Definition */\n_MHQ = \"BRDM2_HQ_Gue\";\n_HQ = \"BRDM2_HQ_Gue_unfolded\";\n_BAR = if (IS_chernarus_map_dependent) then {\"Gue_WarfareBBarracks\"} else {\"TK_GUE_WarfareBBarracks_EP1\"};\n_LVF = if (IS_chernarus_map_dependent) then {\"Gue_WarfareBLightFactory\"} else {\"TK_GUE_WarfareBLightFactory_EP1\"};\n_CC = if (IS_chernarus_map_dependent) then {\"Gue_WarfareBUAVterminal\"} else {\"TK_GUE_WarfareBUAVterminal_EP1\"};\n_HEAVY = if (IS_chernarus_map_dependent) then {\"Gue_WarfareBHeavyFactory\"} else {\"TK_GUE_WarfareBHeavyFactory_EP1\"};\n_AIR = if (IS_chernarus_map_dependent) then {\"Gue_WarfareBAircraftFactory\"} else {\"TK_GUE_WarfareBAircraftFactory_EP1\"};\n_SP = if (IS_chernarus_map_dependent) then {\"Gue_WarfareBVehicleServicePoint\"} else {\"TK_GUE_WarfareBVehicleServicePoint_EP1\"};\n_AAR = if (IS_chernarus_map_dependent) then {\"Gue_WarfareBAntiAirRadar\"} else {\"TK_GUE_WarfareBAntiAirRadar_EP1\"};\n\n/* Mash used after being deployed */\nmissionNamespace setVariable [Format[\"WFBE_%1FARP\", _side], 'Land_A_tent'];\n\n/* Construction Crates */\nmissionNamespace setVariable [Format[\"WFBE_%1CONSTRUCTIONSITE\", _side], 'Gue_WarfareBContructionSite'];\n\n/* Structures */\n_v\t\t\t= [\"Headquarters\"];\n_n\t\t\t= [_HQ];\n_d\t\t\t= [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n_c\t\t\t= [missionNamespace getVariable \"WFBE_C_STRUCTURES_HQ_COST_DEPLOY\"];\n_t\t\t\t= [if (WF_Debug) then {1} else {30}];\n_s\t\t\t= [\"HQSite\"];\n_dis\t\t= [15];\n_dir\t\t= [0];\n\n_v = _v\t\t+ [\"Barracks\"];\n_n = _n\t\t+ [_BAR];\n_d = _d\t\t+ [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n_c = _c\t\t+ [200];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {70}];\n_s = _s\t\t+ [\"SmallSite\"];\n_dis = _dis\t+ [18];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"Light\"];\n_n = _n\t\t+ [_LVF];\n_d = _d\t\t+ [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n_c = _c\t\t+ [600];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {90}];\n_s = _s\t\t+ [\"MediumSite\"];\n_dis = _dis\t+ [25];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"CommandCenter\"];\n_n = _n\t\t+ [_CC];\n_d = _d\t\t+ [localize \"STR_WF_CommandCenter\"];\n_c = _c\t\t+ [1200];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {110}];\n_s = _s\t\t+ [\"SmallSite\"];\n_dis = _dis\t+ [20];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"Heavy\"];\n_n = _n\t\t+ [_HEAVY];\n_d = _d\t\t+ [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n_c = _c\t\t+ [2800];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {130}];\n_s = _s\t\t+ [\"MediumSite\"];\n_dis = _dis\t+ [25];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"Aircraft\"];\n_n = _n\t\t+ [_AIR];\n_d = _d\t\t+ [localize \"STR_WF_AircraftFactory\"];\n_c = _c\t\t+ [4400];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {150}];\n_s = _s\t\t+ [\"SmallSite\"];\n_dis = _dis\t+ [31];\n_dir = _dir\t+ [90];\n\n_v = _v\t\t+ [\"ServicePoint\"];\n_n = _n\t\t+ [_SP];\n_d = _d\t\t+ [localize \"STR_WF_MAIN_ServicePoint\"];\n_c = _c\t\t+ [700];\n_t = _t\t\t+ [if (WF_Debug) then {1} else {70}];\n_s = _s\t\t+ [\"SmallSite\"];\n_dis = _dis\t+ [21];\n_dir = _dir\t+ [90];\n\nif ((missionNamespace getVariable \"WFBE_C_STRUCTURES_ANTIAIRRADAR\") > 0) then {\n\t_v = _v\t\t+ [\"AARadar\"];\n\t_n = _n\t\t+ [_AAR];\n\t_d = _d\t\t+ [getText (configFile >> \"CfgVehicles\" >> (_n select (count _n - 1)) >> \"displayName\")];\n\t_c = _c\t\t+ [3200];\n\t_t = _t\t\t+ [if (WF_Debug) then {1} else {280}];\n\t_s = _s\t\t+ [\"MediumSite\"];\n\t_dis = _dis\t+ [21];\n\t_dir = _dir\t+ [90];\n};\n\nfor [{_count = count _v - 1},{_count >= 0},{_count = _count - 1}] do {\n\tmissionNamespace setVariable [Format[\"WFBE_%1%2TYPE\",_side,_v select _count],_count];\n};\n\n{\n\tmissionNamespace setVariable [Format [\"%1%2\",_side, _x select 0], _x select 1];\n} forEach [[\"HQ\",_HQ],[\"BAR\",_BAR],[\"LVF\",_LVF],[\"CC\",_CC],[\"HEAVY\",_HEAVY],[\"AIR\",_AIR],[\"SP\",_SP],[\"AAR\",_AAR]];\n\nmissionNamespace setVariable [Format[\"WFBE_%1MHQNAME\", _side], _MHQ];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURES\", _side], _v];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURENAMES\", _side], _n];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTUREDESCRIPTIONS\", _side], _d];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURECOSTS\", _side], _c];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURETIMES\", _side], _t];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTUREDISTANCES\", _side], _dis];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTUREDIRECTIONS\", _side], _dir];\nmissionNamespace setVariable [Format[\"WFBE_%1STRUCTURESCRIPTS\", _side], _s];\n\n/* Defenses */\n_n\t\t\t= [\"WarfareBMGNest_PK_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"SearchLight_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"DSHkM_Mini_TriPod_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"DSHKM_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"AGS_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"SPG9_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"ZU23_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"2b14_82mm_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"D30_TK_GUE_EP1\"];\n_n = _n\t\t+ [\"Land_HBarrier3\"];\n_n = _n\t\t+ [\"Land_HBarrier5\"];\n_n = _n\t\t+ [\"Land_HBarrier_large\"];\n_n = _n\t\t+ [\"TK_WarfareBBarrier5x_EP1\"];\n_n = _n\t\t+ [\"TK_WarfareBBarrier10x_EP1\"];\n_n = _n\t\t+ [\"TK_WarfareBBarrier10xTall_EP1\"];\n_n = _n\t\t+ [\"MASH_EP1\"];\n_n = _n\t\t+ [\"Land_Ind_SawMillPen\"];\n_n = _n\t\t+ [\"Land_fort_bagfence_long\"];\n_n = _n\t\t+ [\"Land_fort_bagfence_corner\"];\n_n = _n\t\t+ [\"Land_fort_bagfence_round\"];\n_n = _n\t\t+ [\"Land_Misc_Cargo2B\"];\n_n = _n\t\t+ [\"Land_fortified_nest_small_EP1\"];\n_n = _n\t\t+ [\"Land_fort_rampart_EP1\"];\n_n = _n\t\t+ [\"Land_fort_artillery_nest_EP1\"];\n_n = _n\t\t+ [\"Hhedgehog_concreteBig\"];\n_n = _n\t\t+ [\"Hedgehog_EP1\"];\n_n = _n\t\t+ [\"Land_CamoNet_EAST_EP1\"];\n_n = _n\t\t+ [\"Land_CamoNetVar_EAST_EP1\"];\n_n = _n\t\t+ [\"Land_CamoNetB_EAST_EP1\"];\n_n = _n\t\t+ [\"Sign_Danger\"];\n_n = _n\t\t+ [\"HeliH\"];\n_n = _n\t\t+ [\"Fort_RazorWire\"];\n_n = _n\t\t+ [\"Concrete_Wall_EP1\"];\n_n = _n\t\t+ [\"Land_Campfire\"];\n_n = _n\t\t+ [\"TKOrdnanceBox_EP1\"];\n_n = _n\t\t+ [\"TKVehicleBox_EP1\"];\n_n = _n\t\t+ [\"TKBasicAmmunitionBox_EP1\"];\n_n = _n\t\t+ [\"TKBasicWeapons_EP1\"];\n_n = _n\t\t+ [\"TKLaunchers_EP1\"];\n_n = _n\t\t+ [\"TKSpecialWeapons_EP1\"];\n\n/* Class used for AI, AI will attempt to build those */\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_MG\", _side], ['DSHKM_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_GL\", _side], ['DSHKM_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_AAPOD\", _side], ['ZU23_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_ATPOD\", _side], ['SPG9_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_CANNON\", _side], ['SPG9_Gue']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_MASH\", _side], ['MASH']];\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSES_MORTAR\", _side], ['2b14_82mm_TK_GUE_EP1']];\n\nmissionNamespace setVariable [Format[\"WFBE_%1DEFENSENAMES\", _side], _n];"
+    },
+    {
+      "relpath": "Config\\Core_Units\\Units_GUE.sqf",
+      "text": "Private ['_side','_u'];\n\n_side = _this;\n\n_u \t\t\t= ['GUE_Soldier_1'];\n_u = _u\t\t+ ['GUE_Soldier_2'];\n_u = _u\t\t+ ['GUE_Soldier_3'];\n_u = _u\t\t+ ['GUE_Soldier_GL'];\n_u = _u\t\t+ ['GUE_Soldier_AT'];\n_u = _u\t\t+ ['GUE_Soldier_AA'];\n_u = _u\t\t+ ['GUE_Soldier_AR'];\n_u = _u\t\t+ ['GUE_Soldier_MG'];\n_u = _u\t\t+ ['GUE_Soldier_Sniper'];\n_u = _u\t\t+ ['GUE_Soldier_Medic'];\n_u = _u\t\t+ ['GUE_Soldier_Crew'];\n_u = _u\t\t+ ['GUE_Soldier_Pilot'];\n_u = _u\t\t+ ['GUE_Soldier_Scout'];\n_u = _u\t\t+ ['GUE_Soldier_Sab'];\n_u = _u\t\t+ ['GUE_Commander'];\n_u = _u\t\t+ ['GUE_Worker2'];\n_u = _u\t\t+ ['GUE_Woodlander3'];\n_u = _u\t\t+ ['GUE_Villager3'];\n_u = _u\t\t+ ['GUE_Woodlander2'];\n_u = _u\t\t+ ['GUE_Woodlander1'];\n_u = _u\t\t+ ['GUE_Villager4'];\n\nmissionNamespace setVariable [Format [\"WFBE_%1BARRACKSUNITS\", _side], _u];\nif (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u \t\t\t= ['TT650_Gue'];\n_u = _u\t\t+ ['V3S_Gue'];\n_u = _u\t\t+ ['Pickup_PK_GUE'];\n_u = _u\t\t+ ['Offroad_DSHKM_Gue'];\n_u = _u\t\t+ ['Offroad_SPG9_Gue'];\n_u = _u\t\t+ ['WarfareRepairTruck_Gue'];\n_u = _u\t\t+ ['WarfareSalvageTruck_Gue'];\n_u = _u\t\t+ ['WarfareReammoTruck_Gue'];\n_u = _u\t\t+ ['WarfareSupplyTruck_Gue'];\n_u = _u\t\t+ ['BRDM2_Gue'];\n_u = _u\t\t+ ['Ural_ZU23_Gue'];\n\nmissionNamespace setVariable [Format [\"WFBE_%1LIGHTUNITS\", _side], _u];\nif (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u \t\t\t= ['BMP2_Gue'];\n_u = _u\t\t+ ['T72_Gue'];\n\nmissionNamespace setVariable [Format [\"WFBE_%1HEAVYUNITS\", _side], _u];\nif (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u \t\t\t= ['Mi17_Civilian'];\n\nmissionNamespace setVariable [Format [\"WFBE_%1AIRCRAFTUNITS\", _side], _u];\nif (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u = [];\n\nmissionNamespace setVariable [Format [\"WFBE_%1AIRPORTUNITS\", _side], _u];\nif (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u\t\t\t= [\"MMT_Civ\"];\n_u = _u\t\t+ [\"TT650_Civ\"];\n_u = _u\t\t+ [\"Tractor\"];\n_u = _u\t\t+ [\"Lada2\"];\n_u = _u\t\t+ [\"LadaLM\"];\n_u = _u\t\t+ [\"SkodaRed\"];\n_u = _u\t\t+ [\"VWGolf\"];\n_u = _u\t\t+ [\"datsun1_civil_2_covered\"];\n_u = _u\t\t+ [\"hilux1_civil_2_covered\"];\n_u = _u\t\t+ [\"UralCivil\"];\nif ((missionNamespace getVariable \"WFBE_C_UNITS_TOWN_PURCHASE\") > 0) then {\n\t_u = _u\t\t+ [missionNamespace getVariable \"WFBE_GUERSOLDIER\"];\n};\n\nmissionNamespace setVariable [Format [\"WFBE_%1DEPOTUNITS\", _side], _u];\nif (local player) then {['DEPOT', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};"
+    },
+    {
+      "relpath": "Config\\Core_Units\\Units_CO_GUE.sqf",
+      "text": "Private ['_side','_u'];\n\n_side = _this;\n\nif (IS_chernarus_map_dependent) then {\n    _u \t\t\t= ['GUE_Soldier_1'];\n    _u = _u\t\t+ ['GUE_Soldier_2'];\n    _u = _u\t\t+ ['GUE_Soldier_3'];\n    _u = _u\t\t+ ['GUE_Soldier_GL'];\n    _u = _u\t\t+ ['GUE_Soldier_AT'];\n    _u = _u\t\t+ ['GUE_Soldier_AA'];\n    _u = _u\t\t+ ['GUE_Soldier_AR'];\n    _u = _u\t\t+ ['GUE_Soldier_MG'];\n    _u = _u\t\t+ ['GUE_Soldier_Sniper'];\n    _u = _u\t\t+ ['GUE_Soldier_Medic'];\n    _u = _u\t\t+ ['GUE_Soldier_Crew'];\n    _u = _u\t\t+ ['GUE_Soldier_Pilot'];\n    _u = _u\t\t+ ['GUE_Soldier_Scout'];\n    _u = _u\t\t+ ['GUE_Soldier_Sab'];\n    _u = _u\t\t+ ['GUE_Commander'];\n    _u = _u\t\t+ ['GUE_Worker2'];\n    _u = _u\t\t+ ['GUE_Woodlander3'];\n    _u = _u\t\t+ ['GUE_Villager3'];\n    _u = _u\t\t+ ['GUE_Woodlander2'];\n    _u = _u\t\t+ ['GUE_Woodlander1'];\n    _u = _u\t\t+ ['GUE_Villager4'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_2_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_3_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_4_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_5_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_AT_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_AAT_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_AA_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_AR_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_MG_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_Sniper_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Bonesetter_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_HAT_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_TL_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Warlord_EP1'];\n} else {\n    _u = ['TK_GUE_Soldier_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_2_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_3_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_4_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_5_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_AT_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_AAT_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_AA_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_AR_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_MG_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_Sniper_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Bonesetter_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_HAT_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Soldier_TL_EP1'];\n    _u = _u\t\t+ ['TK_GUE_Warlord_EP1'];\n};\nif ((missionNamespace getVariable \"WFBE_C_MODULE_BIS_PMC\") > 0) then {\n\t_u = _u + ['Soldier_AA_PMC'];\n\t_u = _u + ['Soldier_AT_PMC'];\n\t_u = _u + ['Soldier_Bodyguard_AA12_PMC'];\n\t_u = _u + ['Soldier_Bodyguard_M4_PMC'];\n\t_u = _u + ['Soldier_Crew_PMC'];\n\t_u = _u + ['Soldier_Engineer_PMC'];\n\t_u = _u + ['Soldier_GL_M16A2_PMC'];\n\t_u = _u + ['Soldier_GL_PMC'];\n\t_u = _u + ['Soldier_M4A3_PMC'];\n\t_u = _u + ['Soldier_Medic_PMC'];\n\t_u = _u + ['Soldier_MG_PKM_PMC'];\n\t_u = _u + ['Soldier_MG_PMC'];\n\t_u = _u + ['Soldier_Pilot_PMC'];\n\t_u = _u + ['Soldier_PMC'];\n\t_u = _u + ['Soldier_Sniper_KSVK_PMC'];\n\t_u = _u + ['Soldier_Sniper_PMC'];\n\t_u = _u + ['Soldier_TL_PMC'];\n};\n\nmissionNamespace setVariable [Format [\"WFBE_%1BARRACKSUNITS\", _side], _u];\nif (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u \t\t\t= ['TT650_Gue'];\n_u = _u\t\t+ ['V3S_Gue'];\n_u = _u\t\t+ ['Pickup_PK_GUE'];\n_u = _u\t\t+ ['Offroad_DSHKM_Gue'];\n_u = _u\t\t+ ['Offroad_SPG9_Gue'];\n_u = _u\t\t+ ['WarfareRepairTruck_Gue'];\n_u = _u\t\t+ ['WarfareSalvageTruck_Gue'];\n_u = _u\t\t+ ['WarfareReammoTruck_Gue'];\n_u = _u\t\t+ ['WarfareSupplyTruck_Gue'];\n_u = _u\t\t+ ['BRDM2_Gue'];\n_u = _u\t\t+ ['Ural_ZU23_Gue'];\n_u = _u\t\t+ ['V3S_TK_GUE_EP1'];\n_u = _u\t\t+ ['V3S_Repair_TK_GUE_EP1'];\n_u = _u\t\t+ ['V3S_Salvage_TK_GUE_EP1'];\n_u = _u\t\t+ ['V3S_Reammo_TK_GUE_EP1'];\n_u = _u\t\t+ ['V3S_Refuel_TK_GUE_EP1'];\n_u = _u\t\t+ ['V3S_Supply_TK_GUE_EP1'];\n_u = _u\t\t+ ['Pickup_PK_TK_GUE_EP1'];\n_u = _u\t\t+ ['Offroad_DSHKM_TK_GUE_EP1'];\n_u = _u\t\t+ ['Offroad_SPG9_TK_GUE_EP1'];\n_u = _u\t\t+ ['BRDM2_TK_GUE_EP1'];\n_u = _u\t\t+ ['BTR40_TK_GUE_EP1'];\n_u = _u\t\t+ ['BTR40_MG_TK_GUE_EP1'];\n_u = _u\t\t+ ['Ural_ZU23_TK_GUE_EP1'];\nif ((missionNamespace getVariable \"WFBE_C_MODULE_BIS_PMC\") > 0) then {\n\t_u = _u + ['SUV_PMC'];\n\t_u = _u + ['ArmoredSUV_PMC'];\n};\n\nmissionNamespace setVariable [Format [\"WFBE_%1LIGHTUNITS\", _side], _u];\nif (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u \t\t\t= ['BMP2_Gue'];\n_u = _u\t\t+ ['T72_Gue'];\n_u = _u\t\t+ ['T34_TK_GUE_EP1'];\n_u = _u\t\t+ ['T55_TK_GUE_EP1'];\n\nmissionNamespace setVariable [Format [\"WFBE_%1HEAVYUNITS\", _side], _u];\nif (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u \t\t\t= ['Mi17_Civilian'];\n_u = _u\t\t+ ['UH1H_TK_GUE_EP1'];\n\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_BIS_PMC\") > 0) then {\n\t\t_u = _u\t\t+ ['Ka60_PMC'];\n\t\t_u = _u\t\t+ ['Ka60_GL_PMC'];\n\t};\n\n_u = _u\t\t+ ['An2_1_TK_CIV_EP1'];\n_u = _u\t\t+ ['An2_2_TK_CIV_EP1'];\n\nmissionNamespace setVariable [Format [\"WFBE_%1AIRCRAFTUNITS\", _side], _u];\nif (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u = [];\n_u = _u\t\t+ ['An2_1_TK_CIV_EP1'];\n_u = _u\t\t+ ['An2_2_TK_CIV_EP1'];\n\nmissionNamespace setVariable [Format [\"WFBE_%1AIRPORTUNITS\", _side], _u];\nif (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};\n\n_u\t\t\t= [\"MMT_Civ\"];\n_u = _u\t\t+ [\"TT650_Civ\"];\n_u = _u\t\t+ [\"Tractor\"];\n_u = _u\t\t+ [\"Lada2\"];\n_u = _u\t\t+ [\"LadaLM\"];\n_u = _u\t\t+ [\"SkodaRed\"];\n_u = _u\t\t+ [\"VWGolf\"];\n_u = _u\t\t+ [\"datsun1_civil_2_covered\"];\n_u = _u\t\t+ [\"hilux1_civil_2_covered\"];\n_u = _u\t\t+ [\"UralCivil\"];\nif ((missionNamespace getVariable \"WFBE_C_UNITS_TOWN_PURCHASE\") > 0) then {\n\t_u = _u\t\t+ [missionNamespace getVariable \"WFBE_GUERSOLDIER\"];\n};\n\nmissionNamespace setVariable [Format [\"WFBE_%1DEPOTUNITS\", _side], _u];\nif (local player) then {['DEPOT', _side, _u] Call Compile preProcessFile 'Client\\Init\\Init_Faction.sqf'};"
+    },
+    {
+      "relpath": "Config\\Core_Upgrades\\Upgrades_GUE.sqf",
+      "text": "Private [\"_side\"];\n\n_side = _this;\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_ENABLED\", _side], [\n\ttrue, //--- Barracks\n\ttrue, //--- Light\n\ttrue, //--- Heavy\n\ttrue, //--- Air\n\ttrue, //--- Paratroopers\n\tif (isNil{missionNamespace getVariable Format[\"WFBE_%1UAV\", _side]}) then {false} else {true}, //--- UAV\n\ttrue, //--- Supply\n\ttrue, //--- Respawn Range\n\ttrue, //--- Airlift\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_FLARES\") == 1) then {true} else {false}, //--- Custom Flares\n\tif ((missionNamespace getVariable \"WFBE_C_ARTILLERY\") > 0) then {true} else {false}, //--- Artillery Time\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_ICBM\") > 0 && !(IS_air_war_event)) then {true} else {false}, //--- ICBM\n\tif ((missionNamespace getVariable \"WFBE_C_GAMEPLAY_FAST_TRAVEL\") > 0) then {true} else {false}, //--- Fast Travel\n\ttrue, //--- Gear\n\ttrue, //--- Build Ammo\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_EASA\") > 0) then {true} else {false}, //--- EASA\n\ttrue, //--- Supply Paradrop\n\tif ((missionNamespace getVariable \"WFBE_C_ARTILLERY\") > 0) then {true} else {false}, //--- Artillery Ammo\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_IRSMOKE\") > 0) then {true} else {false}, //--- IR Smoke\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_FLARES\") == 1) then {true} else {false}, //--- Aircraft AA Missiles\n\ttrue //--- Anti Air radar\n]];\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_COSTS\", _side], [\n\t[[540,0],[1350,0],[2070,0]], //--- Barracks\n\t[[250,0],[950,0],[1900,0],[3500,0]], //--- Light\n\t[[1200,0],[4400,0],[9500,0],[10500,0]], //--- Heavy\n\t[[1200,0],[4000,0],[9200,0],[10500,0],[17600,0]], //--- Air\n\t[[1500,0],[2500,0],[3500,0]], //--- Paratroopers\n\t[[2000,0]], //--- UAV\n\t[[2700,0],[4800,0],[6000,0]], //--- Supply\n\t[[500,0],[1500,0]], //--- Respawn Range\n\t[[1000,0]], //--- Airlift\n\t[[4500,0]], //--- Custom Flares\n\t[[800,0],[1400,0],[2200,0],[3700,0],[6100,0],[10000,0]], //--- Artillery Time\n\t[[49500,80000]], //--- ICBM\n\t[[1500,0]], //--- Fast Travel\n\t[[250,0],[650,0],[1200,0],[2100,0],[2400,0]], //--- Gear\n\t[[750,0]], //--- Build Ammo\n\t[[4000,0]], //--- EASA\n\t[[2000,0]], //--- Supply Paradrop\n\t// Marty: Artillery Ammunition is a single upgrade level now.\n\t[[2500,0]], //--- Artillery Ammo\n\t[[3000,0],[9000,0]], //--- IR Smoke\n\t[[7500,0]], //--- Aircraft AA Missiles\n\t[[5000,0],[12500,0]] //--- Anti Air Radar\n]];\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_LEVELS\", _side], [\n\t3, //--- Barracks\n\t4, //--- Light\n\t4, //--- Heavy\n\t5, //--- Air\n\t3, //--- Paratroopers\n\t1, //--- UAV\n\t3, //--- Supply\n\t2, //--- Respawn Range\n\t1, //--- Airlift\n\t1, //--- Custom Flares\n\t6, //--- Artillery Time\n\t1, //--- ICBM\n\t1, //--- Fast Travel\n\t5, //--- Gear\n\t1, //--- Build Ammo\n\t1, //--- EASA\n\t1, //--- Supply Paradrop\n\t// Marty: Artillery Ammunition has one maximum level.\n\t1, //--- Artillery Ammo\n\t2, //--- IR Smoke\n\t1 //--- Aircraft AA Missiles\n]];\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_LINKS\", _side], [\n\t[[WFBE_UP_GEAR,2],[WFBE_UP_GEAR,3],[WFBE_UP_GEAR,5]], //--- Barracks\n\t[[],[],[],[]], //--- Light\n\t[[],[],[],[]], //--- Heavy\n\t[[],[],[],[],[]], //--- Air\n\t[\n\t\t[[WFBE_UP_BARRACKS,1],[WFBE_UP_AIR,1],[WFBE_UP_GEAR,1]],\n\t\t[[WFBE_UP_BARRACKS,2],[WFBE_UP_AIR,2],[WFBE_UP_GEAR,2]],\n\t\t[[WFBE_UP_BARRACKS,3],[WFBE_UP_AIR,3],[WFBE_UP_GEAR,3]]\n\t], //--- Paratroopers\n\t[[WFBE_UP_AIR,2]], //--- UAV\n\t[[],[],[]], //--- Supply\n\t[[WFBE_UP_LIGHT,1],[],[]], //--- Respawn Range\n\t[[WFBE_UP_AIR,1]], //--- Airlift\n\t[[WFBE_UP_AIR,2]], //--- Custom Flares\n    [[],[],[],[],[],[]], //--- Artillery Time\n\t[[WFBE_UP_AIR,3]], //--- ICBM\n\t[\n\t\t[[WFBE_UP_LIGHT,1],[WFBE_UP_SUPPLYRATE,1]]\n\t], //--- Fast Travel\n\t[[],[],[],[],[]], //--- Gear\n\t[[WFBE_UP_GEAR,2]], //--- Build Ammo\n\t[[WFBE_UP_AIR,1]], //--- EASA\n\t[[WFBE_UP_AIRLIFT,1]], //--- Supply Paradrop\n\t// Marty: Only the first dependency gate remains for the single Artillery Ammunition level.\n\t[\n\t\t[[WFBE_UP_GEAR,1],[WFBE_UP_HEAVY,1]]\n\t], //--- Artillery Ammo\n\t[[WFBE_UP_HEAVY, 3],[]], //--- IR Smoke\n\t[[WFBE_UP_AIR, 3]] //--- Aircraft AA Missiles\n]];\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_TIMES\", _side], [\n\t[30,60,90], //--- Barracks\n\t[40,60,80,100], //--- Light\n\t[50,70,90,110], //--- Heavy\n\t[60,75,90,105,120], //--- Air\n\t[35,55,75], //--- Paratroopers\n\t[60], //--- UAV\n\t[60,80,120], //--- Supply\n\t[30,60,90], //--- Respawn Range\n\t[30], //--- Airlift\n\t[100], //--- Custom Flares\n\t[40, 70, 100, 130, 160, 190], //--- Artillery Time\n\t[300], //--- ICBM\n\t[60], //--- Fast Travel\n\t[25,50,75,100,125], //--- Gear\n\t[40], //--- Build Ammo\n\t[90], //--- EASA\n\t[50], //--- Supply Paradrop\n\t// Marty: Artillery Ammunition keeps the original first-level upgrade time.\n\t[60], //--- Artillery Ammo\n\t[120,180], //--- IR Smoke\n\t[120] //--- Aircraft AA Missiles\n]];\n\n//todo, on commander missing link checkup, skip disabled upgrades.\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_AI_ORDER\", _side], [\n\t[WFBE_UP_BARRACKS,1],\n\t[WFBE_UP_GEAR,1],\n\t[WFBE_UP_LIGHT,1],\n\t[WFBE_UP_SUPPLYRATE,1],\n\t[WFBE_UP_BARRACKS,2],\n\t[WFBE_UP_GEAR,2],\n\t[WFBE_UP_LIGHT,2],\n\t[WFBE_UP_BARRACKS,3],\n\t[WFBE_UP_LIGHT,3],\n\t[WFBE_UP_RESPAWNRANGE,1],\n\t[WFBE_UP_SUPPLYRATE,2],\n\t[WFBE_UP_HEAVY,1],\n\t[WFBE_UP_HEAVY,2],\n\t[WFBE_UP_ARTYTIMEOUT,1],\n\t[WFBE_UP_SUPPLYRATE,3],\n\t[WFBE_UP_HEAVY,3],\n\t[WFBE_UP_ARTYTIMEOUT,2],\n\t[WFBE_UP_GEAR,3],\n\t[WFBE_UP_RESPAWNRANGE,2],\n\t[WFBE_UP_ARTYTIMEOUT,3],\n\t[WFBE_UP_AIR,1],\n\t[WFBE_UP_AIRLIFT,1],\n\t[WFBE_UP_RESPAWNRANGE,3],\n\t[WFBE_UP_AIR,2],\n\t[WFBE_UP_FLARESCM,1],\n\t[WFBE_UP_PARATROOPERS,1],\n\t[WFBE_UP_PARATROOPERS,2],\n\t[WFBE_UP_AIR,3],\n\t[WFBE_UP_UAV,1],\n\t[WFBE_UP_PARATROOPERS,3],\n\t[WFBE_UP_EASA,1],\n\t[WFBE_UP_SUPPLYPARADROP,1],\n\t[WFBE_UP_AIRAAM,1]\n]];\n\n//--- Check potential missing definition.\n(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Upgrades\\Check_Upgrades.sqf\";"
+    },
+    {
+      "relpath": "Config\\Core_Upgrades\\Upgrades_CO_GUE.sqf",
+      "text": "Private [\"_side\"];\n\n_side = _this;\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_ENABLED\", _side], [\n\ttrue, //--- Barracks\n\ttrue, //--- Light\n\ttrue, //--- Heavy\n\ttrue, //--- Air\n\ttrue, //--- Paratroopers\n\tif (isNil{missionNamespace getVariable Format[\"WFBE_%1UAV\", _side]}) then {false} else {true}, //--- UAV\n\ttrue, //--- Supply\n\ttrue, //--- Respawn Range\n\ttrue, //--- Airlift\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_FLARES\") == 1) then {true} else {false}, //--- Custom Flares\n\tif ((missionNamespace getVariable \"WFBE_C_ARTILLERY\") > 0) then {true} else {false}, //--- Artillery Time\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_ICBM\") > 0 && !(IS_air_war_event)) then {true} else {false}, //--- ICBM\n\tif ((missionNamespace getVariable \"WFBE_C_GAMEPLAY_FAST_TRAVEL\") > 0) then {true} else {false}, //--- Fast Travel\n\ttrue, //--- Gear\n\ttrue, //--- Build Ammo\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_EASA\") > 0) then {true} else {false}, //--- EASA\n\ttrue, //--- Supply Paradrop\n\tif ((missionNamespace getVariable \"WFBE_C_ARTILLERY\") > 0) then {true} else {false}, //--- Artillery Ammo\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_IRSMOKE\") > 0) then {true} else {false}, //--- IR Smoke\n\tif ((missionNamespace getVariable \"WFBE_C_MODULE_WFBE_FLARES\") == 1) then {true} else {false}, //--- Aircraft AA Missiles\n\ttrue //--- Anti Air radar\n]];\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_COSTS\", _side], [\n\t[[540,0],[1350,0],[2070,0]], //--- Barracks\n\t[[250,0],[950,0],[1900,0],[3500,0]], //--- Light\n\t[[1200,0],[4400,0],[9500,0],[10500,0]], //--- Heavy\n\t[[1200,0],[4000,0],[9200,0],[10500,0],[17600,0]], //--- Air\n\t[[1500,0],[2500,0],[3500,0]], //--- Paratroopers\n\t[[2000,0]], //--- UAV\n\t[[2700,0],[4800,0],[6000,0]], //--- Supply\n\t[[500,0],[1500,0]], //--- Respawn Range\n\t[[1000,0]], //--- Airlift\n\t[[4500,0]], //--- Custom Flares\n\t[[800,0],[1400,0],[2200,0],[3700,0],[6100,0],[10000,0]], //--- Artillery Time\n\t[[49500,80000]], //--- ICBM\n\t[[1500,0]], //--- Fast Travel\n\t[[250,0],[650,0],[1200,0],[2100,0],[2400,0]], //--- Gear\n\t[[750,0]], //--- Build Ammo\n\t[[4000,0]], //--- EASA\n\t[[2000,0]], //--- Supply Paradrop\n\t// Marty: Artillery Ammunition is a single upgrade level now.\n\t[[2500,0]], //--- Artillery Ammo\n\t[[3000,0],[9000,0]], //--- IR Smoke\n\t[[7500,0]], //--- Aircraft AA Missiles\n\t[[5000,0],[12500,0]] //--- Anti Air Radar\n]];\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_LEVELS\", _side], [\n\t3, //--- Barracks\n\t4, //--- Light\n\t4, //--- Heavy\n\t5, //--- Air\n\t3, //--- Paratroopers\n\t1, //--- UAV\n\t3, //--- Supply\n\t2, //--- Respawn Range\n\t1, //--- Airlift\n\t1, //--- Custom Flares\n\t6, //--- Artillery Time\n\t1, //--- ICBM\n\t1, //--- Fast Travel\n\t5, //--- Gear\n\t1, //--- Build Ammo\n\t1, //--- EASA\n\t1, //--- Supply Paradrop\n\t// Marty: Artillery Ammunition has one maximum level.\n\t1, //--- Artillery Ammo\n\t2, //--- IR Smoke\n\t1 //--- Aircraft AA Missiles\n]];\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_LINKS\", _side], [\n\t[[WFBE_UP_GEAR,2],[WFBE_UP_GEAR,3],[WFBE_UP_GEAR,5]], //--- Barracks\n\t[[],[],[],[]], //--- Light\n\t[[],[],[],[]], //--- Heavy\n\t[[],[],[],[],[]], //--- Air\n\t[\n\t\t[[WFBE_UP_BARRACKS,1],[WFBE_UP_AIR,1],[WFBE_UP_GEAR,1]],\n\t\t[[WFBE_UP_BARRACKS,2],[WFBE_UP_AIR,2],[WFBE_UP_GEAR,2]],\n\t\t[[WFBE_UP_BARRACKS,3],[WFBE_UP_AIR,3],[WFBE_UP_GEAR,3]]\n\t], //--- Paratroopers\n\t[[WFBE_UP_AIR,2]], //--- UAV\n\t[[],[],[]], //--- Supply\n\t[[WFBE_UP_LIGHT,1],[],[]], //--- Respawn Range\n\t[[WFBE_UP_AIR,1]], //--- Airlift\n\t[[WFBE_UP_AIR,2]], //--- Custom Flares\n    [[],[],[],[],[],[]], //--- Artillery Time\n\t[[WFBE_UP_AIR,3]], //--- ICBM\n\t[\n\t\t[[WFBE_UP_LIGHT,1],[WFBE_UP_SUPPLYRATE,1]]\n\t], //--- Fast Travel\n\t[[],[],[],[],[]], //--- Gear\n\t[[WFBE_UP_GEAR,2]], //--- Build Ammo\n\t[[WFBE_UP_AIR,1]], //--- EASA\n\t[[WFBE_UP_AIRLIFT,1]], //--- Supply Paradrop\n\t// Marty: Only the first dependency gate remains for the single Artillery Ammunition level.\n\t[\n\t\t[[WFBE_UP_GEAR,1],[WFBE_UP_HEAVY,1]]\n\t], //--- Artillery Ammo\n\t[[WFBE_UP_HEAVY, 3],[]], //--- IR Smoke\n\t[[WFBE_UP_AIR, 3]] //--- Aircraft AA Missiles\n]];\n\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_TIMES\", _side], [\n\t[30,60,90], //--- Barracks\n\t[40,60,80,100], //--- Light\n\t[50,70,90,110], //--- Heavy\n\t[60,75,90,105,120], //--- Air\n\t[35,55,75], //--- Paratroopers\n\t[60], //--- UAV\n\t[60,80,120], //--- Supply\n\t[30,60,90], //--- Respawn Range\n\t[30], //--- Airlift\n\t[100], //--- Custom Flares\n\t[40, 70, 100, 130, 160, 190], //--- Artillery Time\n\t[300], //--- ICBM\n\t[60], //--- Fast Travel\n\t[25,50,75,100,125], //--- Gear\n\t[40], //--- Build Ammo\n\t[90], //--- EASA\n\t[50], //--- Supply Paradrop\n\t// Marty: Artillery Ammunition keeps the original first-level upgrade time.\n\t[60], //--- Artillery Ammo\n\t[120,180], //--- IR Smoke\n\t[120] //--- Aircraft AA Missiles\n]];\n\n//todo, on commander missing link checkup, skip disabled upgrades.\nmissionNamespace setVariable [Format[\"WFBE_C_UPGRADES_%1_AI_ORDER\", _side], [\n\t[WFBE_UP_BARRACKS,1],\n\t[WFBE_UP_GEAR,1],\n\t[WFBE_UP_LIGHT,1],\n\t[WFBE_UP_SUPPLYRATE,1],\n\t[WFBE_UP_BARRACKS,2],\n\t[WFBE_UP_GEAR,2],\n\t[WFBE_UP_LIGHT,2],\n\t[WFBE_UP_BARRACKS,3],\n\t[WFBE_UP_LIGHT,3],\n\t[WFBE_UP_RESPAWNRANGE,1],\n\t[WFBE_UP_SUPPLYRATE,2],\n\t[WFBE_UP_HEAVY,1],\n\t[WFBE_UP_HEAVY,2],\n\t[WFBE_UP_ARTYTIMEOUT,1],\n\t[WFBE_UP_SUPPLYRATE,3],\n\t[WFBE_UP_HEAVY,3],\n\t[WFBE_UP_ARTYTIMEOUT,2],\n\t[WFBE_UP_GEAR,3],\n\t[WFBE_UP_RESPAWNRANGE,2],\n\t[WFBE_UP_ARTYTIMEOUT,3],\n\t[WFBE_UP_AIR,1],\n\t[WFBE_UP_AIRLIFT,1],\n\t[WFBE_UP_RESPAWNRANGE,3],\n\t[WFBE_UP_AIR,2],\n\t[WFBE_UP_FLARESCM,1],\n\t[WFBE_UP_PARATROOPERS,1],\n\t[WFBE_UP_PARATROOPERS,2],\n\t[WFBE_UP_AIR,3],\n\t[WFBE_UP_UAV,1],\n\t[WFBE_UP_PARATROOPERS,3],\n\t[WFBE_UP_EASA,1],\n\t[WFBE_UP_SUPPLYPARADROP,1],\n\t[WFBE_UP_AIRAAM,1]\n]];\n\n//--- Check potential missing definition.\n(_side) Call Compile preprocessFileLineNumbers \"Common\\Config\\Core_Upgrades\\Check_Upgrades.sqf\";"
+    },
+    {
+      "relpath": "Config\\Core_Squads\\Squad_GUE.sqf",
+      "text": "Private ['_aiTeamTemplateRequires','_aiTeamTemplateName','_aiTeamTemplates','_aiTeamTypes','_aiTeamUpgrades','_return','_side','_u'];\n\n_side = _this;\n\n//--- Overall Dump.\n_return = [\"Guerrila\", \"GUE\"] Call Compile preprocessFile \"Common\\Config\\Core_Squads\\Squads_GetFactionGroups.sqf\";\n_aiTeamTemplates = _return select 0;\n_aiTeamTemplateName = _return select 1;\n_aiTeamTemplateRequires = _return select 2;\n_aiTeamTypes = _return select 3;\n_aiTeamUpgrades = _return select 4;\n\nmissionNamespace setVariable [Format[\"WFBE_%1AITEAMTEMPLATES\", _side], _aiTeamTemplates];\nmissionNamespace setVariable [Format[\"WFBE_%1AITEAMTEMPLATEREQUIRES\", _side], _aiTeamTemplateRequires];\nmissionNamespace setVariable [Format[\"WFBE_%1AITEAMTYPES\", _side], _aiTeamTypes];\nmissionNamespace setVariable [Format[\"WFBE_%1AITEAMUPGRADES\", _side], _aiTeamUpgrades];\nmissionNamespace setVariable [Format[\"WFBE_%1AITEAMTEMPLATEDESCRIPTIONS\", _side], _aiTeamTemplateName];"
+    },
+    {
+      "relpath": "Config\\Core_Artillery\\Artillery_GUE.sqf",
+      "text": "Private [\"_side\"];\n_side = _this;\n\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPLAY_NAME', _side], ['2B14']]; //--- Display Name to use in the GUI.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_WEAPONS', _side], ['2B14']]; //--- Weapon classname.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MIN', _side], [50]]; //--- Unit cannot fire if the target is within it's min range.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MAX', _side], [5500]]; //--- Unit max firing range.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_TIME_RELOAD', _side], [4]]; //--- Approximate time needed for unit to fire again.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_BURST', _side], [4]]; //--- Burst sent per fire mission.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_VELOCITIES', _side], [475]]; //--- Projectile fall velocity.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPERSIONS', _side], [60]]; //--- Accuracy of the shell upon landing.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_LASER', _side], []]; //--- LASER rounds\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_SADARM', _side], []]; //--- SADARM rounds\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_ILLUMN', _side], ['ARTY_Sh_82_ILLUM']]; //--- ILLUM rounds\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DEPLOY_SMOKE', _side], ['ARTY_Sh_82_WP']]; //--- Projectiles which deploys smoke\n\n//--- Usable projectiles per artillery class.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMOS', _side], [\n\t['ARTY_Sh_82_HE','Sh_82_HE','ARTY_Sh_82_WP','ARTY_Sh_82_ILLUM']\n]];\n\n//--- Special projectiles used by artillery classes.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_EXTENDED_MAGS', _side], [\n\t['ARTY_8Rnd_82mmWP_2B14','ARTY_8Rnd_82mmILLUM_2B14']\n]];\n\n//--- Upgrade level required to use the special projectile.\n// Marty: All special artillery ammunition is unlocked by Artillery Ammunition level 1.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_EXTENDED_MAGS_UPGRADE', _side], [\n\t[1,1]\n]];\n\n//--- Artillery classnames, more than one of the same family may be used.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_CLASSNAMES', _side], [\n\t['2b14_82mm_GUE']\n]];"
+    },
+    {
+      "relpath": "Config\\Core_Artillery\\Artillery_CO_GUE.sqf",
+      "text": "Private [\"_side\"];\n_side = _this;\n\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPLAY_NAME', _side], ['D30','2B14']]; //--- Display Name to use in the GUI.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_WEAPONS', _side], ['D30','2B14']]; //--- Weapon classname.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MIN', _side], [1000,50]]; //--- Unit cannot fire if the target is within it's min range.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MAX', _side], [7000,5500]]; //--- Unit max firing range.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_TIME_RELOAD', _side], [7,4]]; //--- Approximate time needed for unit to fire again.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_BURST', _side], [8,4]]; //--- Burst sent per fire mission.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_VELOCITIES', _side], [500,475]]; //--- Projectile fall velocity.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPERSIONS', _side], [50,60]]; //--- Accuracy of the shell upon landing.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_LASER', _side], ['Sh_122_LASER']]; //--- LASER rounds\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_SADARM', _side], ['Sh_122_SADARM']]; //--- SADARM rounds\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_ILLUMN', _side], ['Sh_122_ILLUM','Sh_122_ILLUM']]; //--- ILLUM rounds\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DEPLOY_SMOKE', _side], ['Sh_122_WP','Sh_122_SMOKE','Sh_82_WP']]; //--- Projectiles which deploys smoke\n\n//--- Usable projectiles per artillery class.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMOS', _side], [\n\t['Sh_122_HE','Sh_122_WP','Sh_122_SADARM','Sh_122_LASER','Sh_122_SMOKE','Sh_122_ILLUM'],\n\t['Sh_82_HE','Sh_82_WP','Sh_82_ILLUM']\n]];\n\n//--- Special projectiles used by artillery classes.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_EXTENDED_MAGS', _side], [\n\t['30Rnd_122mmWP_D30','30Rnd_122mmSADARM_D30','30Rnd_122mmLASER_D30','30Rnd_122mmSMOKE_D30','30Rnd_122mmILLUM_D30'],\n\t['8Rnd_82mmWP_2B14','8Rnd_82mmILLUM_2B14']\n]];\n\n//--- Upgrade level required to use the special projectile.\n// Marty: All special artillery ammunition is unlocked by Artillery Ammunition level 1.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_EXTENDED_MAGS_UPGRADE', _side], [\n\t[1,1,1,1,1],\n\t[1,1]\n]];\n\n//--- Artillery classnames, more than one of the same family may be used.\nmissionNamespace setVariable [Format['WFBE_%1_ARTILLERY_CLASSNAMES', _side], [\n\t['D30_TK_GUE_EP1'],\n\t['2b14_82mm_TK_GUE_EP1','2b14_82mm_GUE']\n]];"
+    },
+    {
+      "relpath": "Config\\Defenses\\Defenses_GUE.sqf",
+      "text": "/*\n\tDefenses Definition, define the available defenses.\n*/\n\nPrivate [\"_c\",\"_f\",\"_faction\",\"_k\",\"_n\",\"_o\",\"_side\",\"_t\"];\n\n_side = \"GUER\";\n_faction = \"GUE\";\n\n_c = []; //--- Classname\n_n = []; //--- Name. \t\t\t\t\t'' = auto generated.\n_o = []; //--- Price.\n_t = []; //--- Category\n_k = []; //--- Kind (Used for town defenses)\n\n//--- Defenses (Statics)\n_c = _c + ['GUE_WarfareBMGNest_PK'];\n_n = _n + [''];\n_o = _o + [300];\n_t = _t + [\"Defense\"];\n_k = _k + [\"MGNest\"];\n\n_c = _c + ['SearchLight_Gue'];\n_n = _n + [''];\n_o = _o + [50];\n_t = _t + [\"Defense\"];\n_k = _k + [\"\"];\n\n_c = _c + ['DSHKM_Gue'];\n_n = _n + [''];\n_o = _o + [200];\n_t = _t + [\"Defense\"];\n_k = _k + [\"MG\"];\n\n_c = _c + ['SPG9_Gue'];\n_n = _n + [''];\n_o = _o + [400];\n_t = _t + [\"Defense\"];\n_k = _k + [\"AT\"];\n\n_c = _c + ['ZU23_Gue'];\n_n = _n + [''];\n_o = _o + [600];\n_t = _t + [\"Defense\"];\n_k = _k + [\"AA\"];\n\n_c = _c + ['2b14_82mm_GUE'];\n_n = _n + [''];\n_o = _o + [1100];\n_t = _t + [\"Defense\"];\n_k = _k + [\"\"];\n\n//--- Defenses management for towns.\nif (isServer) then {[_side, _c, _k] Call Compile preprocessFile \"Common\\Config\\Config_Defenses_Towns.sqf\"};\n\n//--- Fortitications and rest.\n\n// [_faction, _c, _n, _o, _t] Call Compile preprocessFile \"Common\\Config\\Config_Defenses.sqf\";"
+    },
+    {
+      "relpath": "Config\\Gear\\Gear_GUE.sqf",
+      "text": "_faction = \"GUE\";\n\n_u = [];//--- Magazine\n_p = [];//--- Picture\n_n = [];//--- Label\n_o = [];//--- Price\n_z = [];//--- Upgrade level\n\n//--- Magazines\n_u = _u + [\"5x_22_LR_17_HMR\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [2];\n_z = _z + [0];\n\n_u = _u + [\"8Rnd_9x18_Makarov\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [2];\n_z = _z + [0];\n\n_u = _u + [\"8Rnd_9x18_MakarovSD\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [3];\n_z = _z + [1];\n\n_u = _u + [\"10Rnd_762x54_SVD\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n\n_u = _u + [\"30Rnd_545x39_AK\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [10];\n_z = _z + [0];\n\n_u = _u + [\"30Rnd_545x39_AKSD\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [15];\n_z = _z + [2];\n\n_u = _u + [\"30Rnd_762x39_AK47\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n\n_u = _u + [\"75Rnd_545x39_RPK\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [10];\n_z = _z + [0];\n\n_u = _u + [\"100Rnd_762x54_PK\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [15];\n_z = _z + [0];\n\n_u = _u + [\"OG7\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [100];\n_z = _z + [3];\n\n_u = _u + [\"PG7V\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [50];\n_z = _z + [1];\n\n_u = _u + [\"PG7VR\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [125];\n_z = _z + [3];\n\n_u = _u + [\"PG7VL\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [75];\n_z = _z + [2];\n\n_u = _u + [\"Strela\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [100];\n_z = _z + [3];\n\n_u = _u + [\"1Rnd_SMOKE_GP25\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n\n_u = _u + [\"1Rnd_SMOKERED_GP25\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n\n_u = _u + [\"1Rnd_SMOKEGREEN_GP25\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n\n_u = _u + [\"1Rnd_SMOKEYELLOW_GP25\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n\n[_faction, _u, _p, _n, _o, _z] Call Compile preprocessFile \"Common\\Config\\Config_Magazines.sqf\";\n\n_u = [];//--- Weapon\n_p = [];//--- Picture\n_n = [];//--- Label\n_o = [];//--- Price\n_z = [];//--- Upgrade level\n_m = [];//--- Magazines (-1 = auto, [x,y,z] = forced magazines)\n\n//--- Weapons\n_u = _u + [\"AK_47_M\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [40];\n_z = _z + [1];\n_m = _m + [-1];\n\n_u = _u + [\"AK_47_S\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [50];\n_z = _z + [1];\n_m = _m + [-1];\n\n_u = _u + [\"AK_74\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [75];\n_z = _z + [1];\n_m = _m + [-1];\n\n_u = _u + [\"AK_74_GL\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [85];\n_z = _z + [2];\n_m = _m + [-1];\n\n_u = _u + [\"AKS_74_kobra\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [80];\n_z = _z + [2];\n_m = _m + [-1];\n\n_u = _u + [\"AKS_74_pso\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [95];\n_z = _z + [2];\n_m = _m + [-1];\n\n_u = _u + [\"AKS_74_U\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [80];\n_z = _z + [1];\n_m = _m + [-1];\n\n_u = _u + [\"AKS_74_UN_kobra\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [110];\n_z = _z + [2];\n_m = _m + [-1];\n\n_u = _u + [\"AKS_GOLD\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [350];\n_z = _z + [2];\n_m = _m + [-1];\n\n_u = _u + [\"huntingrifle\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [100];\n_z = _z + [1];\n_m = _m + [-1];\n\n_u = _u + [\"PK\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [150];\n_z = _z + [2];\n_m = _m + [-1];\n\n_u = _u + [\"RPK_74\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [125];\n_z = _z + [2];\n_m = _m + [-1];\n\n_u = _u + [\"SVD\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [150];\n_z = _z + [3];\n_m = _m + [-1];\n\n_u = _u + [\"RPG7V\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [90];\n_z = _z + [1];\n_m = _m + [-1];\n\n_u = _u + [\"Strela\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [225];\n_z = _z + [3];\n_m = _m + [-1];\n\n_u = _u + [\"Makarov\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [15];\n_z = _z + [0];\n_m = _m + [-1];\n\n_u = _u + [\"ItemCompass\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n_m = _m + [-1];\n\n_u = _u + [\"ItemGPS\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [25];\n_z = _z + [0];\n_m = _m + [-1];\n\n_u = _u + [\"ItemMap\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n_m = _m + [-1];\n\n_u = _u + [\"ItemRadio\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [10];\n_z = _z + [0];\n_m = _m + [-1];\n\n_u = _u + [\"ItemWatch\"];\n_p = _p + [''];\n_n = _n + [''];\n_o = _o + [5];\n_z = _z + [0];\n_m = _m + [-1];\n\n[_faction, _u, _p, _n, _o, _z, _m] Call Compile preprocessFile \"Common\\Config\\Config_Weapons.sqf\";"
+    },
+    {
+      "relpath": "Config\\Groups\\Groups_GUE.sqf",
+      "text": "/*\n\tGroups (Used in towns).\n*/\n\nPrivate [\"_faction\",\"_k\",\"_l\",\"_side\",\"_u\"];\n_l = [];//--- Unit list\n_k = [];//--- Type used by AI.\n\n_side = \"GUER\";\n_faction = \"GUE\";\n\n_k = _k + [\"Squad\"];\n_u\t\t= [\"GUE_Soldier_CO\"];\n_u = _u + [\"GUE_Soldier_GL\"];\n_u = _u + [\"GUE_Soldier_AR\"];\n_u = _u + [\"GUE_Soldier_1\"];\n\n_l = _l + [_u];\n\n\n_k = _k + [\"Squad_Advanced\"];\n_u\t\t= [\"Soldier_TL_PMC\"];\n_u = _u + [\"Soldier_M4A3_PMC\"];\n_u = _u + [\"Soldier_AA_PMC\"];\n_u = _u + [\"Soldier_Bodyguard_M4_PMC\"];\n_u = _u + [\"Soldier_GL_M16A2_PMC\"];\n\n_l = _l + [_u];\n\n\n_k = _k + [\"Team\"];\n_u\t\t= [\"GUE_Worker2\"];\n_u = _u + [\"GUE_Woodlander3\"];\n_u = _u + [\"GUE_Villager3\"];\n_u = _u + [\"GUE_Woodlander2\"];\n_u = _u + [\"GUE_Woodlander1\"];\n_u = _u + [\"GUE_Villager4\"];\n_l = _l + [_u];\n\n_k = _k + [\"Team_AT\"];\n_u\t\t= [\"GUE_Soldier_AT\"];\n_u = _u + [\"GUE_Soldier_AT\"];\n\n_l = _l + [_u];\n\n_k = _k + [\"Team_AA\"];\n_u\t\t= [\"GUE_Soldier_AA\"];\n_u = _u + [\"GUE_Soldier_AA\"];\n\n_l = _l + [_u];\n\n_k = _k + [\"Team_Sniper\"];\n_u\t\t= [\"GUE_Soldier_Sniper\"];\n\n_l = _l + [_u];\n\n_k = _k + [\"Motorized\"];\n_u\t\t= [\"Offroad_DSHKM_Gue\"];\n_u = _u + [\"Offroad_SPG9_Gue\"];\n_u = _u + [\"ArmoredSUV_PMC\"];\n\n_l = _l + [_u];\n\n\n_k = _k + [\"AA_Light\"];\n_u\t\t= [\"Ural_ZU23_Gue\"];\n\n_l = _l + [_u];\n\n\n_k = _k + [\"AA_Heavy\"];\n_u\t\t = [\"Ural_ZU23_Gue\"];\n_u = _u + [\"Ural_ZU23_Gue\"];\n\n\n_l = _l + [_u];\n\n_k = _k + [\"Mechanized\"];\n_u =      [\"BRDM2_GUE\"];\n_u = _u + [\"M113_UN_EP1\"];\n_l = _l + [_u];\n\n\n_k = _k + [\"Mechanized_Heavy\"];\n_u =      [\"BRDM2_GUE\"];\n_u = _u + [\"M113_UN_EP1\"];\n\n_l = _l + [_u];\n\n\n_k = _k + [\"Armored_Light\"];\n_u =        [\"BMP2_GUE\"];\n_u = _u +   [\"BMP2_GUE\"];\n\n_l = _l + [_u];\n\n_k = _k + [\"Armored_Heavy\"];\n_u\t\t= [\"T72_GUE\"];\n_u = _u + [\"T72_GUE\"];\n\n_l = _l + [_u];\n\n[_k,_l,_side,_faction] Call Compile preprocessFile \"Common\\Config\\Config_Groups.sqf\";"
+    },
+    {
+      "relpath": "Config\\Loadout\\Loadout_GUE.sqf",
+      "text": "Private [\"_m\",\"_side\",\"_u\"];\n\n_side = _this;\n\n//--- Loadout - Magazines.\n_m = ['30Rnd_762x39_AK47'];\n_m = _m + ['30Rnd_545x39_AK'];\n_m = _m + ['30Rnd_545x39_AKSD'];\n_m = _m + ['100Rnd_762x54_PK'];\n_m = _m + ['75Rnd_545x39_RPK'];\n_m = _m + ['5x_22_LR_17_HMR'];\n_m = _m + ['10Rnd_762x54_SVD'];\n_m = _m + ['8Rnd_B_Saiga12_74Slug'];\n_m = _m + ['PG7V'];\n_m = _m + ['PG7VL'];\n_m = _m + ['OG7'];\n_m = _m + ['PG7VR'];\n_m = _m + ['RPG18'];\n_m = _m + ['Igla'];\n_m = _m + ['Strela'];\n_m = _m + ['Laserbatteries'];\n_m = _m + ['8Rnd_9x18_Makarov'];\n_m = _m + ['8Rnd_9x18_MakarovSD'];\n_m = _m + ['HandGrenade_East'];\n_m = _m + ['HandGrenade_Stone'];\n_m = _m + ['SmokeShell'];\n_m = _m + ['SmokeShellRed'];\n_m = _m + ['SmokeShellGreen'];\n_m = _m + ['SmokeShellBlue'];\n_m = _m + ['SmokeShellYellow'];\n_m = _m + ['SmokeShellOrange'];\n_m = _m + ['SmokeShellPurple'];\n_m = _m + ['FlareWhite_GP25'];\n_m = _m + ['FlareYellow_GP25'];\n_m = _m + ['FlareGreen_GP25'];\n_m = _m + ['FlareRed_GP25'];\n_m = _m + ['1Rnd_HE_GP25'];\n_m = _m + ['1Rnd_SMOKE_GP25'];\n_m = _m + ['1Rnd_SMOKERED_GP25'];\n_m = _m + ['1Rnd_SMOKEGREEN_GP25'];\n_m = _m + ['1Rnd_SMOKEYELLOW_GP25'];\n_m = _m + ['MineE'];\n_m = _m + ['PipeBomb'];\n\n_m = [_m, _side] Call Compile preprocessFile \"Common\\Config\\Config_SortMagazines.sqf\";\n\n//--- Loadout - Weapons.\n_u = ['AK_47_M'];\n_u = _u + ['AK_47_S'];\n_u = _u + ['AK_74'];\n_u = _u + ['AK_74_GL'];\n_u = _u + ['AKS_74_kobra'];\n_u = _u + ['AKS_74_pso'];\n_u = _u + ['AKS_74_U'];\n_u = _u + ['AKS_74_UN_kobra'];\n_u = _u + ['AKS_GOLD'];\n_u = _u + ['PK'];\n_u = _u + ['Pecheneg'];\n_u = _u + ['RPK_74'];\n_u = _u + ['huntingrifle'];\n_u = _u + ['SVD'];\n_u = _u + ['Saiga12K'];\n_u = _u + ['RPG7V'];\n_u = _u + ['RPG18'];\n_u = _u + ['Igla'];\n_u = _u + ['Strela'];\n_u = _u + ['Laserdesignator'];\n_u = _u + ['Binocular'];\n_u = _u + ['NVGoggles'];\n_u = _u + ['Makarov'];\n_u = _u + ['MakarovSD'];\n_u = _u + ['ItemCompass'];\n_u = _u + ['ItemGPS'];\n_u = _u + ['ItemMap'];\n_u = _u + ['ItemRadio'];\n_u = _u + ['ItemWatch'];\n\n[_u, _m, _side] Call Compile preprocessFile \"Common\\Config\\Config_SortWeapons.sqf\";\n\n//--- Loadout - Templates (note that backpacks content require the weapons to be first), use -1 to use the default BP content.\n_u \t\t= [[[],[[],[]]]];\n\n[_u, _side] Call Compile preprocessFile \"Common\\Config\\Config_SetTemplates.sqf\";"
+    }
+  ],
+  "root_vars": {
+    "CREW": "'GUE_Soldier_Crew'",
+    "PILOT": "'GUE_Soldier_1'",
+    "SOLDIER": "'GUE_Soldier_1'",
+    "FLAG": "'\\ca\\data\\Flag_napa_co.paa'",
+    "AMBULANCES": "['V3S_TK_GUE_EP1','V3S_Gue']",
+    "MASHES": "['MASH']",
+    "REPAIRTRUCKS": "['WarfareRepairTruck_Gue','V3S_Repair_TK_GUE_EP1']",
+    "SALVAGETRUCK": "['WarfareSalvageTruck_Gue','V3S_Salvage_TK_GUE_EP1']",
+    "SUPPLYTRUCKS": "['WarfareSupplyTruck_Gue','V3S_Supply_TK_GUE_EP1']",
+    "_RadioAnnouncers": "['WFHQ_CZ0','WFHQ_CZ1','WFHQ_CZ2']",
+    "_RadioAnnouncers_Config": "'RadioProtocolCZ'",
+    "PARACHUTELEVEL1": "['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_2','GUE_Soldier_3','GUE_Soldier_AR','GUE_Soldier_Medic']",
+    "PARACHUTELEVEL2": "['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AA','GUE_Soldier_MG','GUE_Soldier_Medic','GUE_Soldier_Scout','GUE_Soldier_Sniper']",
+    "PARACHUTELEVEL3": "['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AT','GUE_Soldier_AA','GUE_Soldier_AA','GUE_Soldier_AR','GUE_Soldier_Medic','GUE_Soldier_Scout','GUE_Soldier_AT','GUE_Soldier_Sniper']",
+    "PARACARGO": "'Mi17_Civilian'",
+    "REPAIRTRUCK": "'WarfareRepairTruck_Gue'",
+    "STARTINGVEHICLES": "['TT650_Gue','BTR90','Offroad_DSHKM_Gue']",
+    "PARAAMMO": "['RUBasicAmmunitionBox','RUBasicWeaponsBox','RULaunchersBox']",
+    "PARAVEHICARGO": "'BRDM2_Gue'",
+    "PARAVEHI": "'Mi17_Civilian'",
+    "PARACHUTE": "'ParachuteC'",
+    "SUPPLYTRUCK": "'WarfareSupplyTruck_Gue'",
+    "_PATROL_LIGHT": "[\n\t\t['GUE_Soldier_1','GUE_Soldier_MG','GUE_Soldier_Sniper','GUE_Soldier_Medic']",
+    "_PATROL_MEDIUM": "[\n\t\t['GUE_Soldier_CO','GUE_Soldier_AT','GUE_Soldier_MG','GUE_Soldier_AT']",
+    "_PATROL_HEAVY": "[\n\t\t['GUE_Soldier_Sniper','GUE_Soldier_Scout','GUE_Soldier_Sniper']",
+    "_AI_Loadout_0": "[\n\t\t[['AKS_74_kobra','RPG18','Makarov','Binocular','ItemRadio','ItemMap']",
+    "_AI_Loadout_1": "[\n\t\t[['AKS_74_kobra','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap']",
+    "_AI_Loadout_2": "[\n\t\t[['AKS_74_pso','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap']",
+    "_AI_Loadout_3": "[\n\t\t[['AK_74_GL','RPG7V','Binocular','NVGoggles','ItemRadio','ItemMap']",
+    "DEFAULTFACTION": "'Guerilla'",
+    "_DefaultGear": "[\n\t['AKS_74_kobra','Makarov','Binocular','NVGoggles','ItemCompass','ItemMap','ItemRadio','ItemWatch']"
+  },
+  "structures": {
+    "mhq": "BRDM2_HQ_Gue",
+    "buildings": [
+      {
+        "key": "Headquarters",
+        "classname": "BRDM2_HQ_Gue_unfolded",
+        "cost": "missionNamespace getVariable \"WFBE_C_STRUCTURES_HQ_COST_DEPLOY\"",
+        "time": 30
+      },
+      {
+        "key": "Barracks",
+        "classname": "Gue_WarfareBBarracks",
+        "cost": 200,
+        "time": 70
+      },
+      {
+        "key": "Light",
+        "classname": "Gue_WarfareBLightFactory",
+        "cost": 600,
+        "time": 90
+      },
+      {
+        "key": "CommandCenter",
+        "classname": "GUE_WarfareBUAVterminal",
+        "cost": 1200,
+        "time": 110
+      },
+      {
+        "key": "Heavy",
+        "classname": "Gue_WarfareBHeavyFactory",
+        "cost": 2800,
+        "time": 130
+      },
+      {
+        "key": "Aircraft",
+        "classname": "GUE_WarfareBAircraftFactory",
+        "cost": 4400,
+        "time": 150
+      },
+      {
+        "key": "ServicePoint",
+        "classname": "GUE_WarfareBVehicleServicePoint",
+        "cost": 700,
+        "time": 70
+      },
+      {
+        "key": "AARadar",
+        "classname": "Gue_WarfareBAntiAirRadar",
+        "cost": 3200,
+        "time": 280
+      }
+    ],
+    "defense_names": [
+      "GUE_WarfareBMGNest_PK",
+      "DSHKM_Gue",
+      "SearchLight_Gue",
+      "SPG9_Gue",
+      "ZU23_Gue",
+      "2b14_82mm_GUE",
+      "Land_HBarrier3",
+      "Land_HBarrier5",
+      "Land_HBarrier_large",
+      "Base_WarfareBBarrier5x",
+      "Base_WarfareBBarrier10x",
+      "Base_WarfareBBarrier10xTall",
+      "MASH",
+      "Land_fort_bagfence_long",
+      "Land_fort_bagfence_corner",
+      "Land_fort_bagfence_round",
+      "Land_fortified_nest_small",
+      "Land_fortified_nest_big",
+      "Land_Fort_Watchtower",
+      "Land_fort_rampart",
+      "Land_fort_artillery_nest",
+      "Hhedgehog_concreteBig",
+      "Hedgehog",
+      "Land_CamoNet_EAST",
+      "Land_CamoNetVar_EAST",
+      "Land_CamoNetB_EAST",
+      "Sign_Danger",
+      "HeliH",
+      "Fort_RazorWire",
+      "Land_Ind_IlluminantTower",
+      "Land_Campfire",
+      "RUOrdnanceBox",
+      "RUVehicleBox",
+      "RUBasicAmmunitionBox",
+      "RUBasicWeaponsBox",
+      "RULaunchersBox",
+      "RUSpecialWeaponsBox"
+    ]
+  },
+  "core_rows": [
+    {
+      "classname": "GUE_Soldier_1",
+      "raw_tuple": "['','',150,4,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_2",
+      "raw_tuple": "['','',120,4,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_3",
+      "raw_tuple": "['','',140,4,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_GL",
+      "raw_tuple": "['','',150,5,-1,1,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_AT",
+      "raw_tuple": "['','',220,5,-1,1,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_AA",
+      "raw_tuple": "['','',250,4,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_AR",
+      "raw_tuple": "['','',150,4,-1,1,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_MG",
+      "raw_tuple": "['','',190,4,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_Sniper",
+      "raw_tuple": "['','',175,6,-1,1,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_Medic",
+      "raw_tuple": "['','',160,6,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_Crew",
+      "raw_tuple": "['','',120,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_Pilot",
+      "raw_tuple": "['','',120,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_Scout",
+      "raw_tuple": "['','',260,5,-1,3,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_CO",
+      "raw_tuple": "['','',300,5,-1,1,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Soldier_Sab",
+      "raw_tuple": "['','',220,5,-1,2,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Commander",
+      "raw_tuple": "['','',240,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Worker2",
+      "raw_tuple": "['','',100,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Woodlander3",
+      "raw_tuple": "['','',100,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Villager3",
+      "raw_tuple": "['','',100,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Woodlander2",
+      "raw_tuple": "['','',100,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Woodlander1",
+      "raw_tuple": "['','',100,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_Villager4",
+      "raw_tuple": "['','',100,5,-1,0,0,1,'Guerilla',[]"
+    },
+    {
+      "classname": "TT650_Gue",
+      "raw_tuple": "['','',150,15,-2,0,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "V3S_Gue",
+      "raw_tuple": "['','',175,15,-2,0,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "Pickup_PK_GUE",
+      "raw_tuple": "['','',250,17,-2,0,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "Offroad_DSHKM_Gue",
+      "raw_tuple": "['','',550,25,-2,1,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "Offroad_SPG9_Gue",
+      "raw_tuple": "['','',750,20,-2,2,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "WarfareRepairTruck_Gue",
+      "raw_tuple": "['','',425,17,-2,2,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "WarfareSalvageTruck_Gue",
+      "raw_tuple": "['','',450,17,-2,1,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "WarfareReammoTruck_Gue",
+      "raw_tuple": "['','',450,18,-2,1,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "WarfareSupplyTruck_Gue",
+      "raw_tuple": "['','',450,21,-2,0,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "BRDM2_Gue",
+      "raw_tuple": "['','',1200,25,-2,2,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "Ural_ZU23_Gue",
+      "raw_tuple": "['','',1100,20,-2,2,1,0,'Guerilla',[]"
+    },
+    {
+      "classname": "M113_UN_EP1",
+      "raw_tuple": "['','',1100,30,-2,0,2,0,'Takistani Guerilla',[]"
+    },
+    {
+      "classname": "BMP2_Gue",
+      "raw_tuple": "['','',3400,28,-2,1,2,0,'Guerilla',[]"
+    },
+    {
+      "classname": "T72_Gue",
+      "raw_tuple": "['','',5200,35,-2,3,2,0,'Guerilla',[]"
+    },
+    {
+      "classname": "GUE_WarfareBMGNest_PK",
+      "raw_tuple": "['','',300,0,1,0,'Defense',0,'Guerilla',[]"
+    },
+    {
+      "classname": "DSHKM_Gue",
+      "raw_tuple": "['','',225,0,1,0,'Defense',0,'Guerilla',[]"
+    },
+    {
+      "classname": "SPG9_Gue",
+      "raw_tuple": "['','',675,0,1,0,'Defense',0,'Guerilla',[]"
+    },
+    {
+      "classname": "ZU23_Gue",
+      "raw_tuple": "['','',700,0,1,0,'Defense',0,'Guerilla',[]"
+    },
+    {
+      "classname": "2b14_82mm_GUE",
+      "raw_tuple": "['Podnos 2B14','',1025,0,1,0,'Defense',0,'Guerilla',[]"
+    }
+  ],
+  "flags": [
+    {
+      "faction": "CDF",
+      "paa": "\\ca\\ca_e\\data\\flag_cdf_co.paa"
+    },
+    {
+      "faction": "GUE",
+      "paa": "\\ca\\data\\Flag_napa_co.paa"
+    },
+    {
+      "faction": "INS",
+      "paa": "\\Ca\\Data\\flag_chdkz_co.paa"
+    },
+    {
+      "faction": "PMC",
+      "paa": "\\ca\\ca_e\\data\\flag_tkg_co.paa"
+    },
+    {
+      "faction": "RU",
+      "paa": "\\Ca\\Data\\flag_rus_co.paa"
+    },
+    {
+      "faction": "TKA",
+      "paa": "\\Ca\\ca_e\\Data\\flag_tka_co.paa"
+    },
+    {
+      "faction": "TKGUE",
+      "paa": "\\ca\\ca_e\\data\\flag_tkg_co.paa"
+    },
+    {
+      "faction": "US",
+      "paa": "\\Ca\\ca_e\\Data\\flag_us_co.paa"
+    },
+    {
+      "faction": "USMC",
+      "paa": "\\Ca\\Data\\flag_usa_co.paa"
+    },
+    {
+      "faction": "US_Camo",
+      "paa": "\\Ca\\ca_e\\Data\\flag_us_co.paa"
+    }
+  ],
+  "registration": {
+    "factions_east": [
+      "INS",
+      "RU",
+      "TKA"
+    ],
+    "factions_guer": [
+      "GUE",
+      "PMC",
+      "TKGUE"
+    ],
+    "factions_west": [
+      "CDF",
+      "US",
+      "USMC"
+    ],
+    "index_west": 1,
+    "index_east": 2,
+    "index_guer": 2,
+    "include_patterns": {
+      "core_example_lines": [],
+      "gear_example_lines": [
+        "Common\\Config\\Gear\\Gear_US.sqf",
+        "Common\\Config\\Gear\\Gear_TKA.sqf",
+        "Common\\Config\\Gear\\Gear_BAF.sqf",
+        "Common\\Config\\Gear\\Gear_GUE.sqf",
+        "Common\\Config\\Gear\\Gear_PMC.sqf"
+      ],
+      "core_pattern": "Common\\Config\\Core\\Core_{TOKEN}.sqf",
+      "gear_pattern": "Common\\Config\\Gear\\Gear_{TOKEN}.sqf",
+      "note": "Root_/Defenses_/Groups_ are loaded dynamically via Format[...%1.sqf,token]. Core_ and Gear_ must be added explicitly to Init_Common.sqf."
+    }
+  }
+}
