@@ -14,7 +14,7 @@
 :root{
   --gunmetal:#14171B;--steel:#2A2F36;--steel2:#343b44;
   --olive:#5C6536;--bone:#E7E3D6;--orange:#D9763C;--orange-deep:#B85F2A;
-  --chalk:#F2EFE8;--line:#39414b;--danger:#c0392b;--ok:#27ae60;
+  --chalk:#F2EFE8;--line:#39414b;--danger:#c0392b;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;font-family:Inter,system-ui,sans-serif;background:var(--gunmetal);color:var(--bone);overflow:hidden}
@@ -60,7 +60,7 @@ label:first-child{margin-top:0}
 input,select,textarea,button{font-family:inherit;font-size:13px}
 input[type=text],input[type=number],select{width:100%;background:var(--gunmetal);border:1px solid var(--line);color:var(--bone);border-radius:5px;padding:7px 8px;outline:none}
 input:focus,select:focus{border-color:var(--orange)}
-input.valid{border-color:var(--ok)!important}
+input.valid{border-color:var(--olive)!important}
 input.invalid{border-color:var(--danger)!important}
 input.warn{border-color:var(--orange)!important}
 button{cursor:pointer;background:var(--steel2);color:var(--bone);border:1px solid var(--line);border-radius:5px;padding:6px 10px}
@@ -79,7 +79,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .badge{display:inline-block;font-size:10px;background:var(--olive);color:var(--chalk);padding:1px 6px;border-radius:10px;margin-left:5px;vertical-align:middle}
 .badge-count{display:inline-block;font-size:10px;background:var(--steel2);color:#9aa3ad;padding:1px 6px;border-radius:10px;margin-left:5px;vertical-align:middle;font-family:'JetBrains Mono',monospace}
 .warn-text{color:var(--orange);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
-.ok-text{color:var(--ok);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
+.ok-text{color:var(--olive);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
 .err-text{color:var(--danger);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
 
 /* ---- Status bar ---- */
@@ -97,7 +97,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .reg-preview{background:#0a0c0f;border:1px solid var(--line);border-radius:5px;padding:10px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;line-height:1.7;white-space:pre;overflow-x:auto}
 .reg-preview .hi{color:var(--orange);font-weight:600}
 .reg-preview .dim{color:#39414b}
-.reg-preview .new{color:var(--ok)}
+.reg-preview .new{color:var(--olive)}
 
 /* ---- Roster ---- */
 .roster-layout{display:flex;width:100%;height:100%;min-height:0}
@@ -125,7 +125,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .unit-thumb .glyph{font-size:18px;color:#39414b}
 .unit-info{flex:1;min-width:0}
 .unit-info .uname{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.unit-info .ucls{font-family:'JetBrains Mono',monospace;font-size:9px;color:#556;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.unit-info .ucls{font-family:'JetBrains Mono',monospace;font-size:9px;color:#9aa3ad;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .unit-info .uwarn{color:var(--orange)}
 .unit-fields{display:flex;gap:6px;align-items:center;flex-wrap:wrap;flex:0 0 auto}
 .unit-fields label{margin:0;font-size:9px;color:#556;display:flex;flex-direction:column;gap:2px;align-items:flex-start}
@@ -153,8 +153,8 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px}
 .pick-tile{border:1px solid var(--line);border-radius:5px;background:var(--gunmetal);cursor:pointer;overflow:hidden;display:flex;flex-direction:column;transition:border-color .1s}
 .pick-tile:hover{border-color:var(--orange)}
-.pick-tile-img{width:100%;height:64px;object-fit:contain;background:#11141a;display:block}
-.pick-tile-glyph{width:100%;height:64px;display:flex;align-items:center;justify-content:center;background:#11141a;color:#39414b;font-size:24px}
+.pick-tile-img{width:100%;height:52px;object-fit:contain;background:#11141a;display:block}
+.pick-tile-glyph{width:100%;height:52px;display:flex;align-items:center;justify-content:center;background:#11141a;color:#39414b;font-size:24px}
 .pick-tile-name{font-family:'JetBrains Mono',monospace;font-size:9px;color:#c8d0d8;padding:4px 5px;border-top:1px solid var(--steel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pick-tile-class{font-family:'JetBrains Mono',monospace;font-size:8px;color:#556;padding:0 5px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pick-empty{font-size:12px;color:#8b939c;padding:20px;text-align:center}
@@ -178,7 +178,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 
 /* ---- Structures panel ---- */
 .struct-layout{display:flex;width:100%;height:100%;min-height:0}
-.struct-left{width:340px;flex:0 0 340px;border-right:1px solid var(--line);background:var(--steel);overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:0}
+.struct-left{width:340px;flex:0 0 340px;border-right:1px solid var(--line);background:var(--steel);overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:0;min-height:0}
 .struct-right{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:14px}
 .struct-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
 .struct-section:first-child{margin-top:0}
@@ -816,11 +816,14 @@ function renderActiveSlot() {
     });
   }
 
-  // Add button at bottom
-  const addRow = document.createElement('div');
-  addRow.className = 'roster-add-row';
-  addRow.innerHTML = `<button onclick="openPicker('${ACTIVE_SLOT}')" class="sm">+ Add unit to ${slot?.label || ACTIVE_SLOT}</button>`;
-  container.appendChild(addRow);
+  // Add button at bottom — only show the dashed separator row when units already exist;
+  // the empty-state message already tells the user to add a unit.
+  if (units.length > 0) {
+    const addRow = document.createElement('div');
+    addRow.className = 'roster-add-row';
+    addRow.innerHTML = `<button onclick="openPicker('${ACTIVE_SLOT}')" class="sm">+ Add unit to ${slot?.label || ACTIVE_SLOT}</button>`;
+    container.appendChild(addRow);
+  }
 }
 
 function buildUnitRow(entry) {
@@ -961,6 +964,12 @@ function addUnitToRoster(cls, targetSlot) {
   const udata = MODEL.units[cls];
   const type = udata?.type || 'other';
   const slot = targetSlot || TYPE_DEFAULT_SLOT[type] || 'Depot';
+
+  // Duplicate guard: warn if same classname already exists in the same slot
+  if (MODEL.faction.roster.some(r => r.cls === cls && r.factory_key === slot)) {
+    const uname = udata?.name || cls;
+    if (!confirm(`"${uname}" is already in the ${slot} slot. Add another copy?`)) return;
+  }
   const factoryCode = SLOTS.find(s => s.key === slot)?.factory ?? -2;
 
   // Default prices by type
@@ -992,9 +1001,10 @@ function seedFromGUE() {
   rows.forEach(row => {
     // Parse raw_tuple: ['label','pic',price,buildTime,crew,upgrade,factory,skill,'factionStr',turrets]
     const tup = row.raw_tuple;
-    // Quick extraction using regex
-    const nums = [...tup.matchAll(/-?\d+/g)].map(m => parseInt(m[0]));
-    // index: [label,pic,price,buildTime,crew,upgrade,factory,skill,factionStr,turrets]
+    // Strip quoted string fields first so digits inside labels (e.g. "Podnos 2B14") don't shift positions
+    const tupStripped = tup.replace(/'[^']*'/g, '""');
+    const nums = [...tupStripped.matchAll(/-?\d+/g)].map(m => parseInt(m[0]));
+    // index after stripping strings: [price,buildTime,crew,upgrade,factory,skill,turrets...]
     const price     = nums[0] || 150;
     const buildTime = nums[1] || 4;
     const crew      = nums[2] !== undefined ? nums[2] : -1;
@@ -1493,10 +1503,12 @@ function addGlueArrItem(key) {
 //  STEP SWITCHING — extend to init panels on first visit
 // ============================================================
 const _STEP_INITED = {};
-const _origSwitchStep = switchStep;
 // Override switchStep to init panels on first visit
 function switchStep(name) {
   const key = name.charAt(0).toUpperCase() + name.slice(1);
+  // Block navigation to steps that are still locked (disabled tab)
+  const btn = document.getElementById('stepBtn' + key);
+  if (btn && btn.classList.contains('disabled')) return;
   STEPS.forEach(s => {
     document.getElementById('step' + s)?.classList.remove('on');
     document.getElementById('stepBtn' + s)?.classList.remove('on');
@@ -1511,7 +1523,6 @@ function switchStep(name) {
   }
 
   // Enable step button (remove disabled class when navigated to)
-  const btn = document.getElementById('stepBtn' + key);
   if (btn) btn.classList.remove('disabled');
 }
 
