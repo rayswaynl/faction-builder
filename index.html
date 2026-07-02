@@ -180,15 +180,16 @@ body{display:flex;flex-direction:column}
   font-family:'JetBrains Mono',monospace;flex:0 0 auto;
 }
 .step-btn.on .step-num{background:var(--orange);color:#1a1208}
-/* APPROVED stamp on completed tabs */
+/* APPROVED stamp on completed tabs — sits above the tab as a tiny floating badge */
 .step-stamp{
-  position:absolute;top:3px;right:3px;
-  font-family:Oswald,sans-serif;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--olive);border:1.5px solid var(--olive);padding:1px 4px;border-radius:2px;
-  transform:rotate(-8deg);opacity:.85;pointer-events:none;white-space:nowrap;
-  line-height:1.2;
+  position:absolute;top:-7px;right:2px;
+  font-family:Oswald,sans-serif;font-size:6px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--olive);border:1px solid var(--olive);padding:0px 3px;border-radius:2px;
+  transform:rotate(-6deg);opacity:.9;pointer-events:none;white-space:nowrap;
+  line-height:1.4;background:var(--abyss);z-index:3;
 }
-@media (prefers-reduced-motion:reduce){.step-stamp{transform:rotate(-8deg)}}/* keep rotation, remove no transition needed */
+/* prefers-reduced-motion: keep the static rotation, no transition to cancel */
+@media (prefers-reduced-motion:reduce){.step-stamp{transform:rotate(-6deg)}}
 
 /* ================================================================
    PANELS (brief item 3 — panel headers with ordinal + accent bar)
@@ -1150,11 +1151,17 @@ function maybeSStampRoster() {
 }
 
 function maybeSStampStructures() {
-  if (MODEL.faction.structures && MODEL.faction.structures.mhq) stampStep('Structures');
+  // Require a valid token — avoids stamping from GUE default pre-fills on cold load
+  const tok = MODEL.faction.token;
+  const valid = tok && /^[A-Z][A-Z0-9]{1,11}$/.test(tok);
+  if (valid && MODEL.faction.structures && MODEL.faction.structures.mhq) stampStep('Structures');
 }
 
 function maybeSStampGlue() {
-  if (MODEL.faction.glue && MODEL.faction.glue.CREW) stampStep('Glue');
+  // Require a valid token — avoids stamping from GUE default pre-fills on cold load
+  const tok = MODEL.faction.token;
+  const valid = tok && /^[A-Z][A-Z0-9]{1,11}$/.test(tok);
+  if (valid && MODEL.faction.glue && MODEL.faction.glue.CREW) stampStep('Glue');
 }
 
 // ============================================================
