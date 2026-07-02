@@ -5,112 +5,262 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faction Builder — WASP Side Composer</title>
 <meta name="description" content="Compose a new WASP Warfare faction: identity, roster, structures, glue, emit.">
+<meta name="theme-color" content="#14171B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2096%2096'%3E%3Cpolygon%20points%3D'48%2C8%2088%2C32%2088%2C64%2048%2C88%208%2C64%208%2C32'%20fill%3D'none'%20stroke%3D'%23D9763C'%20stroke-width%3D'7'%2F%3E%3Ctext%20x%3D'48'%20y%3D'62'%20text-anchor%3D'middle'%20font-size%3D'38'%20font-weight%3D'bold'%20fill%3D'%235C6536'%20font-family%3D'sans-serif'%3EF%3C%2Ftext%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ---- Design tokens (WDDM) ---- */
+/* ================================================================
+   DESIGN TOKENS — Cold-War operations suite palette (LOCKED)
+   ================================================================ */
 :root{
   --gunmetal:#14171B;--steel:#2A2F36;--steel2:#343b44;
   --olive:#5C6536;--bone:#E7E3D6;--orange:#D9763C;--orange-deep:#B85F2A;
   --chalk:#F2EFE8;--line:#39414b;--danger:#c0392b;
+  /* Derived tints — within-palette only */
+  --olive-dim:rgba(92,101,54,.18);--olive-mid:rgba(92,101,54,.55);
+  --orange-dim:rgba(217,118,60,.12);--orange-glow:rgba(217,118,60,.22);
+  --bone-dim:rgba(231,227,214,.55);--gunmetal-raised:#1a1e24;
+  --led-green:#4dff91;--led-orange:var(--orange);--led-red:var(--danger);
 }
 
-/* ---- Warn chip (shared class, matches garrison-editor) ---- */
-.warn-chip{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;background:#3a1a1a;color:var(--orange);border:1px solid #6a3a2a;border-radius:3px;padding:1px 5px;margin-left:4px;vertical-align:middle}
+/* ================================================================
+   RESET + BASE
+   ================================================================ */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;font-family:Inter,system-ui,sans-serif;background:var(--gunmetal);color:var(--bone);overflow:hidden}
 h1,h2,h3{font-family:Oswald,Inter,sans-serif;font-weight:600;letter-spacing:.5px}
 
-/* ---- Brand bar ---- */
-.brandbar{height:54px;display:flex;align-items:center;gap:14px;padding:0 16px;
-  background:linear-gradient(90deg,#101317 0%,#171b20 100%);border-bottom:1px solid var(--line);position:relative;z-index:5;flex:0 0 auto}
-.brandbar .mark{width:34px;height:34px;flex:0 0 auto}
-.brandbar .word{display:flex;flex-direction:column;line-height:1}
-.brandbar .word .t1{font-family:Oswald,sans-serif;font-weight:600;font-size:19px;letter-spacing:2px;color:var(--bone)}
-.brandbar .word .t2{font-family:Oswald,sans-serif;font-weight:400;font-size:10px;letter-spacing:6px;color:var(--orange);margin-top:2px}
-.brandbar .spacer{flex:1}
-.brandbar .chip{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8b939c;border:1px solid var(--line);border-radius:10px;padding:3px 9px;background:#0d1014}
-.brandbar .chip b{color:var(--olive)}
+/* ---- Shared utility ---- */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.warn-chip{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;background:#3a1a1a;color:var(--orange);border:1px solid #6a3a2a;border-radius:3px;padding:1px 5px;margin-left:4px;vertical-align:middle}
 
-/* ---- Step tabs ---- */
-.steps-bar{display:flex;gap:0;padding:0 16px;background:#101317;border-bottom:1px solid var(--line);flex:0 0 auto}
-.step-btn{font-family:Oswald,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;background:none;border:none;color:#8b939c;padding:10px 20px;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;display:flex;align-items:center;gap:7px}
-.step-btn:hover{color:var(--bone)}
-.step-btn.on{color:var(--orange);border-bottom-color:var(--orange)}
-.step-btn.disabled{color:#39414b;cursor:not-allowed}
-.step-num{width:18px;height:18px;border-radius:50%;background:var(--line);font-size:10px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace}
-.step-btn.on .step-num{background:var(--orange);color:#1a1208}
+/* ================================================================
+   SCROLLBARS + INPUTS (brief item 10)
+   ================================================================ */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:var(--steel2);border-radius:6px}
+::-webkit-scrollbar-track{background:transparent}
 
-/* ---- Main layout ---- */
-.app-body{flex:1;overflow:hidden;display:flex;flex-direction:column;min-height:0}
-body{display:flex;flex-direction:column}
-.step-panel{display:none;flex:1;overflow:hidden;min-height:0}
-.step-panel.on{display:flex}
-
-/* ---- Panels ---- */
-.panel-left{width:300px;flex:0 0 300px;display:flex;flex-direction:column;border-right:1px solid var(--line);background:var(--steel);min-height:0}
-.panel-main{flex:1;display:flex;flex-direction:column;min-height:0;min-width:0;overflow:hidden}
-.panel-hdr{padding:11px 14px;border-bottom:1px solid var(--line);background:var(--gunmetal);flex:0 0 auto}
-.panel-hdr h2{font-size:14px}
-.panel-hdr .sub{font-size:11px;color:#9aa3ad;margin-top:3px;font-family:'JetBrains Mono',monospace}
-.scroll{overflow-y:auto;overflow-x:hidden;padding:14px;flex:1;min-height:0}
-
-/* ---- Forms ---- */
-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#9aa3ad;margin:10px 0 4px}
-label:first-child{margin-top:0}
 input,select,textarea,button{font-family:inherit;font-size:13px}
-input[type=text],input[type=number],select{width:100%;background:var(--gunmetal);border:1px solid var(--line);color:var(--bone);border-radius:5px;padding:7px 8px;outline:none}
-input:focus,select:focus{border-color:var(--orange)}
+input[type=text],input[type=number],select{
+  width:100%;background:var(--gunmetal);border:1px solid var(--line);
+  color:var(--bone);border-radius:5px;padding:7px 8px;outline:none;
+  transition:border-color .12s;
+}
+input:focus,select:focus{border-color:var(--orange);box-shadow:0 0 0 2px var(--orange-dim)}
 input.valid{border-color:var(--olive)!important}
 input.invalid{border-color:var(--danger)!important}
 input.warn{border-color:var(--orange)!important}
-button{cursor:pointer;background:var(--steel2);color:var(--bone);border:1px solid var(--line);border-radius:5px;padding:6px 10px}
-button:hover{border-color:var(--orange)}
+
+/* ================================================================
+   BUTTONS (brief item 4)
+   ================================================================ */
+button{
+  cursor:pointer;background:var(--steel2);color:var(--bone);
+  border:1px solid var(--line);border-radius:5px;padding:6px 10px;
+  transition:border-color .12s,background .12s,transform .12s;
+}
+button:hover:not(:disabled){border-color:var(--orange)}
+button:active:not(:disabled){transform:scale(.98)}
+button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+button:disabled{opacity:.4;cursor:not-allowed}
 button.primary{background:var(--orange);border-color:var(--orange);color:#1a1208;font-weight:600}
-button.primary:hover{background:var(--orange-deep);border-color:var(--orange-deep)}
+button.primary:hover:not(:disabled){background:var(--orange-deep);border-color:var(--orange-deep)}
 button.danger{border-color:var(--danger);color:#e88}
-button.danger:hover{background:var(--danger);color:#fff}
+button.danger:hover:not(:disabled){background:var(--danger);color:#fff}
 button.sm{font-size:11px;padding:4px 8px}
 button.ico{font-size:13px;padding:3px 7px;border-color:transparent;background:none;color:#9aa3ad}
-button.ico:hover{color:var(--bone);border-color:var(--line)}
+button.ico:hover:not(:disabled){color:var(--bone);border-color:var(--line)}
+
+/* ================================================================
+   CHIPS + BADGES (brief item 5 — JetBrains Mono 10px pill)
+   ================================================================ */
+.badge,.badge-count,.chip-pill{
+  display:inline-block;font-family:'JetBrains Mono',monospace;
+  font-size:10px;border-radius:10px;padding:1px 6px;vertical-align:middle;letter-spacing:.3px;
+}
+.badge{background:var(--olive);color:var(--chalk)}
+.badge-count{background:var(--steel2);color:#9aa3ad;border:1px solid var(--line)}
+.chip-pill{background:#0d1014;color:#8b939c;border:1px solid var(--line)}
+.chip-pill.ok{color:var(--olive);border-color:var(--olive-mid)}
+.chip-pill.warn{color:var(--orange);border-color:rgba(184,95,42,.5)}
+.chip-pill.err{color:var(--danger);border-color:rgba(192,57,43,.5)}
+
+/* ================================================================
+   LAYOUT BASE
+   ================================================================ */
+body{display:flex;flex-direction:column}
+.app-body{flex:1;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+.step-panel{display:none;flex:1;overflow:hidden;min-height:0;position:relative}
+.step-panel.on{display:flex}
+
+/* ================================================================
+   STAGE FRAMING — corner brackets + grain/scanline (brief item 2)
+   ================================================================ */
+.stage-frame{position:relative;flex:1;display:flex;overflow:hidden}
+/* Corner brackets via pseudo-elements on each .step-panel.on */
+.step-panel.on::before,.step-panel.on::after{
+  content:'';pointer-events:none;position:absolute;width:18px;height:18px;
+  border:2px solid var(--line);z-index:2;opacity:.55;
+}
+.step-panel.on::before{top:8px;left:8px;border-right:none;border-bottom:none}
+.step-panel.on::after{bottom:8px;right:8px;border-left:none;border-top:none}
+/* Scanline + grain overlay inside panels */
+.app-body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:100;
+  background:
+    repeating-linear-gradient(
+      0deg,transparent,transparent 3px,rgba(0,0,0,.028) 3px,rgba(0,0,0,.028) 4px
+    );
+  mix-blend-mode:multiply;
+}
+
+/* ================================================================
+   BRAND BAR (brief item 1)
+   ================================================================ */
+.brandbar{
+  height:54px;display:flex;align-items:center;gap:14px;padding:0 16px;
+  background:linear-gradient(90deg,#101317 0%,#171b20 100%);
+  border-bottom:1px solid var(--line);border-top:1px solid var(--olive);
+  position:relative;z-index:5;flex:0 0 auto;
+}
+.brandbar .mark{width:34px;height:34px;flex:0 0 auto}
+.brandbar .word{display:flex;flex-direction:column;line-height:1}
+.brandbar .word .t1{font-family:Oswald,sans-serif;font-weight:600;font-size:19px;letter-spacing:4px;color:var(--bone);text-transform:uppercase}
+.brandbar .word .t2{font-family:Oswald,sans-serif;font-weight:400;font-size:10px;letter-spacing:6px;color:var(--orange);margin-top:2px;text-transform:uppercase}
+.brandbar .spacer{flex:1}
+/* Status LED (brief item 1) */
+.status-led{
+  width:9px;height:9px;border-radius:50%;background:var(--led-green);flex:0 0 auto;
+  box-shadow:0 0 5px rgba(77,255,145,.6);cursor:default;transition:background .3s,box-shadow .3s;
+}
+.status-led.dirty{background:var(--led-orange);box-shadow:0 0 6px rgba(217,118,60,.7)}
+.status-led.error{background:var(--led-red);box-shadow:0 0 5px rgba(192,57,43,.6)}
+@keyframes led-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.status-led.dirty{animation:led-pulse 1.8s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.status-led.dirty{animation:none}}
+/* Help button in brandbar */
+.help-btn{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:#8b939c;
+  border:1px solid var(--line);border-radius:50%;width:22px;height:22px;
+  background:#0d1014;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;padding:0;flex:0 0 auto;transition:border-color .12s,color .12s;
+}
+.help-btn:hover{border-color:var(--orange);color:var(--bone)}
+/* Brandbar chip — load status */
+.brandbar .chip{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8b939c;border:1px solid var(--line);border-radius:10px;padding:3px 9px;background:#0d1014}
+.brandbar .chip b,.brandbar .chip .ok{color:var(--olive)}
+
+/* ================================================================
+   STEP TABS — folder tabs (brief identity moment)
+   ================================================================ */
+.steps-bar{display:flex;gap:0;padding:0 8px;background:#101317;border-bottom:1px solid var(--line);flex:0 0 auto;align-items:flex-end}
+.step-btn{
+  font-family:Oswald,sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+  background:var(--steel);border:1px solid var(--line);border-bottom:none;
+  color:#8b939c;padding:9px 18px 10px;cursor:pointer;
+  border-radius:4px 4px 0 0;
+  transition:color .15s,background .15s,border-color .15s;
+  display:flex;align-items:center;gap:7px;position:relative;margin-right:3px;
+  /* folder tab effect: bottom edge flush with bar bottom */
+}
+.step-btn:hover:not(.disabled){background:var(--gunmetal);color:var(--bone)}
+.step-btn:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+.step-btn.on{
+  background:var(--gunmetal);color:var(--orange);border-color:var(--line);
+  /* make active tab "come forward" */
+  box-shadow:inset 0 2px 0 var(--orange);
+}
+.step-btn.disabled{color:#39414b;cursor:not-allowed;opacity:.6}
+.step-num{
+  width:18px;height:18px;border-radius:50%;background:var(--line);
+  font-size:9px;display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;flex:0 0 auto;
+}
+.step-btn.on .step-num{background:var(--orange);color:#1a1208}
+/* APPROVED stamp on completed tabs — sits above the tab as a tiny floating badge */
+.step-stamp{
+  position:absolute;top:-7px;right:2px;
+  font-family:Oswald,sans-serif;font-size:6px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--olive);border:1px solid var(--olive);padding:0px 3px;border-radius:2px;
+  transform:rotate(-6deg);opacity:.9;pointer-events:none;white-space:nowrap;
+  line-height:1.4;background:#0d1014;z-index:3;
+}
+/* prefers-reduced-motion: keep the static rotation, no transition to cancel */
+@media (prefers-reduced-motion:reduce){.step-stamp{transform:rotate(-6deg)}}
+
+/* ================================================================
+   PANELS (brief item 3 — panel headers with ordinal + accent bar)
+   ================================================================ */
+.panel-left{width:300px;flex:0 0 300px;display:flex;flex-direction:column;border-right:1px solid var(--line);background:var(--steel);min-height:0}
+.panel-main{flex:1;display:flex;flex-direction:column;min-height:0;min-width:0;overflow:hidden}
+.panel-hdr{
+  padding:11px 14px 10px 17px;border-bottom:1px solid var(--line);
+  background:var(--gunmetal);flex:0 0 auto;
+  border-left:3px solid var(--olive);
+}
+.panel-hdr h2{
+  font-family:Oswald,sans-serif;font-size:13px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--bone);
+}
+.panel-hdr .ordinal{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--olive);letter-spacing:.5px;margin-bottom:3px;display:block}
+.panel-hdr .sub{font-size:11px;color:#9aa3ad;margin-top:3px;font-family:'JetBrains Mono',monospace}
+.scroll{overflow-y:auto;overflow-x:hidden;padding:14px;flex:1;min-height:0}
+
+/* Section headers (ordinal style) */
+.id-section,.struct-section,.glue-section,.export-section{
+  font-family:Oswald,sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+  color:#9aa3ad;margin:18px 0 8px;padding:4px 0 5px 10px;
+  border-bottom:1px solid var(--line);border-left:3px solid var(--olive);
+  display:flex;align-items:center;gap:6px;
+}
+.id-section:first-child,.struct-section:first-child,.glue-section:first-child,.export-section:first-child{margin-top:0}
+.sec-ord{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--olive);opacity:.7}
+
+/* ================================================================
+   FORMS
+   ================================================================ */
+label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#9aa3ad;margin:10px 0 4px}
+label:first-child{margin-top:0}
 .btnbar{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 .divider{height:1px;background:var(--line);margin:12px 0}
 .hint{font-size:11px;color:#8b939c;line-height:1.5;margin-top:5px}
 .hint code{background:#0d1014;padding:1px 4px;border-radius:3px;color:var(--orange)}
-.badge{display:inline-block;font-size:10px;background:var(--olive);color:var(--chalk);padding:1px 6px;border-radius:10px;margin-left:5px;vertical-align:middle}
-.badge-count{display:inline-block;font-size:10px;background:var(--steel2);color:#9aa3ad;padding:1px 6px;border-radius:10px;margin-left:5px;vertical-align:middle;font-family:'JetBrains Mono',monospace}
 .warn-text{color:var(--orange);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
 .ok-text{color:var(--olive);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
 .err-text{color:var(--danger);font-size:10px;font-family:'JetBrains Mono',monospace;margin-top:3px}
 
-/* ---- Status bar ---- */
+/* ================================================================
+   STATUS BAR (inline diagnostics)
+   ================================================================ */
 .statusbar{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8b939c;padding:5px 8px;background:#0d1014;border-radius:4px;border:1px solid var(--line);margin-top:8px}
 .statusbar .ok{color:var(--olive)}
 .statusbar .loading{color:#9aa3ad}
 .statusbar .err{color:var(--danger)}
 
-/* ---- Screen-reader only utility ---- */
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* ---- Scrollbars ---- */
-::-webkit-scrollbar{width:8px;height:8px}
-::-webkit-scrollbar-thumb{background:var(--steel2);border-radius:6px}
-::-webkit-scrollbar-track{background:transparent}
-
-/* ---- Registration preview ---- */
+/* ================================================================
+   REGISTRATION PREVIEW
+   ================================================================ */
 .reg-preview{background:#0a0c0f;border:1px solid var(--line);border-radius:5px;padding:10px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;line-height:1.7;white-space:pre;overflow-x:auto}
 .reg-preview .hi{color:var(--orange);font-weight:600}
 .reg-preview .dim{color:#39414b}
 .reg-preview .new{color:var(--olive)}
 
-/* ---- Roster ---- */
+/* ================================================================
+   ROSTER (brief item 8 — hover lift on tiles)
+   ================================================================ */
 .roster-layout{display:flex;width:100%;height:100%;min-height:0}
 .roster-sidebar{width:220px;flex:0 0 220px;border-right:1px solid var(--line);background:var(--steel);display:flex;flex-direction:column;min-height:0}
 .roster-main{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
 .roster-slot-list{overflow-y:auto;flex:1;padding:8px 10px}
-.slot-btn{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:1px solid transparent;border-radius:5px;padding:7px 10px;margin-bottom:4px;color:#9aa3ad;font-family:'JetBrains Mono',monospace;font-size:11px;cursor:pointer;transition:all .12s}
+.slot-btn{
+  display:flex;align-items:center;gap:8px;width:100%;text-align:left;
+  background:none;border:1px solid transparent;border-radius:5px;padding:7px 10px;margin-bottom:4px;
+  color:#9aa3ad;font-family:'JetBrains Mono',monospace;font-size:11px;cursor:pointer;
+  transition:all .12s;
+}
 .slot-btn:hover{background:var(--gunmetal);color:var(--bone);border-color:var(--line)}
 .slot-btn.on{background:var(--gunmetal);border-color:var(--orange);color:var(--orange)}
 .slot-count{font-size:9px;background:var(--steel2);color:#9aa3ad;padding:1px 5px;border-radius:8px;margin-left:auto;white-space:nowrap;font-family:'JetBrains Mono',monospace}
@@ -121,10 +271,14 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .roster-card-hdr h2{font-family:Oswald,sans-serif;font-size:16px;letter-spacing:.5px;flex:1}
 .roster-card-hdr .slot-badge{font-family:'JetBrains Mono',monospace;font-size:10px;background:#0d1014;border:1px solid var(--line);border-radius:8px;padding:2px 8px;color:#9aa3ad}
 .roster-card-hdr .factory-code{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--orange);border:1px solid var(--orange-deep);background:#1a0f08;border-radius:3px;padding:1px 6px}
-.roster-empty{text-align:center;padding:48px 20px;color:#39414b;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:2}
+
+/* Empty states (brief item 6) */
+.roster-empty{text-align:center;padding:48px 20px;color:#39414b;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:2.2;letter-spacing:.5px;text-transform:uppercase}
+.roster-empty .empty-hint{display:block;font-size:10px;letter-spacing:0;text-transform:none;color:#39414b;margin-top:4px}
 .roster-add-row{display:flex;align-items:center;justify-content:center;padding:10px 0;border-top:1px dashed var(--line);margin-top:8px}
-/* ---- Unit rows in roster ---- */
-.unit-row{display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid var(--line);border-radius:5px;background:var(--gunmetal);margin-bottom:6px;transition:border-color .1s}
+
+/* Unit rows */
+.unit-row{display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid var(--line);border-radius:5px;background:var(--gunmetal);margin-bottom:6px;transition:border-color .1s,transform .1s}
 .unit-row:hover{border-color:var(--steel2)}
 .unit-thumb{width:44px;height:44px;flex:0 0 44px;border-radius:4px;background:#0d1014;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .unit-thumb img{width:100%;height:100%;object-fit:contain}
@@ -139,17 +293,23 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .unit-fields select{width:90px;font-size:11px;padding:4px 5px;background:#0d1014}
 .unit-del{flex:0 0 auto}
 
-/* ---- Picker modal ---- */
-.modal-back{position:fixed;inset:0;background:rgba(8,10,13,.75);display:none;align-items:center;justify-content:center;z-index:50;backdrop-filter:blur(3px)}
+/* ================================================================
+   PICKER MODAL (brief item 8 — tile hover lift)
+   ================================================================ */
+.modal-back{position:fixed;inset:0;background:rgba(8,10,13,.78);display:none;align-items:center;justify-content:center;z-index:50;backdrop-filter:blur(3px)}
 .modal-back.open{display:flex}
-.modal{width:860px;max-width:96vw;max-height:88vh;background:var(--steel);border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;overflow:hidden}
+.modal{
+  width:860px;max-width:96vw;max-height:88vh;background:var(--steel);
+  border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;
+  overflow:hidden;border-top:2px solid var(--olive);
+}
 .modal-head{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--gunmetal);flex:0 0 auto}
-.modal-head h2{font-size:15px;flex:1}
+.modal-head h2{font-family:Oswald,sans-serif;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;flex:1}
 .modal-head .x{cursor:pointer;color:#9aa3ad;font-size:22px;line-height:1;background:none;border:none;padding:0 4px}
 .modal-head .x:hover{color:var(--bone)}
 .modal-search-bar{padding:10px 14px;border-bottom:1px solid var(--line);background:var(--gunmetal);flex:0 0 auto;display:flex;gap:8px;align-items:center}
 .modal-search-bar input{flex:1;background:var(--steel);border:1px solid var(--line);color:var(--bone);border-radius:5px;padding:8px 10px;font-size:13px;outline:none}
-.modal-search-bar input:focus{border-color:var(--orange)}
+.modal-search-bar input:focus{border-color:var(--orange);box-shadow:0 0 0 2px var(--orange-dim)}
 .modal-body{display:flex;min-height:0;flex:1}
 .modal-side{width:150px;border-right:1px solid var(--line);overflow-y:auto;padding:8px 6px;flex:0 0 150px}
 .modal-side-chip{display:block;width:100%;text-align:left;font-family:'JetBrains Mono',monospace;font-size:11px;background:none;border:1px solid transparent;border-radius:4px;padding:5px 8px;color:#9aa3ad;cursor:pointer;margin-bottom:3px}
@@ -157,37 +317,39 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .modal-side-chip.on{background:var(--steel2);border-color:var(--orange);color:var(--orange)}
 .modal-grid-wrap{flex:1;overflow-y:auto;padding:12px}
 .pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px}
-.pick-tile{border:1px solid var(--line);border-radius:5px;background:var(--gunmetal);cursor:pointer;overflow:hidden;display:flex;flex-direction:column;transition:border-color .1s}
-.pick-tile:hover{border-color:var(--orange)}
+/* hover lift (brief item 8) */
+.pick-tile{
+  border:1px solid var(--line);border-radius:5px;background:var(--gunmetal);
+  cursor:pointer;overflow:hidden;display:flex;flex-direction:column;
+  transition:border-color .1s,transform .12s,box-shadow .12s;
+}
+.pick-tile:hover{border-color:var(--orange);transform:translateY(-1px);box-shadow:0 3px 12px rgba(0,0,0,.35)}
+.pick-tile:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.pick-tile:active{transform:scale(.98)}
 .pick-tile-img{width:100%;height:52px;object-fit:contain;background:#11141a;display:block}
 .pick-tile-glyph{width:100%;height:52px;display:flex;align-items:center;justify-content:center;background:#11141a;color:#39414b;font-size:24px}
 .pick-tile-name{font-family:'JetBrains Mono',monospace;font-size:9px;color:#c8d0d8;padding:4px 5px;border-top:1px solid var(--steel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pick-tile-class{font-family:'JetBrains Mono',monospace;font-size:8px;color:#556;padding:0 5px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pick-empty{font-size:12px;color:#8b939c;padding:20px;text-align:center}
+.pick-empty{font-family:'JetBrains Mono',monospace;font-size:11px;color:#39414b;padding:32px 20px;text-align:center;text-transform:uppercase;letter-spacing:.5px;line-height:2}
 
-/* ---- Placeholder panels (Tasks 3-4) ---- */
-.placeholder-panel{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:#39414b}
-.placeholder-panel .icon{font-size:52px;line-height:1}
-.placeholder-panel .p1{font-family:Oswald,sans-serif;font-size:18px;color:#556;letter-spacing:1px}
-.placeholder-panel .p2{font-family:'JetBrains Mono',monospace;font-size:11px;color:#39414b;text-align:center;line-height:1.8}
-
-/* ---- Identity layout ---- */
+/* ================================================================
+   IDENTITY LAYOUT
+   ================================================================ */
 .identity-layout{display:flex;width:100%;height:100%;min-height:0}
 .id-form-col{width:320px;flex:0 0 320px;border-right:1px solid var(--line);background:var(--steel);overflow-y:auto;padding:16px}
 .id-preview-col{flex:1;display:flex;flex-direction:column;min-width:0;padding:16px;overflow-y:auto}
-.id-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:18px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
-.id-section:first-child{margin-top:0}
 .side-chips{display:flex;gap:6px;margin-top:6px}
 .side-chip{font-family:'JetBrains Mono',monospace;font-size:12px;border:1px solid var(--line);border-radius:4px;padding:6px 14px;background:var(--gunmetal);cursor:pointer;color:#9aa3ad;transition:all .12s;font-weight:600}
 .side-chip:hover{border-color:var(--orange);color:var(--bone)}
 .side-chip.on{border-color:var(--orange);color:var(--orange);background:#251f18}
+.side-chip:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 
-/* ---- Structures panel ---- */
+/* ================================================================
+   STRUCTURES PANEL
+   ================================================================ */
 .struct-layout{display:flex;width:100%;height:100%;min-height:0}
 .struct-left{width:340px;flex:0 0 340px;border-right:1px solid var(--line);background:var(--steel);overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:0;min-height:0}
 .struct-right{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:14px}
-.struct-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
-.struct-section:first-child{margin-top:0}
 .bldg-row{background:var(--gunmetal);border:1px solid var(--line);border-radius:5px;padding:10px 12px;margin-bottom:8px}
 .bldg-row-hdr{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .bldg-row-hdr .bname{font-family:Oswald,sans-serif;font-size:13px;color:var(--bone);flex:1}
@@ -197,25 +359,25 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .bldg-fields input{width:70px;font-size:11px;padding:4px 6px;background:var(--steel);font-family:'JetBrains Mono',monospace}
 .bldg-cls-input{width:100%!important;font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 7px;background:var(--steel);margin-bottom:8px}
 
-/* ---- Flag picker ---- */
+/* FLAG PICKER */
 .flag-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .flag-tile{border:1px solid var(--line);border-radius:4px;padding:6px 10px;background:var(--gunmetal);cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;transition:all .12s;text-align:center;min-width:70px}
 .flag-tile:hover{border-color:var(--orange);color:var(--bone)}
 .flag-tile.on{border-color:var(--orange);color:var(--orange);background:#251f18}
 .flag-paa-preview{background:#0a0c0f;border:1px solid var(--line);border-radius:4px;padding:7px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--orange);margin-top:6px;word-break:break-all}
 
-/* ---- Defense names ---- */
+/* DEFENSE NAMES */
 .defense-list{display:flex;flex-direction:column;gap:4px;margin-top:6px}
 .defense-entry{display:flex;align-items:center;gap:6px;background:var(--gunmetal);border:1px solid var(--line);border-radius:4px;padding:5px 8px}
 .defense-entry input{flex:1;font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 6px;background:var(--steel)}
 .defense-add-row{margin-top:6px}
 
-/* ---- Glue panel ---- */
+/* ================================================================
+   GLUE PANEL
+   ================================================================ */
 .glue-layout{display:flex;width:100%;height:100%;min-height:0}
 .glue-col{flex:1;overflow-y:auto;padding:16px;border-right:1px solid var(--line);min-width:0}
 .glue-col:last-child{border-right:none}
-.glue-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
-.glue-section:first-child{margin-top:0}
 .glue-arr{display:flex;flex-direction:column;gap:4px;margin-top:6px}
 .glue-arr-row{display:flex;align-items:center;gap:6px;background:var(--gunmetal);border:1px solid var(--line);border-radius:4px;padding:4px 8px}
 .glue-arr-row input{flex:1;font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 5px;background:var(--steel)}
@@ -223,12 +385,28 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .glue-mono{font-family:'JetBrains Mono',monospace;font-size:11px}
 .glue-row{margin-bottom:10px}
 
-/* ---- Export panel ---- */
+/* ================================================================
+   EXPORT PANEL — "DEPLOYMENT ORDERS" identity moment
+   ================================================================ */
 .export-layout{display:flex;width:100%;height:100%;min-height:0}
 .export-left{width:300px;flex:0 0 300px;border-right:1px solid var(--line);background:var(--steel);display:flex;flex-direction:column;min-height:0;overflow-y:auto;padding:14px}
 .export-main{flex:1;display:flex;flex-direction:column;min-height:0;overflow-y:auto;padding:14px}
-.export-section{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#9aa3ad;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
-.export-section:first-child{margin-top:0}
+
+/* Deployment Orders document header */
+.deploy-orders-hdr{
+  border:1px solid var(--olive-mid);border-radius:4px;
+  background:#141a0f;padding:12px 16px;margin-bottom:14px;
+}
+.deploy-orders-hdr .do-pre{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--olive);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.deploy-orders-hdr .do-title{font-family:Oswald,sans-serif;font-size:20px;letter-spacing:3px;text-transform:uppercase;color:var(--bone);line-height:1}
+.deploy-orders-hdr .do-sub{font-family:'JetBrains Mono',monospace;font-size:9px;color:#8b939c;margin-top:4px;letter-spacing:.5px}
+.deploy-orders-hdr .do-rule{height:1px;background:var(--olive-mid);margin:8px 0}
+
+/* File list in deployment orders — mono document style */
+.deploy-file-list{margin:8px 0 0;font-family:'JetBrains Mono',monospace;font-size:10px;color:#8b939c;line-height:2}
+.deploy-file-list li{list-style:none;padding-left:0;border-bottom:1px dotted rgba(57,65,75,.4)}
+.deploy-file-list li::before{content:'▸  ';color:var(--olive)}
+
 .file-block{background:#0a0c0f;border:1px solid var(--line);border-radius:5px;margin-bottom:10px;overflow:hidden}
 .file-block-hdr{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--steel);border-bottom:1px solid var(--line)}
 .file-block-hdr .fname{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bone);flex:1}
@@ -241,29 +419,119 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 .patch-block pre{font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;padding:10px 12px;overflow-x:auto;max-height:160px;overflow-y:auto;line-height:1.6;white-space:pre;margin:0}
 .patch-block pre .new{color:var(--olive)}
 .patch-block pre .ctx{color:#39414b}
-.launcher-btn{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--gunmetal);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .15s}
-.launcher-btn:hover{border-color:var(--orange)}
+
+/* Cross-tool launcher */
+.launcher-btn{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--gunmetal);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .15s,transform .12s}
+.launcher-btn:hover{border-color:var(--orange);transform:translateX(2px)}
+.launcher-btn:active{transform:scale(.99)}
 .launcher-btn .lb-icon{font-size:20px;flex:0 0 auto;line-height:1}
 .launcher-btn .lb-text{flex:1}
 .launcher-btn .lb-title{font-family:Oswald,sans-serif;font-size:14px;color:var(--bone);letter-spacing:.5px}
 .launcher-btn .lb-sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad;margin-top:2px}
 .launcher-btn .lb-arrow{color:#556;font-size:18px}
+
+/* Export summary */
 .export-summary{background:var(--gunmetal);border:1px solid var(--line);border-radius:5px;padding:10px 12px;margin-bottom:10px}
 .export-summary .es-row{display:flex;gap:8px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:#9aa3ad;padding:3px 0}
 .export-summary .es-key{color:#556;width:130px;flex:0 0 130px}
 .export-summary .es-val{color:var(--bone)}
 .export-summary .es-val.ok{color:var(--olive)}
 .export-summary .es-val.warn{color:var(--orange)}
+
+/* Empty export state (brief item 6) */
 .export-not-ready{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px 20px;color:#39414b;text-align:center}
-.export-not-ready .nr-icon{font-size:40px;line-height:1}
-.export-not-ready .nr-msg{font-family:'JetBrains Mono',monospace;font-size:11px;color:#556;line-height:1.8}
+.export-not-ready .nr-icon{font-size:40px;line-height:1;color:#39414b}
+.export-not-ready .nr-msg{font-family:'JetBrains Mono',monospace;font-size:11px;color:#556;line-height:2;text-transform:uppercase;letter-spacing:.5px}
+.export-not-ready .nr-hint{font-family:'JetBrains Mono',monospace;font-size:10px;color:#39414b;margin-top:2px;text-transform:none;letter-spacing:0}
+
+/* ================================================================
+   TOAST SYSTEM (brief item 8)
+   ================================================================ */
+#toast-container{
+  position:fixed;bottom:16px;right:16px;z-index:200;
+  display:flex;flex-direction:column;gap:6px;pointer-events:none;
+}
+.toast{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bone);
+  background:var(--steel2);border:1px solid var(--line);border-left:3px solid var(--olive);
+  border-radius:5px;padding:8px 14px;
+  min-width:220px;max-width:340px;
+  box-shadow:0 4px 16px rgba(0,0,0,.45);
+  pointer-events:auto;
+  animation:toast-in 200ms ease forwards;
+}
+.toast.toast-out{animation:toast-out 200ms ease forwards}
+.toast .toast-title{color:var(--olive);font-size:10px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+.toast .toast-body{color:var(--bone-dim)}
+.toast.toast-warn{border-left-color:var(--orange)}
+.toast.toast-warn .toast-title{color:var(--orange)}
+.toast.toast-err{border-left-color:var(--danger)}
+.toast.toast-err .toast-title{color:var(--danger)}
+@keyframes toast-in{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+@keyframes toast-out{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(16px)}}
+@media(prefers-reduced-motion:reduce){
+  .toast,.toast.toast-out{animation:none}
+}
+
+/* ================================================================
+   HELP OVERLAY (brief item 9)
+   ================================================================ */
+.help-overlay{
+  position:fixed;inset:0;background:rgba(8,10,13,.82);
+  display:none;align-items:center;justify-content:center;z-index:60;
+  backdrop-filter:blur(4px);
+}
+.help-overlay.open{display:flex}
+.help-box{
+  width:600px;max-width:94vw;max-height:84vh;background:var(--steel);
+  border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;border-top:2px solid var(--olive);
+}
+.help-box-hdr{
+  display:flex;align-items:center;gap:10px;padding:12px 16px;
+  background:var(--gunmetal);border-bottom:1px solid var(--line);flex:0 0 auto;
+}
+.help-box-hdr h2{font-family:Oswald,sans-serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;flex:1}
+.help-box-hdr .x{cursor:pointer;color:#9aa3ad;font-size:22px;line-height:1;background:none;border:none;padding:0 4px}
+.help-box-hdr .x:hover{color:var(--bone)}
+.help-box-body{overflow-y:auto;padding:16px 20px;flex:1}
+.help-section{margin-bottom:14px}
+.help-section-title{font-family:Oswald,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--olive);margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.help-row{display:flex;align-items:baseline;gap:10px;padding:4px 0;border-bottom:1px solid rgba(57,65,75,.4)}
+.help-key{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--orange);border:1px solid var(--orange-deep);border-radius:3px;padding:1px 6px;background:#1a0f08;flex:0 0 auto;white-space:nowrap}
+.help-desc{font-family:'JetBrains Mono',monospace;font-size:10px;color:#9aa3ad}
+
+/* ================================================================
+   STAGGERED LOAD ANIMATION (brief item 7)
+   ================================================================ */
+@keyframes fade-up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.anim-brandbar{animation:fade-up 250ms ease both}
+.anim-steps{animation:fade-up 250ms 80ms ease both}
+.anim-panel-1{animation:fade-up 250ms 160ms ease both}
+.anim-panel-2{animation:fade-up 250ms 220ms ease both}
+.anim-panel-3{animation:fade-up 250ms 280ms ease both}
+@media(prefers-reduced-motion:reduce){
+  .anim-brandbar,.anim-steps,.anim-panel-1,.anim-panel-2,.anim-panel-3{animation:none}
+}
+
+/* ================================================================
+   FOOTER STRIP (brief item 11)
+   ================================================================ */
+.footer-strip{
+  flex:0 0 auto;background:#0d1014;border-top:1px solid var(--line);
+  padding:5px 16px;display:flex;align-items:center;gap:10px;
+  font-family:'JetBrains Mono',monospace;font-size:9px;color:#39414b;
+}
+.footer-strip a{color:#39414b;text-decoration:none}
+.footer-strip a:hover{color:var(--bone)}
+.footer-strip .sep{color:#39414b;opacity:.4}
 </style>
 </head>
 <body>
 
 <!-- ====== Brand bar ====== -->
-<div class="brandbar">
-  <svg class="mark" viewBox="0 0 96 96" aria-label="WASP Faction Builder">
+<div class="brandbar anim-brandbar">
+  <svg class="mark" viewBox="0 0 96 96" aria-label="WASP Faction Builder" role="img">
     <g fill="none" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter">
       <polyline points="20,54 48,30 76,54" stroke="#D9763C"/>
       <polyline points="20,66 48,42 76,66" stroke="#F2EFE8"/>
@@ -275,12 +543,14 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
     <span class="t2">WASP SIDE COMPOSER</span>
   </div>
   <div class="spacer"></div>
+  <span id="statusLed" class="status-led" title="Ready — no unsaved changes" aria-label="Session status: ready" role="status"></span>
+  <button class="help-btn" id="helpBtn" onclick="openHelp()" aria-label="Help / keyboard shortcuts" title="Help (?)">?</button>
   <a href="https://miksuu.com/tools" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8b939c;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:3px 9px;background:#0d1014;white-space:nowrap" aria-label="All Tools">← All Tools</a>
   <div class="chip" id="loadChip" aria-live="polite" aria-label="Data load status">loading<b> …</b></div>
 </div>
 
-<!-- ====== Step tabs ====== -->
-<div class="steps-bar" role="tablist" aria-label="Faction Builder steps">
+<!-- ====== Step tabs (folder-tab style, stamps on completion) ====== -->
+<div class="steps-bar anim-steps" role="tablist" aria-label="Faction Builder steps">
   <button class="step-btn on" id="stepBtnIdentity" role="tab" aria-selected="true" aria-controls="stepIdentity" onclick="switchStep('identity')">
     <span class="step-num" aria-hidden="true">1</span>Identity
   </button>
@@ -298,7 +568,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
   </button>
 </div>
 
-<div class="app-body">
+<div class="app-body anim-panel-1">
 
 <!-- ====== Step 1: Identity ====== -->
 <div class="step-panel on" id="stepIdentity" role="tabpanel" aria-labelledby="stepBtnIdentity">
@@ -306,7 +576,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 
     <!-- Left: form -->
     <div class="id-form-col">
-      <div class="id-section">Token &amp; Side</div>
+      <div class="id-section"><span class="sec-ord">01 /</span> Token &amp; Side</div>
 
       <label for="tokenInput">Faction Token <span style="color:#556;font-size:9px;font-family:'JetBrains Mono',monospace">[A-Z][A-Z0-9]{1,11}</span></label>
       <input type="text" id="tokenInput" placeholder="e.g. PARTISANS" maxlength="12" autocomplete="off" oninput="onTokenChange()" style="text-transform:uppercase;font-family:'JetBrains Mono',monospace;letter-spacing:2px">
@@ -319,7 +589,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
         <button class="side-chip on" data-side="GUER" aria-pressed="true" onclick="setSide('GUER')">GUER</button>
       </div>
 
-      <div class="id-section">Names</div>
+      <div class="id-section"><span class="sec-ord">02 /</span> Names</div>
 
       <label for="displayNameInput">Display Name / DEFAULTFACTION string
         <span class="hint" style="display:inline;margin:0;text-transform:none;letter-spacing:0">shown in buy menus</span>
@@ -338,7 +608,8 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 
     <!-- Right: registration preview -->
     <div class="id-preview-col">
-      <div class="panel-hdr" style="margin:-16px -16px 16px;padding:11px 16px">
+      <div class="panel-hdr" style="margin:-16px -16px 16px;padding:11px 16px 10px 17px">
+        <span class="ordinal">03 / REGISTRATION</span>
         <h2>Registration Preview</h2>
         <div class="sub">Read-only — shows what Task 4 Emit will touch</div>
       </div>
@@ -367,6 +638,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
     <!-- Sidebar: slot navigation -->
     <div class="roster-sidebar">
       <div class="panel-hdr">
+        <span class="ordinal">02 / ROSTER</span>
         <h2>Factory Slots</h2>
         <div class="sub" id="rosterSidebarSub">0 units total</div>
       </div>
@@ -387,7 +659,8 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
       </div>
       <div class="roster-panel" id="rosterPanel">
         <div class="roster-empty" id="rosterEmpty">
-          No units yet.<br>Click <b>+ Add Unit</b> to open the picker, or<br><b>Import GUE roster</b> to start from the GUE template.
+          — NO PERSONNEL ASSIGNED —<br>
+          <span class="empty-hint">Add units via + Add Unit or import GUE roster as template</span>
         </div>
         <div id="rosterSlots"></div>
       </div>
@@ -402,18 +675,18 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 
     <!-- Left: 8 buildings + MHQ/HQ classnames -->
     <div class="struct-left">
-      <div class="struct-section">Mobile HQ (MHQ)</div>
+      <div class="struct-section"><span class="sec-ord">03a /</span> Mobile HQ (MHQ)</div>
       <label for="mhqInput">MHQ classname</label>
       <input type="text" id="mhqInput" class="glue-mono" placeholder="e.g. BRDM2_HQ_Gue" autocomplete="off" oninput="onStructChange()">
 
-      <div class="struct-section" style="margin-top:12px">Deployed HQ</div>
+      <div class="struct-section" style="margin-top:12px"><span class="sec-ord">03b /</span> Deployed HQ</div>
       <label for="hqInput">Deployed HQ classname</label>
       <input type="text" id="hqInput" class="glue-mono" placeholder="e.g. BRDM2_HQ_Gue_unfolded" autocomplete="off" oninput="onStructChange()">
 
-      <div class="struct-section" style="margin-top:12px">8 Buildings</div>
+      <div class="struct-section" style="margin-top:12px"><span class="sec-ord">03c /</span> 8 Buildings</div>
       <div id="buildingRows"></div>
 
-      <div class="struct-section" style="margin-top:12px">Defense Palette
+      <div class="struct-section" style="margin-top:12px"><span class="sec-ord">03d /</span> Defense Palette
         <span class="hint" style="display:inline;text-transform:none;letter-spacing:0;font-size:9px;margin-left:4px">WFBE_%1DEFENSENAMES</span>
       </div>
       <div class="hint" style="margin-top:0;margin-bottom:8px">Classnames available in the defense build menu.</div>
@@ -425,7 +698,8 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 
     <!-- Right: Flag picker -->
     <div class="struct-right">
-      <div class="panel-hdr" style="margin:-16px -16px 16px;padding:11px 16px;flex:0 0 auto">
+      <div class="panel-hdr" style="margin:-16px -16px 16px;padding:11px 16px 10px 17px;flex:0 0 auto">
+        <span class="ordinal">03b / STRUCTURES</span>
         <h2>Flag</h2>
         <div class="sub">WFBE_%1FLAG — the .paa texture shown on the flag pole</div>
       </div>
@@ -596,7 +870,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 
     <!-- Left: summary + controls -->
     <div class="export-left">
-      <div class="export-section">Faction Summary</div>
+      <div class="export-section"><span class="sec-ord">05a /</span> Faction Summary</div>
       <div class="export-summary" id="exportSummary">
         <div class="es-row"><span class="es-key">Token</span><span class="es-val" id="esTok">—</span></div>
         <div class="es-row"><span class="es-key">Side</span><span class="es-val" id="esSide">—</span></div>
@@ -605,11 +879,11 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
         <div class="es-row"><span class="es-key">Flag</span><span class="es-val" id="esFlag" style="font-size:9px;word-break:break-all">—</span></div>
       </div>
 
-      <div class="export-section">Actions</div>
+      <div class="export-section"><span class="sec-ord">05b /</span> Actions</div>
       <button class="primary" style="width:100%;margin-bottom:8px" onclick="runEmit()">Generate Files</button>
       <button id="dlZipBtn" style="width:100%;margin-bottom:8px;display:none" onclick="downloadZip()">⬇ Download faction (.zip)</button>
 
-      <div class="export-section" style="margin-top:8px">Cross-Tool Launcher</div>
+      <div class="export-section" style="margin-top:8px"><span class="sec-ord">05c /</span> Cross-Tool Launcher</div>
       <div class="hint" style="margin-bottom:8px">Writes a handoff bundle to <code>localStorage</code> so sibling tools can import this faction.</div>
       <button class="launcher-btn" onclick="launchSibling('strategy-economy')" title="Strategy &amp; Economy">
         <span class="lb-icon">📊</span>
@@ -650,11 +924,20 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
       </div>
     </div>
 
-    <!-- Main: generated files + patches -->
+    <!-- Main: DEPLOYMENT ORDERS document + generated files -->
     <div class="export-main" id="exportMain">
+      <!-- Deployment Orders header — always visible -->
+      <div class="deploy-orders-hdr">
+        <div class="do-pre">CLASSIFICATION: OPERATIONAL</div>
+        <div class="do-title">DEPLOYMENT ORDERS</div>
+        <div class="do-rule"></div>
+        <div class="do-sub" id="deployOrdersSub">FACTION: PENDING — GENERATE FILES TO EMIT</div>
+        <ul class="deploy-file-list" id="deployFileList" style="display:none"></ul>
+      </div>
       <div class="export-not-ready" id="exportNotReady">
-        <div class="nr-icon">📦</div>
-        <div class="nr-msg">Click <b>Generate Files</b> to emit the faction file set.<br>Requires a valid token and side.</div>
+        <div class="nr-icon" aria-hidden="true">⬜</div>
+        <div class="nr-msg">— AWAITING ORDERS —</div>
+        <div class="nr-hint">Click <b>Generate Files</b> to emit the faction file set.<br>Requires a valid token and side.</div>
       </div>
       <div id="exportFiles" style="display:none"></div>
     </div>
@@ -663,6 +946,17 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
 </div>
 
 </div><!-- /.app-body -->
+
+<!-- ====== Footer strip (brief item 11) ====== -->
+<footer class="footer-strip" role="contentinfo">
+  <span class="chip-pill">v2026-07-02</span>
+  <span class="sep">|</span>
+  Part of the Warfare Tools suite
+  <span class="sep">·</span>
+  <a href="https://miksuu.com/tools" target="_blank" rel="noopener">miksuu.com/tools</a>
+  <span class="sep">·</span>
+  <span>Press <code style="font-family:'JetBrains Mono',monospace;font-size:9px;background:#0d1014;padding:1px 4px;border-radius:2px;color:var(--orange)">?</code> for help</span>
+</footer>
 
 <!-- ====== Unit Picker Modal ====== -->
 <div class="modal-back" id="pickerModal" role="presentation">
@@ -681,11 +975,51 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
       <!-- Grid -->
       <div class="modal-grid-wrap" role="region" aria-label="Unit results">
         <div class="pick-grid" id="pickerGrid" role="list"></div>
-        <div class="pick-empty" id="pickerEmpty" style="display:none" aria-live="polite">No units match.</div>
+        <div class="pick-empty" id="pickerEmpty" style="display:none" aria-live="polite">— SECTOR CLEAR — NO UNITS MATCH FILTER —<br><span style="font-size:9px;text-transform:none;letter-spacing:0;color:#39414b">Adjust search or type filter to find units</span></div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- ====== Help overlay (brief item 9) ====== -->
+<div class="help-overlay" id="helpOverlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+  <div class="help-box">
+    <div class="help-box-hdr">
+      <h2 id="helpTitle">Builder Reference</h2>
+      <button class="x" onclick="closeHelp()" aria-label="Close help">×</button>
+    </div>
+    <div class="help-box-body">
+      <div class="help-section">
+        <div class="help-section-title">Builder Flow</div>
+        <div class="help-row"><span class="help-key">Step 1</span><span class="help-desc">Identity — Set token, side, display name. Token must be 2–12 chars [A-Z][A-Z0-9].</span></div>
+        <div class="help-row"><span class="help-key">Step 2</span><span class="help-desc">Roster — Add/remove units by slot (Barracks, Light, Heavy, Aircraft, Depot, Defenses). Set price, build time, upgrade tier, crew.</span></div>
+        <div class="help-row"><span class="help-key">Step 3</span><span class="help-desc">Structures — MHQ/HQ classnames, 8 buildings (classname + cost + time), flag .paa, defense palette.</span></div>
+        <div class="help-row"><span class="help-key">Step 4</span><span class="help-desc">Glue — Crew/pilot/soldier classes, support trucks, starting vehicles, paratroop pools, radio config.</span></div>
+        <div class="help-row"><span class="help-key">Step 5</span><span class="help-desc">Export — Generate the full file set (Core, Root, Structures, Units + GUE-clone defaults). Download as .zip or copy per-file.</span></div>
+      </div>
+      <div class="help-section">
+        <div class="help-section-title">Keyboard Shortcuts</div>
+        <div class="help-row"><span class="help-key">?</span><span class="help-desc">Open / close this help overlay</span></div>
+        <div class="help-row"><span class="help-key">Esc</span><span class="help-desc">Close open modal / overlay</span></div>
+        <div class="help-row"><span class="help-key">1–5</span><span class="help-desc">Jump to step 1–5 (if step is not locked)</span></div>
+      </div>
+      <div class="help-section">
+        <div class="help-section-title">Status LED</div>
+        <div class="help-row"><span class="help-key" style="background:rgba(77,255,145,.12);border-color:#4dff91;color:#4dff91">GREEN</span><span class="help-desc">Data loaded — no unsaved changes</span></div>
+        <div class="help-row"><span class="help-key" style="background:var(--orange-dim);border-color:var(--orange);color:var(--orange)">ORANGE</span><span class="help-desc">Session has unsaved / unexported changes (pulsing)</span></div>
+        <div class="help-row"><span class="help-key" style="background:rgba(192,57,43,.12);border-color:var(--danger);color:var(--danger)">RED</span><span class="help-desc">Validation error — token missing or invalid</span></div>
+      </div>
+      <div class="help-section">
+        <div class="help-section-title">Session Persistence</div>
+        <div class="help-row"><span class="help-key">Auto</span><span class="help-desc">All changes are auto-saved to localStorage (600ms debounce). Refreshing the page offers to restore your last session.</span></div>
+        <div class="help-row"><span class="help-key">Export</span><span class="help-desc">Use Export → Generate Files + Download (.zip) for the actual file set. localStorage is NOT a substitute.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Toast container (brief item 8) ====== -->
+<div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
 <script>
 // ============================================================
@@ -727,6 +1061,127 @@ const TYPE_DEFAULT_SLOT = {
 };
 
 // ============================================================
+//  STATUS LED (brief item 1)
+// ============================================================
+function updateLed() {
+  const led = document.getElementById('statusLed');
+  if (!led) return;
+  const tok = MODEL.faction.token;
+  const valid = tok && /^[A-Z][A-Z0-9]{1,11}$/.test(tok);
+
+  // Check for validation error condition
+  if (tok && !valid) {
+    led.className = 'status-led error';
+    led.title = 'Validation error — token invalid';
+    led.setAttribute('aria-label', 'Session status: validation error');
+    return;
+  }
+
+  // Dirty = session has meaningful data that hasn't been exported
+  const dirty = !!(MODEL.faction.token || MODEL.faction.displayName || MODEL.faction.roster.length > 0);
+  if (dirty) {
+    led.className = 'status-led dirty';
+    led.title = 'Session has changes — export to emit files';
+    led.setAttribute('aria-label', 'Session status: unsaved changes');
+  } else {
+    led.className = 'status-led';
+    led.title = MODEL.loaded ? 'Ready — data loaded' : 'Loading data…';
+    led.setAttribute('aria-label', 'Session status: ready');
+  }
+}
+
+// ============================================================
+//  TOAST SYSTEM (brief item 8)
+// ============================================================
+function showToast(title, body, type /* ok|warn|err */, ms) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+  const t = document.createElement('div');
+  t.className = 'toast' + (type === 'warn' ? ' toast-warn' : type === 'err' ? ' toast-err' : '');
+  t.innerHTML = `<div class="toast-title">${title}</div><div class="toast-body">${body}</div>`;
+  container.appendChild(t);
+  const dur = ms || 2400;
+  setTimeout(() => {
+    t.classList.add('toast-out');
+    setTimeout(() => { if (t.parentNode) t.parentNode.removeChild(t); }, 220);
+  }, dur);
+}
+
+// ============================================================
+//  HELP OVERLAY (brief item 9)
+// ============================================================
+function openHelp() {
+  document.getElementById('helpOverlay').classList.add('open');
+  document.querySelector('#helpOverlay .x').focus();
+}
+function closeHelp() {
+  document.getElementById('helpOverlay').classList.remove('open');
+  document.getElementById('helpBtn').focus();
+}
+
+// ============================================================
+//  STEP STAMP (APPROVED) — identity moment
+// ============================================================
+// Tracks which steps are "approved" (completed/visited with valid data)
+const STEP_APPROVED = { Identity: false, Roster: false, Structures: false, Glue: false };
+
+function stampStep(key) {
+  if (STEP_APPROVED[key]) return; // idempotent
+  STEP_APPROVED[key] = true;
+  const btn = document.getElementById('stepBtn' + key);
+  if (!btn) return;
+  // Remove any existing stamp first
+  const existing = btn.querySelector('.step-stamp');
+  if (existing) existing.remove();
+  const stamp = document.createElement('span');
+  stamp.className = 'step-stamp';
+  stamp.textContent = 'APPROVED';
+  stamp.setAttribute('aria-hidden', 'true');
+  btn.appendChild(stamp);
+}
+
+function maybeSStampIdentity() {
+  const tok = MODEL.faction.token;
+  const valid = tok && /^[A-Z][A-Z0-9]{1,11}$/.test(tok);
+  if (valid && MODEL.faction.displayName) stampStep('Identity');
+}
+
+function maybeSStampRoster() {
+  if (MODEL.faction.roster.length > 0) stampStep('Roster');
+}
+
+function maybeSStampStructures() {
+  // Require a valid token — avoids stamping from GUE default pre-fills on cold load
+  const tok = MODEL.faction.token;
+  const valid = tok && /^[A-Z][A-Z0-9]{1,11}$/.test(tok);
+  if (valid && MODEL.faction.structures && MODEL.faction.structures.mhq) stampStep('Structures');
+}
+
+function maybeSStampGlue() {
+  // Require a valid token — avoids stamping from GUE default pre-fills on cold load
+  const tok = MODEL.faction.token;
+  const valid = tok && /^[A-Z][A-Z0-9]{1,11}$/.test(tok);
+  if (valid && MODEL.faction.glue && MODEL.faction.glue.CREW) stampStep('Glue');
+}
+
+// ============================================================
+//  DEPLOYMENT ORDERS PANEL — update file list (brief identity)
+// ============================================================
+function updateDeployOrders(tok, files) {
+  const sub = document.getElementById('deployOrdersSub');
+  const list = document.getElementById('deployFileList');
+  if (!sub || !list) return;
+  sub.textContent = tok ? `FACTION: ${tok} — ${files.length} FILE(S) EMITTED` : 'FACTION: PENDING — GENERATE FILES TO EMIT';
+  if (files && files.length > 0) {
+    list.style.display = '';
+    list.innerHTML = files.map(f => `<li>${f.name}</li>`).join('');
+  } else {
+    list.style.display = 'none';
+    list.innerHTML = '';
+  }
+}
+
+// ============================================================
 //  DATA LOADING
 // ============================================================
 async function loadData() {
@@ -746,9 +1201,17 @@ async function loadData() {
     buildPickerSide();
     renderRosterSidebar();
     updateRegPreview();
+    updateLed();
+    // Update stamps if session was restored
+    maybeSStampIdentity();
+    maybeSStampRoster();
+    maybeSStampStructures();
+    maybeSStampGlue();
   } catch (e) {
     document.getElementById('loadChip').innerHTML = `<span style="color:var(--danger)">load error</span>`;
     console.error('Load error:', e);
+    showToast('DATA ERROR', 'Failed to load unit catalog — check console.', 'err', 4000);
+    updateLed();
   }
 }
 
@@ -767,6 +1230,7 @@ function onTokenChange() {
   validateToken(raw);
   updateRegPreview();
   saveSession();
+  maybeSStampIdentity();
 }
 
 function validateToken(tok) {
@@ -819,6 +1283,7 @@ function onDisplayNameChange() {
     MODEL.faction.factionStr = MODEL.faction.displayName;
   }
   saveSession();
+  maybeSStampIdentity();
 }
 
 function onFactionStrChange() {
@@ -1095,6 +1560,7 @@ function addUnitToRoster(cls, targetSlot) {
   renderRosterSidebar();
   renderActiveSlot();
   saveSession();
+  maybeSStampRoster();
 }
 
 function seedFromGUE() {
@@ -1143,6 +1609,7 @@ function seedFromGUE() {
   renderRosterSidebar();
   renderActiveSlot();
   saveSession();
+  maybeSStampRoster();
 }
 
 // ============================================================
@@ -1204,9 +1671,27 @@ document.getElementById('pickerModal').addEventListener('keydown', e => {
 document.getElementById('pickerModal').addEventListener('click', e => {
   if (e.target === document.getElementById('pickerModal')) closePicker();
 });
+document.getElementById('helpOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('helpOverlay')) closeHelp();
+});
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && document.getElementById('pickerModal').classList.contains('open')) {
-    closePicker();
+  // Escape closes any open overlay
+  if (e.key === 'Escape') {
+    if (document.getElementById('helpOverlay').classList.contains('open')) {
+      closeHelp(); return;
+    }
+    if (document.getElementById('pickerModal').classList.contains('open')) {
+      closePicker(); return;
+    }
+  }
+  // ? opens help
+  if ((e.key === '?' || (e.key === '/' && e.shiftKey)) && !e.target.closest('input,textarea,select')) {
+    openHelp(); return;
+  }
+  // 1–5 shortcut to jump steps
+  if (!e.ctrlKey && !e.metaKey && !e.altKey && !e.target.closest('input,textarea,select')) {
+    const stepKeys = { '1':'identity','2':'roster','3':'structures','4':'glue','5':'export' };
+    if (stepKeys[e.key]) switchStep(stepKeys[e.key]);
   }
 });
 
@@ -1462,6 +1947,7 @@ function onStructChange() {
   MODEL.faction.structures.mhq = document.getElementById('mhqInput').value;
   MODEL.faction.structures.hq  = document.getElementById('hqInput').value;
   saveSession();
+  maybeSStampStructures();
 }
 
 function onBuildingField(idx, field, val) {
@@ -1609,6 +2095,7 @@ function initGluePanel() {
 function onGlueScalarChange(key, val) {
   MODEL.faction.glue[key] = val;
   saveSession();
+  maybeSStampGlue();
 }
 
 function renderGlueArr(elId, key) {
@@ -1695,6 +2182,7 @@ let _saveTimer   = null;
 
 function saveSession() {
   if (!_saveEnabled) return;
+  updateLed();
   clearTimeout(_saveTimer);
   _saveTimer = setTimeout(() => {
     try {
@@ -1810,8 +2298,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init roster sidebar with restored (or empty) counts
   renderRosterSidebar();
   renderActiveSlot();
+  // Initial LED state (no data loaded yet)
+  updateLed();
   // Load data
   loadData();
+});
+
+// Help overlay focus trap
+document.getElementById('helpOverlay').addEventListener('keydown', e => {
+  if (e.key !== 'Tab') return;
+  const box = document.querySelector('#helpOverlay .help-box');
+  const focusable = Array.from(box.querySelectorAll(
+    'button:not([disabled]),input:not([disabled]),[tabindex]:not([tabindex="-1"])'
+  )).filter(el => el.offsetParent !== null);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last  = focusable[focusable.length - 1];
+  if (e.shiftKey) {
+    if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+  } else {
+    if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+  }
 });
 
 // ============================================================
@@ -2215,9 +2722,11 @@ function runEmit() {
 
 function renderEmitResults(files, patches, tok, side) {
   document.getElementById('exportNotReady').style.display = 'none';
+  updateDeployOrders(tok, files);
   const container = document.getElementById('exportFiles');
   container.style.display = '';
   container.innerHTML = '';
+  showToast('FILES GENERATED', `${files.length} files ready for ${tok} — download or copy per-file.`, 'ok', 3000);
 
   // Section: Generated core files
   const coreFiles = files.filter(f => ['core','root','struct','units'].includes(f.type));
@@ -2284,24 +2793,29 @@ function escHtml(str) {
 }
 
 function copyText(btn, text) {
-  navigator.clipboard.writeText(text).then(() => {
-    const orig = btn.textContent;
-    btn.textContent = 'Copied!';
+  const orig = btn.textContent;
+  const finish = () => {
+    btn.textContent = 'COPIED ✓';
+    showToast('COPIED', 'File contents copied to clipboard.', 'ok', 1600);
     setTimeout(() => { btn.textContent = orig; }, 1400);
-  }).catch(() => {
-    // fallback
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    const orig = btn.textContent;
-    btn.textContent = 'Copied!';
-    setTimeout(() => { btn.textContent = orig; }, 1400);
-  });
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(finish).catch(() => {
+      fallbackCopy(text); finish();
+    });
+  } else {
+    fallbackCopy(text); finish();
+  }
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
 }
 
 // ============================================================
@@ -2501,10 +3015,12 @@ function launchSibling(key) {
     localStorage.setItem('wasp-faction-handoff', JSON.stringify(handoff));
     const st = document.getElementById('launchStatus');
     st.innerHTML = `<span style="color:var(--olive)">✓ Handoff written for <b>${tok || '(no token)'}</b> → opening ${key}…</span>`;
+    showToast('HANDOFF WRITTEN', `Faction data sent to ${key}.`, 'ok', 2400);
   } catch (e) {
     console.warn('localStorage write failed:', e);
     const st = document.getElementById('launchStatus');
     st.innerHTML = `<span style="color:var(--danger)">localStorage unavailable — opening ${key} without handoff.</span>`;
+    showToast('HANDOFF FAILED', 'localStorage unavailable.', 'warn', 3000);
   }
 
   window.open(url, '_blank', 'noopener');
