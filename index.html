@@ -275,6 +275,7 @@ button.ico:hover{color:var(--bone);border-color:var(--line)}
     <span class="t2">WASP SIDE COMPOSER</span>
   </div>
   <div class="spacer"></div>
+  <a href="https://miksuu.com/tools" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8b939c;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:3px 9px;background:#0d1014;white-space:nowrap" aria-label="All Tools">← All Tools</a>
   <div class="chip" id="loadChip" aria-live="polite" aria-label="Data load status">loading<b> …</b></div>
 </div>
 
@@ -756,17 +757,6 @@ async function loadData() {
 // ============================================================
 const STEPS = ['Identity', 'Roster', 'Structures', 'Glue', 'Export'];
 
-function switchStep(name) {
-  const key = name.charAt(0).toUpperCase() + name.slice(1);
-  // Don't block disabled steps — just allow switching (they show placeholder)
-  STEPS.forEach(s => {
-    document.getElementById('step' + s)?.classList.remove('on');
-    document.getElementById('stepBtn' + s)?.classList.remove('on');
-  });
-  document.getElementById('step' + key).classList.add('on');
-  document.getElementById('stepBtn' + key).classList.add('on');
-}
-
 // ============================================================
 //  IDENTITY PANEL
 // ============================================================
@@ -776,6 +766,7 @@ function onTokenChange() {
   MODEL.faction.token = raw;
   validateToken(raw);
   updateRegPreview();
+  saveSession();
 }
 
 function validateToken(tok) {
@@ -816,6 +807,7 @@ function setSide(side) {
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
   updateRegPreview();
+  saveSession();
 }
 
 function onDisplayNameChange() {
@@ -826,12 +818,14 @@ function onDisplayNameChange() {
     fsEl.value = MODEL.faction.displayName;
     MODEL.faction.factionStr = MODEL.faction.displayName;
   }
+  saveSession();
 }
 
 function onFactionStrChange() {
   const fsEl = document.getElementById('factionStrInput');
   fsEl.dataset.userEdited = '1';
   MODEL.faction.factionStr = fsEl.value;
+  saveSession();
 }
 
 function updateRegPreview() {
@@ -1002,7 +996,7 @@ function buildUnitRow(entry) {
     if (entry.upgrade === t) o.selected = true;
     upgSel.appendChild(o);
   });
-  upgSel.onchange = () => { entry.upgrade = parseInt(upgSel.value); };
+  upgSel.onchange = () => { entry.upgrade = parseInt(upgSel.value); saveSession(); };
   upgLabel.appendChild(upgSel);
   fields.appendChild(upgLabel);
 
@@ -1025,6 +1019,7 @@ function buildUnitRow(entry) {
     entry.factory = SLOTS.find(s => s.key === slotSel.value)?.factory ?? -2;
     renderRosterSidebar();
     renderActiveSlot();
+    saveSession();
   };
   slotLabel.appendChild(slotSel);
   fields.appendChild(slotLabel);
@@ -1041,6 +1036,7 @@ function buildUnitRow(entry) {
     MODEL.faction.roster = MODEL.faction.roster.filter(r => r !== entry);
     renderRosterSidebar();
     renderActiveSlot();
+    saveSession();
   };
   row.appendChild(del);
 
@@ -1059,7 +1055,7 @@ function makeField(lbl, type, val, min, max, onChange) {
   inp.style.fontSize = '11px';
   inp.style.padding = '4px 5px';
   inp.style.background = '#0d1014';
-  inp.onchange = () => onChange(inp.value);
+  inp.onchange = () => { onChange(inp.value); saveSession(); };
   label.appendChild(inp);
   return label;
 }
@@ -1098,6 +1094,7 @@ function addUnitToRoster(cls, targetSlot) {
   ACTIVE_SLOT = slot;
   renderRosterSidebar();
   renderActiveSlot();
+  saveSession();
 }
 
 function seedFromGUE() {
@@ -1145,6 +1142,7 @@ function seedFromGUE() {
 
   renderRosterSidebar();
   renderActiveSlot();
+  saveSession();
 }
 
 // ============================================================
@@ -1463,6 +1461,7 @@ function initStructuresPanel() {
 function onStructChange() {
   MODEL.faction.structures.mhq = document.getElementById('mhqInput').value;
   MODEL.faction.structures.hq  = document.getElementById('hqInput').value;
+  saveSession();
 }
 
 function onBuildingField(idx, field, val) {
@@ -1471,6 +1470,7 @@ function onBuildingField(idx, field, val) {
   } else {
     MODEL.faction.structures.buildings[idx][field] = val;
   }
+  saveSession();
 }
 
 function renderDefenseList() {
@@ -1483,7 +1483,7 @@ function renderDefenseList() {
     inp.type = 'text';
     inp.value = cls;
     inp.style.cssText = 'flex:1;font-family:\'JetBrains Mono\',monospace;font-size:11px;padding:4px 6px;background:var(--steel);border:1px solid var(--line);border-radius:4px;color:var(--bone);outline:none';
-    inp.oninput = () => { MODEL.faction.structures.defenseNames[i] = inp.value; };
+    inp.oninput = () => { MODEL.faction.structures.defenseNames[i] = inp.value; saveSession(); };
     const del = document.createElement('button');
     del.className = 'ico danger';
     del.textContent = '✕';
@@ -1491,6 +1491,7 @@ function renderDefenseList() {
     del.onclick = () => {
       MODEL.faction.structures.defenseNames.splice(i, 1);
       renderDefenseList();
+      saveSession();
     };
     row.appendChild(inp);
     row.appendChild(del);
@@ -1501,6 +1502,7 @@ function renderDefenseList() {
 function addDefenseName(cls) {
   MODEL.faction.structures.defenseNames.push(cls);
   renderDefenseList();
+  saveSession();
   // Focus the last input
   setTimeout(() => {
     const inputs = document.querySelectorAll('#defenseList .defense-entry input');
@@ -1546,6 +1548,7 @@ function selectFlag(paa) {
   document.querySelectorAll('.flag-tile').forEach(t => {
     t.classList.toggle('on', t.dataset.paa === paa);
   });
+  saveSession();
 }
 
 function onFlagCustomChange() {
@@ -1556,6 +1559,7 @@ function onFlagCustomChange() {
   document.querySelectorAll('.flag-tile').forEach(t => {
     t.classList.toggle('on', t.dataset.paa === val);
   });
+  saveSession();
 }
 
 // ============================================================
@@ -1604,6 +1608,7 @@ function initGluePanel() {
 
 function onGlueScalarChange(key, val) {
   MODEL.faction.glue[key] = val;
+  saveSession();
 }
 
 function renderGlueArr(elId, key) {
@@ -1618,7 +1623,7 @@ function renderGlueArr(elId, key) {
     inp.type = 'text';
     inp.value = val;
     inp.style.cssText = 'flex:1;font-family:\'JetBrains Mono\',monospace;font-size:11px;padding:3px 5px;background:var(--steel);border:1px solid var(--line);border-radius:4px;color:var(--bone);outline:none';
-    inp.oninput = () => { arr[i] = inp.value; };
+    inp.oninput = () => { arr[i] = inp.value; saveSession(); };
     const del = document.createElement('button');
     del.className = 'ico danger';
     del.textContent = '✕';
@@ -1627,6 +1632,7 @@ function renderGlueArr(elId, key) {
       arr.splice(i, 1);
       MODEL.faction.glue[key] = arr;
       renderGlueArr(elId, key);
+      saveSession();
     };
     row.appendChild(inp);
     row.appendChild(del);
@@ -1646,13 +1652,12 @@ function addGlueArrItem(key) {
       if (rows.length) rows[rows.length - 1].focus();
     }, 30);
   }
+  saveSession();
 }
 
 // ============================================================
-//  STEP SWITCHING — extend to init panels on first visit
+//  STEP SWITCHING — init panels on every visit
 // ============================================================
-const _STEP_INITED = {};
-// Override switchStep to init panels on first visit
 function switchStep(name) {
   const key = name.charAt(0).toUpperCase() + name.slice(1);
   // Block navigation to steps that are still locked (disabled tab)
@@ -1674,20 +1679,135 @@ function switchStep(name) {
     btn.classList.remove('disabled');
   }
 
-  if (!_STEP_INITED[key]) {
-    _STEP_INITED[key] = true;
-    if (key === 'Structures') initStructuresPanel();
-    if (key === 'Glue') initGluePanel();
-  }
-  // Export panel always re-syncs summary when visited
+  // Structures and Glue always re-render on revisit to reflect current MODEL state.
+  // Export panel always re-syncs summary when visited.
+  if (key === 'Structures') initStructuresPanel();
+  if (key === 'Glue') initGluePanel();
   if (key === 'Export') initExportPanel();
+}
+
+// ============================================================
+//  SESSION PERSISTENCE — localStorage autosave/restore
+// ============================================================
+const LS_SESSION_KEY = 'faction-builder-session';
+let _saveEnabled = false;
+let _saveTimer   = null;
+
+function saveSession() {
+  if (!_saveEnabled) return;
+  clearTimeout(_saveTimer);
+  _saveTimer = setTimeout(() => {
+    try {
+      const payload = {
+        faction:   MODEL.faction,
+        _ts:       Date.now()
+      };
+      localStorage.setItem(LS_SESSION_KEY, JSON.stringify(payload));
+    } catch (e) { /* quota — ignore */ }
+  }, 600);
+}
+
+function restoreSession() {
+  try {
+    const raw = localStorage.getItem(LS_SESSION_KEY);
+    if (!raw) return false;
+    const payload = JSON.parse(raw);
+    if (!payload || !payload.faction) return false;
+    const f = payload.faction;
+    // Merge into MODEL.faction — deep replace
+    Object.assign(MODEL.faction, f);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Sync Identity UI fields to MODEL.faction after a restore
+function syncIdentityUI() {
+  const f = MODEL.faction;
+  const tokEl = document.getElementById('tokenInput');
+  const dnEl  = document.getElementById('displayNameInput');
+  const fsEl  = document.getElementById('factionStrInput');
+
+  if (tokEl) tokEl.value = f.token || '';
+  if (dnEl)  dnEl.value  = f.displayName || '';
+  if (fsEl) {
+    fsEl.value = f.factionStr || '';
+    if (f.factionStr && f.factionStr !== f.displayName) fsEl.dataset.userEdited = '1';
+  }
+  // Side chips
+  document.querySelectorAll('.side-chip').forEach(btn => {
+    const active = btn.dataset.side === f.side;
+    btn.classList.toggle('on', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+  // Token validation
+  if (f.token) validateToken(f.token);
+  updateRegPreview();
 }
 
 // ============================================================
 //  INIT
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Init roster sidebar with empty counts
+  // Try to restore session — offer restore-or-fresh choice if data exists
+  const hadSession = restoreSession();
+
+  if (hadSession) {
+    const f = MODEL.faction;
+    const hasMeaningfulData = f.token || f.displayName || f.roster.length > 0;
+    if (hasMeaningfulData) {
+      const wantRestore = confirm(
+        'A previous faction-builder session was found.\n\n' +
+        `Token: ${f.token || '(none)'}  Display name: ${f.displayName || '(none)'}  Units: ${f.roster.length}\n\n` +
+        'Restore this session? (Cancel = start fresh)'
+      );
+      if (!wantRestore) {
+        // Clear the saved session and reset MODEL to defaults
+        try { localStorage.removeItem(LS_SESSION_KEY); } catch (e) {}
+        MODEL.faction.token = '';
+        MODEL.faction.side  = 'GUER';
+        MODEL.faction.displayName = '';
+        MODEL.faction.factionStr  = '';
+        MODEL.faction.roster = [];
+        MODEL.faction.flag   = '\\ca\\data\\Flag_napa_co.paa';
+        // structures and glue stay at defaults (already set by Object.assign above)
+        Object.assign(MODEL.faction.structures, {
+          mhq: 'BRDM2_HQ_Gue', hq: 'BRDM2_HQ_Gue_unfolded',
+          buildings: [
+            { key: 'Headquarters',  classname: 'BRDM2_HQ_Gue_unfolded',          cost: 0,    time: 30  },
+            { key: 'Barracks',      classname: 'Gue_WarfareBBarracks',            cost: 200,  time: 70  },
+            { key: 'Light',         classname: 'Gue_WarfareBLightFactory',        cost: 600,  time: 90  },
+            { key: 'CommandCenter', classname: 'GUE_WarfareBUAVterminal',         cost: 1200, time: 110 },
+            { key: 'Heavy',         classname: 'Gue_WarfareBHeavyFactory',        cost: 2800, time: 130 },
+            { key: 'Aircraft',      classname: 'GUE_WarfareBAircraftFactory',     cost: 4400, time: 150 },
+            { key: 'ServicePoint',  classname: 'GUE_WarfareBVehicleServicePoint', cost: 700,  time: 70  },
+            { key: 'AARadar',       classname: 'Gue_WarfareBAntiAirRadar',        cost: 3200, time: 280 }
+          ],
+          defenseNames: [
+            'GUE_WarfareBMGNest_PK','DSHKM_Gue','SearchLight_Gue','SPG9_Gue','ZU23_Gue',
+            '2b14_82mm_GUE','Land_HBarrier3','Land_HBarrier5','Land_HBarrier_large',
+            'Base_WarfareBBarrier5x','Base_WarfareBBarrier10x','Base_WarfareBBarrier10xTall',
+            'MASH','Land_fort_bagfence_long','Land_fort_bagfence_corner','Land_fort_bagfence_round',
+            'Land_fortified_nest_small','Land_fortified_nest_big','Land_Fort_Watchtower',
+            'Land_fort_rampart','Land_fort_artillery_nest','Hhedgehog_concreteBig','Hedgehog',
+            'Land_CamoNet_EAST','Land_CamoNetVar_EAST','Land_CamoNetB_EAST','Sign_Danger',
+            'HeliH','Fort_RazorWire','Land_Ind_IlluminantTower','Land_Campfire',
+            'RUOrdnanceBox','RUVehicleBox','RUBasicAmmunitionBox','RUBasicWeaponsBox',
+            'RULaunchersBox','RUSpecialWeaponsBox'
+          ]
+        });
+      } else {
+        // Sync the identity UI to restored data
+        syncIdentityUI();
+      }
+    }
+  }
+
+  // Enable autosave now that restore decision is done
+  _saveEnabled = true;
+
+  // Init roster sidebar with restored (or empty) counts
   renderRosterSidebar();
   renderActiveSlot();
   // Load data
@@ -2014,6 +2134,9 @@ ${patches.incPatch}
 // ---- Main emit orchestrator ----
 let LAST_EMIT = null; // { files: [{name, path, content}], patches, tok, side }
 
+// Hard-coded reserved WASP faction tokens — must never be overwritten
+const RESERVED_TOKENS = ['US','USMC','RU','CDF','INS','GUE','TKA','TK','TKGUE','GUER'];
+
 function runEmit() {
   const f = MODEL.faction;
   const tok  = f.token;
@@ -2024,7 +2147,23 @@ function runEmit() {
     return;
   }
 
+  // Block emit on reserved token — or registered token — unless user explicitly confirms
   const reg = MODEL.template?.registration || {};
+  const registeredAll = [
+    ...(reg.factions_west || []),
+    ...(reg.factions_east || []),
+    ...(reg.factions_guer || [])
+  ];
+  const isReserved  = RESERVED_TOKENS.includes(tok);
+  const isRegistered = registeredAll.includes(tok);
+  if (isReserved || isRegistered) {
+    const reason = isReserved
+      ? `"${tok}" is a built-in WASP faction token`
+      : `"${tok}" is already registered in this mission`;
+    if (!confirm(`⚠ Token collision — ${reason}.\n\nEmitting with this token will overwrite existing faction files. Are you sure you want to continue?`)) {
+      return;
+    }
+  }
 
   // Build core files
   const coreText       = emitCore(tok, side, f.roster, f.factionStr || f.displayName || tok);
