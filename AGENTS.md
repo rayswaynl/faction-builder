@@ -48,7 +48,8 @@ regenerate, clone the source repo(s) locally, edit the constant, run the script 
      in a clone of [a2waspwarfare](https://github.com/rayswaynl/a2waspwarfare).
    - Edit the `COMMON` constant to point at that `Common` dir, then: `python tools/extract_faction_template.py`
 2. `tools/gen_unit_catalog.py` → `assets/data/units.json` + `assets/thumbs/*.jpg`
-   - Source: `Config/CfgVehicles.txt` + `Images/` in a clone of the `arma2-co-config-reference` repo
+   - Source: `Config/CfgVehicles.txt` + `Images/` in a clone of
+     [arma2-co-config-reference](https://github.com/rayswaynl/arma2-co-config-reference)
      (sibling reference dump of the A2:CO configs).
    - Edit the `REF_DIR` constant, then: `python tools/gen_unit_catalog.py`
 
@@ -60,7 +61,7 @@ in a2waspwarfare) — `<TOK>` = the faction token:
 - `Common\Config\Core\Core_<TOK>.sqf` — roster phone-book (parallel `_c` classnames + `_i` tuples).
 - `Common\Config\Core_Root\Root_<TOK>.sqf` — master glue (`WFBE_%1FLAG/CREW/PILOT/...` setVariables).
 - `Common\Config\Core_Structures\Structures_<TOK>.sqf` — 8 base buildings + MHQ/HQ + defense palette.
-- `Common\Config\Core_Units\Units_<TOK>.sqf` — the factory buy lists (`WFBE_%1{BARRACKS,LIGHT,HEAVY,AIRCRAFT,AIRPORT,DEPOT}UNITS`).
+- `Common\Config\Core_Units\Units_<TOK>.sqf` — the factory buy lists (`WFBE_%1{BARRACKS,LIGHT,HEAVY,AIRCRAFT,DEPOT,DEFENSE}UNITS`).
 - GUE-clone defaults (token-substituted): `Upgrades_/Squad_/Artillery_/Defenses_/Gear_/Groups_/Loadout_<TOK>.sqf` + CO variants.
 - `README.txt` with the two **manual registration patches**:
   - `Init\Init_CommonConstants.sqf`: append token to `WFBE_C_UNITS_FACTIONS_<SIDE>` + set `WFBE_C_UNITS_FACTION_<SIDE>` index.
