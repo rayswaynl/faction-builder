@@ -2,6 +2,8 @@
 
 A browser-based, offline, single-file **faction composer** for Arma 2 **WASP "Warfare"** — the capstone of the [Miksuu's Warfare tools](https://miksuu.com/tools) suite (sibling to [WDDM](https://github.com/rayswaynl/WDDM), [Loadout Lab](https://github.com/rayswaynl/loadout-lab), [Sector & Town Planner](https://github.com/rayswaynl/sector-planner), [Strategy & Economy](https://github.com/rayswaynl/strategy-economy), [Garrison & AI Groups](https://github.com/rayswaynl/garrison-editor)).
 
+**AI agents:** start with [AGENTS.md](AGENTS.md).
+
 > Status: **v1 shipped** — full compose → emit → zip → cross-tool launcher flow working.
 
 ## What it does
